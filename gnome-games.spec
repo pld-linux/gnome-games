@@ -5,7 +5,7 @@ Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.0.51
-Release:	3
+Release:	4
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -45,7 +45,7 @@ Summary(pl):	Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
 Group:		X11/GNOME/Development/Libraries
 Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
-Requires:	gtk-devel
+Requires:	gtk+-devel
 
 %description devel
 GNOME games libraries - header files.
