@@ -13,36 +13,15 @@ License:	LGPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
-#Patch0:		%{name}-DESTDIR.patch
-#Patch1:		%{name}-scrollkeeper.patch
-#Patch2:		%{name}-ac_fix.patch
-#Patch3:		%{name}-pixbuf_cflags.patch
-#Patch4:		%{name}-applnk.patch
-#Patch5:		%{name}-fix-help-paths.patch
-#Patch6:		%{name}-am16.patch
-#Icon:		gnome-games.gif
-#BuildRequires:	ORBit >= 0.4.3
-#BuildRequires:	audiofile-devel >= 0.1.5
-#BuildRequires:	autoconf
-#BuildRequires:	automake
-#BuildRequires:	esound-devel >= 0.2.7
-#BuildRequires:	gettext-devel
-#BuildRequires:	gnome-libs-devel >= 1.2.13
-#BuildRequires:	gtk+-devel >= 1.2.0
-#BuildRequires:	gdk-pixbuf-devel
-#BuildRequires:	guile-devel >= 1.4.1
-#BuildRequires:	libtool
-#BuildRequires:	ncurses-devel >= 5.0
-#BuildRequires:	readline-devel
-#BuildRequires:	scrollkeeper
-#PreReq:		scrollkeeper
+BuildRequires:	scrollkeeper
+PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 Obsoletes:	gnect
 
 %define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME
+%define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
@@ -108,20 +87,8 @@ Biblioteki statyczne do GNOME games.
 %prep
 %setup -q
 %patch0 -p1
-#%patch1 -p1
-#%patch2 -p1
-#%patch3 -p1
-#%patch4 -p1
-#%patch5 -p1
-#%patch6 -p1
 
 %build
-#intltoolize --copy --force                                                               
-#glib-gettextize --copy --force                                                           
-#libtoolize --copy --force                                                                
-#aclocal        
-#%{__autoconf}
-#%{__automake}
 %configure
 
 %{__make}
@@ -137,6 +104,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
+GCONF_CONFIG_SOURCE="" \
+%{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 /usr/bin/scrollkeeper-update
 
 %postun
@@ -150,6 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %config %{_sysconfdir}/sound/events/*
+%{_sysconfdir}/gconf/schemas/*
 
 %attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
@@ -187,9 +157,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/sounds/*
-
-%{_applnkdir}/Games/*.desktop
-%{_applnkdir}/Games/*/*.desktop
+%{_datadir}/applications/*
+%{_datadir}/gnect
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
