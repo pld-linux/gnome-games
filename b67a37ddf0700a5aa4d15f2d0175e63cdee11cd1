@@ -1,0 +1,6 @@
+Fixes aka "gnome-games will take now few inodes less":
+- remove modules .la files from %%files,
+- added gnome-stones_modules_fixes patch:
+-- change objectdir from $(libdir)/gnome-stones/objects to shorter $(libdir)/gnome-stones,
+-- build gnome-stones mdules as non-versioned shared objects (added to modules
+   LDFLAGS "-module -avoid-version").
