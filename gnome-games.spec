@@ -1,7 +1,7 @@
 Summary:	GNOME games
 Summary(es):	Juegos de GNOME
 Summary(fr):	Jeux pour GNOME
-Summary(pl):	GNOME - Gry
+Summary(pl):	GNOME - gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.3
