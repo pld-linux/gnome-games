@@ -6,36 +6,38 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.6.0
+Version:	2.6.0.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	e46292fd6ed78af488401c56c5fcccfe
+# Source0-md5:	569e9d02fdc0cbd3294349cf30adccd1
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.5.90
+BuildRequires:	GConf2-devel >= 2.6.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.5.91
-BuildRequires:	guile-devel >= 1.6.0
+BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 2.3.6
-BuildRequires:	libgnome-devel >= 2.5.92
-BuildRequires:	libgnomeui-devel >= 2.5.92
+BuildRequires:	libglade2-devel >= 1:2.3.6
+BuildRequires:	libgnome-devel >= 2.6.0
+BuildRequires:	libgnomeui-devel >= 2.6.0
 BuildRequires:	libltdl-devel
+BuildRequires:	librsvg >= 1:2.6.4
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.5.91
+Requires:	gnome-vfs2 >= 2.6.0
+Requires:	librsvg >= 1:2.6.4
 Obsoletes:	gnect
 Obsoletes:	gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
