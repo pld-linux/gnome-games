@@ -86,7 +86,7 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f gnome-games.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
 %config /etc/X11/GNOME/sound/events/*
