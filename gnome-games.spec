@@ -4,8 +4,8 @@ Summary(fr):	Jeux pour GNOME
 Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.4.0.1
-Release:	2
+Version:	1.4.0.3
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -14,7 +14,7 @@ Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-scrollkeeper.patch
-Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch2:		%{name}-ac_fix.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -38,6 +38,7 @@ Obsoletes:	gnome
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
+%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
 %description
 GNOME games.
@@ -87,11 +88,12 @@ Biblioteki statyczne do GNOME games.
 %patch2 -p1
 
 %build
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
-automake -a -c
 aclocal -I %{_aclocaldir}/gnome
 autoconf
+automake -a -c
 %configure 
 
 %{__make}
@@ -101,7 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Gamesdir=%{_applnkdir}/Games
+	Gamesdir=%{_applnkdir}/Games \
+	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -123,7 +126,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %config %{_sysconfdir}/sound/events/*
 
-%attr(755,root,root) %{_bindir}/GnomeScott
 %attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
@@ -138,11 +140,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/gnotravex
 %attr(2755,root,games) %{_bindir}/gnotski
 %attr(2755,root,games) %{_bindir}/gtali
-%attr(2755,root,games) %{_bindir}/gturing
 %attr(2755,root,games) %{_bindir}/iagno
 %attr(2755,root,games) %{_bindir}/mahjongg
 %attr(2755,root,games) %{_bindir}/same-gnome
-
 
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_libdir}/gnome-stones
@@ -153,7 +153,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
 %{_datadir}/gnome-stones
-%{_datadir}/gturing
 %{_datadir}/sol-games
 %{_datadir}/xbill
 
@@ -166,6 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_applnkdir}/Games/*.desktop
 
+%{_omf_dest_dir}/omf/%{name}
 %attr(664,root,games) %{_localstatedir}/games/*
 
 %files devel
