@@ -6,7 +6,7 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.3.1
+Version:	2.3.2
 Release:	1
 Epoch:		1
 License:	LGPL
@@ -105,7 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
-#	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -127,10 +126,11 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_sysconfdir}/sound/events/*
 %{_sysconfdir}/gconf/schemas/*
 
-%attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(755,root,root) %{_bindir}/gnect
+%attr(755,root,root) %{_bindir}/gnibbles
+%attr(755,root,root) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/glines
 %attr(2755,root,games) %{_bindir}/gnome-stones
 %attr(2755,root,games) %{_bindir}/gnometris
@@ -159,6 +159,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sounds/*
 %{_datadir}/applications/*
 %{_datadir}/gnect
+%{_datadir}/gnibbles
+%{_datadir}/gnobots2
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
