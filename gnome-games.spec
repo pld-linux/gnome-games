@@ -5,7 +5,7 @@ Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.0.51
-Release:	5
+Release:	6
 Copyright:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -86,7 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*so.*.* \
+	$RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.so*
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -101,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
-%config /etc/X11/GNOME/sound/events/*
+%config %{_sysconfdir}/GNOME/sound/events/*
 
 %attr(755,root,root) %{_bindir}/GnomeScott
 %attr(755,root,root) %{_bindir}/ctali
