@@ -541,7 +541,10 @@ fi
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/games-server.py
 %{_sysconfdir}/gconf/schemas/libgnomegames.schemas
+%dir %{_datadir}/%{name}
+%dir %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/gnome-games-common
+%dir %{_pixmapsdir}/iagno
 %{_pixmapsdir}/iagno/classic.png
 
 %files blackjack
@@ -718,8 +721,8 @@ fi
 %{_datadir}/sounds/iagno
 %{_desktopdir}/iagno.desktop
 %{_omf_dest_dir}/%{name}/iagno-C.omf
-%{_pixmapsdir}/iagno
 %{_pixmapsdir}/iagno.png
+%{_pixmapsdir}/iagno/*
 %exclude %{_pixmapsdir}/iagno/classic.png
 %dir %{_gnomehelpdir}/iagno
 %{_gnomehelpdir}/iagno/C
