@@ -6,29 +6,36 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.4.2
-Release:	2
+Version:	2.6.0
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	ce45ec6f0a3180b096ebb2c7dc6c69a5
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	e46292fd6ed78af488401c56c5fcccfe
 Patch0:		%{name}-schemas.patch
+Patch1:		%{name}-locale-names.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.4.0
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	guile-devel >= 1.4.1
-BuildRequires:	libgnome-devel >= 2.4.0
-BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	GConf2-devel >= 2.5.90
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	esound-devel
+BuildRequires:	gnome-vfs2-devel >= 2.5.91
+BuildRequires:	guile-devel >= 1.6.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	intltool >= 0.29
+BuildRequires:	libglade2-devel >= 2.3.6
+BuildRequires:	libgnome-devel >= 2.5.92
+BuildRequires:	libgnomeui-devel >= 2.5.92
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	scrollkeeper
+BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.4.0
+Requires:	gnome-vfs2 >= 2.5.91
 Obsoletes:	gnect
 Obsoletes:	gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,8 +70,8 @@ Summary(pl):	Pliki nag³ówkowe do tworzenia programów opartych o GNOME games
 Summary(ru):	æÁÊÌÙ ÒÁÚÒÁÂÏÔËÉ ÉÇÒ ÐÏÄ GNOME
 Summary(uk):	æÁÊÌÉ ÒÏÚÒÏÂËÉ ¦ÇÒ Ð¦Ä GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
-Requires:	gtk+2-devel >= 2.2.4
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	gtk+2-devel >= 2:2.4.0
 
 %description devel
 GNOME games libraries - header files.
@@ -86,7 +93,7 @@ Pliki nag³ówkowe do tworzenia programów opartych o GNOME games.
 Summary:	GNOME games static libraries
 Summary(pl):	Biblioteki statyczne do GNOME games
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 GNOME games static libraries.
@@ -97,9 +104,18 @@ Biblioteki statyczne do GNOME games.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv po/{no,nb}.po
 
 %build
 cp -f /usr/share/automake/config.sub .
+glib-gettextize --copy --force
+intltoolize --copy --force
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoheader}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
