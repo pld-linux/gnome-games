@@ -6,11 +6,11 @@ Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.0.51
 Release:	6
-Copyright:	LGPL
+License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
-Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
-Patch:		gnome-games-applnk.patch
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
+Patch0:		gnome-games-applnk.patch
 Icon:		gnome-games.gif
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit >= 0.4.3
@@ -31,9 +31,9 @@ Obsoletes:	gnome
 %description
 GNOME games.
 
-GNOME is the GNU Network Object Model Environment.  That's a fancy
-name but really GNOME is a nice GUI desktop environment.  It makes
-using your computer easy, powerful, and easy to configure.
+GNOME is the GNU Network Object Model Environment. That's a fancy name
+but really GNOME is a nice GUI desktop environment. It makes using
+your computer easy, powerful, and easy to configure.
 
 %description -l pl
 Gry pod GNOME.
@@ -171,6 +171,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 
 %files static
-%defattr(664,root,root,755)
+%defattr(644,root,root,755)
 %{_libdir}/lib*.a
 %{_libdir}/gnome-stones/objects/lib*.a
