@@ -6,27 +6,27 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.5.8
+Version:	2.5.9
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	7d0abab72afc16fdddd71cdee0626732
+# Source0-md5:	0113bc03ef56ffa3743e8f2870e10a9c
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.5.0
+BuildRequires:	GConf2-devel >= 2.5.90
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.5.6
+BuildRequires:	gnome-vfs2-devel >= 2.5.90
 BuildRequires:	guile-devel >= 1.6.0
-BuildRequires:	gtk+2-devel >= 2:2.3.5
+BuildRequires:	gtk+2-devel >= 2:2.3.6
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 2.3.1
-BuildRequires:	libgnome-devel >= 2.5.1
-BuildRequires:	libgnomeui-devel >= 2.5.1
+BuildRequires:	libgnome-devel >= 2.5.90
+BuildRequires:	libgnomeui-devel >= 2.5.90
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper >= 0.3.8
@@ -34,7 +34,7 @@ BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.5.6
+Requires:	gnome-vfs2 >= 2.5.90
 Obsoletes:	gnect
 Obsoletes:	gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -70,7 +70,7 @@ Summary(ru):	Файлы разработки игр под GNOME
 Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.3.5
+Requires:	gtk+2-devel >= 2:2.3.6
 
 %description devel
 GNOME games libraries - header files.
