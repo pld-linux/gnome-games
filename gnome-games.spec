@@ -6,7 +6,7 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.1.2
+Version:	2.1.3
 Release:	1
 Epoch:		1
 License:	LGPL
@@ -116,9 +116,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
-%{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 /usr/bin/scrollkeeper-update
+%gconf_schema_install
 
 %postun
 /sbin/ldconfig
