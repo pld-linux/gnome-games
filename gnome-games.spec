@@ -26,7 +26,7 @@ Gry pod GNOME.
 Summary:     GNOME games libraries - header files
 Summary(pl): Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
 Group:       X11/Libraries
-Requires:    %{name} =%{version}
+Requires:    %{name} = %{version}
 
 %description devel
 GNOME games libraries - header files.
@@ -40,7 +40,7 @@ Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
 Summary:     GNOME games static libraries
 Summary(pl): Biblioteki statyczne do GNOME games
 Group:       X11/Libraries
-Requires:    %{name}-devel =%{version}
+Requires:    %{name}-devel = %{version}
 
 %description static
 GNOME games static libraries.
