@@ -1,0 +1,151 @@
+--- gnome-games-1.4.0.3/aisleriot/Makefile.am~	Thu May 23 00:41:54 2002
++++ gnome-games-1.4.0.3/aisleriot/Makefile.am	Thu May 23 00:41:54 2002
+@@ -124,6 +124,6 @@
+ 	template.scm translatable_game_names.h
+ 
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Card
+ Games_DATA = sol.desktop
+ 
+--- gnome-games-1.4.0.3/freecell/src/Makefile.am~	Thu May 23 00:43:28 2002
++++ gnome-games-1.4.0.3/freecell/src/Makefile.am	Thu May 23 00:43:28 2002
+@@ -1,5 +1,5 @@
+ ## process this file with automake to produce Makefile.in
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Card
+ 
+ INCLUDES = \
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+--- gnome-games-1.4.0.3/gataxx/Makefile.am~	Thu May 23 00:44:48 2002
++++ gnome-games-1.4.0.3/gataxx/Makefile.am	Thu May 23 00:44:48 2002
+@@ -1,6 +1,6 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir=$(datadir)/pixmaps/gataxx
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ appicondir=$(datadir)/pixmaps
+ 
+ INCLUDES = 			\
+--- gnome-games-1.4.0.3/glines/Makefile.am~	Thu May 23 00:45:46 2002
++++ gnome-games-1.4.0.3/glines/Makefile.am	Thu May 23 00:45:46 2002
+@@ -1,7 +1,7 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/glines
+ icondir = $(datadir)/pixmaps
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ 
+ INCLUDES = -I.. -I$(srcdir)/..		\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+--- gnome-games-1.4.0.3/gnibbles/Makefile.am~	Thu May 23 00:46:28 2002
++++ gnome-games-1.4.0.3/gnibbles/Makefile.am	Thu May 23 00:46:28 2002
+@@ -2,7 +2,7 @@
+ configdir=$(datadir)/gnibbles
+ icondir=$(datadir)/pixmaps
+ soundlistdir = $(sysconfdir)/sound/events
+-Gamesdir=$(datadir)/gnome/apps/Games
++Gamesdir=$(datadir)/applnk/Games/Arcade
+ scoredir=$(localstatedir)/games
+ 
+ INCLUDES = 			\
+--- gnome-games-1.4.0.3/gnobots2/Makefile.am~	Thu May 23 00:48:19 2002
++++ gnome-games-1.4.0.3/gnobots2/Makefile.am	Thu May 23 00:48:19 2002
+@@ -4,7 +4,7 @@
+ soundlistdir=$(sysconfdir)/sound/events
+ sounddir=$(datadir)/sounds/gnobots2
+ appicondir=$(datadir)/pixmaps
+-Gamesdir=$(datadir)/gnome/apps/Games
++Gamesdir=$(datadir)/applnk/Games/Arcade
+ 
+ SUBDIRS = help
+ 
+--- gnome-games-1.4.0.3/gnome-stones/Makefile.am~	Thu May 23 00:49:29 2002
++++ gnome-games-1.4.0.3/gnome-stones/Makefile.am	Thu May 23 00:49:29 2002
+@@ -1,6 +1,6 @@
+ SUBDIRS  = objects graphics help
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Arcade
+ scoredir =$(localstatedir)/games
+ Pixmapdir= $(datadir)/pixmaps
+ Cavesdir = $(datadir)/gnome-stones
+--- gnome-games-1.4.0.3/gnometris/Makefile.am~	Thu May 23 00:50:17 2002
++++ gnome-games-1.4.0.3/gnometris/Makefile.am	Thu May 23 00:50:17 2002
+@@ -1,6 +1,6 @@
+ SUBDIRS=pix
+ scoredir=$(localstatedir)/games
+-Gamesdir=$(datadir)/gnome/apps/Games
++Gamesdir=$(datadir)/applnk/Games/Arcade
+ 
+ INCLUDES=\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+--- gnome-games-1.4.0.3/gnomine/Makefile.am~	Thu May 23 00:51:11 2002
++++ gnome-games-1.4.0.3/gnomine/Makefile.am	Thu May 23 00:51:11 2002
+@@ -1,5 +1,5 @@
+ scoredir=$(localstatedir)/games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ 
+ SUBDIRS = help
+ 
+--- gnome-games-1.4.0.3/gnotravex/Makefile.am~	Thu May 23 00:52:16 2002
++++ gnome-games-1.4.0.3/gnotravex/Makefile.am	Thu May 23 00:52:16 2002
+@@ -1,6 +1,6 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir=$(datadir)/pixmaps/gnotravex
+-Gamesdir=$(datadir)/gnome/apps/Games
++Gamesdir=$(datadir)/applnk/Games/Board
+ 
+ INCLUDES = 			\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+--- gnome-games-1.4.0.3/gnotski/Makefile.am~	Thu May 23 00:53:10 2002
++++ gnome-games-1.4.0.3/gnotski/Makefile.am	Thu May 23 00:53:10 2002
+@@ -1,6 +1,6 @@
+ scoredir=$(DESTDIR)$(localstatedir)/games
+ pixmapdir=$(datadir)/pixmaps
+-Gamesdir=$(datadir)/gnome/apps/Games
++Gamesdir=$(datadir)/applnk/Games/Board
+ 
+ INCLUDES = 			\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+--- gnome-games-1.4.0.3/gtali/Makefile.am~	Thu May 23 00:53:52 2002
++++ gnome-games-1.4.0.3/gtali/Makefile.am	Thu May 23 00:53:52 2002
+@@ -1,5 +1,5 @@
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games
+ scoredir=$(localstatedir)/games
+ 
+ SUBDIRS = pix help
+--- gnome-games-1.4.0.3/iagno/Makefile.am~	Thu May 23 01:16:51 2002
++++ gnome-games-1.4.0.3/iagno/Makefile.am	Thu May 23 01:16:51 2002
+@@ -1,6 +1,6 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir=$(datadir)/pixmaps/iagno
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ appicondir=$(datadir)/pixmaps
+ 
+ INCLUDES = 			\
+--- gnome-games-1.4.0.3/mahjongg/Makefile.am~	Thu May 23 01:17:36 2002
++++ gnome-games-1.4.0.3/mahjongg/Makefile.am	Thu May 23 01:17:36 2002
+@@ -1,7 +1,7 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/mahjongg
+ bgdir = $(datadir)/pixmaps/mahjongg/bg
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ appicondir=$(datadir)/pixmaps
+ 
+ INCLUDES = -I.. -I$(srcdir)/..		\
+--- gnome-games-1.4.0.3/same-gnome/Makefile.am~	Thu May 23 01:18:22 2002
++++ gnome-games-1.4.0.3/same-gnome/Makefile.am	Thu May 23 01:18:22 2002
+@@ -1,6 +1,6 @@
+ scoredir=$(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/same-gnome
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/applnk/Games/Board
+ 
+ SUBDIRS = help
+ 
