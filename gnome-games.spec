@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.10.0
-Release:	2
+Release:	2.1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -36,7 +36,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.8
-BuildRequires:	rpm-build >= 4.1-10
+BuildRequires:	rpm-build >= 4.3-0.20040107.50
 Requires(post):	GConf2
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	librsvg >= 1:2.9.5
@@ -345,23 +345,23 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/libgnomegames.schemas
 
 %post blackjack
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/blackjack.schemas
 
 %postun blackjack -p /usr/bin/scrollkeeper-update
 
 %post gataxx
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gataxx.schemas
 
 %postun gataxx -p /usr/bin/scrollkeeper-update
 
 %post glines
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/glines.schemas
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
 	touch %{_gamesdir}/glines.scores
@@ -373,13 +373,13 @@ fi
 
 %post gnect
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnect.schemas
 
 %postun gnect -p /usr/bin/scrollkeeper-update
 
 %post gnibbles
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnibbles.schemas
 
 for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	gnibbles.3.1 gnibbles.4.0 gnibbles.4.1; do
@@ -394,7 +394,7 @@ done
 
 %post gnobots2
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnobots2.schemas
 
 for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	gnobots2.classic_robots-super-safe gnobots2.nightmare-safe \
@@ -417,7 +417,7 @@ done
 %post stones
 umask 022
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnome-stones.schemas
 [ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1 ||:
 
 if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
@@ -433,7 +433,7 @@ umask 022
 
 %post gnometris
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnometris.schemas
 
 if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	touch %{_gamesdir}/gnometris.scores
@@ -445,7 +445,7 @@ fi
 
 %post gnomine
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnomine.schemas
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	if [ ! -f %{_gamesdir}/$i.scores ]; then
@@ -459,7 +459,7 @@ done
 
 %post gnotravex
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnotravex.schemas
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	gnotravex.6x6; do
@@ -474,7 +474,7 @@ done
 
 %post gnotski
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gnotski.schemas
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
@@ -488,7 +488,7 @@ done
 
 %post gtali
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/gtali.schemas
 
 if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	touch %{_gamesdir}/gtali.scores
@@ -500,13 +500,13 @@ fi
 
 %post iagno
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/iagno.schemas
 
 %postun iagno -p /usr/bin/scrollkeeper-update
 
 %post mahjongg
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/mahjongg.schemas
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	mahjongg.difficult mahjongg.dragon mahjongg.easy \
@@ -522,7 +522,7 @@ done
 
 %post same-gnome
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/same-gnome.schemas
 
 if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	touch %{_gamesdir}/same-gnome.scores
@@ -534,7 +534,7 @@ fi
 
 %post sol
 /usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install /etc/gconf/schemas/aisleriot.schemas
 
 %postun sol -p /usr/bin/scrollkeeper-update
 
