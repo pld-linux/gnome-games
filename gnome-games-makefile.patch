@@ -1,24 +1,23 @@
 diff -urN gnome-games-2.0.3.orig/freecell/src/Makefile.in gnome-games-2.0.3/freecell/src/Makefile.in
 --- gnome-games-2.0.3.orig/freecell/src/Makefile.in	Fri Aug 16 11:06:34 2002
 +++ gnome-games-2.0.3/freecell/src/Makefile.in	Fri Aug 16 11:14:23 2002
-@@ -488,7 +488,7 @@
+@@ -435,7 +435,6 @@
  @INTLTOOL_DESKTOP_RULE@
  
  install-data-local:
 -	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
-+
+
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
 diff -urN gnome-games-2.0.3.orig/gataxx/Makefile.in gnome-games-2.0.3/gataxx/Makefile.in
 --- gnome-games-2.0.3.orig/gataxx/Makefile.in	Fri Aug 16 11:06:34 2002
 +++ gnome-games-2.0.3/gataxx/Makefile.in	Fri Aug 16 11:14:43 2002
-@@ -649,7 +649,7 @@
+@@ -582,7 +582,6 @@
  @INTLTOOL_SOUNDLIST_RULE@
  
  install-data-local:
 -	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
-+
+
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
@@ -47,19 +46,10 @@ diff -urN gnome-games-2.0.3.orig/gnomine/Makefile.in gnome-games-2.0.3/gnomine/M
 diff -urN gnome-games-2.0.3.orig/gnotski/Makefile.in gnome-games-2.0.3/gnotski/Makefile.in
 --- gnome-games-2.0.3.orig/gnotski/Makefile.in	Fri Aug 16 11:06:34 2002
 +++ gnome-games-2.0.3/gnotski/Makefile.in	Fri Aug 16 11:23:40 2002
-@@ -140,7 +140,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
--scoredir = $(DESTDIR)$(localstatedir)/games
-+scoredir = $(localstatedir)/games
- pixmapdir = $(datadir)/pixmaps
- Gamesdir = $(datadir)/applications
- 
-@@ -468,66 +468,66 @@
+@@ -430,66 +430,66 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
- 	-chgrp games $(DESTDIR)$(bindir)/gnotski && chmod 2111 $(DESTDIR)$(bindir)/gnotski
+ 	-chgrp games $(DESTDIR)$(bindir)/gnotski && chmod 2555 $(DESTDIR)$(bindir)/gnotski
 -	-touch             $(scoredir)/gnotski.1.scores
 -	-chown games.games $(scoredir)/gnotski.1.scores
 -	-chmod 664         $(scoredir)/gnotski.1.scores
@@ -180,9 +170,9 @@ diff -urN gnome-games-2.0.3.orig/gnotski/Makefile.in gnome-games-2.0.3/gnotski/M
 +	-touch             $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chown games.games $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chmod 664         $(DESTDIR)$(scoredir)/gnotski.26.scores
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
 diff -urN gnome-games-2.0.3.orig/gtali/Makefile.in gnome-games-2.0.3/gtali/Makefile.in
 --- gnome-games-2.0.3.orig/gtali/Makefile.in	Fri Aug 16 11:06:34 2002
 +++ gnome-games-2.0.3/gtali/Makefile.in	Fri Aug 16 11:16:16 2002
