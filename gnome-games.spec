@@ -77,14 +77,14 @@ strip $RPM_BUILD_ROOT/usr/X11R6/{bin/*,lib/lib*so.*.*}
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %config /etc/GNOME/sound/events/*
 
-%attr(755, root,  root) /usr/X11R6/bin/GnomeScott
-%attr(755, root,  root) /usr/X11R6/bin/cyahtzee
-%attr(755, root,  root) /usr/X11R6/bin/freecell
-%attr(755, root,  root) /usr/X11R6/bin/sol
+%attr(755,root,  root) /usr/X11R6/bin/GnomeScott
+%attr(755,root,  root) /usr/X11R6/bin/cyahtzee
+%attr(755,root,  root) /usr/X11R6/bin/freecell
+%attr(755,root,  root) /usr/X11R6/bin/sol
 %attr(2755, games, games) /usr/X11R6/bin/gnobots
 %attr(2755, games, games) /usr/X11R6/bin/gnome-stones
 %attr(2755, games, games) /usr/X11R6/bin/gnomine
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755, games, games) /usr/X11R6/bin/mahjongg
 %attr(2755, games, games) /usr/X11R6/bin/same-gnome
 
-%attr(755, root,  root) /usr/X11R6/lib/lib*.so.*.*
+%attr(755,root,  root) /usr/X11R6/lib/lib*.so.*.*
 
 /usr/X11R6/share/pixmaps/*
 /usr/X11R6/share/sol-games
@@ -119,12 +119,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(664, games, games) /var/games/*
 
 %files devel
-%defattr(644, root, root, 755)
-%attr(0755, root,  root) /usr/X11R6/lib/lib*.so
+%defattr(644,root,root,755)
+%attr(0755,root,  root) /usr/X11R6/lib/lib*.so
 /usr/X11R6/include/*
 
 %files static
-%attr(664, root, root) /usr/X11R6/lib/lib*.a
+%attr(664,root,root) /usr/X11R6/lib/lib*.a
 
 %changelog
 * Tue Jan 05 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
