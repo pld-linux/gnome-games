@@ -12,6 +12,7 @@ Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	4af0c596ba7dd67dce56773c8eba9535
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
