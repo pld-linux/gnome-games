@@ -160,7 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/sounds/*
-%{_datadir}/applications/*
+%{_desktopdir}/*
 %{_datadir}/gnect
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
