@@ -1,0 +1,37 @@
+--- gnome-games-1.4.0.4/xbill/xbill.desktop.old	Wed Oct  2 18:54:02 2002
++++ gnome-games-1.4.0.4/xbill/xbill.desktop	Wed Oct  2 18:54:02 2002
+@@ -33,7 +33,7 @@
+ Comment[tr]=xBill oyununun Gnome surümü
+ Comment[wa]=Ni leyîz nén ki Bill mete si sistinme dvins les coputreces
+ Comment[zh_TW]=xBill ¹CÀ¸ªº Gnome ª©¥»
+-Icon=xbill.png
++Icon=gnome-xbill.png
+ Exec=gnome-xbill
+ Terminal=0
+ Type=Application
+--- gnome-games-1.4.0.4/xbill/UI.cc.old	Wed Oct  2 18:55:10 2002
++++ gnome-games-1.4.0.4/xbill/UI.cc	Wed Oct  2 18:55:10 2002
+@@ -44,7 +44,7 @@
+ void UI::initialize(int argc, char **argv, const struct poptOption *options) {
+         gnome_init_with_popt_table(PACKAGE, VERSION, argc, argv,
+ 				   options, 0, NULL);
+-	gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/xbill.png");
++	gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-xbill.png");
+ 	toplevel = gnome_app_new("gnome-xbill", "Gnome xBill");
+ 	gtk_signal_connect(GTK_OBJECT(toplevel), "destroy",
+ 			   GTK_SIGNAL_FUNC(gtk_main_quit), NULL);
+--- gnome-games-1.4.0.4/xbill/Makefile.am.old	Wed Oct  2 18:58:15 2002
++++ gnome-games-1.4.0.4/xbill/Makefile.am	Wed Oct  2 18:58:34 2002
+@@ -16,10 +16,10 @@
+ 
+ gnome_xbill_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS)
+ 
+-EXTRA_DIST = README.Ports xbill.png xbill.desktop
++EXTRA_DIST = README.Ports gnome-xbill.png xbill.desktop
+ 
+ pixmapdir = $(datadir)/pixmaps
+-pixmap_DATA = xbill.png
++pixmap_DATA = gnome-xbill.png
+ 
+ Gamesdir=$(datadir)/gnome/apps/Games
+ Games_DATA = xbill.desktop
