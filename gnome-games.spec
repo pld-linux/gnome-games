@@ -352,7 +352,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %preun
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/libgnomegames.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/libgnomegames.schemas
 fi
 
 %post blackjack
@@ -361,7 +361,7 @@ fi
 
 %preun blackjack
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/blackjack.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/blackjack.schemas
 fi
 
 %postun blackjack
@@ -375,7 +375,7 @@ fi
 
 %preun gataxx
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gataxx.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gataxx.schemas
 fi
 
 %postun gataxx
@@ -395,7 +395,7 @@ fi
 
 %preun glines
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/glines.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/glines.schemas
 fi
 
 %postun glines
@@ -409,7 +409,7 @@ fi
 
 %preun gnect
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnect.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnect.schemas
 fi
 
 %postun gnect
@@ -432,7 +432,7 @@ done
 
 %preun gnibbles
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnibbles.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnibbles.schemas
 fi
 
 %postun gnibbles
@@ -462,7 +462,7 @@ done
 
 %preun gnobots2
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnobots2.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnobots2.schemas
 fi
 
 %postun	gnobots2
@@ -483,7 +483,7 @@ fi
 
 %preun stones
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnome-stones.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnome-stones.schemas
 fi
 
 %postun stones
@@ -504,7 +504,7 @@ fi
 
 %preun gnometris
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnometris.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnometris.schemas
 fi
 
 %postun gnometris
@@ -526,7 +526,7 @@ done
 
 %preun gnomine
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnomine.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnomine.schemas
 fi
 
 %postun gnomine
@@ -549,7 +549,7 @@ done
 
 %preun gnotravex
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnotravex.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnotravex.schemas
 fi
 
 %postun gnotravex
@@ -571,7 +571,7 @@ done
 
 %preun gnotski
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gnotski.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gnotski.schemas
 fi
 
 %postun gnotski
@@ -591,7 +591,7 @@ fi
 
 %preun gtali
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/gtali.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/gtali.schemas
 fi
 
 %postun gtali
@@ -605,7 +605,7 @@ fi
 
 %preun iagno
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/iagno.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/iagno.schemas
 fi
 
 %postun iagno
@@ -629,7 +629,7 @@ done
 
 %preun mahjongg
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/mahjongg.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/mahjongg.schemas
 fi
 
 %postun mahjongg
@@ -649,7 +649,7 @@ fi
 
 %preun same-gnome
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/same-gnome.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/same-gnome.schemas
 fi
 
 %postun same-gnome
@@ -663,7 +663,7 @@ fi
 
 %preun sol
 if [ "$1" = "0" ]; then
-    %gconf_schema_uninstall /etc/gconf/schemas/aisleriot.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/aisleriot.schemas
 fi
 
 %postun sol
