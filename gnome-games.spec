@@ -4,7 +4,7 @@ Summary(fr):	Jeux pour GNOME
 Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.0.42
+Version:	1.0.51
 Release:	1
 Copyright:	LGPL
 Group:		X11/GNOME
@@ -18,6 +18,8 @@ BuildRequires:	audiofile-devel >= 0.1.5
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	guile-devel >= 1.3
 BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	readline-devel
+BuildRequires:	ncurses-devel >= 5.0
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
