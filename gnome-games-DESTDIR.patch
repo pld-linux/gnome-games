@@ -1,0 +1,375 @@
+diff -Nru gnome-games-1.2.0/glines/Makefile.am gnome-games-1.2.0.new/glines/Makefile.am
+--- gnome-games-1.2.0/glines/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/glines/Makefile.am	Fri May 26 04:26:43 2000
+@@ -30,6 +30,6 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	touch $(DESTDIR)$(scoredir)/glines.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/glines.scores
++	-chgrp games $(DESTDIR)$(scoredir)/glines.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/glines.scores
+-	-chgrp games $(DESTDIR)$(bindir)/glines && chmod 2111 $(DESTDIR)$(bindir)/glines
++	-chgrp games $(DESTDIR)$(bindir)/glines && chmod 2755 $(DESTDIR)$(bindir)/glines
+diff -Nru gnome-games-1.2.0/gnibbles/Makefile.am gnome-games-1.2.0.new/gnibbles/Makefile.am
+--- gnome-games-1.2.0/gnibbles/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnibbles/Makefile.am	Fri May 26 04:31:41 2000
+@@ -96,27 +96,27 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.4.0.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.4.0.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.4.0.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.4.0.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.3.0.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.3.0.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.3.0.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.3.0.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.2.0.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.2.0.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.2.0.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.2.0.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.1.0.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.1.0.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.1.0.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.1.0.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.4.1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.4.1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.4.1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.4.1.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.3.1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.3.1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.3.1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.3.1.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.2.1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.2.1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.2.1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.2.1.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
+-	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2111 $(DESTDIR)$(bindir)/gnibbles
++	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2755 $(DESTDIR)$(bindir)/gnibbles
+diff -Nru gnome-games-1.2.0/gnobots2/Makefile.am gnome-games-1.2.0.new/gnobots2/Makefile.am
+--- gnome-games-1.2.0/gnobots2/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnobots2/Makefile.am	Fri May 26 04:27:34 2000
+@@ -88,7 +88,7 @@
+ 	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
+             fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
+             fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
+-	    touch echo $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
+-	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname1; \
++	    touch echo $$fname1; chmod 664 $$fname1; chgrp games $$fname1; \
++	    touch echo $$fname2; chmod 664 $$fname2; chgrp games $$fname1; \
+ 	    done
+-	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2111 $(DESTDIR)$(bindir)/gnobots2
++	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2755 $(DESTDIR)$(bindir)/gnobots2
+diff -Nru gnome-games-1.2.0/gnome-stones/Makefile.am gnome-games-1.2.0.new/gnome-stones/Makefile.am
+--- gnome-games-1.2.0/gnome-stones/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnome-stones/Makefile.am	Fri May 26 04:30:38 2000
+@@ -67,9 +67,9 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnome-stones.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnome-stones.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnome-stones.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnome-stones.scores	
+-	-chgrp games $(DESTDIR)$(bindir)/gnome-stones && chmod 2111 $(DESTDIR)$(bindir)/gnome-stones
++	-chgrp games $(DESTDIR)$(bindir)/gnome-stones && chmod 2755 $(DESTDIR)$(bindir)/gnome-stones
+ 
+ gnome-stones.keys: gnome-stones.keys.in Makefile
+ 	sed -e 's^\@icondir\@^$(Pixmapdir)^g' < $(srcdir)/gnome-stones.keys.in > gnome-stones.keys.tmp \
+diff -Nru gnome-games-1.2.0/gnometris/Makefile.am gnome-games-1.2.0.new/gnometris/Makefile.am
+--- gnome-games-1.2.0/gnometris/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnometris/Makefile.am	Fri May 26 04:33:25 2000
+@@ -38,13 +38,6 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	touch $(DESTDIR)$(scoredir)/gnometris.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnometris.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnometris.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnometris.scores
+-	-chgrp games $(DESTDIR)$(bindir)/gnometris && chmod 2111 $(DESTDIR)$(bindir)/gnometris
+-
+-
+-
+-
+-
+-
+-
++	-chgrp games $(DESTDIR)$(bindir)/gnometris && chmod 2755 $(DESTDIR)$(bindir)/gnometris
+diff -Nru gnome-games-1.2.0/gnomine/Makefile.am gnome-games-1.2.0.new/gnomine/Makefile.am
+--- gnome-games-1.2.0/gnomine/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnomine/Makefile.am	Fri May 26 04:33:59 2000
+@@ -27,15 +27,15 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnomine.Tiny.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnomine.Tiny.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnomine.Tiny.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnomine.Tiny.scores	
+ 	-touch $(DESTDIR)$(scoredir)/gnomine.Medium.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnomine.Medium.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnomine.Medium.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnomine.Medium.scores	
+ 	-touch $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnomine.Biiiig.scores	
+ 	-touch $(DESTDIR)$(scoredir)/gnomine.Custom.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnomine.Custom.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnomine.Custom.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnomine.Custom.scores	
+-	-chgrp games $(DESTDIR)$(bindir)/gnomine && chmod 2111 $(DESTDIR)$(bindir)/gnomine
++	-chgrp games $(DESTDIR)$(bindir)/gnomine && chmod 2755 $(DESTDIR)$(bindir)/gnomine
+diff -Nru gnome-games-1.2.0/gnotravex/Makefile.am gnome-games-1.2.0.new/gnotravex/Makefile.am
+--- gnome-games-1.2.0/gnotravex/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gnotravex/Makefile.am	Fri May 26 04:34:26 2000
+@@ -25,18 +25,18 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnotravex.2x2.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnotravex.2x2.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotravex.2x2.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.2x2.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnotravex.3x3.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnotravex.3x3.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotravex.3x3.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.3x3.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnotravex.4x4.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnotravex.4x4.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotravex.4x4.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.4x4.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnotravex.5x5.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnotravex.5x5.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotravex.5x5.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.5x5.scores
+ 	-touch $(DESTDIR)$(scoredir)/gnotravex.6x6.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnotravex.6x6.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotravex.6x6.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.6x6.scores
+-	-chgrp games $(DESTDIR)$(bindir)/gnotravex && chmod 2111 $(DESTDIR)$(bindir)/gnotravex
++	-chgrp games $(DESTDIR)$(bindir)/gnotravex && chmod 2755 $(DESTDIR)$(bindir)/gnotravex
+diff -Nru gnome-games-1.2.0/gnotski/Makefile.am gnome-games-1.2.0.new/gnotski/Makefile.am
+--- gnome-games-1.2.0/gnotski/Makefile.am	Sat Oct 16 17:54:14 1999
++++ gnome-games-1.2.0.new/gnotski/Makefile.am	Fri May 26 04:25:30 2000
+@@ -24,65 +24,65 @@
+ EXTRA_DIST = README gnotski.desktop $(pixmap_DATA)
+ 
+ install-data-local:
+-	-$(mkinstalldirs) $(scoredir)
+-	-chgrp games $(bindir)/gnotski && chmod 2111 $(bindir)/gnotski
+-	-touch             $(scoredir)/gnotski.1.scores
+-	-chown games.games $(scoredir)/gnotski.1.scores
+-	-chmod 664         $(scoredir)/gnotski.1.scores
+-	-touch             $(scoredir)/gnotski.2.scores
+-	-chown games.games $(scoredir)/gnotski.2.scores
+-	-chmod 664         $(scoredir)/gnotski.2.scores
+-	-touch             $(scoredir)/gnotski.3.scores
+-	-chown games.games $(scoredir)/gnotski.3.scores
+-	-chmod 664         $(scoredir)/gnotski.3.scores
+-	-touch             $(scoredir)/gnotski.4.scores
+-	-chown games.games $(scoredir)/gnotski.4.scores
+-	-chmod 664         $(scoredir)/gnotski.4.scores
+-	-touch             $(scoredir)/gnotski.5.scores
+-	-chown games.games $(scoredir)/gnotski.5.scores
+-	-chmod 664         $(scoredir)/gnotski.5.scores
+-	-touch             $(scoredir)/gnotski.6.scores
+-	-chown games.games $(scoredir)/gnotski.6.scores
+-	-chmod 664         $(scoredir)/gnotski.6.scores
+-	-touch             $(scoredir)/gnotski.7.scores
+-	-chown games.games $(scoredir)/gnotski.7.scores
+-	-chmod 664         $(scoredir)/gnotski.7.scores
+-	-touch             $(scoredir)/gnotski.11.scores
+-	-chown games.games $(scoredir)/gnotski.11.scores
+-	-chmod 664         $(scoredir)/gnotski.11.scores
+-	-touch             $(scoredir)/gnotski.12.scores
+-	-chown games.games $(scoredir)/gnotski.12.scores
+-	-chmod 664         $(scoredir)/gnotski.12.scores
+-	-touch             $(scoredir)/gnotski.13.scores
+-	-chown games.games $(scoredir)/gnotski.13.scores
+-	-chmod 664         $(scoredir)/gnotski.13.scores
+-	-touch             $(scoredir)/gnotski.14.scores
+-	-chown games.games $(scoredir)/gnotski.14.scores
+-	-chmod 664         $(scoredir)/gnotski.14.scores
+-	-touch             $(scoredir)/gnotski.15.scores
+-	-chown games.games $(scoredir)/gnotski.15.scores
+-	-chmod 664         $(scoredir)/gnotski.15.scores
+-	-touch             $(scoredir)/gnotski.16.scores
+-	-chown games.games $(scoredir)/gnotski.16.scores
+-	-chmod 664         $(scoredir)/gnotski.16.scores
+-	-touch             $(scoredir)/gnotski.17.scores
+-	-chown games.games $(scoredir)/gnotski.17.scores
+-	-chmod 664         $(scoredir)/gnotski.17.scores
+-	-touch             $(scoredir)/gnotski.21.scores
+-	-chown games.games $(scoredir)/gnotski.21.scores
+-	-chmod 664         $(scoredir)/gnotski.21.scores
+-	-touch             $(scoredir)/gnotski.22.scores
+-	-chown games.games $(scoredir)/gnotski.22.scores
+-	-chmod 664         $(scoredir)/gnotski.22.scores
+-	-touch             $(scoredir)/gnotski.23.scores
+-	-chown games.games $(scoredir)/gnotski.23.scores
+-	-chmod 664         $(scoredir)/gnotski.23.scores
+-	-touch             $(scoredir)/gnotski.24.scores
+-	-chown games.games $(scoredir)/gnotski.24.scores
+-	-chmod 664         $(scoredir)/gnotski.24.scores
+-	-touch             $(scoredir)/gnotski.25.scores
+-	-chown games.games $(scoredir)/gnotski.25.scores
+-	-chmod 664         $(scoredir)/gnotski.25.scores
+-	-touch             $(scoredir)/gnotski.26.scores
+-	-chown games.games $(scoredir)/gnotski.26.scores
+-	-chmod 664         $(scoredir)/gnotski.26.scores
++	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
++	-chgrp games $(DESTDIR)$(bindir)/gnotski && chmod 2755 $(DESTDIR)$(bindir)/gnotski
++	-touch $(DESTDIR)$(scoredir)/gnotski.1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.1.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.1.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.2.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.2.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.2.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.3.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.3.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.3.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.4.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.4.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.4.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.5.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.5.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.5.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.6.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.6.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.6.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.7.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.7.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.7.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.11.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.11.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.11.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.12.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.12.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.12.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.13.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.13.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.13.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.14.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.14.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.14.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.15.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.15.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.15.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.16.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.16.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.16.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.17.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.17.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.17.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.21.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.21.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.21.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.22.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.22.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.22.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.23.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.23.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.23.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.24.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.24.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.24.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.25.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.25.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.25.scores
++	-touch $(DESTDIR)$(scoredir)/gnotski.26.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnotski.26.scores
++	-chmod 664 $DESTDIR)$(scoredir)/gnotski.26.scores
+diff -Nru gnome-games-1.2.0/gtali/Makefile.am gnome-games-1.2.0.new/gtali/Makefile.am
+--- gnome-games-1.2.0/gtali/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gtali/Makefile.am	Fri May 26 04:35:01 2000
+@@ -53,6 +53,6 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gtali.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gtali.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gtali.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gtali.scores	
+-	-chgrp games $(DESTDIR)$(bindir)/gtali && chmod 2111 $(DESTDIR)$(bindir)/gtali
++	-chgrp games $(DESTDIR)$(bindir)/gtali && chmod 2755 $(DESTDIR)$(bindir)/gtali
+diff -Nru gnome-games-1.2.0/gturing/Makefile.am gnome-games-1.2.0.new/gturing/Makefile.am
+--- gnome-games-1.2.0/gturing/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/gturing/Makefile.am	Fri May 26 04:35:13 2000
+@@ -31,4 +31,4 @@
+ 	README CREDITS $(examples_DATA) $(Games_DATA)
+ 
+ install-data-local:
+-	-chgrp games $(DESTDIR)$(bindir)/gturing && chmod 2111 $(DESTDIR)$(bindir)/gturing
++	-chgrp games $(DESTDIR)$(bindir)/gturing && chmod 2755 $(DESTDIR)$(bindir)/gturing
+diff -Nru gnome-games-1.2.0/iagno/Makefile.am gnome-games-1.2.0.new/iagno/Makefile.am
+--- gnome-games-1.2.0/iagno/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/iagno/Makefile.am	Fri May 26 04:35:47 2000
+@@ -67,19 +67,19 @@
+ 	touch $(DESTDIR)$(scoredir)/iagno.b1.scores
+ 	touch $(DESTDIR)$(scoredir)/iagno.b2.scores
+ 	touch $(DESTDIR)$(scoredir)/iagno.b3.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.w1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.w2.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.w3.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.b1.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.b2.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/iagno.b3.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.w1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.w2.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.w3.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.b1.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.b2.scores
++	-chgrp games $(DESTDIR)$(scoredir)/iagno.b3.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.w1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.w2.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.w3.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.b1.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.b2.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/iagno.b3.scores
+-	-chgrp games $(DESTDIR)$(bindir)/iagno && chmod 2111 $(DESTDIR)$(bindir)/iagno
++	-chgrp games $(DESTDIR)$(bindir)/iagno && chmod 2755 $(DESTDIR)$(bindir)/iagno
+ 
+ soundlistdir = $(sysconfdir)/sound/events
+ soundlist_DATA = iagno.soundlist
+diff -Nru gnome-games-1.2.0/mahjongg/Makefile.am gnome-games-1.2.0.new/mahjongg/Makefile.am
+--- gnome-games-1.2.0/mahjongg/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/mahjongg/Makefile.am	Fri May 26 04:36:17 2000
+@@ -37,10 +37,7 @@
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	$(mkinstalldirs) $(DESTDIR)$(bgdir)
+ 	touch $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
++	-chgrp games $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+-	-chgrp games $(DESTDIR)$(bindir)/mahjongg && chmod 2111 $(DESTDIR)$(bindir)/mahjongg
++	-chgrp games $(DESTDIR)$(bindir)/mahjongg && chmod 2755 $(DESTDIR)$(bindir)/mahjongg
+ 	$(mkinstalldirs) $(DESTDIR)$(Gamesdir)
+-
+-
+-
+diff -Nru gnome-games-1.2.0/same-gnome/Makefile.am gnome-games-1.2.0.new/same-gnome/Makefile.am
+--- gnome-games-1.2.0/same-gnome/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/same-gnome/Makefile.am	Fri May 26 04:36:38 2000
+@@ -28,6 +28,6 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	touch $(DESTDIR)$(scoredir)/same-gnome.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/same-gnome.scores
++	-chgrp games $(DESTDIR)$(scoredir)/same-gnome.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/same-gnome.scores
+-	-chgrp games $(DESTDIR)$(bindir)/same-gnome && chmod 2111 $(DESTDIR)$(bindir)/same-gnome
++	-chgrp games $(DESTDIR)$(bindir)/same-gnome && chmod 2755 $(DESTDIR)$(bindir)/same-gnome
+diff -Nru gnome-games-1.2.0/xbill/Makefile.am gnome-games-1.2.0.new/xbill/Makefile.am
+--- gnome-games-1.2.0/xbill/Makefile.am	Fri May 26 04:21:43 2000
++++ gnome-games-1.2.0.new/xbill/Makefile.am	Fri May 26 04:37:06 2000
+@@ -27,7 +27,6 @@
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnome-xbill.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnome-xbill.scores
++	-chgrp games $(DESTDIR)$(scoredir)/gnome-xbill.scores
+ 	-chmod 664 $(DESTDIR)$(scoredir)/gnome-xbill.scores
+-	-chgrp games $(DESTDIR)$(bindir)/gnome-xbill && chmod 2111 $(DESTDIR)$(bindir)/gnome-xbill
+-
++	-chgrp games $(DESTDIR)$(bindir)/gnome-xbill && chmod 2755 $(DESTDIR)$(bindir)/gnome-xbill
