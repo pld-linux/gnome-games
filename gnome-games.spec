@@ -5,12 +5,14 @@ Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.2.0
-Release:	3
+Release:	10
+Epoch:		1
 License:	LGPL
-Group:		X11/GNOME
-Group(pl):	X11/GNOME
+Group:		X11/Applications
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
-Patch0:		gnome-games-DESTDIR.patch
+Patch0:		%{name}-DESTDIR.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -42,8 +44,9 @@ Gry pod GNOME.
 %package devel
 Summary:	GNOME games libraries - header files
 Summary(pl):	Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 Requires:	gtk+-devel
 
@@ -58,15 +61,16 @@ Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
 %package static
 Summary:	GNOME games static libraries
 Summary(pl):	Biblioteki statyczne do GNOME games
-Group:		X11/GNOME/Development/Libraries
-Group(pl):	X11/GNOME/Programowanie/Biblioteki
+Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
 GNOME games static libraries.
 
 %description static
-Biblioteki statyczne do GNOME games
+Biblioteki statyczne do GNOME games.
 
 %prep
 %setup -q
@@ -75,7 +79,6 @@ Biblioteki statyczne do GNOME games
 %build
 gettextize --copy --force
 automake
-LDFLAGS="-s"; export LDFLAGS
 %configure 
 
 %{__make}
@@ -86,9 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	Gamesdir=%{_applnkdir}/Games
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*so.*.* \
-	$RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.so*
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
