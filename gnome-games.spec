@@ -5,7 +5,7 @@ Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications
