@@ -6,7 +6,7 @@ Release:     1
 Copyright:   LGPL
 Group:       X11/Libraries
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
-Icon:        foot.gif
+Icon:        %{name}.gif
 Requires:    gnome-libs >= %{version}
 URL:         http://www.gnome.org
 BuildRoot:   /tmp/%{name}-%{version}-root
