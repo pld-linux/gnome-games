@@ -6,35 +6,36 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.4.0.4
-Release:	2
+Version:	2.0.0
+Release:	0
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
-Patch0:		%{name}-DESTDIR.patch
-Patch1:		%{name}-scrollkeeper.patch
-Patch2:		%{name}-ac_fix.patch
-Patch3:		%{name}-pixbuf_cflags.patch
-Patch4:		%{name}-applnk.patch
-Patch5:		%{name}-fix-help-paths.patch
-Patch6:		%{name}-am16.patch
-Icon:		gnome-games.gif
-BuildRequires:	ORBit >= 0.4.3
-BuildRequires:	audiofile-devel >= 0.1.5
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel >= 1.2.13
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	gdk-pixbuf-devel
-BuildRequires:	guile-devel >= 1.4.1
-BuildRequires:	libtool
-BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	readline-devel
-BuildRequires:	scrollkeeper
-PreReq:		scrollkeeper
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-makefile.patch
+#Patch0:		%{name}-DESTDIR.patch
+#Patch1:		%{name}-scrollkeeper.patch
+#Patch2:		%{name}-ac_fix.patch
+#Patch3:		%{name}-pixbuf_cflags.patch
+#Patch4:		%{name}-applnk.patch
+#Patch5:		%{name}-fix-help-paths.patch
+#Patch6:		%{name}-am16.patch
+#Icon:		gnome-games.gif
+#BuildRequires:	ORBit >= 0.4.3
+#BuildRequires:	audiofile-devel >= 0.1.5
+#BuildRequires:	autoconf
+#BuildRequires:	automake
+#BuildRequires:	esound-devel >= 0.2.7
+#BuildRequires:	gettext-devel
+#BuildRequires:	gnome-libs-devel >= 1.2.13
+#BuildRequires:	gtk+-devel >= 1.2.0
+#BuildRequires:	gdk-pixbuf-devel
+#BuildRequires:	guile-devel >= 1.4.1
+#BuildRequires:	libtool
+#BuildRequires:	ncurses-devel >= 5.0
+#BuildRequires:	readline-devel
+#BuildRequires:	scrollkeeper
+#PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
@@ -107,20 +108,20 @@ Biblioteki statyczne do GNOME games.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
+#%patch1 -p1
+#%patch2 -p1
+#%patch3 -p1
+#%patch4 -p1
+#%patch5 -p1
+#%patch6 -p1
 
 %build
-rm -f missing
-libtoolize --copy --force
-gettextize --copy --force
-aclocal -I %{_aclocaldir}/gnome
-%{__autoconf}
-%{__automake}
+#intltoolize --copy --force                                                               
+#glib-gettextize --copy --force                                                           
+#libtoolize --copy --force                                                                
+#aclocal        
+#%{__autoconf}
+#%{__automake}
 %configure
 
 %{__make}
