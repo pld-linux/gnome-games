@@ -21,13 +21,12 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel >= 5.0
 URL:		http://www.gnome.org/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 GNOME games.
