@@ -22,6 +22,7 @@ BuildRequires:	GConf2-devel >= 2.7.92
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
+BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-vfs2-devel >= 2.7.92
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.4
@@ -316,7 +317,7 @@ Ró¿ne gry karciane.
 glib-gettextize --copy --force
 intltoolize --copy --force
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoheader}
 %{__autoconf}
 %{__automake}
