@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.10.0
-Release:	2.1
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -36,7 +36,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.8
-BuildRequires:	rpm-build >= 4.3-0.20040107.50
+BuildRequires:	rpmbuild(macros) >= 1.196
 Requires(post):	GConf2
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	librsvg >= 1:2.9.5
@@ -347,17 +347,24 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %gconf_schema_install /etc/gconf/schemas/libgnomegames.schemas
 
+%postun
+%gconf_schema_uninstall /etc/gconf/schemas/libgnomegames.schemas
+
 %post blackjack
 /usr/bin/scrollkeeper-update
 %gconf_schema_install /etc/gconf/schemas/blackjack.schemas
 
-%postun blackjack -p /usr/bin/scrollkeeper-update
+%postun blackjack
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/blackjack.schemas
 
 %post gataxx
 /usr/bin/scrollkeeper-update
 %gconf_schema_install /etc/gconf/schemas/gataxx.schemas
 
-%postun gataxx -p /usr/bin/scrollkeeper-update
+%postun gataxx
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gataxx.schemas
 
 %post glines
 /usr/bin/scrollkeeper-update
@@ -369,13 +376,17 @@ if [ ! -f %{_gamesdir}/glines.scores ]; then
 	chmod 664 %{_gamesdir}/glines.scores
 fi
 
-%postun glines -p /usr/bin/scrollkeeper-update
+%postun glines
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/glines.schemas
 
 %post gnect
 /usr/bin/scrollkeeper-update
 %gconf_schema_install /etc/gconf/schemas/gnect.schemas
 
-%postun gnect -p /usr/bin/scrollkeeper-update
+%postun gnect
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnect.schemas
 
 %post gnibbles
 /usr/bin/scrollkeeper-update
@@ -390,7 +401,9 @@ for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	fi
 done
 
-%postun gnibbles -p /usr/bin/scrollkeeper-update
+%postun gnibbles
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnibbles.schemas
 
 %post gnobots2
 /usr/bin/scrollkeeper-update
@@ -412,7 +425,9 @@ for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	fi
 done
 
-%postun	gnobots2 -p /usr/bin/scrollkeeper-update
+%postun	gnobots2
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnobots2.schemas
 
 %post stones
 umask 022
@@ -429,6 +444,7 @@ fi
 %postun stones
 umask 022
 /usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnome-stones.schemas
 [ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
 
 %post gnometris
@@ -441,7 +457,9 @@ if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	chmod 664 %{_gamesdir}/gnometris.scores
 fi
 
-%postun gnometris -p /usr/bin/scrollkeeper-update
+%postun gnometris
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnometris.schemas
 
 %post gnomine
 /usr/bin/scrollkeeper-update
@@ -455,7 +473,9 @@ for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	fi
 done
 
-%postun gnomine -p /usr/bin/scrollkeeper-update
+%postun gnomine
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnomine.schemas
 
 %post gnotravex
 /usr/bin/scrollkeeper-update
@@ -470,7 +490,9 @@ for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	fi
 done
 
-%postun gnotravex -p /usr/bin/scrollkeeper-update
+%postun gnotravex
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnotravex.schemas
 
 %post gnotski
 /usr/bin/scrollkeeper-update
@@ -484,7 +506,9 @@ for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	fi
 done
 
-%postun gnotski -p /usr/bin/scrollkeeper-update
+%postun gnotski
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gnotski.schemas
 
 %post gtali
 /usr/bin/scrollkeeper-update
@@ -496,13 +520,17 @@ if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	chmod 664 %{_gamesdir}/gtali.scores
 fi
 
-%postun gtali -p /usr/bin/scrollkeeper-update
+%postun gtali
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/gtali.schemas
 
 %post iagno
 /usr/bin/scrollkeeper-update
 %gconf_schema_install /etc/gconf/schemas/iagno.schemas
 
-%postun iagno -p /usr/bin/scrollkeeper-update
+%postun iagno
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/iagno.schemas
 
 %post mahjongg
 /usr/bin/scrollkeeper-update
@@ -518,7 +546,9 @@ for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	fi
 done
 
-%postun mahjongg -p /usr/bin/scrollkeeper-update
+%postun mahjongg
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/mahjongg.schemas
 
 %post same-gnome
 /usr/bin/scrollkeeper-update
@@ -530,13 +560,17 @@ if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	chmod 664 %{_gamesdir}/same-gnome.scores
 fi
 
-%postun same-gnome -p /usr/bin/scrollkeeper-update
+%postun same-gnome
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/same-gnome.schemas
 
 %post sol
 /usr/bin/scrollkeeper-update
 %gconf_schema_install /etc/gconf/schemas/aisleriot.schemas
 
-%postun sol -p /usr/bin/scrollkeeper-update
+%postun sol
+/usr/bin/scrollkeeper-update
+%gconf_schema_uninstall /etc/gconf/schemas/aisleriot.schemas
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
