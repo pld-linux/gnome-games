@@ -6,28 +6,29 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.6.1
+Version:	2.7.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	6ea145547bfd8aa828b22cbbe34cbedf
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	ca563f78f21921687763fd9fa9f3b8fc
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
+Patch2:		%{name}-cxx_warnings.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.6.0
-BuildRequires:	autoconf
+BuildRequires:	GConf2-devel >= 2.7.1
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	gnome-vfs2-devel >= 2.7.1
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.3.6
-BuildRequires:	libgnome-devel >= 2.6.0
-BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libgnome-devel >= 2.7.1
+BuildRequires:	libgnomeui-devel >= 2.7.1
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg >= 1:2.6.4
 BuildRequires:	libstdc++-devel
@@ -108,6 +109,7 @@ Biblioteki statyczne do GNOME games.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv po/{no,nb}.po
 
