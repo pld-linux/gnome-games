@@ -57,6 +57,8 @@ Biblioteki statyczne do GNOME games
 %setup -q
 
 %build
+autoconf
+gettextize --copy --force
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=/usr/X11R6 \
@@ -68,7 +70,9 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make DESTDIR=$RPM_BUILD_ROOT install
+make install DESTDIR=$RPM_BUILD_ROOT \
+	localstatedir=$RPM_BUILD_ROOT/var \
+	same_gnome_helpdir=$RPM_BUILD_ROOT/usr/X11R6/share/gnome/help/samegnome/C
 
 strip $RPM_BUILD_ROOT/usr/X11R6/{bin/*,lib/lib*so.*.*}
 
