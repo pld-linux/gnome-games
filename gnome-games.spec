@@ -6,19 +6,21 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.0.4
-Release:	2
+Version:	2.0.5
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.0/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
+URL:		http://www.gnome.org/
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
-PreReq:		scrollkeeper
-URL:		http://www.gnome.org/
+Requires(post):	GConf2
+Requires(post,postun):	/sbin/ldconfig
+Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 Obsoletes:	gnect
@@ -105,6 +107,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome --all-name
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/ldconfig
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
@@ -114,9 +119,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
 %postun
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
