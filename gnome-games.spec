@@ -20,6 +20,7 @@ Patch4:		%{name}-applnk.patch
 Patch5:		%{name}-fix-help-paths.patch
 Patch6:		%{name}-am16.patch
 Patch7:		%{name}-xbill.patch
+Patch8:		%{name}-omf.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -116,6 +117,7 @@ Biblioteki statyczne do GNOME games.
 %patch6 -p1
 %patch7 -p1
 mv xbill/xbill.png xbill/gnome-xbill.png
+%patch8 -p1
 
 %build
 rm -f missing
