@@ -5,7 +5,7 @@ Summary(pl):	GNOME - gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -99,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	Gamesdir=%{_applnkdir}/Games \
-	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
+	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -160,7 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_applnkdir}/Games/*.desktop
 
-%{_omf_dest_dir}/omf/%{name}
+%{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
 
 %files devel
