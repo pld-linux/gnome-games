@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.t
 # Source0-md5:	78f9ea8374be8bb7b681a9fd16dc8d3f
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-desktop.patch
+Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.4.0
 BuildRequires:	gnome-vfs2-devel >= 2.4.0
