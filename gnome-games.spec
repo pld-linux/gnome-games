@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.6.2
-Release:	5
+Release:	6
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.t
 # Source0-md5:	3b43e035912ec7e941568b571f1237ae
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
+Patch2:		%{name}-desktop.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.6.2
@@ -110,6 +111,7 @@ Biblioteki statyczne do GNOME games.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv po/{no,nb}.po
 
