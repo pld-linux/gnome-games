@@ -7,7 +7,7 @@ Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.7.7
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -16,6 +16,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.t
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 Patch2:		%{name}-include.patch
+Patch3:		%{name}-desktop.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.7.3
@@ -298,6 +299,7 @@ Ró¿ne gry karciane.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 mv po/{no,nb}.po
 
