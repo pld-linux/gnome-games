@@ -10,7 +10,7 @@ Summary(wa):	Djeus po GNOME
 Summary(zh_CN):	GNOMEсно╥
 Name:		gnome-games
 Version:	1.4.0.4
-Release:	6
+Release:	7
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -25,6 +25,7 @@ Patch6:		%{name}-am16.patch
 Patch7:		%{name}-xbill.patch
 Patch8:		%{name}-omf.patch
 Patch9:		%{name}-gnome-stones_modules_fixes.patch
+Patch10:	%{name}-gnect.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -60,26 +61,26 @@ GNOME is the GNU Network Object Model Environment. That's a fancy name
 but really GNOME is a nice GUI desktop environment. It makes using
 your computer easy, powerful, and easy to configure.
 
-%description -l pl
-Gry pod GNOME.
-
 %description -l ja
 gnome-games ╔я╔ц╔╠║╪╔╦╓о GNOME GUI ╔г╔╧╔╞╔х╔ц╔в╢д╤╜мя╓н╔╡║╪╔Ю╫╦╓г╓╧║ё
 GnomeScott, ctali, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
 same-gnome, ╓╫╓╥╓ф sol ╓х╓╓╓ц╓©╔╡║╪╔Ю╓╛╢ч╓ч╓Л╓ф╓╓╓ч╓╧║ё
 
-%description -l uk
-Пакет gnome-games включа╓ ╕гри для середовища робочого столу GNOME,
-серед яких GnomeScott, freecell, gnibbles, gnobots, gnobots2,
-gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome та sol.
+%description -l pl
+Gry pod GNOME.
 
 %description -l ru
 Пакет gnome-games включает игры для среды рабочего стола GNOME, среди
 которых GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
 same-gnome и sol.
+
+%description -l uk
+Пакет gnome-games включа╓ ╕гри для середовища робочого столу GNOME,
+серед яких GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
+same-gnome та sol.
 
 %package devel
 Summary:	GNOME games libraries - header files
@@ -137,6 +138,7 @@ Biblioteki statyczne do GNOME games.
 mv xbill/xbill.png xbill/gnome-xbill.png
 %patch8 -p1
 %patch9 -p1
+%patch10 -p1
 
 %build
 rm -f missing
@@ -160,10 +162,6 @@ install -d $RPM_BUILD_ROOT/usr/bin
 mv -f $RPM_BUILD_ROOT{%{_bindir},/usr/bin}/ctali
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade/{,gnome-}xbill.desktop
 
-# gnect is sgid and linked with GTK - it does not work
-rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/help/gnect
-rm -f  $RPM_BUILD_ROOT%{_omf_dest_dir}/%{name}/gnect*
-
 %find_lang %{name} --with-gnome --all-name
 
 %post
@@ -181,14 +179,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %config %{_sysconfdir}/sound/events/??[^e]*
-#%config %{_sysconfdir}/sound/events/gnect.*
+%config %{_sysconfdir}/sound/events/gnect.*
 
 %attr(755,root,root) /usr/bin/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(2755,root,games) %{_bindir}/glines
-#%attr(2755,root,games) %{_bindir}/gnect
+%attr(755,root,root) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/gnibbles
 %attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
@@ -206,7 +204,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnome-stones
 %attr(755,root,root) %{_libdir}/gnome-stones/lib*.so
 
-#%{_datadir}/gnect
+%{_datadir}/gnect
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
 %{_datadir}/gnome-stones
@@ -218,13 +216,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/??[^e]*
-#%{_pixmapsdir}/gnect*
+%{_pixmapsdir}/gnect*
 %{_datadir}/sounds/*
 
 %{_applnkdir}/Games/*.desktop
 %{_applnkdir}/Games/[AC]*/*.desktop
 %{_applnkdir}/Games/Board/??[^e]*.desktop
-#%{_applnkdir}/Games/Board/gnect.desktop
+%{_applnkdir}/Games/Board/gnect.desktop
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
