@@ -225,14 +225,3 @@ diff -urN gnome-games-2.0.0.orig/same-gnome/Makefile.in gnome-games-2.0.0/same-g
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
---- gnome-games-2.0.0/aisleriot/Makefile.in.wiget2	Tue Jun 18 17:31:35 2002
-+++ gnome-games-2.0.0/aisleriot/Makefile.in	Tue Jun 18 17:32:52 2002
-@@ -160,7 +160,7 @@
- EXTRA_DIST = AUTHORS $(types_DATA) $(cardimage_DATA) 	$(icon_DATA) sol.desktop.in SCHEME_GAMES.h 	template.scm translatable_game_names.h
- 
- 
--sysdir = $(datadir)/gnome/apps/Games
-+sysdir = $(Gamesdir)
- sys_in_files = sol.desktop.in
- sys_DATA = $(sys_in_files:.desktop.in=.desktop)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
