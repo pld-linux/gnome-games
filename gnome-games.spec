@@ -6,20 +6,20 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.3.90
+Version:	2.4.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	d35216b59f609f34d4b35e89df893131
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
+# Source0-md5:	a1a2935642921e7defce3a0a5c54bdbd
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel
-BuildRequires:	gnome-vfs2-devel >= 2.3.7
+BuildRequires:	GConf2-devel >= 2.4.0
+BuildRequires:	gnome-vfs2-devel >= 2.4.0
 BuildRequires:	guile-devel >= 1.4.1
-BuildRequires:	libgnome-devel >= 2.3.6
-BuildRequires:	libgnomeui-devel >= 2.3.6
+BuildRequires:	libgnome-devel >= 2.4.0
+BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
@@ -27,7 +27,7 @@ BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.3.7
+Requires:	gnome-vfs2 >= 2.4.0
 Obsoletes:	gnect
 Obsoletes:	gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,7 +63,7 @@ Summary(ru):	Файлы разработки игр под GNOME
 Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
-Requires:	gtk+2-devel
+Requires:	gtk+2-devel >= 2.2.4
 
 %description devel
 GNOME games libraries - header files.
