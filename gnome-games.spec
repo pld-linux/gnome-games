@@ -108,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/include/*
 
 %files static
-/usr/lib/lib*.a
+%attr(664, root, root) /usr/lib/lib*.a
 
 %changelog
 * Mon Aug 31 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
