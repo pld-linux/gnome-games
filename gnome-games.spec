@@ -6,8 +6,8 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.4.0.3
-Release:	3
+Version:	1.4.0.4
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -18,6 +18,7 @@ Patch2:		%{name}-ac_fix.patch
 Patch3:		%{name}-pixbuf_cflags.patch
 Patch4:		%{name}-applnk.patch
 Patch5:		%{name}-fix-help-paths.patch
+Patch6:		%{name}-am16.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -110,6 +111,7 @@ Biblioteki statyczne do GNOME games.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 rm -f missing
