@@ -11,7 +11,7 @@ Icon:        gnome-games.gif
 Requires:    gnome-libs = 0.99.2, ORBit = 0.3.91, libaudiofile = 0.1.5
 Requires:    glib = 1.1.12, gtk+ = 1.1.12, guile = 1.3, esound = 0.2.7
 URL:         http://www.gnome.org
-BuildRoot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:   gnome
 
 %description
