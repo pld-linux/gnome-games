@@ -196,3 +196,16 @@
  Comment=Gnome ataxx game
  Comment[pt_BR]=Jogo attax Gnome
  Comment[da]=Ataxx-spil til Gnome
+--- gnome-games-1.4.0.4/gnect/data/gnect.desktop~	Fri Nov 15 01:15:47 2002
++++ gnome-games-1.4.0.4/gnect/data/gnect.desktop	Fri Nov 15 01:15:47 2002
+@@ -1,7 +1,8 @@
+ [Desktop Entry]
+ Name=Gnect
+ Comment=A four in a row game for GNOME
++Comment[pl]=Gra dla GNOME: układanie czterech w linii
+ Exec=gnect
+-Terminal=0
+-Type=Game
++Type=Application
+ Icon=gnect-icon.png
++Terminal=0
