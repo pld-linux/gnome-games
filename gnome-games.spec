@@ -11,7 +11,7 @@ Patch:		gnome-games-DESTDIR.patch
 Icon:		gnome-games.gif
 Requires:	gnome-libs >= 1.0.0, ORBit >= 0.4.3, libaudiofile >= 0.1.5
 Requires:	glib >= 1.2.0, gtk+ >= 1.2.0, guile >= 1.3, esound >= 0.2.7
-BuildPrereq:	gnome-libs-devel
+BuildRequires:	gnome-libs-devel
 URL:		http://www.gnome.org
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
