@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.1.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -30,10 +30,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
 Obsoletes:	gnect
 
-%define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
-%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
 %description
 GNOME games.
