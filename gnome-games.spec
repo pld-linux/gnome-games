@@ -1,47 +1,21 @@
 Summary:	GNOME games
 Summary(es):	Juegos de GNOME
 Summary(fr):	Jeux pour GNOME
-Summary(ja):	GNOME ¥²¡¼¥à½¸
-Summary(ko):	±×³ð °ÔÀÓµé
 Summary(pl):	GNOME - gry
 Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
-Summary(zh_CN):	GNOMEÓÎÏ·
 Name:		gnome-games
-Version:	1.4.0.4
-Release:	5
+Version:	2.1.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
-Patch0:		%{name}-DESTDIR.patch
-Patch1:		%{name}-scrollkeeper.patch
-Patch2:		%{name}-ac_fix.patch
-Patch3:		%{name}-pixbuf_cflags.patch
-Patch4:		%{name}-applnk.patch
-Patch5:		%{name}-fix-help-paths.patch
-Patch6:		%{name}-am16.patch
-Patch7:		%{name}-xbill.patch
-Patch8:		%{name}-omf.patch
-Patch9:		%{name}-gnome-stones_modules_fixes.patch
-Icon:		gnome-games.gif
-BuildRequires:	ORBit >= 0.4.3
-BuildRequires:	audiofile-devel >= 0.1.5
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel >= 1.2.13
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	gdk-pixbuf-devel
-BuildRequires:	guile-devel >= 1.4.1
-BuildRequires:	libtool
-BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	readline-devel
-BuildRequires:	scrollkeeper >= 0.3.11
-BuildRequires:	libltdl-devel >= 1.4.2
-BuildRequires:	docbook-utils >= 0.6.11
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-makefile.patch
+BuildRequires:	libltdl-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	scrollkeeper
 PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,7 +23,7 @@ Obsoletes:	gnome
 Obsoletes:	gnect
 
 %define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME
+%define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
@@ -62,12 +36,6 @@ your computer easy, powerful, and easy to configure.
 
 %description -l pl
 Gry pod GNOME.
-
-%description -l ja
-gnome-games ¥Ñ¥Ã¥±¡¼¥¸¤Ï GNOME GUI ¥Ç¥¹¥¯¥È¥Ã¥×´Ä¶­ÍÑ¤Î¥²¡¼¥à½¸¤Ç¤¹¡£
-GnomeScott, ctali, freecell, gnibbles, gnobots, gnobots2,
-gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome, ¤½¤·¤Æ sol ¤È¤¤¤Ã¤¿¥²¡¼¥à¤¬´Þ¤Þ¤ì¤Æ¤¤¤Þ¤¹¡£
 
 %description -l uk
 ðÁËÅÔ gnome-games ×ËÌÀÞÁ¤ ¦ÇÒÉ ÄÌÑ ÓÅÒÅÄÏ×ÉÝÁ ÒÏÂÏÞÏÇÏ ÓÔÏÌÕ GNOME,
@@ -83,23 +51,17 @@ same-gnome É sol.
 
 %package devel
 Summary:	GNOME games libraries - header files
-Summary(ja):	GNOME ¥²¡¼¥à³«È¯¥é¥¤¥Ö¥é¥ê
 Summary(pl):	Pliki nag³ówkowe do tworzenia programów opartych o GNOME games
 Summary(ru):	æÁÊÌÙ ÒÁÚÒÁÂÏÔËÉ ÉÇÒ ÐÏÄ GNOME
 Summary(uk):	æÁÊÌÉ ÒÏÚÒÏÂËÉ ¦ÇÒ Ð¦Ä GNOME
-Summary(zh_CN):	GNOMEÓÎÏ·¿ª·¢¿â
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk+-devel
+Requires:	gtk+2-devel
 
 %description devel
 GNOME games libraries - header files.
 
 Right now this is just stuff to develop care games. I think.
-
-%description devel -l ja
-gnome-games-devel ¥Ñ¥Ã¥±¡¼¥¸¤Ï¡¢GNOME GUI ¥Ç¥¹¥¯¥È¥Ã¥×´Ä¶­ÍÑ¤Î¥²¡¼¥à
-¤Î³«È¯¤ËÉ¬Í×¤Ê¥é¥¤¥Ö¥é¥ê¤ä¤½¤ÎÂ¾¥Õ¥¡¥¤¥ë¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Þ¤¹¡£
 
 %description devel -l pl
 Pliki nag³ówkowe do tworzenia programów opartych o GNOME games.
@@ -127,24 +89,8 @@ Biblioteki statyczne do GNOME games.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
-mv xbill/xbill.png xbill/gnome-xbill.png
-%patch8 -p1
-%patch9 -p1
 
 %build
-rm -f missing
-%{__libtoolize}
-%{__gettextize}
-%{__aclocal} -I %{_aclocaldir}/gnome
-%{__autoconf}
-%{__automake}
 %configure
 
 %{__make}
@@ -160,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
+GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
+%{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 /usr/bin/scrollkeeper-update
 
 %postun
@@ -173,12 +121,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %config %{_sysconfdir}/sound/events/*
+%{_sysconfdir}/gconf/schemas/*
 
 %attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(2755,root,games) %{_bindir}/glines
+%attr(2755,root,games) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/gnibbles
 %attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
@@ -194,7 +144,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_libdir}/gnome-stones
-%attr(755,root,root) %{_libdir}/gnome-stones/lib*.so
+%dir %{_libdir}/gnome-stones/objects
+%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
+%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.la
 
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
@@ -208,9 +160,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/sounds/*
-
-%{_applnkdir}/Games/*.desktop
-%{_applnkdir}/Games/*/*.desktop
+%{_datadir}/applications/*
+%{_datadir}/gnect
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
@@ -218,10 +169,10 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
-%{_libdir}/gnome-stones/lib*.a
+%{_libdir}/gnome-stones/objects/lib*.a
