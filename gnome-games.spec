@@ -35,7 +35,9 @@ BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
-BuildRequires:	scrollkeeper
+BuildRequires:	scrollkeeper >= 0.3.11
+BuildRequires:	libltdl-devel >= 1.4.2
+BuildRequires:	docbook-utils >= 0.6.11
 PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
