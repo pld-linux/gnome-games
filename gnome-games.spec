@@ -116,7 +116,7 @@ Biblioteki statyczne do GNOME games.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 %{__autoconf}
