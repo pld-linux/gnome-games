@@ -56,7 +56,7 @@ Summary(ru):	Файлы разработки игр под GNOME
 Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk+-devel
+Requires:	gtk+2-devel
 
 %description devel
 GNOME games libraries - header files.
