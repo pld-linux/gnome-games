@@ -7,11 +7,11 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.0.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/2.0.1/sources/gnome-games/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
@@ -126,9 +126,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
+%attr(755,root,root) %{_bindir}/gnect
 %attr(755,root,root) %{_bindir}/sol
 %attr(2755,root,games) %{_bindir}/glines
-%attr(2755,root,games) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/gnibbles
 %attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
