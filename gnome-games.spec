@@ -21,6 +21,7 @@ BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
+BuildRequires:	rpm-build >= 4.1-7
 Requires:	gnome-vfs2 >= 2.0.4-3
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
