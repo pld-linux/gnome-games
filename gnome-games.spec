@@ -1,7 +1,3 @@
-#
-# TODO:
-# - find a right place for gnome-die*.png
-#
 Summary:	GNOME games
 Summary(es):	Juegos de GNOME
 Summary(fr):	Jeux pour GNOME
@@ -10,16 +6,15 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.7.3
-Release:	2
+Version:	2.7.4
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	ca563f78f21921687763fd9fa9f3b8fc
+# Source0-md5:	e588a647dd9d4dbd8579c140c4d79fcc
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
-Patch2:		%{name}-cxx_warnings.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.7.1
@@ -28,7 +23,7 @@ BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-vfs2-devel >= 2.7.1
 BuildRequires:	guile-devel >= 1.6.4
-BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.3
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.4.0
 BuildRequires:	libgnome-devel >= 2.7.1
@@ -43,7 +38,7 @@ Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
 Requires:	gnome-vfs2 >= 2.7.1
-Requires:	librsvg >= 1:2.6.4
+Requires:	librsvg >= 1:2.7.2
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
@@ -248,7 +243,6 @@ Ró¿ne gry karciane.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 mv po/{no,nb}.po
 
@@ -386,7 +380,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %{_pixmapsdir}/gnome-games-common
-%{_pixmapsdir}/gnome-die*.png
 
 %files blackjack
 %defattr(644,root,root,755)
@@ -464,6 +457,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
 %{_pixmapsdir}/gnobots2
 %{_pixmapsdir}/gnome-gnobots2.png
+%{_pixmapsdir}/rteleport.png
+%{_pixmapsdir}/teleport.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
 %dir %{_gnomehelpdir}/gnobots2
 %{_gnomehelpdir}/gnobots2/C
@@ -534,6 +529,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/gtali.desktop
 %{_omf_dest_dir}/%{name}/gtali-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
+%{_pixmapsdir}/gnome-die*.png
 %{_pixmapsdir}/gnome-gtali.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
 %dir %{_gnomehelpdir}/gtali
