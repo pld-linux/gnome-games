@@ -14,9 +14,11 @@ Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
 URL:		http://www.gnome.org/
+BuildRequires:	guile-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	ncurses-devel
 BuildRequires:	scrollkeeper
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
@@ -59,7 +61,9 @@ Summary(ru):	Файлы разработки игр под GNOME
 Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk+2-devel
+BuildRequires:	libgnomeui-devel
+BuildRequires:	libltdl-devel
+BuildRequires:	libstdc++-devel
 
 %description devel
 GNOME games libraries - header files.
@@ -149,7 +153,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
 %dir %{_libdir}/gnome-stones
 %dir %{_libdir}/gnome-stones/objects
 %attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.la
+%{_libdir}/gnome-stones/objects/lib*.la
 
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
@@ -172,7 +176,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/*
 
 %files static
