@@ -1,0 +1,16 @@
+--- gnome-games-1.4.0.4/sgmldocs.make~	Sun Dec 28 18:32:06 2003
++++ gnome-games-1.4.0.4/sgmldocs.make	Sun Dec 28 18:32:06 2003
+@@ -71,7 +71,12 @@
+ 		jw -c /etc/sgml/catalog $$srcdir/$(docname).sgml -o $$srcdir/$(docname); \
+ 	else 						\
+ 		db2html $$srcdir/$(docname).sgml; 	\
+-	 fi
++	fi; \
++	if test -f $$srcdir/$(docname)/t1.html ; then	\
++		ln -s t1.html $$srcdir/$(docname)/index.html;	\
++	else if test -f $$srcdir/$(docname)/book1.html ; then	\
++		ln -s book1.html $$srcdir/$(docname)/index.html;	\
++	fi; fi
+ 
+ app-dist-hook: index.html
+ 	-$(mkinstalldirs) $(distdir)/$(docname)/stylesheet-images
