@@ -30,7 +30,7 @@ BuildRequires:	gnome-vfs2-devel >= 2.7.1
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 1:2.3.6
+BuildRequires:	libglade2-devel >= 1:2.4.0
 BuildRequires:	libgnome-devel >= 2.7.1
 BuildRequires:	libgnomeui-devel >= 2.7.1
 BuildRequires:	libltdl-devel
@@ -46,6 +46,7 @@ Requires:	gnome-vfs2 >= 2.7.1
 Requires:	librsvg >= 1:2.6.4
 Obsoletes:	gnect
 Obsoletes:	gnome
+Obsoletes:	gnome-games-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
