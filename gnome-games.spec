@@ -1,7 +1,8 @@
 Summary:     GNOME games
+Summary(pl): GNOME - Gry
 Name:        gnome-games
 Version:     0.27
-Release:     1
+Release:     2
 Copyright:   LGPL
 Group:       X11/Libraries
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
@@ -17,8 +18,12 @@ GNOME is the GNU Network Object Model Environment.  That's a fancy
 name but really GNOME is a nice GUI desktop environment.  It makes
 using your computer easy, powerful, and easy to configure.
 
+%description -l pl
+Gry pod GNOME.
+
 %package devel
 Summary:     GNOME games libraries - header files
+Summary(pl): Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
 Group:       X11/Libraries
 Requires:    %{name} =%{version}
 
@@ -27,13 +32,20 @@ GNOME games libraries - header files.
 
 Right now this is just stuff to develop care games. I think.
 
+%description -l pl devel
+Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
+
 %package static
 Summary:     GNOME games static libraries
+Summary(pl): Biblioteki statyczne do GNOME games
 Group:       X11/Libraries
 Requires:    %{name}-devel =%{version}
 
 %description static
 GNOME games static libraries.
+
+%description static
+Biblioteki statyczne do GNOME games
 
 %prep
 %setup -q
@@ -99,6 +111,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/lib*.a
 
 %changelog
+* Mon Aug 31 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+  [0.27-2]
+- added pl translation.
+
 * Mon Aug 24 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.27-1]
 - added -q %setup parameter,
