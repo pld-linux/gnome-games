@@ -2,6 +2,8 @@ Summary:	GNOME games
 Summary(es):	Juegos de GNOME
 Summary(fr):	Jeux pour GNOME
 Summary(pl):	GNOME - gry
+Summary(ru):	Игры под GNOME
+Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.3
@@ -50,9 +52,23 @@ your computer easy, powerful, and easy to configure.
 %description -l pl
 Gry pod GNOME.
 
+%description -l uk
+Пакет gnome-games включа╓ ╕гри для середовища робочого столу GNOME,
+серед яких GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
+same-gnome та sol.
+
+%description -l ru
+Пакет gnome-games включает игры для среды рабочего стола GNOME, среди
+которых GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
+same-gnome и sol.
+
 %package devel
 Summary:	GNOME games libraries - header files
 Summary(pl):	Pliki nagЁСwkowe do tworzenia programСw opartych o GNOME games
+Summary(ru):	Файлы разработки игр под GNOME
+Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+-devel
@@ -64,6 +80,14 @@ Right now this is just stuff to develop care games. I think.
 
 %description devel -l pl
 Pliki nagЁСwkowe do tworzenia programСw opartych o GNOME games.
+
+%description devel -l uk
+Пакет gnome-games-devel встановлю╓ файли, необх╕дн╕ для розробки ╕гор
+п╕д GNOME.
+
+%description devel -l ru
+Пакет gnome-games-devel устанавливает файлы, необходимые для
+разработки игр под GNOME.
 
 %package static
 Summary:	GNOME games static libraries
