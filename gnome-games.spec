@@ -6,18 +6,18 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.5.4
+Version:	2.5.5
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	6619384372012759f1e127586c43efa1
+# Source0-md5:	69fe674c98d7691846e7c78097230907
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	GConf2-devel >= 2.4.0
+BuildRequires:	GConf2-devel >= 2.5.0
 BuildRequires:	gnome-vfs2-devel >= 2.5.1
 BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	gtk+2-devel >= 1:2.3.1
