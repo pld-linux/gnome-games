@@ -118,11 +118,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(2755,root,games) %{_bindir}/gnometris
 %attr(2755,root,games) %{_bindir}/gnomine
 %attr(2755,root,games) %{_bindir}/gnotravex
+%attr(2755,root,games) %{_bindir}/gnotski
 %attr(2755,root,games) %{_bindir}/gtali
 %attr(2755,root,games) %{_bindir}/gturing
 %attr(2755,root,games) %{_bindir}/iagno
 %attr(2755,root,games) %{_bindir}/mahjongg
 %attr(2755,root,games) %{_bindir}/same-gnome
+
 
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_libdir}/gnome-stones
