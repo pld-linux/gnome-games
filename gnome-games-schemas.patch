@@ -1,16 +1,3 @@
-diff -urN gnome-games-2.5.6.orig/aisleriot/aisleriot.schemas.in gnome-games-2.5.6/aisleriot/aisleriot.schemas.in
---- gnome-games-2.5.6.orig/aisleriot/aisleriot.schemas.in	2004-02-16 12:25:44.451457272 +0100
-+++ gnome-games-2.5.6/aisleriot/aisleriot.schemas.in	2004-02-16 12:26:06.174154920 +0100
-@@ -43,7 +43,8 @@
-       <applyto>/apps/aisleriot/statistics</applyto>
-       <owner>aisleriot</owner>
-       <type>list</type>
--      <default></default>
-+      <list_type>string</list_type>
-+      <default>[]</default>
-       <locale name="C">
-         <short>Statistics of games played</short>
- 	<long>A list of strings that come in the form of a quintuple: name, wins, total games played, best time (in seconds) and worst time (also in seconds). Unplayed games do not need to be represented.</long>
 diff -urN gnome-games-2.5.6.orig/gtali/gtali.schemas.in gnome-games-2.5.6/gtali/gtali.schemas.in
 --- gnome-games-2.5.6.orig/gtali/gtali.schemas.in	2004-02-16 12:25:40.148111480 +0100
 +++ gnome-games-2.5.6/gtali/gtali.schemas.in	2004-02-16 12:28:22.347453432 +0100
@@ -20,7 +7,7 @@ diff -urN gnome-games-2.5.6.orig/gtali/gtali.schemas.in gnome-games-2.5.6/gtali/
        <list_type>string</list_type>
 +      <default>[Human,Wilber,Bill,Monica,Kenneth,Janet]</default>
        <locale name="C">
--        <default> [Human,Wilber,Bill,Monica,Kenneth,Janet]</default>
+-        <default>[Human,Wilber,Bill,Monica,Kenneth,Janet]</default>
 -        <short></short>
 -        <long></long>
 +        <short>Player names</short>
