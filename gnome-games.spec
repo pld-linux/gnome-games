@@ -10,7 +10,7 @@ Summary(wa):	Djeus po GNOME
 Summary(zh_CN):	GNOME”Œœ∑
 Name:		gnome-games
 Version:	1.4.0.4
-Release:	5
+Release:	6
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -151,10 +151,18 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/bin
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
+
+mv -f $RPM_BUILD_ROOT{%{_bindir},/usr/bin}/ctali
+mv -f $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade/{,gnome-}xbill.desktop
+
+# gnect is sgid and linked with GTK - it does not work
+rm -rf $RPM_BUILD_ROOT%{_datadir}/gnome/help/gnect
+rm -f  $RPM_BUILD_ROOT%{_omf_dest_dir}/%{name}/gnect*
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -172,13 +180,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%config %{_sysconfdir}/sound/events/*
+%config %{_sysconfdir}/sound/events/??[^e]*
+#%config %{_sysconfdir}/sound/events/gnect.*
 
-%attr(755,root,root) %{_bindir}/ctali
+%attr(755,root,root) /usr/bin/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(2755,root,games) %{_bindir}/glines
+#%attr(2755,root,games) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/gnibbles
 %attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
@@ -196,6 +206,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnome-stones
 %attr(755,root,root) %{_libdir}/gnome-stones/lib*.so
 
+#%{_datadir}/gnect
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
 %{_datadir}/gnome-stones
@@ -206,11 +217,14 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
 
 %{_datadir}/mime-info/*
-%{_pixmapsdir}/*
+%{_pixmapsdir}/??[^e]*
+#%{_pixmapsdir}/gnect*
 %{_datadir}/sounds/*
 
 %{_applnkdir}/Games/*.desktop
-%{_applnkdir}/Games/*/*.desktop
+%{_applnkdir}/Games/[AC]*/*.desktop
+%{_applnkdir}/Games/Board/??[^e]*.desktop
+#%{_applnkdir}/Games/Board/gnect.desktop
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
