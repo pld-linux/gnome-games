@@ -265,7 +265,7 @@ diff -ur gnome-games-1.4.0.4.orig/gnibbles/gnibbles.desktop gnome-games-1.4.0.4/
  Name[da]=Gnibbles
  Name[de]=Gnibbles
  Name[el]=Gnibbles
-@@ -9,38 +8,41 @@
+@@ -9,38 +8,40 @@
  Name[fi]=Gnibbles
  Name[fr]=Gnibbles
  Name[gl]=Gnibbles
@@ -310,7 +310,6 @@ diff -ur gnome-games-1.4.0.4.orig/gnibbles/gnibbles.desktop gnome-games-1.4.0.4/
 +Comment[gl]=Xogo Nibbles de GNOME
 +Comment[ja]=GNOME版「ヘビ」ゲーム
 +Comment[lt]=GNOME gyvatėlių žaidimas
-+Comment[lt]=GNOME gyvat�li� �aidimas
 +Comment[no]=GNOME Nibbles spill
 +Comment[pl]=Gra Nibbles dla GNOME
 +Comment[pt_BR]=Jogo Nibbles GNOME
