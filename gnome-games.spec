@@ -471,6 +471,7 @@ if [ $1 = 0 ]; then
 fi
 
 %post stones
+umask 022
 /usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnome-stones.schemas
 /usr/bin/update-desktop-database
@@ -488,6 +489,7 @@ fi
 
 %postun stones
 if [ $1 = 0 ]; then
+	umask 022
 	/usr/bin/scrollkeeper-update -q
 	/usr/bin/update-desktop-database
 fi
