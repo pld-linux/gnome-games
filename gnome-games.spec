@@ -1,8 +1,8 @@
 Summary:     GNOME games
 Summary(pl): GNOME - Gry
 Name:        gnome-games
-Version:     0.27
-Release:     3
+Version:     0.30
+Release:     1
 Copyright:   LGPL
 Group:       X11/Libraries
 Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
@@ -52,16 +52,9 @@ Biblioteki statyczne do GNOME games
 %setup -q
 
 %build
-# Needed for snapshot releases.
-if [ ! -f configure ]; then
-  CFLAGS="$RPM_OPT_FLAGS" ./autogen.sh \
-			--prefix=/usr/X11R6 \
-			--localstatedir=/var
-else
-  CFLAGS="$RPM_OPT_FLAGS" ./configure \
-			--prefix=/usr/X11R6 \
-			--localstatedir=/var
-fi
+CFLAGS="$RPM_OPT_FLAGS" ./configure \
+	--prefix=/usr/X11R6 \
+	--localstatedir=/var
 
 make
 
