@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.3.2
+Version:	2.3.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
+# Source0-md5:	8d0211893f5cdcb641d5b815fca397b8
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	4af0c596ba7dd67dce56773c8eba9535
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
@@ -132,6 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnect
 %attr(755,root,root) %{_bindir}/gnibbles
 %attr(755,root,root) %{_bindir}/gnobots2
+%attr(755,root,root) %{_bindir}/blackjack
 %attr(2755,root,games) %{_bindir}/glines
 %attr(2755,root,games) %{_bindir}/gnome-stones
 %attr(2755,root,games) %{_bindir}/gnometris
@@ -151,6 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_datadir}/gnome-stones
 %{_datadir}/sol-games
+%{_datadir}/blackjack
 
 %{_datadir}/gnome-stonesrc
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
