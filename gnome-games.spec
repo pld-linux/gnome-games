@@ -335,6 +335,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
+
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name
@@ -642,7 +644,6 @@ fi
 %dir %{_libdir}/gnome-stones
 %dir %{_libdir}/gnome-stones/objects
 %attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so
-%{_libdir}/gnome-stones/objects/lib*.la
 %{_desktopdir}/gnome-stones.desktop
 %{_omf_dest_dir}/%{name}/gnome-stones-C.omf
 %{_pixmapsdir}/gnome-stones
