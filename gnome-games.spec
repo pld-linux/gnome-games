@@ -6,12 +6,12 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.2.1
+Version:	2.3.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.2/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel
@@ -23,7 +23,7 @@ BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.1.5
+Requires:	gnome-vfs2 >= 2.2.0
 Requires(post):	GConf2
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
@@ -97,7 +97,7 @@ Biblioteki statyczne do GNOME games.
 %patch0 -p1
 
 %build
-%configure
+%configure 
 
 %{__make}
 
@@ -105,8 +105,8 @@ Biblioteki statyczne do GNOME games.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/%{name}
+	DESTDIR=$RPM_BUILD_ROOT 
+#	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -128,16 +128,12 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_sysconfdir}/sound/events/*
 %{_sysconfdir}/gconf/schemas/*
 
-%attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(755,root,root) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/glines
-%attr(2755,root,games) %{_bindir}/gnibbles
-%attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
-%attr(2755,root,games) %{_bindir}/gnome-xbill
 %attr(2755,root,games) %{_bindir}/gnometris
 %attr(2755,root,games) %{_bindir}/gnomine
 %attr(2755,root,games) %{_bindir}/gnotravex
@@ -153,11 +149,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
 %{_libdir}/gnome-stones/objects/lib*.la
 
-%{_datadir}/gnibbles
-%{_datadir}/gnobots2
 %{_datadir}/gnome-stones
 %{_datadir}/sol-games
-%{_datadir}/xbill
 
 %{_datadir}/gnome-stonesrc
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
