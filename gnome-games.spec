@@ -28,6 +28,7 @@ Patch8:		%{name}-omf.patch
 Patch9:		%{name}-gnome-stones_modules_fixes.patch
 Patch10:	%{name}-gnect.patch
 Patch11:	%{name}-desktop.patch
+Patch12:	%{name}-xml.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -142,6 +143,7 @@ mv xbill/xbill.png xbill/gnome-xbill.png
 %patch9 -p1
 %patch10 -p1
 %patch11 -p1
+%patch12 -p1
 
 %build
 rm -f missing
