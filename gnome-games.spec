@@ -7,7 +7,7 @@ Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.10.0
-Release:	4.1
+Release:	5
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -27,18 +27,18 @@ BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	gob2 >= 2.0.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	gtk+2-devel >= 2:2.6.4
-BuildRequires:	howl-devel >= 0.9.6
-BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 1:2.5.0
+BuildRequires:	howl-devel >= 0.9.10
+BuildRequires:	intltool >= 0.33
+BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.9.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpmbuild(macros) >= 1.196
-Requires(post):	GConf2
+BuildRequires:	scrollkeeper >= 0.3.8
+Requires(post,preun):	GConf2
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	librsvg >= 1:2.9.5
 Obsoletes:	gnect
@@ -77,8 +77,8 @@ same-gnome É sol.
 Summary:	GNOME's version of blackjack
 Summary(pl):	Blackjack dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description blackjack
@@ -91,8 +91,8 @@ Kasynowa wersja gry oczko.
 Summary:	GNOME Ataxx
 Summary(pl):	Ataxx dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gataxx
@@ -105,9 +105,9 @@ Gra podobna do Reversi.
 Summary:	Five or more game
 Summary(pl):	Gra "Piêæ albo wiêcej"
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description glines
@@ -121,8 +121,8 @@ linie.
 Summary:	Four-in-a-row game
 Summary(pl):	Gra "Cztery w rzêdzie"
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnect
@@ -135,9 +135,9 @@ Gra, której celem jest utowrzenie linii w jednym kolorze.
 Summary:	GNOME Nibbles
 Summary(pl):	Nibbles dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnibbles
@@ -150,9 +150,9 @@ Gra polegaj±ca na przeprowadzeniu robaka przez labirynt.
 Summary:	GNOME Robots
 Summary(pl):	Robots dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnobots2
@@ -165,8 +165,9 @@ Gra polegaj±ca na zapobieganiu zderzeniom robotów.
 Summary:	GNOME Stones
 Summary(pl):	"Kamienie" dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
+Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -180,9 +181,9 @@ Gra podobna do Boulder Dasha.
 Summary:	GNOME Tetris
 Summary(pl):	Tetris dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnometris
@@ -195,9 +196,9 @@ Gra podobna do Tetrisa.
 Summary:	GNOME Mines
 Summary(pl):	Miny dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnomine
@@ -210,9 +211,9 @@ Gra, której celem jest rozminowanie pola minowego.
 Summary:	GNOME Tetravex
 Summary(pl):	Tetravex dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotravex
@@ -225,9 +226,9 @@ Uk³adanka.
 Summary:	Gnome Klotski
 Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotski
@@ -242,9 +243,9 @@ w pole ograniczone zielonymi znacznikami.
 Summary:	GNOME Tali
 Summary(pl):	Tali dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gtali
@@ -257,8 +258,8 @@ Gra w ko¶ci w pokerowym stylu.
 Summary:	GNOME Iagno
 Summary(pl):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description iagno
@@ -271,9 +272,9 @@ Gra podobna do Reversi.
 Summary:	GNOME Mahjongg
 Summary(pl):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description mahjongg
@@ -286,9 +287,9 @@ par.
 %package same-gnome
 Summary:	Same GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description same-gnome
@@ -301,8 +302,8 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 Summary:	AisleRiot Solitaire
 Summary(pl):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	guile >= 5:1.6.5
 
@@ -355,7 +356,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %post blackjack
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/blackjack.schemas
 
 %preun blackjack
@@ -364,10 +365,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun blackjack
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gataxx
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gataxx.schemas
 
 %preun gataxx
@@ -376,11 +379,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gataxx
-/usr/bin/scrollkeeper-update
-
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post glines
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/glines.schemas
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
@@ -395,10 +399,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun glines
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnect
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnect.schemas
 
 %preun gnect
@@ -407,10 +413,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnect
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnibbles
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnibbles.schemas
 
 for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
@@ -428,10 +436,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnibbles
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnobots2
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnobots2.schemas
 
 for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
@@ -456,13 +466,14 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun	gnobots2
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post stones
-umask 022
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnome-stones.schemas
-[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1 ||:
+/usr/bin/update-desktop-database
 
 if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
 	touch %{_gamesdir}/gnome-stones.scores
@@ -476,12 +487,13 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun stones
-umask 022
-/usr/bin/scrollkeeper-update
-[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+	/usr/bin/update-desktop-database
+fi
 
 %post gnometris
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnometris.schemas
 
 if [ ! -f %{_gamesdir}/gnometris.scores ]; then
@@ -496,10 +508,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnometris
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnomine
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnomine.schemas
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
@@ -516,10 +530,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnomine
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnotravex
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnotravex.schemas
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
@@ -537,10 +553,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnotravex
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gnotski
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gnotski.schemas
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
@@ -557,10 +575,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gnotski
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gtali
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gtali.schemas
 
 if [ ! -f %{_gamesdir}/gtali.scores ]; then
@@ -575,10 +595,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun gtali
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post iagno
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/iagno.schemas
 
 %preun iagno
@@ -587,10 +609,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun iagno
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post mahjongg
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/mahjongg.schemas
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
@@ -609,10 +633,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun mahjongg
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post same-gnome
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/same-gnome.schemas
 
 if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
@@ -627,10 +653,12 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun same-gnome
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post sol
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/aisleriot.schemas
 
 %preun sol
@@ -639,7 +667,9 @@ if [ "$1" = "0" ]; then
 fi
 
 %postun sol
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
