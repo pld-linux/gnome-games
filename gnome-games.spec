@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.4
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -179,7 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnome-stones
 %dir %{_libdir}/gnome-stones/objects
 %attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.la
+%attr(644,root,root) %{_libdir}/gnome-stones/objects/lib*.la
 
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
@@ -203,7 +203,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%attr(644,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
 
 %files static
