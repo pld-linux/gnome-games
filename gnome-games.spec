@@ -21,7 +21,7 @@ Patch5:		%{name}-fix-help-paths.patch
 Patch6:		%{name}-am16.patch
 Patch7:		%{name}-xbill.patch
 Patch8:		%{name}-omf.patch
-Patch8:		%{name}-gnome-stones_modules_fixes.patch
+Patch9:		%{name}-gnome-stones_modules_fixes.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
