@@ -6,7 +6,7 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.0.5
+Version:	2.0.6
 Release:	1
 Epoch:		1
 License:	LGPL
