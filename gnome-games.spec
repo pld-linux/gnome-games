@@ -16,6 +16,7 @@ Patch0:		%{name}-makefile.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
+BuildRequires:	guile
 BuildRequires:	libgnome-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
@@ -130,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ctali
 %attr(755,root,root) %{_bindir}/freecell
 %attr(755,root,root) %{_bindir}/gataxx
-##attr(755,root,root) %{_bindir}/sol
+%attr(755,root,root) %{_bindir}/sol
 %attr(755,root,root) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/glines
 %attr(2755,root,games) %{_bindir}/gnibbles
@@ -155,7 +156,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
 %{_datadir}/gnome-stones
-##{_datadir}/sol-games
+%{_datadir}/sol-games
 %{_datadir}/xbill
 
 %{_datadir}/gnome-stonesrc
