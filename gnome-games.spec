@@ -13,6 +13,10 @@ License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
+BuildRequires:	GConf2-devel
+BuildRequires:	gnome-vfs2-devel
+BuildRequires:	libgnome-devel
+BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
