@@ -5,7 +5,7 @@ Summary(pl):	GNOME - gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	1.4.0.3
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -14,6 +14,8 @@ Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-scrollkeeper.patch
 Patch2:		%{name}-ac_fix.patch
 Patch3:		%{name}-pixbuf_cflags.patch
+Patch4:		%{name}-applnk.patch
+Patch5:		%{name}-fix-help-paths.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -23,7 +25,7 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.13
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	guile-devel >= 1.3
+BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
@@ -81,6 +83,8 @@ Biblioteki statyczne do GNOME games.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 rm -f missing
@@ -98,10 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Gamesdir=%{_applnkdir}/Games \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
-
-gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -118,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %config %{_sysconfdir}/sound/events/*
 
 %attr(755,root,root) %{_bindir}/ctali
@@ -159,6 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sounds/*
 
 %{_applnkdir}/Games/*.desktop
+%{_applnkdir}/Games/*/*.desktop
 
 %{_omf_dest_dir}/%{name}
 %attr(664,root,games) %ghost %{_localstatedir}/games/*
