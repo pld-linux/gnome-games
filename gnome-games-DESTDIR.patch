@@ -1,6 +1,6 @@
-diff -Nru gnome-games-1.2.0/glines/Makefile.am gnome-games-1.2.0.new/glines/Makefile.am
---- gnome-games-1.2.0/glines/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/glines/Makefile.am	Fri May 26 04:26:43 2000
+diff -urN gnome-games-1.4.0.org/glines/Makefile.am gnome-games-1.4.0/glines/Makefile.am
+--- gnome-games-1.4.0.org/glines/Makefile.am	Fri Mar 23 16:21:58 2001
++++ gnome-games-1.4.0/glines/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -30,6 +30,6 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -10,9 +10,9 @@ diff -Nru gnome-games-1.2.0/glines/Makefile.am gnome-games-1.2.0.new/glines/Make
  	-chmod 664 $(DESTDIR)$(scoredir)/glines.scores
 -	-chgrp games $(DESTDIR)$(bindir)/glines && chmod 2111 $(DESTDIR)$(bindir)/glines
 +	-chgrp games $(DESTDIR)$(bindir)/glines && chmod 2755 $(DESTDIR)$(bindir)/glines
-diff -Nru gnome-games-1.2.0/gnibbles/Makefile.am gnome-games-1.2.0.new/gnibbles/Makefile.am
---- gnome-games-1.2.0/gnibbles/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnibbles/Makefile.am	Fri May 26 04:31:41 2000
+diff -urN gnome-games-1.4.0.org/gnibbles/Makefile.am gnome-games-1.4.0/gnibbles/Makefile.am
+--- gnome-games-1.4.0.org/gnibbles/Makefile.am	Fri Mar 23 16:21:58 2001
++++ gnome-games-1.4.0/gnibbles/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -96,27 +96,27 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -50,9 +50,9 @@ diff -Nru gnome-games-1.2.0/gnibbles/Makefile.am gnome-games-1.2.0.new/gnibbles/
  	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
 -	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2111 $(DESTDIR)$(bindir)/gnibbles
 +	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2755 $(DESTDIR)$(bindir)/gnibbles
-diff -Nru gnome-games-1.2.0/gnobots2/Makefile.am gnome-games-1.2.0.new/gnobots2/Makefile.am
---- gnome-games-1.2.0/gnobots2/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnobots2/Makefile.am	Fri May 26 04:27:34 2000
+diff -urN gnome-games-1.4.0.org/gnobots2/Makefile.am gnome-games-1.4.0/gnobots2/Makefile.am
+--- gnome-games-1.4.0.org/gnobots2/Makefile.am	Fri Mar 23 16:21:55 2001
++++ gnome-games-1.4.0/gnobots2/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -88,7 +88,7 @@
  	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
              fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
@@ -64,9 +64,9 @@ diff -Nru gnome-games-1.2.0/gnobots2/Makefile.am gnome-games-1.2.0.new/gnobots2/
  	    done
 -	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2111 $(DESTDIR)$(bindir)/gnobots2
 +	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2755 $(DESTDIR)$(bindir)/gnobots2
-diff -Nru gnome-games-1.2.0/gnome-stones/Makefile.am gnome-games-1.2.0.new/gnome-stones/Makefile.am
---- gnome-games-1.2.0/gnome-stones/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnome-stones/Makefile.am	Fri May 26 04:30:38 2000
+diff -urN gnome-games-1.4.0.org/gnome-stones/Makefile.am gnome-games-1.4.0/gnome-stones/Makefile.am
+--- gnome-games-1.4.0.org/gnome-stones/Makefile.am	Fri Mar 23 16:21:56 2001
++++ gnome-games-1.4.0/gnome-stones/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -67,9 +67,9 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -79,9 +79,9 @@ diff -Nru gnome-games-1.2.0/gnome-stones/Makefile.am gnome-games-1.2.0.new/gnome
  
  gnome-stones.keys: gnome-stones.keys.in Makefile
  	sed -e 's^\@icondir\@^$(Pixmapdir)^g' < $(srcdir)/gnome-stones.keys.in > gnome-stones.keys.tmp \
-diff -Nru gnome-games-1.2.0/gnometris/Makefile.am gnome-games-1.2.0.new/gnometris/Makefile.am
---- gnome-games-1.2.0/gnometris/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnometris/Makefile.am	Fri May 26 04:33:25 2000
+diff -urN gnome-games-1.4.0.org/gnometris/Makefile.am gnome-games-1.4.0/gnometris/Makefile.am
+--- gnome-games-1.4.0.org/gnometris/Makefile.am	Fri Mar 23 16:21:57 2001
++++ gnome-games-1.4.0/gnometris/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -38,13 +38,6 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -98,9 +98,9 @@ diff -Nru gnome-games-1.2.0/gnometris/Makefile.am gnome-games-1.2.0.new/gnometri
 -
 -
 +	-chgrp games $(DESTDIR)$(bindir)/gnometris && chmod 2755 $(DESTDIR)$(bindir)/gnometris
-diff -Nru gnome-games-1.2.0/gnomine/Makefile.am gnome-games-1.2.0.new/gnomine/Makefile.am
---- gnome-games-1.2.0/gnomine/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnomine/Makefile.am	Fri May 26 04:33:59 2000
+diff -urN gnome-games-1.4.0.org/gnomine/Makefile.am gnome-games-1.4.0/gnomine/Makefile.am
+--- gnome-games-1.4.0.org/gnomine/Makefile.am	Fri Mar 23 16:21:53 2001
++++ gnome-games-1.4.0/gnomine/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -27,15 +27,15 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -122,9 +122,9 @@ diff -Nru gnome-games-1.2.0/gnomine/Makefile.am gnome-games-1.2.0.new/gnomine/Ma
  	-chmod 664 $(DESTDIR)$(scoredir)/gnomine.Custom.scores	
 -	-chgrp games $(DESTDIR)$(bindir)/gnomine && chmod 2111 $(DESTDIR)$(bindir)/gnomine
 +	-chgrp games $(DESTDIR)$(bindir)/gnomine && chmod 2755 $(DESTDIR)$(bindir)/gnomine
-diff -Nru gnome-games-1.2.0/gnotravex/Makefile.am gnome-games-1.2.0.new/gnotravex/Makefile.am
---- gnome-games-1.2.0/gnotravex/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gnotravex/Makefile.am	Fri May 26 04:34:26 2000
+diff -urN gnome-games-1.4.0.org/gnotravex/Makefile.am gnome-games-1.4.0/gnotravex/Makefile.am
+--- gnome-games-1.4.0.org/gnotravex/Makefile.am	Fri Mar 23 16:21:56 2001
++++ gnome-games-1.4.0/gnotravex/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -25,18 +25,18 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -150,9 +150,9 @@ diff -Nru gnome-games-1.2.0/gnotravex/Makefile.am gnome-games-1.2.0.new/gnotrave
  	-chmod 664 $(DESTDIR)$(scoredir)/gnotravex.6x6.scores
 -	-chgrp games $(DESTDIR)$(bindir)/gnotravex && chmod 2111 $(DESTDIR)$(bindir)/gnotravex
 +	-chgrp games $(DESTDIR)$(bindir)/gnotravex && chmod 2755 $(DESTDIR)$(bindir)/gnotravex
-diff -Nru gnome-games-1.2.0/gnotski/Makefile.am gnome-games-1.2.0.new/gnotski/Makefile.am
---- gnome-games-1.2.0/gnotski/Makefile.am	Sat Oct 16 17:54:14 1999
-+++ gnome-games-1.2.0.new/gnotski/Makefile.am	Fri May 26 04:25:30 2000
+diff -urN gnome-games-1.4.0.org/gnotski/Makefile.am gnome-games-1.4.0/gnotski/Makefile.am
+--- gnome-games-1.4.0.org/gnotski/Makefile.am	Fri Mar 23 16:21:56 2001
++++ gnome-games-1.4.0/gnotski/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -24,65 +24,65 @@
  EXTRA_DIST = README gnotski.desktop $(pixmap_DATA)
  
@@ -281,9 +281,9 @@ diff -Nru gnome-games-1.2.0/gnotski/Makefile.am gnome-games-1.2.0.new/gnotski/Ma
 +	-touch $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chgrp games $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chmod 664 $DESTDIR)$(scoredir)/gnotski.26.scores
-diff -Nru gnome-games-1.2.0/gtali/Makefile.am gnome-games-1.2.0.new/gtali/Makefile.am
---- gnome-games-1.2.0/gtali/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gtali/Makefile.am	Fri May 26 04:35:01 2000
+diff -urN gnome-games-1.4.0.org/gtali/Makefile.am gnome-games-1.4.0/gtali/Makefile.am
+--- gnome-games-1.4.0.org/gtali/Makefile.am	Fri Mar 23 16:21:55 2001
++++ gnome-games-1.4.0/gtali/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -53,6 +53,6 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -293,18 +293,18 @@ diff -Nru gnome-games-1.2.0/gtali/Makefile.am gnome-games-1.2.0.new/gtali/Makefi
  	-chmod 664 $(DESTDIR)$(scoredir)/gtali.scores	
 -	-chgrp games $(DESTDIR)$(bindir)/gtali && chmod 2111 $(DESTDIR)$(bindir)/gtali
 +	-chgrp games $(DESTDIR)$(bindir)/gtali && chmod 2755 $(DESTDIR)$(bindir)/gtali
-diff -Nru gnome-games-1.2.0/gturing/Makefile.am gnome-games-1.2.0.new/gturing/Makefile.am
---- gnome-games-1.2.0/gturing/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/gturing/Makefile.am	Fri May 26 04:35:13 2000
-@@ -31,4 +31,4 @@
- 	README CREDITS $(examples_DATA) $(Games_DATA)
+diff -urN gnome-games-1.4.0.org/gturing/Makefile.am gnome-games-1.4.0/gturing/Makefile.am
+--- gnome-games-1.4.0.org/gturing/Makefile.am	Fri Mar 23 16:21:55 2001
++++ gnome-games-1.4.0/gturing/Makefile.am	Fri Mar 23 16:22:27 2001
+@@ -34,4 +34,4 @@
+ 	README CREDITS $(examples_DATA) $(Games_DATA) $(icon_DATA)
  
  install-data-local:
 -	-chgrp games $(DESTDIR)$(bindir)/gturing && chmod 2111 $(DESTDIR)$(bindir)/gturing
 +	-chgrp games $(DESTDIR)$(bindir)/gturing && chmod 2755 $(DESTDIR)$(bindir)/gturing
-diff -Nru gnome-games-1.2.0/iagno/Makefile.am gnome-games-1.2.0.new/iagno/Makefile.am
---- gnome-games-1.2.0/iagno/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/iagno/Makefile.am	Fri May 26 04:35:47 2000
+diff -urN gnome-games-1.4.0.org/iagno/Makefile.am gnome-games-1.4.0/iagno/Makefile.am
+--- gnome-games-1.4.0.org/iagno/Makefile.am	Fri Mar 23 16:21:55 2001
++++ gnome-games-1.4.0/iagno/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -67,19 +67,19 @@
  	touch $(DESTDIR)$(scoredir)/iagno.b1.scores
  	touch $(DESTDIR)$(scoredir)/iagno.b2.scores
@@ -332,10 +332,10 @@ diff -Nru gnome-games-1.2.0/iagno/Makefile.am gnome-games-1.2.0.new/iagno/Makefi
  
  soundlistdir = $(sysconfdir)/sound/events
  soundlist_DATA = iagno.soundlist
-diff -Nru gnome-games-1.2.0/mahjongg/Makefile.am gnome-games-1.2.0.new/mahjongg/Makefile.am
---- gnome-games-1.2.0/mahjongg/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/mahjongg/Makefile.am	Fri May 26 04:36:17 2000
-@@ -37,10 +37,7 @@
+diff -urN gnome-games-1.4.0.org/mahjongg/Makefile.am gnome-games-1.4.0/mahjongg/Makefile.am
+--- gnome-games-1.4.0.org/mahjongg/Makefile.am	Fri Mar 23 16:21:54 2001
++++ gnome-games-1.4.0/mahjongg/Makefile.am	Fri Mar 23 16:22:27 2001
+@@ -39,10 +39,7 @@
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	$(mkinstalldirs) $(DESTDIR)$(bgdir)
  	touch $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
@@ -348,9 +348,9 @@ diff -Nru gnome-games-1.2.0/mahjongg/Makefile.am gnome-games-1.2.0.new/mahjongg/
 -
 -
 -
-diff -Nru gnome-games-1.2.0/same-gnome/Makefile.am gnome-games-1.2.0.new/same-gnome/Makefile.am
---- gnome-games-1.2.0/same-gnome/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/same-gnome/Makefile.am	Fri May 26 04:36:38 2000
+diff -urN gnome-games-1.4.0.org/same-gnome/Makefile.am gnome-games-1.4.0/same-gnome/Makefile.am
+--- gnome-games-1.4.0.org/same-gnome/Makefile.am	Fri Mar 23 16:21:54 2001
++++ gnome-games-1.4.0/same-gnome/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -28,6 +28,6 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
@@ -360,9 +360,21 @@ diff -Nru gnome-games-1.2.0/same-gnome/Makefile.am gnome-games-1.2.0.new/same-gn
  	-chmod 664 $(DESTDIR)$(scoredir)/same-gnome.scores
 -	-chgrp games $(DESTDIR)$(bindir)/same-gnome && chmod 2111 $(DESTDIR)$(bindir)/same-gnome
 +	-chgrp games $(DESTDIR)$(bindir)/same-gnome && chmod 2755 $(DESTDIR)$(bindir)/same-gnome
-diff -Nru gnome-games-1.2.0/xbill/Makefile.am gnome-games-1.2.0.new/xbill/Makefile.am
---- gnome-games-1.2.0/xbill/Makefile.am	Fri May 26 04:21:43 2000
-+++ gnome-games-1.2.0.new/xbill/Makefile.am	Fri May 26 04:37:06 2000
+diff -urN gnome-games-1.4.0.org/sgmldocs.make gnome-games-1.4.0/sgmldocs.make
+--- gnome-games-1.4.0.org/sgmldocs.make	Fri Mar 23 16:21:52 2001
++++ gnome-games-1.4.0/sgmldocs.make	Fri Mar 23 16:25:26 2001
+@@ -58,7 +58,7 @@
+ 	-cp $(docname)/index.html .
+ 
+ $(docname).sgml: $(sgml_ents)
+-        -ourdir=`pwd`;  \
++        ourdir=`pwd`;  \
+         cd $(srcdir);   \
+         cp $(sgml_ents) $$ourdir
+ 
+diff -urN gnome-games-1.4.0.org/xbill/Makefile.am gnome-games-1.4.0/xbill/Makefile.am
+--- gnome-games-1.4.0.org/xbill/Makefile.am	Fri Mar 23 16:21:58 2001
++++ gnome-games-1.4.0/xbill/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -27,7 +27,6 @@
  install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(scoredir)
