@@ -27,7 +27,6 @@ diff -uNr gnome-games-1.4.0.4.orig/aisleriot/docs/C/aisleriot-C.omf gnome-games-
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/aisleriot/docs/eu/aisleriot-eu.omf gnome-games-1.4.0.4/aisleriot/docs/eu/aisleriot-eu.omf
 --- gnome-games-1.4.0.4.orig/aisleriot/docs/eu/aisleriot-eu.omf	Mon Feb 25 22:21:40 2002
 +++ gnome-games-1.4.0.4/aisleriot/docs/eu/aisleriot-eu.omf	Wed Oct  2 23:19:35 2002
@@ -52,12 +51,12 @@ diff -uNr gnome-games-1.4.0.4.orig/aisleriot/docs/eu/aisleriot-eu.omf gnome-game
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="aisleriot.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="faf74e20-d64a-11d6-9f12-dcfcfaaaed5b"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/aisleriot/docs/it/aisleriot-it.omf gnome-games-1.4.0.4/aisleriot/docs/it/aisleriot-it.omf
 --- gnome-games-1.4.0.4.orig/aisleriot/docs/it/aisleriot-it.omf	Thu Apr 19 22:57:38 2001
 +++ gnome-games-1.4.0.4/aisleriot/docs/it/aisleriot-it.omf	Wed Oct  2 23:19:13 2002
@@ -87,7 +86,6 @@ diff -uNr gnome-games-1.4.0.4.orig/aisleriot/docs/it/aisleriot-it.omf gnome-game
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/C/gataxx-C.omf gnome-games-1.4.0.4/gataxx/help/C/gataxx-C.omf
 --- gnome-games-1.4.0.4.orig/gataxx/help/C/gataxx-C.omf	Mon Mar 12 01:17:09 2001
 +++ gnome-games-1.4.0.4/gataxx/help/C/gataxx-C.omf	Wed Oct  2 23:21:38 2002
@@ -117,7 +115,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/C/gataxx-C.omf gnome-games-1.4.0.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/es/gataxx-es.omf gnome-games-1.4.0.4/gataxx/help/es/gataxx-es.omf
 --- gnome-games-1.4.0.4.orig/gataxx/help/es/gataxx-es.omf	Wed Jun 20 14:33:50 2001
 +++ gnome-games-1.4.0.4/gataxx/help/es/gataxx-es.omf	Wed Oct  2 23:18:11 2002
@@ -171,12 +168,12 @@ diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/eu/gataxx-eu.omf gnome-games-1.4.
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gataxx.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="519a0866-d64c-11d6-95fd-99fe44e9832d"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/it/gataxx-it.omf gnome-games-1.4.0.4/gataxx/help/it/gataxx-it.omf
 --- gnome-games-1.4.0.4.orig/gataxx/help/it/gataxx-it.omf	Thu Apr 19 22:05:27 2001
 +++ gnome-games-1.4.0.4/gataxx/help/it/gataxx-it.omf	Wed Oct  2 23:18:22 2002
@@ -206,7 +203,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gataxx/help/it/gataxx-it.omf gnome-games-1.4.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnect/help/C/gnect-C.omf gnome-games-1.4.0.4/gnect/help/C/gnect-C.omf
 --- gnome-games-1.4.0.4.orig/gnect/help/C/gnect-C.omf	Thu Dec 20 14:24:41 2001
 +++ gnome-games-1.4.0.4/gnect/help/C/gnect-C.omf	Wed Oct  2 23:24:29 2002
@@ -263,7 +259,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gnibbles/help/C/gnibbles-C.omf gnome-games-1.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnibbles/help/eu/gnibbles-eu.omf gnome-games-1.4.0.4/gnibbles/help/eu/gnibbles-eu.omf
 --- gnome-games-1.4.0.4.orig/gnibbles/help/eu/gnibbles-eu.omf	Mon Feb 25 22:21:41 2002
 +++ gnome-games-1.4.0.4/gnibbles/help/eu/gnibbles-eu.omf	Wed Oct  2 23:57:12 2002
@@ -287,12 +282,12 @@ diff -uNr gnome-games-1.4.0.4.orig/gnibbles/help/eu/gnibbles-eu.omf gnome-games-
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gnibbles.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="4e349db6-d64d-11d6-81c2-dc0a4d8a8ce3"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnobots2/help/C/gnobots2-C.omf gnome-games-1.4.0.4/gnobots2/help/C/gnobots2-C.omf
 --- gnome-games-1.4.0.4.orig/gnobots2/help/C/gnobots2-C.omf	Wed Mar 21 04:23:30 2001
 +++ gnome-games-1.4.0.4/gnobots2/help/C/gnobots2-C.omf	Wed Oct  2 23:26:32 2002
@@ -321,7 +316,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gnobots2/help/C/gnobots2-C.omf gnome-games-1.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnobots2/help/eu/gnobots2-eu.omf gnome-games-1.4.0.4/gnobots2/help/eu/gnobots2-eu.omf
 --- gnome-games-1.4.0.4.orig/gnobots2/help/eu/gnobots2-eu.omf	Mon Feb 25 22:21:42 2002
 +++ gnome-games-1.4.0.4/gnobots2/help/eu/gnobots2-eu.omf	Wed Oct  2 23:26:31 2002
@@ -345,12 +339,12 @@ diff -uNr gnome-games-1.4.0.4.orig/gnobots2/help/eu/gnobots2-eu.omf gnome-games-
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gnobots2.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="96f56f58-d64d-11d6-8080-a372dddc7810"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnome-stones/help/C/gnome-stones-C.omf gnome-games-1.4.0.4/gnome-stones/help/C/gnome-stones-C.omf
 --- gnome-games-1.4.0.4.orig/gnome-stones/help/C/gnome-stones-C.omf	Mon Mar 12 01:17:11 2001
 +++ gnome-games-1.4.0.4/gnome-stones/help/C/gnome-stones-C.omf	Wed Oct  2 23:29:49 2002
@@ -379,7 +373,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gnome-stones/help/C/gnome-stones-C.omf gnome-
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnome-stones/help/it/gnome-stones-it.omf gnome-games-1.4.0.4/gnome-stones/help/it/gnome-stones-it.omf
 --- gnome-games-1.4.0.4.orig/gnome-stones/help/it/gnome-stones-it.omf	Sat Jun  2 02:05:57 2001
 +++ gnome-games-1.4.0.4/gnome-stones/help/it/gnome-stones-it.omf	Wed Oct  2 23:29:58 2002
@@ -408,7 +401,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gnome-stones/help/it/gnome-stones-it.omf gnom
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gnomine/help/C/gnome-mines-C.omf gnome-games-1.4.0.4/gnomine/help/C/gnome-mines-C.omf
 --- gnome-games-1.4.0.4.orig/gnomine/help/C/gnome-mines-C.omf	Wed Mar 28 02:04:18 2001
 +++ gnome-games-1.4.0.4/gnomine/help/C/gnome-mines-C.omf	Wed Oct  2 23:33:05 2002
@@ -460,7 +452,8 @@ diff -uNr gnome-games-1.4.0.4.orig/gnomine/help/eu/gnome-mines-eu.omf gnome-game
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gnome-mines.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="7916b75c-d64e-11d6-85ad-da7b0a616f11"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
@@ -544,7 +537,8 @@ diff -uNr gnome-games-1.4.0.4.orig/gnotravex/help/eu/gnotravex-eu.omf gnome-game
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gnotravex.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="02e5ebe2-d64f-11d6-9b1e-c0ae48e3f58b"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
@@ -577,7 +571,6 @@ diff -uNr gnome-games-1.4.0.4.orig/gtali/help/C/gtali-C.omf gnome-games-1.4.0.4/
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/gtali/help/eu/gtali-eu.omf gnome-games-1.4.0.4/gtali/help/eu/gtali-eu.omf
 --- gnome-games-1.4.0.4.orig/gtali/help/eu/gtali-eu.omf	Mon Feb 25 22:21:45 2002
 +++ gnome-games-1.4.0.4/gtali/help/eu/gtali-eu.omf	Wed Oct  2 23:40:50 2002
@@ -601,12 +594,12 @@ diff -uNr gnome-games-1.4.0.4.orig/gtali/help/eu/gtali-eu.omf gnome-games-1.4.0.
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="gtali.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="9540da4c-d64f-11d6-9401-c3a882c823bc"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/iagno/help/C/iagno-C.omf gnome-games-1.4.0.4/iagno/help/C/iagno-C.omf
 --- gnome-games-1.4.0.4.orig/iagno/help/C/iagno-C.omf	Mon Mar 12 01:17:13 2001
 +++ gnome-games-1.4.0.4/iagno/help/C/iagno-C.omf	Wed Oct  2 23:45:28 2002
@@ -635,7 +628,6 @@ diff -uNr gnome-games-1.4.0.4.orig/iagno/help/C/iagno-C.omf gnome-games-1.4.0.4/
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/iagno/help/eu/iagno-eu.omf gnome-games-1.4.0.4/iagno/help/eu/iagno-eu.omf
 --- gnome-games-1.4.0.4.orig/iagno/help/eu/iagno-eu.omf	Mon Feb 25 22:21:45 2002
 +++ gnome-games-1.4.0.4/iagno/help/eu/iagno-eu.omf	Wed Oct  2 23:45:28 2002
@@ -659,12 +651,12 @@ diff -uNr gnome-games-1.4.0.4.orig/iagno/help/eu/iagno-eu.omf gnome-games-1.4.0.
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="iagno.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="3613d302-d650-11d6-9548-bca1300b0aaa"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/iagno/help/it/iagno-it.omf gnome-games-1.4.0.4/iagno/help/it/iagno-it.omf
 --- gnome-games-1.4.0.4.orig/iagno/help/it/iagno-it.omf	Mon Mar 12 01:17:13 2001
 +++ gnome-games-1.4.0.4/iagno/help/it/iagno-it.omf	Wed Oct  2 23:45:29 2002
@@ -693,7 +685,6 @@ diff -uNr gnome-games-1.4.0.4.orig/iagno/help/it/iagno-it.omf gnome-games-1.4.0.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/C/mahjongg-C.omf gnome-games-1.4.0.4/mahjongg/help/C/mahjongg-C.omf
 --- gnome-games-1.4.0.4.orig/mahjongg/help/C/mahjongg-C.omf	Mon Mar 12 01:17:13 2001
 +++ gnome-games-1.4.0.4/mahjongg/help/C/mahjongg-C.omf	Wed Oct  2 23:47:59 2002
@@ -722,7 +713,6 @@ diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/C/mahjongg-C.omf gnome-games-1.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/eu/mahjongg-eu.omf gnome-games-1.4.0.4/mahjongg/help/eu/mahjongg-eu.omf
 --- gnome-games-1.4.0.4.orig/mahjongg/help/eu/mahjongg-eu.omf	Mon Feb 25 22:21:47 2002
 +++ gnome-games-1.4.0.4/mahjongg/help/eu/mahjongg-eu.omf	Wed Oct  2 23:47:58 2002
@@ -746,12 +736,12 @@ diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/eu/mahjongg-eu.omf gnome-games-
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="mahjongg.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="94aa6886-d650-11d6-9fc7-b427b46d41e7"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/it/mahjongg-it.omf gnome-games-1.4.0.4/mahjongg/help/it/mahjongg-it.omf
 --- gnome-games-1.4.0.4.orig/mahjongg/help/it/mahjongg-it.omf	Thu Apr 19 22:22:30 2001
 +++ gnome-games-1.4.0.4/mahjongg/help/it/mahjongg-it.omf	Wed Oct  2 23:47:58 2002
@@ -780,7 +770,6 @@ diff -uNr gnome-games-1.4.0.4.orig/mahjongg/help/it/mahjongg-it.omf gnome-games-
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/same-gnome/help/C/same-gnome-C.omf gnome-games-1.4.0.4/same-gnome/help/C/same-gnome-C.omf
 --- gnome-games-1.4.0.4.orig/same-gnome/help/C/same-gnome-C.omf	Mon Mar 12 01:17:14 2001
 +++ gnome-games-1.4.0.4/same-gnome/help/C/same-gnome-C.omf	Wed Oct  2 23:52:13 2002
@@ -809,7 +798,6 @@ diff -uNr gnome-games-1.4.0.4.orig/same-gnome/help/C/same-gnome-C.omf gnome-game
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/same-gnome/help/es/same-gnome-es.omf gnome-games-1.4.0.4/same-gnome/help/es/same-gnome-es.omf
 --- gnome-games-1.4.0.4.orig/same-gnome/help/es/same-gnome-es.omf	Wed Jun 20 14:33:53 2001
 +++ gnome-games-1.4.0.4/same-gnome/help/es/same-gnome-es.omf	Wed Oct  2 23:52:12 2002
@@ -861,12 +849,12 @@ diff -uNr gnome-games-1.4.0.4.orig/same-gnome/help/eu/same-gnome-eu.omf gnome-ga
 +    <type/>
      <format mime="text/sgml"/>
      <identifier url="same-gnome.sgml"/>
-     <language code="EU"/>
+-    <language code="EU"/>
++    <language code="eu"/>
 +    <relation seriesid="2bf366ac-d651-11d6-903a-96d0ef850302"/>
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -uNr gnome-games-1.4.0.4.orig/same-gnome/help/ru/same-gnome-ru.omf gnome-games-1.4.0.4/same-gnome/help/ru/same-gnome-ru.omf
 --- gnome-games-1.4.0.4.orig/same-gnome/help/ru/same-gnome-ru.omf	Tue Mar 13 22:04:37 2001
 +++ gnome-games-1.4.0.4/same-gnome/help/ru/same-gnome-ru.omf	Wed Oct  2 23:52:13 2002
