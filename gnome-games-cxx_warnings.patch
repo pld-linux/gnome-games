@@ -1,0 +1,18 @@
+diff -aurN gnome-games-2.7.3.orig/configure.in gnome-games-2.7.3/configure.in
+--- gnome-games-2.7.3.orig/configure.in	2004-06-07 11:33:25.000000000 +0200
++++ gnome-games-2.7.3/configure.in	2004-06-07 20:19:21.127695408 +0200
+@@ -62,12 +62,13 @@
+ AC_SUBST(GNOME_GAMES_CFLAGS)
+ AC_SUBST(GNOME_GAMES_LIBS)
+ 
++GNOME_GAMES_CXXFLAGS="$GNOME_GAMES_CFLAGS -I\$(top_srcdir)/libgames-support $WARN_CXXFLAGS"
+ GNOME_GAMES_CFLAGS="$GNOME_GAMES_CFLAGS -I\$(top_srcdir)/libgames-support $WARN_CFLAGS"
+ GNOME_GAMES_LIBS="$GNOME_GAMES_LIBS \$(top_builddir)/libgames-support/libgames-support.la"
+ 
+ ## Use a separate set of flags for C++ (so we can exclude -std=gnu89 for
+ ## example, it doesn't make sense under C++).
+-GNOME_GAMES_CXXFLAGS="-Werror $GNOME_GAMES_CFLAGS"
++GNOME_GAMES_CXXFLAGS="$GNOME_GAMES_CXXFLAGS -Werror"
+ AC_SUBST(GNOME_GAMES_CXXFLAGS)
+ 
+ ## This should make sure that developers using gcc 3.x will write something
