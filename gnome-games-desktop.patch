@@ -165,22 +165,16 @@
  X-GNOME-Bugzilla-Component=same-gnome
 --- gnome-games-2.6.2/blackjack/data/blackjack.desktop~	2004-08-24 05:36:55.000000000 +0200
 +++ gnome-games-2.6.2/blackjack/data/blackjack.desktop	2004-08-24 05:36:55.000000000 +0200
-@@ -26,9 +26,9 @@
- Name[ko]=블랙잭
- Name[lt]=Blackjack
- Name[mn]=Блакжак
-+Name[nb]=Blackjack
+@@ -26,7 +26,6 @@
+ Name[nb]=Blackjack
  Name[nl]=Blackjack
  Name[nn]=Blackjack
 -Name[no]=Blackjack
  Name[pa]=ਕਾਲਾ ਗੋਲ੏ਾ
  Name[pl]=Oczko
  Name[pt]=Blackjack
-@@ -69,9 +69,9 @@
- Comment[lt]=Žaisti kazino žaidimą Blackjack
- Comment[mn]=Казино карт тоглоом Блакжак тоглох
- Comment[ms]=Main permainan kad kasino Blackjack
-+Comment[nb]=Spill kasinospillet Blackjack
+@@ -69,7 +69,6 @@
+ Comment[nb]=Spill kasinospillet Blackjack
  Comment[nl]=Het casino-kaartspel Blackjack
  Comment[nn]=Spel kasinospelet Blackjack
 -Comment[no]=Spill kasinospillet Blackjack
@@ -198,26 +192,20 @@
  X-GNOME-Bugzilla-Component=blackjack
 --- gnome-games-2.6.2/gnect/data/gnect.desktop~	2004-08-24 05:37:33.000000000 +0200
 +++ gnome-games-2.6.2/gnect/data/gnect.desktop	2004-08-24 05:37:33.000000000 +0200
-@@ -27,9 +27,9 @@
- Name[lt]=Keturi-eilėje
- Name[mn]=Нэг мөрөнд дөрөв
- Name[ms]=Four-in-a-row
-+Name[nb]=Fire på rad
+@@ -27,7 +27,6 @@
+ Name[nb]=Fire på rad
  Name[nl]=Vier-op-een-rij
  Name[nn]=Fire på rad
 -Name[no]=Fire på rad
- Name[pa]=ੲਿੱਕ ਕਤਾਰ ਵਿੱਚ ਚਾਰ
+ Name[pa]=ਇੱਕ ਕਤਾਰ ਵਿੱਚ ਚਾਰ
  Name[pl]=Gra "cztery w rzędzie"
  Name[pt]=Quatro-em-linha
-@@ -67,9 +67,9 @@
- Comment[ja]=同じ色のラインを作って競い合って下さい
- Comment[ko]=서로 같은 색을 한 줄로 놓는 게임
- Comment[lt]=Sudarykite liniją iš tos pačios spalvos rutulių
-+Comment[nb]=Kjemp om å la linjene bli av samme farge
+@@ -67,7 +67,6 @@
+ Comment[nb]=Kjemp om å la linjene bli av samme farge
  Comment[nl]=Probeer lijnen van dezelfde kleur te maken
  Comment[nn]=Kapp om å laga linjer av same farge
 -Comment[no]=Kjemp om å la linjene bli av samme farge
- Comment[pa]=ੲਿੱਕ ਰੰਗ ਦੀਅ੾ ਲਾੲਿਨ੾ ਬਣਾੳੁਣ ਦਾ ਮੁਕਾਬਲਾ ਕਰੋ
+ Comment[pa]=ਇੱਕ ਰੰਗ ਦੀਆਂ ਲਾਇਨਾਂ ਬਣਾਉਣ ਦਾ ਮੁਕਾਬਲਾ ਕਰੋ
  Comment[pl]=Rywalizuj w celu utowrzenia linii w jednym kolorze
  Comment[pt]=Compita para fazer linhas da mesma cor
 @@ -84,7 +84,7 @@
