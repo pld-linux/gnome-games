@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.6.2
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -45,7 +45,7 @@ Obsoletes:	gnome
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
-%define		__gamesdir	%{_localstatedir}/games
+%define		_gamesdir	%{_localstatedir}/games
 
 %description
 GNOME games.
@@ -224,7 +224,7 @@ done
 %{_datadir}/gnobots2
 
 %{_omf_dest_dir}/%{name}
-%attr(664,root,games) %ghost %{_localstatedir}/games/*
+%attr(664,root,games) %ghost %{_gamesdir}/*
 
 %files devel
 %defattr(644,root,root,755)
