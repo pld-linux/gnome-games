@@ -1,6 +1,19 @@
-diff -urN aaa/gnome-games-2.3.7/gtali/gtali.schemas.in gnome-games-2.3.7/gtali/gtali.schemas.in
---- aaa/gnome-games-2.3.7/gtali/gtali.schemas.in	2003-08-10 08:06:24.000000000 +0200
-+++ gnome-games-2.3.7/gtali/gtali.schemas.in	2003-08-10 18:33:27.000000000 +0200
+diff -urN aa/gnome-games-2.5.5/aisleriot/aisleriot.schemas.in gnome-games-2.5.5/aisleriot/aisleriot.schemas.in
+--- aa/gnome-games-2.5.5/aisleriot/aisleriot.schemas.in	2004-01-25 07:16:58.000000000 +0100
++++ gnome-games-2.5.5/aisleriot/aisleriot.schemas.in	2004-01-31 13:38:20.000897240 +0100
+@@ -43,7 +43,8 @@
+       <applyto>/apps/aisleriot/statistics</applyto>
+       <owner>aisleriot</owner>
+       <type>list</type>
+-      <default></default>
++      <list_type>string</list_type>
++      <default>[]</default>
+       <locale name="C">
+         <short>Statistics of games played</short>
+ 	<long>A list of strings that come in the form of a quintuple: name, wins, total games played, best time (in seconds) and worst time (also in seconds). Unplayed games do not need to be represented.</long>
+diff -urN aa/gnome-games-2.5.5/gtali/gtali.schemas.in gnome-games-2.5.5/gtali/gtali.schemas.in
+--- aa/gnome-games-2.5.5/gtali/gtali.schemas.in	2003-08-04 00:17:40.000000000 +0200
++++ gnome-games-2.5.5/gtali/gtali.schemas.in	2004-01-31 13:30:03.239416464 +0100
 @@ -54,10 +54,10 @@
        <owner>gtali</owner>
        <type>list</type>
