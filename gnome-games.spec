@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.6.0.1
+Version:	2.6.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	569e9d02fdc0cbd3294349cf30adccd1
+# Source0-md5:	6ea145547bfd8aa828b22cbbe34cbedf
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 Icon:		gnome-games.gif
