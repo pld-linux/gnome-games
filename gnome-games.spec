@@ -124,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
   subpackage,
 - added %post{un} with runing /sbin/ldconfig,
 - added "Requires: gnome-libs >= %%{version}" to main package,
-- added striping shared libraries.
+- added stripping shared libraries.
 
 * Mon Mar 16 1998 Marc Ewing <marc@redhat.com>
 - Integrate into gnome-games CVS source tree
