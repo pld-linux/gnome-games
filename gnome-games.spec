@@ -6,35 +6,36 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.7.4
-Release:	2.1
+Version:	2.7.5
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	e588a647dd9d4dbd8579c140c4d79fcc
+# Source0-md5:	d903445629a8cd46ac58a5b5aa7cd556
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
+Patch2:		%{name}-include.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.1
+BuildRequires:	GConf2-devel >= 2.7.3
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.7.1
+BuildRequires:	gnome-vfs2-devel >= 2.7.3
 BuildRequires:	guile-devel >= 1.6.4
-BuildRequires:	gtk+2-devel >= 2:2.4.3
+BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnome-devel >= 2.7.1
-BuildRequires:	libgnomeui-devel >= 2.7.1
+BuildRequires:	libgnome-devel >= 2.7.2
+BuildRequires:	libgnomeui-devel >= 2.7.2
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg >= 1:2.6.4
+BuildRequires:	librsvg >= 1:2.7.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.7.1
+Requires:	gnome-vfs2 >= 2.7.2
 Requires:	librsvg >= 1:2.7.2
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -203,6 +204,22 @@ Puzzle game.
 %description gnotravex -l pl
 Uk³adanka.
 
+%package gnotski
+Summary:	Gnome Klotski
+Summary(pl):	Klotski dla GNOME
+Group:		X11/Applications/Games
+Requires(post):	coreutils
+Requires(post):	scrollkeeper
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description gnotski
+Clone of the Klotski game. The objective is to move the patterned
+block to the area bordered by green markers.
+
+%description gnotski -l pl
+Klon gry Klotski. Celem gry jest przesuniêcie zaznaczonego klocka
+w pole ograniczone zielonymi znacznikami.
+
 %package gtali
 Summary:	GNOME Tali
 Summary(pl):	Tali dla GNOME
@@ -280,6 +297,7 @@ Ró¿ne gry karciane.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv po/{no,nb}.po
 
@@ -427,6 +445,19 @@ for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 done
 
 %postun gnotravex -p /usr/bin/scrollkeeper-update
+
+%post gnotski
+/usr/bin/scrollkeeper-update
+
+for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
+	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
+	touch %{_gamesdir}/gnotski.$i.scores
+	chown root:games %{_gamesdir}/gnotski.$i.scores
+	chmod 664 %{_gamesdir}/gnotski.$i.scores
+	fi
+done
+
+%postun gnotski -p /usr/bin/scrollkeeper-update
 
 %post gtali
 /usr/bin/scrollkeeper-update
@@ -576,7 +607,6 @@ fi
 %{_sysconfdir}/gconf/schemas/gnome-stones.schemas
 %{_datadir}/gnome-stones
 %{_datadir}/mime-info/gnome-stones.*
-%{_datadir}/sounds/gnome-stones
 %{_datadir}/gnome-stonesrc
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
 %dir %{_libdir}/gnome-stones
@@ -599,6 +629,7 @@ fi
 %{_omf_dest_dir}/%{name}/gnometris-C.omf
 %{_pixmapsdir}/gnometris
 %{_pixmapsdir}/gnome-gtetris.png
+%{_datadir}/sounds/gnometris
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
 %dir %{_gnomehelpdir}/gnometris
 %{_gnomehelpdir}/gnometris/C
@@ -626,6 +657,16 @@ fi
 %dir %{_gnomehelpdir}/gnotravex
 %{_gnomehelpdir}/gnotravex/C
 
+%files gnotski
+%defattr(644,root,root,755)
+%attr(2755,root,games) %{_bindir}/gnotski
+%{_desktopdir}/gnotski.desktop
+%{_omf_dest_dir}/%{name}/gnotski-C.omf
+%{_pixmapsdir}/gnotski*.png
+%attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
+%dir %{_gnomehelpdir}/gnotski
+%{_gnomehelpdir}/gnotski/C
+
 %files gtali
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gtali
@@ -633,7 +674,7 @@ fi
 %{_desktopdir}/gtali.desktop
 %{_omf_dest_dir}/%{name}/gtali-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
-%{_pixmapsdir}/gnome-die*.png
+%{_pixmapsdir}/gtali
 %{_pixmapsdir}/gnome-gtali.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
 %dir %{_gnomehelpdir}/gtali
