@@ -13,6 +13,8 @@ License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/gnome-games/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
+BuildRequires:	libltdl-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	scrollkeeper
 PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
@@ -104,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-GCONF_CONFIG_SOURCE="" \
+GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" \
 %{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 /usr/bin/scrollkeeper-update
 
