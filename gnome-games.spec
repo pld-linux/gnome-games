@@ -163,7 +163,7 @@ Summary(pl):	"Kamienie" dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description stones
@@ -406,8 +406,10 @@ done
 %postun	gnobots2 -p /usr/bin/scrollkeeper-update
 
 %post stones
+umask 022
 /usr/bin/scrollkeeper-update
 %gconf_schema_install
+[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1 ||:
 
 if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
 	touch %{_gamesdir}/gnome-stones.scores
@@ -415,7 +417,10 @@ if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
 	chmod 664 %{_gamesdir}/gnome-stones.scores
 fi
 
-%postun stones -p /usr/bin/scrollkeeper-update
+%postun stones
+umask 022
+/usr/bin/scrollkeeper-update
+[ ! -x /usr/bin/update-desktop-database ] || /usr/bin/update-desktop-database >/dev/null 2>&1
 
 %post gnometris
 /usr/bin/scrollkeeper-update
