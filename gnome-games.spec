@@ -6,37 +6,37 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.7.7
-Release:	3
+Version:	2.7.8
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	3e4dc70c873108dc9b49338da53e143e
+# Source0-md5:	fa8f92357a8f8c6b0ccf2d1a3cee0819
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 Patch2:		%{name}-include.patch
 Patch3:		%{name}-desktop.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.3
+BuildRequires:	GConf2-devel >= 2.7.91
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.7.5
+BuildRequires:	gnome-vfs2-devel >= 2.7.91
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnome-devel >= 2.7.2
-BuildRequires:	libgnomeui-devel >= 2.7.2
+BuildRequires:	libgnome-devel >= 2.7.91
+BuildRequires:	libgnomeui-devel >= 2.7.91
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg >= 1:2.7.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.7.5
+Requires:	gnome-vfs2 >= 2.7.91
 Requires:	librsvg >= 1:2.7.2
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -301,7 +301,7 @@ Ró¿ne gry karciane.
 %patch2 -p1
 %patch3 -p1
 
-mv po/{no,nb}.po
+rm po/no.po
 
 %build
 cp -f /usr/share/automake/config.sub .
