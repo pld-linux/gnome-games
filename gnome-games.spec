@@ -4,8 +4,8 @@ Summary(fr):	Jeux pour GNOME
 Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.2.0
-Release:	10
+Version:	1.4.0
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications
@@ -17,12 +17,15 @@ Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
 BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	gettext-devel
 BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	gnome-libs-devel >= 1.2.13
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	guile-devel >= 1.3
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
+BuildRequires:	scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
@@ -78,7 +81,9 @@ Biblioteki statyczne do GNOME games.
 
 %build
 gettextize --copy --force
-automake
+automake -a -c
+aclocal -I %{_aclocaldir}/gnome
+autoconf
 %configure 
 
 %{__make}
@@ -102,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
+%doc *.gz
 %config %{_sysconfdir}/sound/events/*
 
 %attr(755,root,root) %{_bindir}/GnomeScott
