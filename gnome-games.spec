@@ -98,7 +98,7 @@ Biblioteki statyczne do GNOME games.
 %patch0 -p1
 
 %build
-%configure 
+%configure
 %{__make}
 
 %install
