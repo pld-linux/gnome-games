@@ -25,6 +25,7 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gnome-libs-devel >= 1.2.13
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	guile-devel >= 1.3
+BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
 BuildRequires:	scrollkeeper
@@ -86,6 +87,7 @@ Biblioteki statyczne do GNOME games.
 %patch2 -p1
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
 automake -a -c
 aclocal -I %{_aclocaldir}/gnome
