@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.10.0
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -304,6 +304,7 @@ Group:		X11/Applications/Games
 Requires(post):	GConf2
 Requires(post):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	guile >= 5:1.6.5
 
 %description sol
 Many different solitaire games.
