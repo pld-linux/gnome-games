@@ -1,0 +1,11 @@
+--- gnome-games-1.4.0.4/gnect/src/connect4.c~	Fri Nov 15 00:33:44 2002
++++ gnome-games-1.4.0.4/gnect/src/connect4.c	Fri Nov 15 00:33:44 2002
+@@ -117,7 +117,7 @@
+ 	long size,len;
+ 	FILE *h1;
+ 	short x;
+-	char *bookdata = g_strdup("/usr/share/gnect/" WHITE_BOOK); /* FIXME */
++	char *bookdata = g_strdup("/usr/X11R6/share/gnect/" WHITE_BOOK); /* FIXME */
+ 
+ 
+ 	if (!gnect_file_exists(bookdata)) {
