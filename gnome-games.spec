@@ -6,12 +6,12 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.0.0
+Version:	2.0.1
 Release:	0
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/gnome-games/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
 BuildRequires:	scrollkeeper
 PreReq:		scrollkeeper
