@@ -4,7 +4,7 @@ Summary(fr):	Jeux pour GNOME
 Summary(pl):	GNOME - Gry
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	1.4.0
+Version:	1.4.0.1
 Release:	1
 Epoch:		1
 License:	LGPL
@@ -13,6 +13,7 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-scrollkeeper.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -26,6 +27,8 @@ BuildRequires:	guile-devel >= 1.3
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
 BuildRequires:	scrollkeeper
+Prereq:		/sbin/ldconfig
+Prereq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
@@ -77,7 +80,8 @@ Biblioteki statyczne do GNOME games.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 gettextize --copy --force
@@ -99,8 +103,13 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
+
+%postun
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
 
 %clean
 rm -rf $RPM_BUILD_ROOT
