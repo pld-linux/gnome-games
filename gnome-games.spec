@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.7.5
+Version:	2.7.6
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	d903445629a8cd46ac58a5b5aa7cd556
+# Source0-md5:	804accfa813147c58891250988221088
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 Patch2:		%{name}-include.patch
@@ -22,7 +22,7 @@ BuildRequires:	GConf2-devel >= 2.7.3
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.7.3
+BuildRequires:	gnome-vfs2-devel >= 2.7.5
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	intltool >= 0.29
@@ -35,7 +35,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.7.2
+Requires:	gnome-vfs2 >= 2.7.5
 Requires:	librsvg >= 1:2.7.2
 Obsoletes:	gnect
 Obsoletes:	gnome
