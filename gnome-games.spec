@@ -31,6 +31,7 @@ BuildRequires:	libgnomeui-devel >= 2.6.0
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg >= 1:2.6.4
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
@@ -114,6 +115,7 @@ mv po/{no,nb}.po
 cp -f /usr/share/automake/config.sub .
 glib-gettextize --copy --force
 intltoolize --copy --force
+%{__libtoolize}
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
 %{__autoheader}
 %{__autoconf}
