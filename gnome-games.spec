@@ -255,7 +255,8 @@ intltoolize --copy --force
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-static
 %{__make}
 
 %install
@@ -270,69 +271,212 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
+%post	-n blackjack
 /usr/bin/scrollkeeper-update
 %gconf_schema_install
 
-%postun
-/sbin/ldconfig
+%postun	-n blackjack
+/usr/bin/scrollkeeper-update
+
+%post	-n freecell
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun -n freecell
+/usr/bin/scrollkeeper-update
+
+%post	-n gataxx
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gataxx
+/usr/bin/scrollkeeper-update
+
+%post	-n glines
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n glines
+/usr/bin/scrollkeeper-update
+
+%post	-n gnect
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnect
+/usr/bin/scrollkeeper-update
+
+%post	-n gnibbles
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnibbles
+/usr/bin/scrollkeeper-update
+
+%post	-n gnobots2
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnobots2
+/usr/bin/scrollkeeper-update
+
+%post	-n gnome-stones
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnome-stones
+/usr/bin/scrollkeeper-update
+
+%post	-n gnometris
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnometris
+/usr/bin/scrollkeeper-update
+
+%post	-n gnomine
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnomine
+/usr/bin/scrollkeeper-update
+
+%post	-n gnotravex
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gnotravex
+/usr/bin/scrollkeeper-update
+
+%post	-n gtali
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n gtali
+/usr/bin/scrollkeeper-update
+
+%post	-n iagno
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n iagno
+/usr/bin/scrollkeeper-update
+
+%post	-n mahjongg
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n mahjongg
+/usr/bin/scrollkeeper-update
+
+%post	-n same-gnome
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n same-gnome
+/usr/bin/scrollkeeper-update
+
+%post	-n sol
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun	-n sol
 /usr/bin/scrollkeeper-update
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%config %{_sysconfdir}/sound/events/*
-%{_sysconfdir}/gconf/schemas/*
 
-%attr(755,root,root) %{_bindir}/gataxx
-%attr(755,root,root) %{_bindir}/sol
-%attr(755,root,root) %{_bindir}/gnect
-%attr(755,root,root) %{_bindir}/gnibbles
-%attr(755,root,root) %{_bindir}/gnobots2
-%attr(755,root,root) %{_bindir}/blackjack
-%attr(2755,root,games) %{_bindir}/glines
-%attr(2755,root,games) %{_bindir}/gnome-stones
-%attr(2755,root,games) %{_bindir}/gnometris
-%attr(2755,root,games) %{_bindir}/gnomine
-%attr(2755,root,games) %{_bindir}/gnotravex
-%attr(2755,root,games) %{_bindir}/gnotski
-%attr(2755,root,games) %{_bindir}/gtali
-%attr(2755,root,games) %{_bindir}/iagno
-%attr(2755,root,games) %{_bindir}/mahjongg
-%attr(2755,root,games) %{_bindir}/same-gnome
+#%attr(755,root,root) %{_bindir}/sol
+#%attr(2755,root,games) %{_bindir}/gnome-stones
+#%attr(2755,root,games) %{_bindir}/gnometris
+#%attr(2755,root,games) %{_bindir}/gnomine
+#%attr(2755,root,games) %{_bindir}/gnotravex
+#%attr(2755,root,games) %{_bindir}/gnotski
+#%attr(2755,root,games) %{_bindir}/gtali
+#%attr(2755,root,games) %{_bindir}/iagno
+#%attr(2755,root,games) %{_bindir}/mahjongg
+#%attr(2755,root,games) %{_bindir}/same-gnome
 
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
-%dir %{_libdir}/gnome-stones
-%dir %{_libdir}/gnome-stones/objects
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
-%{_libdir}/gnome-stones/objects/lib*.la
+#%dir %{_libdir}/gnome-stones
+#%dir %{_libdir}/gnome-stones/objects
+#%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
+#%{_libdir}/gnome-stones/objects/lib*.la
 
-%{_datadir}/gnome-stones
-%{_datadir}/sol-games
-%{_datadir}/blackjack
+#%{_datadir}/gnome-stones
+#%{_datadir}/sol-games
 
 %{_datadir}/gnome-stonesrc
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
 
-%{_datadir}/mime-info/*
-%{_pixmapsdir}/*
-%{_datadir}/sounds/*
-%{_desktopdir}/*
+%files blackjack
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/blackjack
+%{_sysconfdir}/gconf/schemas/blackjack.schemas
+%{_desktopdir}/blackjack.desktop
+%{_omf_dest_dir}/%{name}/blackjack-C.omf
+%{_pixmapsdir}/blackjack
+%{_pixmapsdir}/gnome-blackjack.png
+
+%files freecell
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/freecell
+#%%{_sysconfdir}/gconf/schemas
+%{_desktopdir}/freecell.desktop
+#%%{_pixmapsdir}/
+#%%{_pixmapsdir}/
+
+%files gataxx
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gataxx
+%{_sysconfdir}/gconf/schemas/gataxx.schemas
+%{_desktopdir}/gataxx.desktop
+%{_omf_dest_dir}/%{name}/gataxx-C.omf
+%{_pixmapsdir}/gataxx.png
+
+%files glines
+%defattr(644,root,root,755)
+%attr(2755,root,games) %{_bindir}/glines
+%{_sysconfdir}/gconf/schemas/glines.schemas
+%{_desktopdir}/glines.desktop
+%{_omf_dest_dir}/%{name}/glines-C.omf
+%{_pixmapsdir}/glines
+%{_pixmapsdir}/glines.png
+%attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
+
+%files gnect
+%defattr(644,root,root,755)
+%attr(755,root,games) %{_bindir}/gnect
+%{_sysconfdir}/gconf/schemas/gnect.schemas
+%{_sysconfdir}/sound/event/gnect.soundlist
 %{_datadir}/gnect
+%{_desktopdir}/gnect.desktop
+%{_omf_dest_dir}/%{name}/gnect-C.omf
+%{_pixmapsdir}/gnect
+%{_pixmapsdir}/gnect-icon.png
+
+%files gnibbles
+%defattr(644,root,root,755)
+%attr(2755,root,games) %{_bindir}/gnibbles
+%{_sysconfdir}/gconf/schemas/gnibbles.schemas
+%{_sysconfdir}/sound/event/gnibbles.soundlist
 %{_datadir}/gnibbles
+%{_datadir}/sounds/gnibbles
+%{_desktopdir}/gnibbles.desktop
+%{_omf_dest_dir}/%{name}/gnibbles-C.omf
+%{_pixmapsdir}/gnibbles
+%{_pixmapsdir}/gnome-nibbles.png
+%attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
+
+%files gnobots2
+%defattr(644,root,root,755)
+%attr(2755,root,games) %{_bindir}/gnobots2
+%{_sysconfdir}/gconf/schemas/gnobots2.schemas
+%{_sysconfdir}/sound/event/gnobots2.soundlist
 %{_datadir}/gnobots2
-
-%{_omf_dest_dir}/%{name}
-%attr(664,root,games) %ghost %{_localstatedir}/games/*
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/lib*.a
-%{_libdir}/gnome-stones/objects/lib*.a
+%{_datadir}/sounds/gnobots2
+%{_desktopdir}/gnobots2.desktop
+%{_omf_dest_dir}/%{name}/gnobots2-C.omf
+%{_pixmapsdir}/gnobots
+%{_pixmapsdir}/gnome-gnobots2.png
+%attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
