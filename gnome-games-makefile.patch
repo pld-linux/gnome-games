@@ -1,30 +1,31 @@
-diff -urN gnome-games-2.0.0.orig/freecell/src/Makefile.in gnome-games-2.0.0/freecell/src/Makefile.in
---- gnome-games-2.0.0.orig/freecell/src/Makefile.in	Tue Jun 18 08:40:32 2002
-+++ gnome-games-2.0.0/freecell/src/Makefile.in	Tue Jun 18 09:06:15 2002
-@@ -451,7 +451,6 @@
+diff -urN gnome-games-2.0.3.orig/freecell/src/Makefile.in gnome-games-2.0.3/freecell/src/Makefile.in
+--- gnome-games-2.0.3.orig/freecell/src/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/freecell/src/Makefile.in	Fri Aug 16 11:14:23 2002
+@@ -488,7 +488,7 @@
  @INTLTOOL_DESKTOP_RULE@
  
  install-data-local:
 -	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
- 
++
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
-diff -urN gnome-games-2.0.0.orig/gataxx/Makefile.in gnome-games-2.0.0/gataxx/Makefile.in
---- gnome-games-2.0.0.orig/gataxx/Makefile.in	Tue Jun 18 08:40:32 2002
-+++ gnome-games-2.0.0/gataxx/Makefile.in	Tue Jun 18 08:55:03 2002
-@@ -588,7 +588,7 @@
+ .NOEXPORT:
+diff -urN gnome-games-2.0.3.orig/gataxx/Makefile.in gnome-games-2.0.3/gataxx/Makefile.in
+--- gnome-games-2.0.3.orig/gataxx/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/gataxx/Makefile.in	Fri Aug 16 11:14:43 2002
+@@ -649,7 +649,7 @@
  @INTLTOOL_SOUNDLIST_RULE@
  
  install-data-local:
 -	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
 +
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
-diff -urN gnome-games-2.0.0.orig/gnometris/Makefile.in gnome-games-2.0.0/gnometris/Makefile.in
---- gnome-games-2.0.0.orig/gnometris/Makefile.in	Tue Jun 18 08:40:31 2002
-+++ gnome-games-2.0.0/gnometris/Makefile.in	Tue Jun 18 08:56:12 2002
-@@ -530,7 +530,6 @@
+ .NOEXPORT:
+diff -urN gnome-games-2.0.3.orig/gnometris/Makefile.in gnome-games-2.0.3/gnometris/Makefile.in
+--- gnome-games-2.0.3.orig/gnometris/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/gnometris/Makefile.in	Fri Aug 16 11:15:27 2002
+@@ -611,7 +611,6 @@
  @INTLTOOL_DESKTOP_RULE@
  
  install-data-local:
@@ -32,10 +33,10 @@ diff -urN gnome-games-2.0.0.orig/gnometris/Makefile.in gnome-games-2.0.0/gnometr
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	touch $(DESTDIR)$(scoredir)/gnometris.scores
  	-chown games.games $(DESTDIR)$(scoredir)/gnometris.scores
-diff -urN gnome-games-2.0.0.orig/gnomine/Makefile.in gnome-games-2.0.0/gnomine/Makefile.in
---- gnome-games-2.0.0.orig/gnomine/Makefile.in	Tue Jun 18 08:40:32 2002
-+++ gnome-games-2.0.0/gnomine/Makefile.in	Tue Jun 18 08:56:21 2002
-@@ -534,7 +534,6 @@
+diff -urN gnome-games-2.0.3.orig/gnomine/Makefile.in gnome-games-2.0.3/gnomine/Makefile.in
+--- gnome-games-2.0.3.orig/gnomine/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/gnomine/Makefile.in	Fri Aug 16 11:15:46 2002
+@@ -586,7 +586,6 @@
  @INTLTOOL_DESKTOP_RULE@
  
  install-data-local:
@@ -43,62 +44,19 @@ diff -urN gnome-games-2.0.0.orig/gnomine/Makefile.in gnome-games-2.0.0/gnomine/M
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-touch $(DESTDIR)$(scoredir)/gnomine.Tiny.scores
  	-chown games.games $(DESTDIR)$(scoredir)/gnomine.Tiny.scores
-diff -urN gnome-games-2.0.0.orig/gtali/Makefile.in gnome-games-2.0.0/gtali/Makefile.in
---- gnome-games-2.0.0.orig/gtali/Makefile.in	Tue Jun 18 08:40:31 2002
-+++ gnome-games-2.0.0/gtali/Makefile.in	Tue Jun 18 08:56:47 2002
-@@ -534,7 +534,6 @@
- @INTLTOOL_DESKTOP_RULE@
- 
- install-data-local:
--	-GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
- 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
- 	-touch $(DESTDIR)$(scoredir)/gtali.scores
- 	-chown games.games $(DESTDIR)$(scoredir)/gtali.scores
-diff -urN gnome-games-2.0.0.orig/iagno/Makefile.in gnome-games-2.0.0/iagno/Makefile.in
---- gnome-games-2.0.0.orig/iagno/Makefile.in	Tue Jun 18 08:40:31 2002
-+++ gnome-games-2.0.0/iagno/Makefile.in	Tue Jun 18 08:56:57 2002
-@@ -589,7 +589,6 @@
- @INTLTOOL_DESKTOP_RULE@
- 
- install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
- 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
- 	touch $(DESTDIR)$(scoredir)/iagno.w1.scores
- 	touch $(DESTDIR)$(scoredir)/iagno.w2.scores
-diff -urN gnome-games-2.0.0.orig/mahjongg/Makefile.in gnome-games-2.0.0/mahjongg/Makefile.in
---- gnome-games-2.0.0.orig/mahjongg/Makefile.in	Tue Jun 18 08:40:32 2002
-+++ gnome-games-2.0.0/mahjongg/Makefile.in	Tue Jun 18 08:57:42 2002
-@@ -585,7 +585,6 @@
- @INTLTOOL_DESKTOP_RULE@
- 
- install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
- 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
- 	$(mkinstalldirs) $(DESTDIR)$(bgdir)
- 	touch $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
-diff -urN gnome-games-2.0.0.orig/same-gnome/Makefile.in gnome-games-2.0.0/same-gnome/Makefile.in
---- gnome-games-2.0.0.orig/same-gnome/Makefile.in	Tue Jun 18 08:40:32 2002
-+++ gnome-games-2.0.0/same-gnome/Makefile.in	Tue Jun 18 08:57:52 2002
-@@ -530,7 +530,6 @@
- @INTLTOOL_DESKTOP_RULE@
- 
- install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
- 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
- 	touch $(DESTDIR)$(scoredir)/same-gnome.scores
- 	-chown games.games $(DESTDIR)$(scoredir)/same-gnome.scores
---- gnome-games-2.0.0/gnotski/Makefile.in.wiget	Tue Jun 18 17:27:05 2002
-+++ gnome-games-2.0.0/gnotski/Makefile.in	Tue Jun 18 17:28:42 2002
-@@ -131,7 +131,7 @@
- WARN_CFLAGS = @WARN_CFLAGS@
- ac_cv_prog_cxx_works = @ac_cv_prog_cxx_works@
- 
+diff -urN gnome-games-2.0.3.orig/gnotski/Makefile.in gnome-games-2.0.3/gnotski/Makefile.in
+--- gnome-games-2.0.3.orig/gnotski/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/gnotski/Makefile.in	Fri Aug 16 11:23:40 2002
+@@ -140,7 +140,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
 -scoredir = $(DESTDIR)$(localstatedir)/games
 +scoredir = $(localstatedir)/games
  pixmapdir = $(datadir)/pixmaps
  Gamesdir = $(datadir)/applications
  
-@@ -431,66 +431,66 @@
+@@ -468,66 +468,66 @@
  install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-chgrp games $(DESTDIR)$(bindir)/gnotski && chmod 2111 $(DESTDIR)$(bindir)/gnotski
@@ -222,6 +180,50 @@ diff -urN gnome-games-2.0.0.orig/same-gnome/Makefile.in gnome-games-2.0.0/same-g
 +	-touch             $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chown games.games $(DESTDIR)$(scoredir)/gnotski.26.scores
 +	-chmod 664         $(DESTDIR)$(scoredir)/gnotski.26.scores
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+diff -urN gnome-games-2.0.3.orig/gtali/Makefile.in gnome-games-2.0.3/gtali/Makefile.in
+--- gnome-games-2.0.3.orig/gtali/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/gtali/Makefile.in	Fri Aug 16 11:16:16 2002
+@@ -600,7 +600,6 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
+-	-GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gtali.scores
+ 	-chown games.games $(DESTDIR)$(scoredir)/gtali.scores
+diff -urN gnome-games-2.0.3.orig/iagno/Makefile.in gnome-games-2.0.3/iagno/Makefile.in
+--- gnome-games-2.0.3.orig/iagno/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/iagno/Makefile.in	Fri Aug 16 11:16:34 2002
+@@ -654,7 +654,6 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	touch $(DESTDIR)$(scoredir)/iagno.w1.scores
+ 	touch $(DESTDIR)$(scoredir)/iagno.w2.scores
+diff -urN gnome-games-2.0.3.orig/mahjongg/Makefile.in gnome-games-2.0.3/mahjongg/Makefile.in
+--- gnome-games-2.0.3.orig/mahjongg/Makefile.in	Fri Aug 16 11:06:34 2002
++++ gnome-games-2.0.3/mahjongg/Makefile.in	Fri Aug 16 11:16:50 2002
+@@ -638,7 +638,6 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	$(mkinstalldirs) $(DESTDIR)$(bgdir)
+ 	touch $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+diff -urN gnome-games-2.0.3.orig/same-gnome/Makefile.in gnome-games-2.0.3/same-gnome/Makefile.in
+--- gnome-games-2.0.3.orig/same-gnome/Makefile.in	Fri Aug 16 11:06:35 2002
++++ gnome-games-2.0.3/same-gnome/Makefile.in	Fri Aug 16 11:17:20 2002
+@@ -578,7 +578,6 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
+-	GCONF_CONFIG_SOURCE=$(GCONF_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	touch $(DESTDIR)$(scoredir)/same-gnome.scores
+ 	-chown games.games $(DESTDIR)$(scoredir)/same-gnome.scores
