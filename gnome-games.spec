@@ -40,6 +40,7 @@ Requires:	librsvg >= 1:2.8.1
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
+Obsoletes:	gnome-games-static
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
