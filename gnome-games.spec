@@ -10,11 +10,12 @@ Summary(wa):	Djeus po GNOME
 Summary(zh_CN):	GNOME”Œœ∑
 Name:		gnome-games
 Version:	1.4.0.4
-Release:	7
+Release:	8
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-games/1.4/%{name}-%{version}.tar.gz
+# Source0-md5:	76765679554b4b14c56c260081654514
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-scrollkeeper.patch
 Patch2:		%{name}-ac_fix.patch
