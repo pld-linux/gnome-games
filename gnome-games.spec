@@ -6,12 +6,12 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.0.1
-Release:	0
+Version:	2.0.3
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/gnome-games/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/gnome-games/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-makefile.patch
 BuildRequires:	scrollkeeper
 PreReq:		scrollkeeper
@@ -126,6 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gataxx
 %attr(755,root,root) %{_bindir}/sol
 %attr(2755,root,games) %{_bindir}/glines
+%attr(2755,root,games) %{_bindir}/gnect
 %attr(2755,root,games) %{_bindir}/gnibbles
 %attr(2755,root,games) %{_bindir}/gnobots2
 %attr(2755,root,games) %{_bindir}/gnome-stones
