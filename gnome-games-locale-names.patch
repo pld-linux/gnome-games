@@ -1,12 +1,12 @@
-diff -urN gnome-games-2.6.1.orig/configure.in gnome-games-2.6.1/configure.in
---- gnome-games-2.6.1.orig/configure.in	2004-04-20 09:52:14.184531736 +0200
-+++ gnome-games-2.6.1/configure.in	2004-04-20 09:52:26.698629304 +0200
-@@ -84,7 +84,7 @@
+diff -aurN gnome-games-2.7.3.orig/configure.in gnome-games-2.7.3/configure.in
+--- gnome-games-2.7.3.orig/configure.in	2004-06-07 11:33:25.000000000 +0200
++++ gnome-games-2.7.3/configure.in	2004-06-07 19:27:31.649407960 +0200
+@@ -87,7 +87,7 @@
  GETTEXT_PACKAGE=gnome-games
  AC_SUBST(GETTEXT_PACKAGE)
  AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext package name])
--ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl gu he hi hr hu id it ja ko lt lv mk ml mn ms nl nn no pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv tr uk vi wa zh_CN zh_TW"
-+ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl gu he hi hr hu id it ja ko lt lv mk ml mn ms nb nl nn pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv tr uk vi wa zh_CN zh_TW"
+-ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl gu he hi hr hu id is it ja ko lt lv mk ml mn ms nl nn no pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta tr uk vi wa zh_CN zh_TW"
++ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl gu he hi hr hu id is it ja ko lt lv mk ml mn ms nb nl nn pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta tr uk vi wa zh_CN zh_TW"
  AM_GLIB_GNU_GETTEXT
  # Since there is controversy over using it, we will check for it.
  AC_CHECK_FUNCS(ngettext)
