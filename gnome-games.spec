@@ -10,16 +10,17 @@ License:	LGPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
-Patch0:		gnome-games-applnk.patch
+Patch0:		gnome-games-DESTDIR.patch
 Icon:		gnome-games.gif
-BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
+BuildRequires:	automake
+BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	guile-devel >= 1.3
-BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	readline-devel
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
@@ -74,7 +75,6 @@ Biblioteki statyczne do GNOME games
 %build
 gettextize --copy --force
 automake
-autoconf
 LDFLAGS="-s"; export LDFLAGS
 %configure 
 
@@ -83,14 +83,16 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR=$RPM_BUILD_ROOT
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	Gamesdir=%{_applnkdir}/Games
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*so.*.* \
 	$RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.so*
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome --all-name
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -135,31 +137,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sol-games
 %{_datadir}/xbill
 
+%{_datadir}/gnome-stonesrc
+%lang(ko) %{_datadir}/gnome-stonesrc.ko
+
 %{_datadir}/mime-info/*
 %{_datadir}/pixmaps/*
 %{_datadir}/sounds/*
 
-%{_datadir}/gnome-stonesrc
-%lang(ko) %{_datadir}/gnome-stonesrc.ko
-
 %{_applnkdir}/Games/*.desktop
-
-%dir %{_datadir}/gnome/help/aisleriot
-%{_datadir}/gnome/help/aisleriot/C
-
-%dir %{_datadir}/gnome/help/gnobots2
-%{_datadir}/gnome/help/gnobots2/C
-%lang(es) %{_datadir}/gnome/help/gnobots2/es
-%lang(it) %{_datadir}/gnome/help/gnobots2/it
-
-%dir %{_datadir}/gnome/help/gtali
-%{_datadir}/gnome/help/gtali/C
-
-%dir %{_datadir}/gnome/help/gturing
-%{_datadir}/gnome/help/gturing/C
-
-%dir %{_datadir}/gnome/help/samegnome
-%{_datadir}/gnome/help/samegnome/C
 
 %attr(664,root,games) %{_localstatedir}/games/*
 
@@ -167,7 +152,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so
 %{_includedir}/*
 
 %files static
