@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.8.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -534,6 +534,7 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %{_pixmapsdir}/gnome-games-common
+%{_pixmapsdir}/iagno/classic.png
 
 %files blackjack
 %defattr(644,root,root,755)
@@ -710,6 +711,7 @@ fi
 %{_omf_dest_dir}/%{name}/iagno-C.omf
 %{_pixmapsdir}/iagno
 %{_pixmapsdir}/iagno.png
+%exclude %{_pixmapsdir}/iagno/classic.png
 %dir %{_gnomehelpdir}/iagno
 %{_gnomehelpdir}/iagno/C
 
