@@ -50,22 +50,21 @@ diff -urN gnome-games-1.4.0.org/gnibbles/Makefile.am gnome-games-1.4.0/gnibbles/
  	-chmod 664 $(DESTDIR)$(scoredir)/gnibbles.1.1.scores
 -	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2111 $(DESTDIR)$(bindir)/gnibbles
 +	-chgrp games $(DESTDIR)$(bindir)/gnibbles && chmod 2755 $(DESTDIR)$(bindir)/gnibbles
---- gnome-games-1.4.0.3/gnobots2/Makefile.am.orig	Sat Jul  7 08:29:09 2001
-+++ gnome-games-1.4.0.3/gnobots2/Makefile.am	Thu Aug  9 18:10:34 2001
+--- gnome-games-1.4.0.4/gnobots2/Makefile.am.orig	Fri Jul 13 00:56:09 2001
++++ gnome-games-1.4.0.4/gnobots2/Makefile.am	Sat May 25 10:54:35 2002
 @@ -90,8 +90,8 @@
              fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
              fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
              fname3=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-super-safe.scores; \
--	    touch echo $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
--	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname2; \
--	    touch echo $$fname3; chmod 664 $$fname3; chown games:games $$fname3; \
-+	    touch echo $$fname1; chmod 664 $$fname1; chgrp games $$fname1; \
-+	    touch echo $$fname2; chmod 664 $$fname2; chgrp games $$fname2; \
-+	    touch echo $$fname3; chmod 664 $$fname3; chgrp games $$fname3; \
+-	    touch $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
+-	    touch $$fname2; chmod 664 $$fname2; chown games:games $$fname2; \
+-	    touch $$fname3; chmod 664 $$fname3; chown games:games $$fname3; \
++	    touch $$fname1; chmod 664 $$fname1; chgrp games $$fname1; \
++	    touch $$fname2; chmod 664 $$fname2; chgrp games $$fname2; \
++	    touch $$fname3; chmod 664 $$fname3; chgrp games $$fname3; \
  	    done
 -	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2111 $(DESTDIR)$(bindir)/gnobots2
 +	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2755 $(DESTDIR)$(bindir)/gnobots2
-diff -urN gnome-games-1.4.0.org/gnome-stones/Makefile.am gnome-games-1.4.0/gnome-stones/Makefile.am
 --- gnome-games-1.4.0.org/gnome-stones/Makefile.am	Fri Mar 23 16:21:56 2001
 +++ gnome-games-1.4.0/gnome-stones/Makefile.am	Fri Mar 23 16:22:27 2001
 @@ -67,9 +67,9 @@
