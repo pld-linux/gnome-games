@@ -114,7 +114,7 @@
 @@ -1,5 +1,5 @@
  
 -Gamesdir = $(datadir)/gnome/apps/Games
-+Gamesdir = $(datadir)/applnk/Games/Arcade
++Gamesdir = $(datadir)/applnk/Games
  scoredir=$(localstatedir)/games
  
  SUBDIRS = pix help
