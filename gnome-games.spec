@@ -14,6 +14,7 @@ Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-games/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-scrollkeeper.patch
+Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -82,6 +83,7 @@ Biblioteki statyczne do GNOME games.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 gettextize --copy --force
