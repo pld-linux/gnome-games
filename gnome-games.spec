@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.10.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -23,13 +23,13 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	guile-devel >= 1.6.5
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	howl-devel >= 0.9.6
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.5.0
-BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.9.5
 BuildRequires:	libstdc++-devel
@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
-Requires:	gnome-vfs2 >= 2.10.0
+Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	librsvg >= 1:2.9.5
 Obsoletes:	gnect
 Obsoletes:	gnome
