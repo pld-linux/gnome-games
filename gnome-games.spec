@@ -24,6 +24,7 @@ BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	gob2 >= 2.0.0
 BuildRequires:	guile-devel >= 1.6.5
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	howl-devel >= 0.9.6
