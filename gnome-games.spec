@@ -61,7 +61,7 @@ Summary(pl):	Pliki nag³ówkowe do tworzenia programów opartych o GNOME games
 Summary(ru):	æÁÊÌÙ ÒÁÚÒÁÂÏÔËÉ ÉÇÒ ĞÏÄ GNOME
 Summary(uk):	æÁÊÌÉ ÒÏÚÒÏÂËÉ ¦ÇÒ Ğ¦Ä GNOME
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	gtk+2-devel
 
 %description devel
@@ -84,7 +84,7 @@ Pliki nag³ówkowe do tworzenia programów opartych o GNOME games.
 Summary:	GNOME games static libraries
 Summary(pl):	Biblioteki statyczne do GNOME games
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 GNOME games static libraries.
