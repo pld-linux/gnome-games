@@ -32,7 +32,7 @@ BuildRequires:	libglade2-devel >= 1:2.4.0
 BuildRequires:	libgnome-devel >= 2.7.92
 BuildRequires:	libgnomeui-devel >= 2.7.92
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg >= 1:2.8.1
+BuildRequires:	librsvg-devel >= 1:2.8.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	scrollkeeper >= 0.3.8
