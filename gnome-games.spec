@@ -21,6 +21,7 @@ Patch5:		%{name}-fix-help-paths.patch
 Patch6:		%{name}-am16.patch
 Patch7:		%{name}-xbill.patch
 Patch8:		%{name}-omf.patch
+Patch8:		%{name}-gnome-stones_modules_fixes.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
@@ -120,6 +121,7 @@ Biblioteki statyczne do GNOME games.
 %patch7 -p1
 mv xbill/xbill.png xbill/gnome-xbill.png
 %patch8 -p1
+%patch9 -p1
 
 %build
 rm -f missing
@@ -177,9 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_libdir}/gnome-stones
-%dir %{_libdir}/gnome-stones/objects
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so*
-%attr(644,root,root) %{_libdir}/gnome-stones/objects/lib*.la
+%attr(755,root,root) %{_libdir}/gnome-stones/lib*.so
 
 %{_datadir}/gnibbles
 %{_datadir}/gnobots2
@@ -203,7 +203,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(644,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/*
 
 %files static
