@@ -1,18 +1,19 @@
-Summary:     GNOME games
-Summary(pl): GNOME - Gry
-Name:        gnome-games
-Version:     0.99.1
-Release:     1
-Copyright:   LGPL
-Group:       X11/Libraries
-Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
-Patch0:      gnome-games-DESTDIR.patch
-Icon:        gnome-games.gif
-Requires:    gnome-libs = 0.99.2, ORBit = 0.3.91, libaudiofile = 0.1.5
-Requires:    glib = 1.1.12, gtk+ = 1.1.12, guile = 1.3, esound = 0.2.7
-URL:         http://www.gnome.org
+Summary:	GNOME games
+Summary(pl):	GNOME - Gry
+Name:		gnome-games
+Version:	1.0.2
+Release:	1
+Copyright:	LGPL
+Group:		X11/GNOME
+Group(pl):	X11/GNOME
+Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
+Icon:		gnome-games.gif
+Requires:	gnome-libs >= 1.0.0, ORBit >= 0.4.3, libaudiofile >= 0.1.5
+Requires:	glib >= 1.2.0, gtk+ >= 1.2.0, guile >= 1.3, esound >= 0.2.7
+BuildPrereq:	gnome-libs-devel
+URL:		http://www.gnome.org
 BuildRoot:	/tmp/%{name}-%{version}-root
-Obsoletes:   gnome
+Obsoletes:	gnome
 
 %description
 GNOME games.
@@ -25,10 +26,11 @@ using your computer easy, powerful, and easy to configure.
 Gry pod GNOME.
 
 %package devel
-Summary:     GNOME games libraries - header files
-Summary(pl): Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
-Group:       X11/Libraries
-Requires:    %{name} = %{version}
+Summary:	GNOME games libraries - header files
+Summary(pl):	Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:	%{name} = %{version}
 
 %description devel
 GNOME games libraries - header files.
@@ -39,10 +41,11 @@ Right now this is just stuff to develop care games. I think.
 Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
 
 %package static
-Summary:     GNOME games static libraries
-Summary(pl): Biblioteki statyczne do GNOME games
-Group:       X11/Libraries
-Requires:    %{name}-devel = %{version}
+Summary:	GNOME games static libraries
+Summary(pl):	Biblioteki statyczne do GNOME games
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
 
 %description static
 GNOME games static libraries.
@@ -52,13 +55,12 @@ Biblioteki statyczne do GNOME games
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target_platform} \
 	--prefix=/usr/X11R6 \
-	--sysconfdir=/etc/GNOME \
+	--sysconfdir=/etc/X11/GNOME \
 	--localstatedir=/var
 
 make
@@ -70,16 +72,20 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 strip $RPM_BUILD_ROOT/usr/X11R6/{bin/*,lib/lib*so.*.*}
 
+gzip -9nf AUTHORS ChangeLog NEWS README
+
+%find_lang %{name}
+
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -n gnome-games.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
-%config /etc/GNOME/sound/events/*
+%doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
+%config /etc/X11/GNOME/sound/events/*
 
 %attr(755,root,  root) /usr/X11R6/bin/GnomeScott
 %attr(755,root,  root) /usr/X11R6/bin/cyahtzee
@@ -102,20 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/share/apps/Games/*
 /usr/X11R6/share/gnome/help/*
 
-%lang(cs) /usr/X11R6/share/locale/cs/LC_MESSAGES/gnome-games.mo
-%lang(da) /usr/X11R6/share/locale/da/LC_MESSAGES/gnome-games.mo
-%lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/gnome-games.mo
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-games.mo
-%lang(fi) /usr/X11R6/share/locale/fi/LC_MESSAGES/gnome-games.mo
-%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-games.mo
-%lang(ga) /usr/X11R6/share/locale/ga/LC_MESSAGES/gnome-games.mo
-%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gnome-games.mo
-%lang(ja) /usr/X11R6/share/locale/ja/LC_MESSAGES/gnome-games.mo
-%lang(ko) /usr/X11R6/share/locale/ko/LC_MESSAGES/gnome-games.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-games.mo
-%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gnome-games.mo
-%lang(pl) /usr/X11R6/share/locale/pl/LC_MESSAGES/gnome-games.mo
-
 %attr(664, games, games) /var/games/*
 
 %files devel
@@ -127,6 +119,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(664,root,root) /usr/X11R6/lib/lib*.a
 
 %changelog
+* Wed Jun  9 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [1.0.2-1]
+- added find_lang macro
+
 * Tue Jan 05 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.99.1-1]
 - added LDFLAGS="-s" to ./configure enviroment,
