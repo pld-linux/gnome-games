@@ -124,7 +124,7 @@
  scoredir=$(localstatedir)/games
  pixmapdir=$(datadir)/pixmaps/iagno
 -Gamesdir = $(datadir)/gnome/apps/Games
-+Gamesdir = $(datadir)/applnk/Games
++Gamesdir = $(datadir)/applnk/Games/Board
  appicondir=$(datadir)/pixmaps
  
  INCLUDES = 			\
@@ -171,3 +171,28 @@
  Games_DATA     = gnect.desktop
  
  soundlistdir   = $(sysconfdir)/sound/events
+--- gnome-games-1.4.0.4/gataxx/gataxx.desktop~	Wed Nov 13 18:45:59 2002
++++ gnome-games-1.4.0.4/gataxx/gataxx.desktop	Wed Nov 13 18:45:59 2002
+@@ -1,21 +1,6 @@
+ [Desktop Entry]
+ Icon=gataxx.png
+-Name=gataxx
+-Name[pt_BR]=gataxx
+-Name[da]=gataxx
+-Name[de]=gataxx
+-Name[el]=gataxx
+-Name[et]=gataxx
+-Name[fi]=gataxx
+-Name[fr]=gataxx
+-Name[gl]=gataxx
+-Name[hu]=gataxx
+-Name[ja]=gataxx
+-Name[lt]=gataxx
+-Name[no]=gataxx
+-Name[sk]=gataxx
+-Name[sv]=gataxx
+-Name[zh_TW]=gataxx
++Name=Gataxx
+ Comment=Gnome ataxx game
+ Comment[pt_BR]=Jogo attax Gnome
+ Comment[da]=Ataxx-spil til Gnome
