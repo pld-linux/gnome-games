@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.7.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -411,7 +411,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/glines-C.omf
 %{_pixmapsdir}/glines
 %{_pixmapsdir}/glines.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/glines.*
 %dir %{_gnomehelpdir}/glines
 %{_gnomehelpdir}/glines/C
 
@@ -439,7 +439,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/gnibbles-C.omf
 %{_pixmapsdir}/gnibbles
 %{_pixmapsdir}/gnome-nibbles.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnibbles.*
 %dir %{_gnomehelpdir}/gnibbles
 %{_gnomehelpdir}/gnibbles/C
 
@@ -459,7 +459,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/gnome-gnobots2.png
 %{_pixmapsdir}/rteleport.png
 %{_pixmapsdir}/teleport.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnobots2.*
 %dir %{_gnomehelpdir}/gnobots2
 %{_gnomehelpdir}/gnobots2/C
 %lang(da) %{_gnomehelpdir}/gnobots2/da
@@ -483,7 +483,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/gnome-stones-C.omf
 %{_pixmapsdir}/gnome-stones
 %{_pixmapsdir}/gnome-stones*.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnome-stones.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnome-stones.*
 %dir %{_gnomehelpdir}/gnome-stones
 %{_gnomehelpdir}/gnome-stones/C
 
@@ -495,7 +495,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/gnometris-C.omf
 %{_pixmapsdir}/gnometris
 %{_pixmapsdir}/gnome-gtetris.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnometris.*
 %dir %{_gnomehelpdir}/gnometris
 %{_gnomehelpdir}/gnometris/C
 
@@ -507,7 +507,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/gnomine-C.omf
 %{_pixmapsdir}/gnomine
 %{_pixmapsdir}/gnome-gnomine.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnomine.*
 %dir %{_gnomehelpdir}/gnomine
 %{_gnomehelpdir}/gnomine/C
 
@@ -518,7 +518,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/gnotravex.desktop
 %{_omf_dest_dir}/%{name}/gnotravex-C.omf
 %{_pixmapsdir}/gnome-gnotravex.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gnotravex.*
 %dir %{_gnomehelpdir}/gnotravex
 %{_gnomehelpdir}/gnotravex/C
 
@@ -531,7 +531,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
 %{_pixmapsdir}/gnome-die*.png
 %{_pixmapsdir}/gnome-gtali.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/gtali.*
 %dir %{_gnomehelpdir}/gtali
 %{_gnomehelpdir}/gtali/C
 %lang(da) %{_gnomehelpdir}/gtali/da
@@ -557,7 +557,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/mahjongg-C.omf
 %{_pixmapsdir}/mahjongg
 %{_pixmapsdir}/gnome-mahjongg.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/mahjongg.*
 %dir %{_gnomehelpdir}/mahjongg
 %{_gnomehelpdir}/mahjongg/C
 
@@ -569,7 +569,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_omf_dest_dir}/%{name}/same-gnome-C.omf
 %{_pixmapsdir}/same-gnome
 %{_pixmapsdir}/gnome-gsame.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
+%attr(664,root,games) %config(noreplace) %{_localstatedir}/games/same-gnome.*
 %dir %{_gnomehelpdir}/same-gnome
 %{_gnomehelpdir}/same-gnome/C
 
