@@ -398,3 +398,11 @@ diff -urN gnome-games-1.4.0.org/xbill/Makefile.am gnome-games-1.4.0/xbill/Makefi
 +Gamesdir = $(datadir)/gnome/apps/Games
 +Games_DATA = sol.desktop
  
+--- gnome-games-1.4.0.3/gnotski/Makefile.am~	Fri May 24 19:00:35 2002
++++ gnome-games-1.4.0.3/gnotski/Makefile.am	Fri May 24 19:00:35 2002
+@@ -1,4 +1,4 @@
+-scoredir=$(DESTDIR)$(localstatedir)/games
++scoredir=$(localstatedir)/games
+ pixmapdir=$(datadir)/pixmaps
+ Gamesdir=$(datadir)/applnk/Games
+ 
