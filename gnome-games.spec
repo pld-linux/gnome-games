@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.5.7
+Version:	2.5.8
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	3051bcaf4cbf31327e2007cd9c6d9170
+# Source0-md5:	7d0abab72afc16fdddd71cdee0626732
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
@@ -22,7 +22,7 @@ BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-vfs2-devel >= 2.5.6
 BuildRequires:	guile-devel >= 1.6.0
-BuildRequires:	gtk+2-devel >= 1:2.3.1
+BuildRequires:	gtk+2-devel >= 2:2.3.5
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnome-devel >= 2.5.1
@@ -70,7 +70,7 @@ Summary(ru):	Файлы разработки игр под GNOME
 Summary(uk):	Файли розробки ╕гр п╕д GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gtk+2-devel >= 2.3.1
+Requires:	gtk+2-devel >= 2:2.3.5
 
 %description devel
 GNOME games libraries - header files.
