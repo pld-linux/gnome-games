@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.6.2
-Release:	4
+Release:	5
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
