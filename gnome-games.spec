@@ -18,10 +18,10 @@ Patch2:		%{name}-ac_fix.patch
 Icon:		gnome-games.gif
 BuildRequires:	ORBit >= 0.4.3
 BuildRequires:	audiofile-devel >= 0.1.5
-BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	gettext-devel
+BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.13
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	guile-devel >= 1.3
@@ -52,7 +52,7 @@ Gry pod GNOME.
 
 %package devel
 Summary:	GNOME games libraries - header files
-Summary(pl):	Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
+Summary(pl):	Pliki nag³ówkowe do tworzenia programów opartych o GNOME games
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -64,8 +64,8 @@ GNOME games libraries - header files.
 
 Right now this is just stuff to develop care games. I think.
 
-%description -l pl devel
-Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
+%description devel -l pl
+Pliki nag³ówkowe do tworzenia programów opartych o GNOME games.
 
 %package static
 Summary:	GNOME games static libraries
@@ -78,7 +78,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 GNOME games static libraries.
 
-%description static
+%description static -l pl
 Biblioteki statyczne do GNOME games.
 
 %prep
@@ -94,7 +94,7 @@ gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 autoconf
 automake -a -c
-%configure 
+%configure
 
 %{__make}
 
@@ -166,7 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Games/*.desktop
 
 %{_omf_dest_dir}/omf/%{name}
-%attr(664,root,games) %{_localstatedir}/games/*
+%attr(664,root,games) %ghost %{_localstatedir}/games/*
 
 %files devel
 %defattr(644,root,root,755)
