@@ -27,6 +27,7 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.13
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
