@@ -1,6 +1,7 @@
 Summary:	GNOME games
 Summary(es):	Juegos de GNOME
 Summary(fr):	Jeux pour GNOME
+Summary(ko):	╠вЁП ╟тюс╣И
 Summary(pl):	GNOME - gry
 Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
@@ -209,4 +210,4 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
-%{_libdir}/gnome-stones/objects/lib*.a
+%{_libdir}/gnome-stones/lib*.a
