@@ -7,7 +7,7 @@ Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.6.2
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -142,32 +142,25 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/scrollkeeper-update
 %gconf_schema_install
 
-for i in glines.scores gnibbles.1.0.scores gnibbles.1.1.scores \
-	gnibbles.2.0.scores gnibbles.2.1.scores gnibbles.3.0.scores \
-	gnibbles.3.1.scores gnibbles.4.0.scores gnibbles.4.1.scores \
-	gnobots2.classic_robots-safe.scores \
-	gnobots2.classic_robots-super-safe.scores \
-	gnobots2.classic_robots.scores gnobots2.nightmare-safe.scores \
-	gnobots2.nightmare-super-safe.scores gnobots2.nightmare.scores \
-	gnobots2.robots2-safe.scores gnobots2.robots2-super-safe.scores \
-	gnobots2.robots2.scores gnobots2.robots2_easy-safe.scores \
-	gnobots2.robots2_easy-super-safe.scores gnobots2.robots2_easy.scores \
-	gnobots2.robots_with_safe_teleport-safe.scores \
-	gnobots2.robots_with_safe_teleport-super-safe.scores \
-	gnobots2.robots_with_safe_teleport.scores gnome-stones.scores \
-	gnometris.scores gnomine.Custom.scores gnomine.Large.scores \
-	gnomine.Medium.scores gnomine.Small.scores gnotravex.2x2.scores \
-	gnotravex.3x3.scores gnotravex.4x4.scores gnotravex.5x5.scores \
-	gnotravex.6x6.scores gnotski.1.scores gnotski.11.scores \
-	gnotski.12.scores gnotski.13.scores gnotski.14.scores \
-	gnotski.15.scores gnotski.16.scores gnotski.17.scores gnotski.2.scores \
-	gnotski.21.scores gnotski.22.scores gnotski.23.scores \
-	gnotski.24.scores gnotski.25.scores gnotski.26.scores gnotski.3.scores \
-	gnotski.4.scores gnotski.5.scores gnotski.6.scores gnotski.7.scores \
-	gtali.scores mahjongg.bridges.scores mahjongg.cloud.scores \
-	mahjongg.confounding.scores mahjongg.difficult.scores \
-	mahjongg.dragon.scores mahjongg.easy.scores mahjongg.pyramid.scores \
-	mahjongg.tictactoe.scores same-gnome.scores; do
+for i in glines gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 \
+	gnibbles.3.0 gnibbles.3.1 gnibbles.4.0 gnibbles.4.1 \
+	gnobots2.classic_robots-safe gnobots2.classic_robots-super-safe \
+	gnobots2.classic_robots gnobots2.nightmare-safe \
+	gnobots2.nightmare-super-safe gnobots2.nightmare \
+	gnobots2.robots2-safe gnobots2.robots2-super-safe \
+	gnobots2.robots2 gnobots2.robots2_easy-safe \
+	gnobots2.robots2_easy-super-safe gnobots2.robots2_easy \
+	gnobots2.robots_with_safe_teleport-safe \
+	gnobots2.robots_with_safe_teleport-super-safe \
+	gnobots2.robots_with_safe_teleport gnome-stones gnometris \
+	gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small \
+	gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
+	gnotravex.6x6 gnotski.1 gnotski.11 gnotski.12 gnotski.13 gnotski.14 \
+	gnotski.15 gnotski.16 gnotski.17 gnotski.2 gnotski.21 gnotski.22 \
+	gnotski.23 gnotski.24 gnotski.25 gnotski.26 gnotski.3 gnotski.4 \
+	gnotski.5 gnotski.6 gnotski.7 gtali mahjongg.bridges mahjongg.cloud \
+	mahjongg.confounding mahjongg.difficult mahjongg.dragon mahjongg.easy \
+	mahjongg.pyramid mahjongg.tictactoe same-gnome; do
 	if [ ! -f %{_gamesdir}/$i.scores ]; then
 		touch %{_gamesdir}/$i.scores
 		chown root:games %{_gamesdir}/$i.scores
