@@ -30,8 +30,7 @@ BuildRequires:	libtool
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	readline-devel
 BuildRequires:	scrollkeeper
-Prereq:		/sbin/ldconfig
-Prereq:		scrollkeeper
+PreReq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnome
