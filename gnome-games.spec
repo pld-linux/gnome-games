@@ -28,8 +28,8 @@ Gry pod GNOME.
 %package devel
 Summary:	GNOME games libraries - header files
 Summary(pl):	Pliki nag³ówkowedo tworzenia programów opartych o GNOME games
-Group:		X11/Development/Libraries
-Group(pl):	X11/Programowanie/Biblioteki
+Group:		X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -43,8 +43,8 @@ Pliki nag³ówkowedo tworzenia programów opartych o GNOME games.
 %package static
 Summary:	GNOME games static libraries
 Summary(pl):	Biblioteki statyczne do GNOME games
-Group:		X11/Development/Libraries
-Group(pl):	X11/Programowanie/Biblioteki
+Group:		X11/GNOME/Development/Libraries
+Group(pl):	X11/GNOME/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -82,7 +82,7 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n gnome-games.lang
+%files -f gnome-games.lang
 %defattr(644,root,root,755)
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
 %config /etc/X11/GNOME/sound/events/*
