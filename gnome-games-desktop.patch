@@ -1,165 +1,1110 @@
---- gnome-games-2.6.2/aisleriot/freecell.desktop.in~	2004-08-24 04:49:40.000000000 +0200
-+++ gnome-games-2.6.2/aisleriot/freecell.desktop.in	2004-08-24 04:49:40.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-cardgame.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;CardGame;
-+Categories=GTK;GNOME;Game;CardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=aisleriot
---- gnome-games-2.6.2/aisleriot/sol.desktop.in~	2004-08-24 04:49:50.000000000 +0200
-+++ gnome-games-2.6.2/aisleriot/sol.desktop.in	2004-08-24 04:49:50.000000000 +0200
-@@ -6,7 +6,7 @@
+diff -ur gnome-games-1.4.0.4.orig/aisleriot/sol.desktop gnome-games-1.4.0.4/aisleriot/sol.desktop
+--- gnome-games-1.4.0.4.orig/aisleriot/sol.desktop	Tue Sep  4 22:05:56 2001
++++ gnome-games-1.4.0.4/aisleriot/sol.desktop	Thu Dec 18 22:09:56 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=AisleRiot
+-Name[pt_BR]=AisleRiot
+ Name[da]=AisleRiot
+ Name[de]=AisleRiot
+ Name[el]=AisleRiot
+@@ -13,30 +12,34 @@
+ Name[lt]=AisleRiot
+ Name[no]=AisleRiot
+ Name[pt]=AisleRiot
+-Name[ru]=áÊÓÅÌÅÒÉÏÔ
++Name[pt_BR]=AisleRiot
++Name[ru]=ĞĞ¹ÑĞµĞ»ĞµÑ€Ğ¸Ğ¾Ñ‚
+ Name[sk]=AisleRiot
+ Name[sv]=AisleRiot
+ Name[tr]=Yedili
+ Name[zh_TW]=AisleRiot
+-Comment=Card-based Solitaire suite.
+-Comment[pt_BR]=Jogo de Paciência
++Comment=Card-based Solitaire suite
+ Comment[da]=Samling af kabale-kortspil
+ Comment[de]=Sammlung von Patiencen
+-Comment[el]=ÏìÜäá ğáé÷íéäéşí ìå ôñÜğïõëá ôığïõ ğáóéİíôæá
++Comment[el]=ÎŸÎ¼Î¬Î´Î± Ï€Î±Î¹Ï‡Î½Î¹Î´Î¹ÏÎ½ Î¼Îµ Ï„ÏÎ¬Ï€Î¿Ï…Î»Î± Ï„ÏÏ€Î¿Ï… Ï€Î±ÏƒÎ¹Î­Î½Ï„Î¶Î±
+ Comment[es]=Conjunto de juegos de cartas de tipo solitario
+-Comment[et]=Valik pasjansimänge
+-Comment[fi]=Gnome-pasianssipelipaketti
++Comment[et]=Valik pasjansimÃ¤nge
++Comment[fi]=GNOME-pasianssipelipaketti
+ Comment[fr]=Ensemble de jeux de cartes du type solitaire
+ Comment[gl]=Conxunto de xogos de cartas tipo solitario
+-Comment[ja]=¥È¥é¥ó¥×¤ò»È¤Ã¤¿¥½¥ê¥Æ¥¢¡£
+-Comment[lt]=Kortø şaidimø - soliteriø - rinkinys
++Comment[ja]=ãƒˆãƒ©ãƒ³ãƒ—ã‚’ä½¿ã£ãŸã‚½ãƒªãƒ†ã‚¢ã€‚
++Comment[lt]=KortÅ³ Å¾aidimÅ³ - soliteriÅ³ - rinkinys
+ Comment[no]=Samling av Solitaire kortspill
+-Comment[ru]=ëÏÌÌÅËÃÉÑ ĞÁÓØÑÎÓÏ×
+-Comment[sk]=Zbierka solitérovıch kartovıch hier
++Comment[pl]=ZbiÃ³r pasjansÃ³w dla GNOME
++Comment[pt_BR]=Jogo de PaciÃªncia
++Comment[ru]=ĞšĞ¾Ğ»Ğ»ĞµĞºÑ†Ğ¸Ñ Ğ¿Ğ°ÑÑŒÑĞ½ÑĞ¾Ğ²
++Comment[sk]=Zbierka solitÃ©rovÃ½ch kartovÃ½ch hier
+ Comment[sv]=Samling med patiensspel
+ Comment[tr]=Yedili oyunu
+-Comment[zh_TW]=¯ÈµP Solitaire ¹CÀ¸¶°
++Comment[zh_TW]=ç´™ç‰Œ Solitaire éŠæˆ²é›†
+ Exec=sol
  Icon=gnome-aisleriot.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;CardGame;
-+Categories=GTK;GNOME;Game;CardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=aisleriot
---- gnome-games-2.6.2/gataxx/gataxx.desktop.in~	2004-08-24 04:50:07.000000000 +0200
-+++ gnome-games-2.6.2/gataxx/gataxx.desktop.in	2004-08-24 04:50:07.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/freecell/src/freecell.desktop gnome-games-1.4.0.4/freecell/src/freecell.desktop
+--- gnome-games-1.4.0.4.orig/freecell/src/freecell.desktop	Tue Sep  4 22:05:56 2001
++++ gnome-games-1.4.0.4/freecell/src/freecell.desktop	Thu Dec 18 22:12:49 2003
+@@ -1,49 +1,52 @@
+ [Desktop Entry]
+ Name=FreeCell
+-Name[pt_BR]=FreeCell
+ Name[cs]=FreeCell
+ Name[da]=Napoleon
+ Name[de]=FreeCell
+ Name[el]=FreeCell
+ Name[es]=FreeCell
+ Name[et]=Freecell
+-Name[fi]=Vapaakenttä
++Name[fi]=VapaakenttÃ¤
+ Name[fr]=FreeCell
+ Name[gl]=FreeCell
+-Name[ja]=¥Õ¥ê¡¼¥»¥ë
+-Name[ko]=ÇÁ¸®¼¿
++Name[ja]=ãƒ•ãƒªãƒ¼ã‚»ãƒ«
++Name[ko]=í”„ë¦¬ì…€
+ Name[lt]=FreeCell
+ Name[no]=Freecell
+ Name[pt]=Freecell
+-Name[ru]=æÒÉÓÅÌÌ
++Name[pt_BR]=FreeCell
++Name[ru]=Ğ¤Ñ€Ğ¸ÑĞµĞ»Ğ»
+ Name[sk]=FreeCell
+-Name[sv]=Napoleon på S:t Helena
+-Name[tr]=İskambil falı
++Name[sv]=Napoleon pÃ¥ S:t Helena
++Name[tr]=Ä°skambil falÄ±
+ Name[wa]=Freecell
+ Name[zh_TW]=FreeCell
+ Comment=FreeCell Game
+ Comment[cs]=Hra FreeCell
+-Comment[da]=Kortspillet Napoleon - også kaldet FreeCell
+-Comment[de]=Gnome-Variante von FreeCell
+-Comment[el]=Ôï ğáé÷íßäé FreeCell
++Comment[da]=Kortspillet Napoleon - ogsÃ¥ kaldet FreeCell
++Comment[de]=GNOME-Variante von FreeCell
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ FreeCell
+ Comment[es]=Juego FreeCell
+-Comment[et]=Kaardimäng freecell
+-Comment[fi]=Vapaakenttä-pasianssi
++Comment[et]=KaardimÃ¤ng freecell
++Comment[fi]=VapaakenttÃ¤-pasianssi
+ Comment[fr]=Variante GNOME du Jeu FreeCell
+ Comment[gl]=Xogo FreeCell
+-Comment[ja]=¥Õ¥ê¡¼¥»¥ë
+-Comment[ko]=ÇÁ¸®¼¿
+-Comment[lt]=FreeCell kortø şaidimas
++Comment[ja]=ãƒ•ãƒªãƒ¼ã‚»ãƒ«
++Comment[ko]=í”„ë¦¬ì…€
++Comment[lt]=FreeCell kortÅ³ Å¾aidimas
+ Comment[no]=Kortspillet Freecell
++Comment[pl]=Gra FreeCell dla GNOME
+ Comment[pt]=Variante GNOME de FreeCell
+ Comment[pt_BR]=Jogo FreeCell
+-Comment[ru]=GNOME ×ÅÒÓÉÑ ÉÇÒÙ ĞÁÓØÑÎÓÁ æÒÉÓÅÌÌ
++Comment[ru]=GNOME Ğ²ĞµÑ€ÑĞ¸Ñ Ğ¸Ğ³Ñ€Ñ‹ Ğ¿Ğ°ÑÑŒÑĞ½ÑĞ° Ğ¤Ñ€Ğ¸ÑĞµĞ»Ğ»
+ Comment[sk]=Hra FreeCell
+-Comment[sv]=Kortspelet Napoleon på S:t Helena
+-Comment[tr]=İskambil falı oyunu
+-Comment[wa]=Li cwårdjeu di Freecell
+-Comment[zh_TW]=FreeCell ¹CÀ¸
++Comment[sv]=Kortspelet Napoleon pÃ¥ S:t Helena
++Comment[tr]=Ä°skambil falÄ± oyunu
++Comment[wa]=Li cwÃ¥rdjeu di Freecell
++Comment[zh_TW]=FreeCell éŠæˆ²
+ Exec=freecell
+ Icon=gnome-cardgame.png
+-Terminal=0
++Terminal=false
+ Type=Application
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gataxx/gataxx.desktop gnome-games-1.4.0.4/gataxx/gataxx.desktop
+--- gnome-games-1.4.0.4.orig/gataxx/gataxx.desktop	Wed Dec 17 22:34:12 2003
++++ gnome-games-1.4.0.4/gataxx/gataxx.desktop	Thu Dec 18 22:00:55 2003
+@@ -1,22 +1,25 @@
+ [Desktop Entry]
+ Icon=gataxx.png
+ Name=Gataxx
+-Comment=Gnome ataxx game
+-Comment[pt_BR]=Jogo attax Gnome
+-Comment[da]=Ataxx-spil til Gnome
+-Comment[de]=Ataxx-Spiel für Gnome
+-Comment[el]=Ôï ğáé÷íßäé ataxx ãéá ôï GNOME
+-Comment[et]=ataxx mäng GNOME-le
+-Comment[fi]=Gnome-ataxx-peli
+-Comment[fr]=Jeu ataxx Gnome
+-Comment[gl]=Xogo ataxx de Gnome
+-Comment[hu]=ataxx játék Gnome alá
+-Comment[ja]=GNOMEÈÇataxx¥²¡¼¥à
+-Comment[lt]=Gnome ataxx şaidimas
+-Comment[no]=Gnome ataxx spill
++Comment=GNOME ataxx game
++Comment[da]=Ataxx-spil til GNOME
++Comment[de]=Ataxx-Spiel fÃ¼r GNOME
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ ataxx Î³Î¹Î± Ï„Î¿ GNOME
++Comment[et]=ataxx mÃ¤ng GNOME-le
++Comment[fi]=GNOME-ataxx-peli
++Comment[fr]=Jeu ataxx GNOME
++Comment[gl]=Xogo ataxx de GNOME
++Comment[hu]=ataxx jÃ¡tÃ©k GNOME alÃ¡
++Comment[ja]=GNOMEç‰ˆataxxã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME ataxx Å¾aidimas
++Comment[no]=GNOME ataxx spill
++Comment[pl]=Gra ataxx dla GNOME
++Comment[pt_BR]=Jogo attax GNOME
+ Comment[sk]=Hra ataxx pre GNOME
+-Comment[sv]=Ataxx-spel för Gnome
+-Comment[zh_TW]=Gnome ataxx ¹CÀ¸
++Comment[sv]=Ataxx-spel fÃ¶r GNOME
++Comment[zh_TW]=GNOME ataxx éŠæˆ²
  Exec=gataxx
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;BoardGame;
-+Categories=GTK;GNOME;Game;BoardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gataxx
---- gnome-games-2.6.2/glines/glines.desktop.in~	2004-08-24 04:50:21.000000000 +0200
-+++ gnome-games-2.6.2/glines/glines.desktop.in	2004-08-24 04:50:21.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/glines/glines.desktop gnome-games-1.4.0.4/glines/glines.desktop
+--- gnome-games-1.4.0.4.orig/glines/glines.desktop	Tue Sep  4 22:05:59 2001
++++ gnome-games-1.4.0.4/glines/glines.desktop	Thu Dec 18 22:08:20 2003
+@@ -1,9 +1,8 @@
+ [Desktop Entry]
+ Name=Glines
+-Name[pt_BR]=Glines
+-Name[da]=Gnome linjer
++Name[da]=GNOME linjer
+ Name[el]=Glines
+-Name[et]=Munamäng
++Name[et]=MunamÃ¤ng
+ Name[fi]=Glines
+ Name[fr]=Glines
+ Name[gl]=Glines
+@@ -11,27 +10,31 @@
+ Name[ja]=Glines
+ Name[lt]=Glines
+ Name[no]=Glines
+-Name[sk]=GÈiary
++Name[pt_BR]=Glines
++Name[sk]=GÄŒiary
+ Name[sv]=Glines
+-Name[tr]=Sıradaki toplar
++Name[tr]=SÄ±radaki toplar
+ Name[zh_TW]=Glines
+-Comment=Gnome color lines
+-Comment[pt_BR]=Linhas coloridas do Gnome
+-Comment[da]=Gnome farvelinjer
+-Comment[el]=¸ã÷ñùìåò ãñáììİò ôïõ GNOME
+-Comment[et]=Värviliste munade rittaseadmine
+-Comment[fi]=Värilliset rivit
+-Comment[fr]=Lignes colorées GNOME
+-Comment[gl]=Liñas de cores de Gnome
+-Comment[hu]=Color lines játék GNOME alá
+-Comment[ja]=GNOMEÈÇ¥«¥é¡¼¥é¥¤¥ó¥²¡¼¥à
+-Comment[lt]=Gnome spalvotas lines şaidimas
+-Comment[no]=Gnome fargelinjer
+-Comment[sk]=Hra farebné èiary pre GNOME
+-Comment[sv]=Gnome färglinjer
+-Comment[tr]=Sıradaki toplar oyunu
+-Comment[zh_TW]=Gnome ÃC¦â±Æ¦C¹CÀ¸
++Comment=GNOME color lines
++Comment[da]=GNOME farvelinjer
++Comment[el]=ÎˆÎ³Ï‡ÏÏ‰Î¼ÎµÏ‚ Î³ÏÎ±Î¼Î¼Î­Ï‚ Ï„Î¿Ï… GNOME
++Comment[et]=VÃ¤rviliste munade rittaseadmine
++Comment[fi]=VÃ¤rilliset rivit
++Comment[fr]=Lignes colorÃ©es GNOME
++Comment[gl]=LiÃ±as de cores de GNOME
++Comment[hu]=Color lines jÃ¡tÃ©k GNOME alÃ¡
++Comment[ja]=GNOMEç‰ˆã‚«ãƒ©ãƒ¼ãƒ©ã‚¤ãƒ³ã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME spalvotas lines Å¾aidimas
++Comment[no]=GNOME fargelinjer
++Comment[pl]=Gra kolorowe linie dla GNOME
++Comment[pt_BR]=Linhas coloridas do GNOME
++Comment[sk]=Hra farebnÃ© Äiary pre GNOME
++Comment[sv]=GNOME fÃ¤rglinjer
++Comment[tr]=SÄ±radaki toplar oyunu
++Comment[zh_TW]=GNOME é¡è‰²æ’åˆ—éŠæˆ²
+ Exec=glines
  Icon=glines.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=glines
---- gnome-games-2.6.2/gnibbles/gnibbles.desktop.in~	2004-08-24 04:50:30.000000000 +0200
-+++ gnome-games-2.6.2/gnibbles/gnibbles.desktop.in	2004-08-24 04:50:30.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnect/data/gnect.desktop gnome-games-1.4.0.4/gnect/data/gnect.desktop
+--- gnome-games-1.4.0.4.orig/gnect/data/gnect.desktop	Wed Dec 17 22:34:12 2003
++++ gnome-games-1.4.0.4/gnect/data/gnect.desktop	Thu Dec 18 00:12:08 2003
+@@ -5,4 +5,7 @@
+ Exec=gnect
+ Type=Application
+ Icon=gnect-icon.png
+-Terminal=0
++Terminal=false
++Encoding=UTF-8
++# vi: encoding=utf-8
++
+diff -ur gnome-games-1.4.0.4.orig/gnibbles/gnibbles.desktop gnome-games-1.4.0.4/gnibbles/gnibbles.desktop
+--- gnome-games-1.4.0.4.orig/gnibbles/gnibbles.desktop	Tue Sep  4 22:06:03 2001
++++ gnome-games-1.4.0.4/gnibbles/gnibbles.desktop	Thu Dec 18 22:00:15 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=Gnibbles
+-Name[pt_BR]=Gnibbles
+ Name[da]=Gnibbles
+ Name[de]=Gnibbles
+ Name[el]=Gnibbles
+@@ -9,38 +8,40 @@
+ Name[fi]=Gnibbles
+ Name[fr]=Gnibbles
+ Name[gl]=Gnibbles
+-Name[ja]=G¥Ë¥Ö¥ë
++Name[ja]=Gãƒ‹ãƒ–ãƒ«
+ Name[ko]=Gnibbles
+ Name[lt]=Gnibbles
+ Name[no]=Gnibbles
+ Name[pt]=Gnibbles
+-Name[ru]=çÎÉÂÂÌÅÓ
++Name[pt_BR]=Gnibbles
++Name[ru]=Ğ“Ğ½Ğ¸Ğ±Ğ±Ğ»ĞµÑ
+ Name[sk]=Gnibbles
+ Name[sv]=Gnibbles
+-Name[sv]=Yılan oyunu
++Name[tr]=YÄ±lan oyunu
+ Name[zh_TW]=Gnibbles
+-Comment=Gnome Nibbles Game
+-Comment[pt_BR]=Jogo Nibbles Gnome
+-Comment[da]=Gnome Nibbles spil
+-Comment[de]=Nibbles für Gnome
+-Comment[el]=Ôï ğáé÷íßäé Nibbles ãéá ôï GNOME
+-Comment[es]=Juego de orugas de Gnome
+-Comment[et]=Ussimäng GNOMEle
+-Comment[fi]=Gnome-matopeli
+-Comment[fr]=Jeu de chenilles de Gnome
+-Comment[gl]=Xogo Nibbles de Gnome
+-Comment[ja]=GNOMEÈÇ¡Ö¥Ø¥Ó¡×¥²¡¼¥à
+-Comment[ko]=Gnome Nibbles Game
+-Comment[lt]=Gnome gyvatëliø şaidimas
+-Comment[no]=Gnome Nibbles spill
+-Comment[pt]=Gnome Nibbles Game
+-Comment[ru]=éÇÒÁ Gnome îÉÂÂÌÅÓ(ÚÍÅÑ)
++Comment=GNOME Nibbles Game
++Comment[da]=GNOME Nibbles spil
++Comment[de]=Nibbles fÃ¼r GNOME
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ Nibbles Î³Î¹Î± Ï„Î¿ GNOME
++Comment[es]=Juego de orugas de GNOME
++Comment[et]=UssimÃ¤ng GNOMEle
++Comment[fi]=GNOME-matopeli
++Comment[fr]=Jeu de chenilles de GNOME
++Comment[gl]=Xogo Nibbles de GNOME
++Comment[ja]=GNOMEç‰ˆã€Œãƒ˜ãƒ“ã€ã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME gyvatÄ—liÅ³ Å¾aidimas
++Comment[no]=GNOME Nibbles spill
++Comment[pl]=Gra Nibbles dla GNOME
++Comment[pt_BR]=Jogo Nibbles GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° GNOME ĞĞ¸Ğ±Ğ±Ğ»ĞµÑ(Ğ·Ğ¼ĞµÑ)
+ Comment[sk]=Hra Nibbles pre GNOME
+-Comment[sv]=Nibbles-spel för Gnome
+-Comment[tr]=Yılan oyunu
+-Comment[zh_TW]=Gnome Nibbles ¹CÀ¸
++Comment[sv]=Nibbles-spel fÃ¶r GNOME
++Comment[tr]=YÄ±lan oyunu
++Comment[zh_TW]=GNOME Nibbles éŠæˆ²
+ Exec=gnibbles
  Icon=gnome-nibbles.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;ArcadeGame;
-+Categories=GTK;GNOME;Game;ArcadeGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnibbles
---- gnome-games-2.6.2/gnobots2/gnobots2.desktop.in~	2004-08-24 04:51:33.000000000 +0200
-+++ gnome-games-2.6.2/gnobots2/gnobots2.desktop.in	2004-08-24 04:51:33.000000000 +0200
-@@ -6,7 +6,7 @@
+ Icon=gnome-nibbles.png
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnobots2/gnobots2.desktop gnome-games-1.4.0.4/gnobots2/gnobots2.desktop
+--- gnome-games-1.4.0.4.orig/gnobots2/gnobots2.desktop	Tue Sep  4 22:06:03 2001
++++ gnome-games-1.4.0.4/gnobots2/gnobots2.desktop	Thu Dec 18 22:07:40 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=GnobotsII
+-Name[pt_BR]=GnobotsII
+ Name[da]=Gnobotter II
+ Name[de]=GnobotsII
+ Name[el]=GnobotsII
+@@ -13,31 +12,35 @@
+ Name[lt]=Gnobots II
+ Name[no]=GnobotsII
+ Name[pt]=GnobotsII
+-Name[ru]=çÎÏÂÏÔÓ II
++Name[pt_BR]=GnobotsII
++Name[ru]=Ğ“Ğ½Ğ¾Ğ±Ğ¾Ñ‚Ñ II
+ Name[sk]=Gnoboti II
+-Name[tr]=Çarpışan Robotlar
++Name[tr]=Ã‡arpÄ±ÅŸan Robotlar
+ Name[sv]=Gnobots II
+ Name[zh_TW]=GnobotsII
+-Comment=Gnome Robots game
+-Comment[pt_BR]=Jogo Robots Gnome
+-Comment[da]=Robots spil til Gnome - udvidet version
+-Comment[de]=robots(6) für Gnome - erweiterte Version
+-Comment[el]=Áğïöıãåôå ôá ñïìğüô ğïõ óáò áêïëïõèïıí
++Comment=GNOME Robots game
++Comment[da]=Robots spil til GNOME - udvidet version
++Comment[de]=robots(6) fÃ¼r GNOME - erweiterte Version
++Comment[el]=Î‘Ï€Î¿Ï†ÏÎ³ÎµÏ„Îµ Ï„Î± ÏÎ¿Î¼Ï€ÏŒÏ„ Ï€Î¿Ï… ÏƒÎ±Ï‚ Î±ÎºÎ¿Î»Î¿Ï…Î¸Î¿ÏÎ½
+ Comment[es]=Trate de escapar a los robots que le asedian
+-Comment[et]=II versioon GNOME robotimängust
+-Comment[fi]=Gnome-robotit II
+-Comment[fr]=Essayez d'échaper aux robots qui vous poursuivent
+-Comment[gl]=Xogo de Robots de Gnome
+-Comment[ja]=GNOMEÈÇ¥í¥Ü¥Ã¥È¥²¡¼¥à
+-Comment[lt]=Gnome Robots şaidimas
+-Comment[no]=Gnome Robots spill
+-Comment[pt]=Jogo Gnome Robots
+-Comment[ru]=éÇÒÁ òÏÂÏÔÙ ÄÌÑ Gnome
++Comment[et]=II versioon GNOME robotimÃ¤ngust
++Comment[fi]=GNOME-robotit II
++Comment[fr]=Essayez d'Ã©chaper aux robots qui vous poursuivent
++Comment[gl]=Xogo de Robots de GNOME
++Comment[ja]=GNOMEç‰ˆãƒ­ãƒœãƒƒãƒˆã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME Robots Å¾aidimas
++Comment[no]=GNOME Robots spill
++Comment[pl]=Gra Roboty dla GNOME
++Comment[pt]=Jogo GNOME Robots
++Comment[pt_BR]=Jogo Robots GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° Ğ Ğ¾Ğ±Ğ¾Ñ‚Ñ‹ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra GNOME Roboti
+-Comment[sv]=Robotspel för Gnome
+-Comment[tr]=Çarpışan robotlar
+-Comment[zh_TW]=Gnome ¾÷¾¹¤H¹CÀ¸
++Comment[sv]=Robotspel fÃ¶r GNOME
++Comment[tr]=Ã‡arpÄ±ÅŸan robotlar
++Comment[zh_TW]=GNOME æ©Ÿå™¨äººéŠæˆ²
+ Exec=gnobots2
  Icon=gnome-gnobots2.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;ArcadeGame;
-+Categories=GTK;GNOME;Game;ArcadeGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnobots2
---- gnome-games-2.6.2/gnome-stones/gnome-stones.desktop.in~	2004-08-24 04:51:49.000000000 +0200
-+++ gnome-games-2.6.2/gnome-stones/gnome-stones.desktop.in	2004-08-24 04:51:49.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnome-stones/gnome-stones.desktop gnome-games-1.4.0.4/gnome-stones/gnome-stones.desktop
+--- gnome-games-1.4.0.4.orig/gnome-stones/gnome-stones.desktop	Tue Sep  4 22:06:04 2001
++++ gnome-games-1.4.0.4/gnome-stones/gnome-stones.desktop	Thu Dec 18 21:59:49 2003
+@@ -1,40 +1,44 @@
+ [Desktop Entry]
+-Name=Gnome-Stones
+-Name[pt_BR]=Gnome-Stones
+-Name[da]=Gnome-sten
+-Name[de]=Gnome-Stones
+-Name[el]=Ğİôñåò-Gnome
+-Name[et]=Gnome koopad
+-Name[fi]=Gnome-luolat
+-Name[fr]=Gnome-Stones
+-Name[gl]=Gnome-Stones
++Name=GNOME-Stones
++Name[da]=GNOME-sten
++Name[de]=GNOME-Stones
++Name[el]=Î Î­Ï„ÏÎµÏ‚-GNOME
++Name[et]=GNOME koopad
++Name[fi]=GNOME-luolat
++Name[fr]=GNOME-Stones
++Name[gl]=GNOME-Stones
+ Name[ja]=GNOME Stones
+-Name[lt]=Gnome-Stones
+-Name[no]=Gnome-steiner
+-Name[ru]=Gnome-ËÁÍÎÉ
+-Name[sk]=Gnome Kamene
+-Name[sv]=Gnome-stenar
+-Name[tr]=Kör köstebek
+-Name[zh_TW]=Gnome-Ä_¥Û
+-Comment=Gnome Stones game
+-Comment[pt_BR]=Jogo Stones Gnome
+-Comment[da]=Spillet Gnome-sten
+-Comment[de]=Das Spiel Gnome-Stones
+-Comment[el]=Ôï ğáé÷íßäé Ğİôñåò ôïõ Gnome
+-Comment[es]=Juego Gnome Stones
++Name[lt]=GNOME-Stones
++Name[no]=GNOME-steiner
++Name[pl]=GNOME kamienie
++Name[pt_BR]=GNOME-Stones
++Name[ru]=GNOME-ĞºĞ°Ğ¼Ğ½Ğ¸
++Name[sk]=GNOME Kamene
++Name[sv]=GNOME-stenar
++Name[tr]=KÃ¶r kÃ¶stebek
++Name[zh_TW]=GNOME-å¯¶çŸ³
++Comment=GNOME Stones game
++Comment[da]=Spillet GNOME-sten
++Comment[de]=Das Spiel GNOME-Stones
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ Î Î­Ï„ÏÎµÏ‚ Ï„Î¿Ï… GNOME
++Comment[es]=Juego GNOME Stones
+ Comment[et]=Boulderdashi kloon GNOME-le
+ Comment[fi]=Boulderdash-klooni
+-Comment[fr]=Jeu Gnome Stones
+-Comment[gl]=Xogo de Pedras de Gnome
+-Comment[ja]=GNOMEÈÇStone¥²¡¼¥à
+-Comment[lt]=Gnome Stones şaidimas
+-Comment[no]=Gnome-steiner spill
+-Comment[ru]=éÇÒÁ Gnome-ËÁÍÎÉ
++Comment[fr]=Jeu GNOME Stones
++Comment[gl]=Xogo de Pedras de GNOME
++Comment[ja]=GNOMEç‰ˆStoneã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME Stones Å¾aidimas
++Comment[no]=GNOME-steiner spill
++Comment[pl]=Gra kamienie dla GNOME
++Comment[pt_BR]=Jogo Stones GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° GNOME-ĞºĞ°Ğ¼Ğ½Ğ¸
+ Comment[sk]=Hra GNOME Kamene
+-Comment[sv]=Spelet Gnome-stenar
+-Comment[tr]=Kör köstebek oyunu
+-Comment[zh_TW]=Gnome Ä_¥Û¹CÀ¸
++Comment[sv]=Spelet GNOME-stenar
++Comment[tr]=KÃ¶r kÃ¶stebek oyunu
++Comment[zh_TW]=GNOME å¯¶çŸ³éŠæˆ²
+ Exec=gnome-stones
  Icon=gnome-stones.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnome-stones
---- gnome-games-2.6.2/gnometris/gnometris.desktop.in~	2004-08-24 04:51:59.000000000 +0200
-+++ gnome-games-2.6.2/gnometris/gnometris.desktop.in	2004-08-24 04:51:59.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnometris/gnometris.desktop gnome-games-1.4.0.4/gnometris/gnometris.desktop
+--- gnome-games-1.4.0.4.orig/gnometris/gnometris.desktop	Tue Sep  4 22:06:04 2001
++++ gnome-games-1.4.0.4/gnometris/gnometris.desktop	Thu Dec 18 22:07:07 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=Gnometris
+-Name[pt_BR]=Gnometris
+ Name[da]=Gnometris
+ Name[de]=Gnometris
+ Name[el]=Gnometris
+@@ -9,32 +8,34 @@
+ Name[fi]=Gnometris
+ Name[fr]=Gnometris
+ Name[gl]=Gnometris
+-Name[ja]=GNOME¥È¥ê¥¹
++Name[ja]=GNOMEãƒˆãƒªã‚¹
+ Name[lt]=Gnometris
+ Name[no]=Gnometris
+-Name[ru]=çÎÏÍÅÔÒÉÓ
++Name[pt_BR]=Gnometris
++Name[ru]=Ğ“Ğ½Ğ¾Ğ¼ĞµÑ‚Ñ€Ğ¸Ñ
+ Name[sk]=Gnometris
+ Name[sv]=Gnometris
+ Name[tr]=Gnometris
+ Name[zh_TW]=Gnometris
+-Comment=Gnome Tetris Game
+-Comment[pt_BR]=Jogo Tetris Gnome
+-Comment[da]=Tetris spil til Gnome
+-Comment[de]=Gnome-Tetris-Spiel
+-Comment[el]=Ôï ğáé÷íßäé Ôİôñéò ôïõ Gnome
+-Comment[es]=El juego de Tetris de Gnome
++Comment=GNOME Tetris Game
++Comment[da]=Tetris spil til GNOME
++Comment[de]=GNOME-Tetris-Spiel
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ Î¤Î­Ï„ÏÎ¹Ï‚ Ï„Î¿Ï… GNOME
++Comment[es]=El juego de Tetris de GNOME
+ Comment[et]=Tetris, sedapuhku GNOME-le
+-Comment[fi]=Gnome-tetrisklooni
+-Comment[fr]=Le jeu Tetris de Gnome
+-Comment[gl]=Xogo de Tetris de Gnome
+-Comment[ja]=GNOME¥Æ¥È¥ê¥¹
+-Comment[lt]=Gnome Tetris klonas
+-Comment[no]=Tetris spill for Gnome
+-Comment[ru]=ôÅÔÒÉÓ ÄÌÑ Gnome
++Comment[fi]=GNOME-tetrisklooni
++Comment[fr]=Le jeu Tetris de GNOME
++Comment[gl]=Xogo de Tetris de GNOME
++Comment[ja]=GNOMEãƒ†ãƒˆãƒªã‚¹
++Comment[lt]=GNOME Tetris klonas
++Comment[no]=Tetris spill for GNOME
++Comment[pl]=Klon gry Tetris dla GNOME
++Comment[pt_BR]=Jogo Tetris GNOME
++Comment[ru]=Ğ¢ĞµÑ‚Ñ€Ğ¸Ñ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra Tetris pre GNOME
+-Comment[sv]=Tetrisspel för Gnome
++Comment[sv]=Tetrisspel fÃ¶r GNOME
+ Comment[tr]=Bir Tetris oyunu 
+-Comment[zh_TW]=Gnome «XÃ¹´µ¤è¶ô
++Comment[zh_TW]=GNOME ä¿„ç¾…æ–¯æ–¹å¡Š
+ Icon=gnome-gtetris.png
  Exec=gnometris
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;BlocksGame;
-+Categories=GTK;GNOME;Game;BlocksGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnometris
---- gnome-games-2.6.2/gnomine/gnomine.desktop.in~	2004-08-24 04:52:16.000000000 +0200
-+++ gnome-games-2.6.2/gnomine/gnomine.desktop.in	2004-08-24 04:52:16.000000000 +0200
-@@ -6,7 +6,7 @@
+ Terminal=0
+diff -ur gnome-games-1.4.0.4.orig/gnomine/gnomine.desktop gnome-games-1.4.0.4/gnomine/gnomine.desktop
+--- gnome-games-1.4.0.4.orig/gnomine/gnomine.desktop	Tue Sep  4 22:06:05 2001
++++ gnome-games-1.4.0.4/gnomine/gnomine.desktop	Thu Dec 18 21:58:33 2003
+@@ -1,54 +1,58 @@
+ [Desktop Entry]
+-Name=Gnome Mines
+-Name[cs]=Gnome miny
+-Name[da]=Gnome Miner
++Name=GNOME Mines
++Name[cs]=GNOME miny
++Name[da]=GNOME Miner
+ Name[de]=GNOME-Minen
+-Name[el]=ÍáñêáëéåõôŞò
+-Name[es]=Gnome Minas
+-Name[et]=Miiniväli
+-Name[fi]=Gnome-miinat
++Name[el]=ÎÎ±ÏÎºÎ±Î»Î¹ÎµÏ…Ï„Î®Ï‚
++Name[es]=GNOME Minas
++Name[et]=MiinivÃ¤li
++Name[fi]=GNOME-miinat
+ Name[fr]=Gnomineur
+-Name[ga]=Miana Gnome
+-Name[gl]=Gnome Minas
+-Name[it]=Campo Minato di Gnome
+-Name[ja]=Gnome¥Ş¥¤¥ó¥¹¥¤¡¼¥Ñ
+-Name[ko]=±×³ğ Áö·ÚÃ£±â
+-Name[lt]=Gnome Minos
++Name[ga]=Miana GNOME
++Name[gl]=GNOME Minas
++Name[it]=Campo Minato di GNOME
++Name[ja]=GNOMEãƒã‚¤ãƒ³ã‚¹ã‚¤ãƒ¼ãƒ‘
++Name[ko]=ê·¸ë†ˆ ì§€ë¢°ì°¾ê¸°
++Name[lt]=GNOME Minos
+ Name[no]=Minesveiper
+-Name[pt]=Minas Gnome
+-Name[pt_BR]=Campo Minado Gnome
+-Name[ru]=Gnome íÉÎÏÉÓËÁÔÅÌØ
+-Name[sk]=Gnome míny
+-Name[sl]=Gnome mine
+-Name[sv]=Gnome-minor
+-Name[tr]=Mayın tarlası
+-Name[uk]=Gnome í¦ÎÏÛÕËÁŞ
+-Name[zh_TW]=Gnome ¦a¹p
+-Comment=Gnome Mines game
+-Comment[pt_BR]=Jogo Campo Minado Gnome
+-Comment[da]=Gnome Minestryger kopi
++Name[pl]=GNOME saper
++Name[pt]=Minas GNOME
++Name[pt_BR]=Campo Minado GNOME
++Name[ru]=GNOME ĞœĞ¸Ğ½Ğ¾Ğ¸ÑĞºĞ°Ñ‚ĞµĞ»ÑŒ
++Name[sk]=GNOME mÃ­ny
++Name[sl]=GNOME mine
++Name[sv]=GNOME-minor
++Name[tr]=MayÄ±n tarlasÄ±
++Name[uk]=GNOME ĞœÑ–Ğ½Ğ¾ÑˆÑƒĞºĞ°Ñ‡
++Name[zh_TW]=GNOME åœ°é›·
++Comment=GNOME Mines game
++Comment[da]=GNOME Minestryger kopi
+ Comment[de]=GNOME-Variante von Minesweeper
+-Comment[el]=Ôï ğáé÷íßäé íáñêáëéåõôŞò ôïõ Gnome
+-Comment[es]=Juego Gnome Minas
+-Comment[et]=Miiniväljale eksinud Gnoom
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ Î½Î±ÏÎºÎ±Î»Î¹ÎµÏ…Ï„Î®Ï‚ Ï„Î¿Ï… GNOME
++Comment[es]=Juego GNOME Minas
++Comment[et]=MiinivÃ¤ljale eksinud Gnoom
+ Comment[fi]=Miinanraivauspeli
+-Comment[fr]=Clone GNOME du démineur
++Comment[fr]=Clone GNOME du dÃ©mineur
+ Comment[ga]=Coip minesweeper
+-Comment[gl]=Xogo de minas de Gnome
++Comment[gl]=Xogo de minas de GNOME
+ Comment[it]=Clone di campo minato
+-Comment[ja]=¥Ş¥¤¥ó¥¹¥¤¡¼¥Ñ¤Î¥¯¥í¡¼¥ó¥×¥í¥°¥é¥à
+-Comment[ko]=±×³ğ Áö·ÚÃ£±â °ÔÀÓ
+-Comment[lt]=Gnome şaidimas iğminuotojams
++Comment[ja]=ãƒã‚¤ãƒ³ã‚¹ã‚¤ãƒ¼ãƒ‘ã®ã‚¯ãƒ­ãƒ¼ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
++Comment[ko]=ê·¸ë†ˆ ì§€ë¢°ì°¾ê¸° ê²Œì„
++Comment[lt]=GNOME Å¾aidimas iÅ¡minuotojams
+ Comment[no]=Minesveiperklone
+-Comment[pt]=Versão GNOME do campo minado
+-Comment[ru]=éÇÒÁ íÉÎÏÉÓËÁÔÅÌØ Gnome
+-Comment[sk]=Hra Míny pre GNOME
+-Comment[sl]=Igra Gnome mine
+-Comment[sv]=Minspel för Gnome
+-Comment[tr]=Mayın tarlası oyunu
+-Comment[uk]=çÒÁ í¦ÎÏÛÕËÁŞ
+-Comment[zh_TW]=Gnome ©î¦a¹p¹CÀ¸
++Comment[pl]=Gra saper dla GNOME
++Comment[pt]=VersÃ£o GNOME do campo minado
++Comment[pt_BR]=Jogo Campo Minado GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° ĞœĞ¸Ğ½Ğ¾Ğ¸ÑĞºĞ°Ñ‚ĞµĞ»ÑŒ GNOME
++Comment[sk]=Hra MÃ­ny pre GNOME
++Comment[sl]=Igra GNOME mine
++Comment[sv]=Minspel fÃ¶r GNOME
++Comment[tr]=MayÄ±n tarlasÄ± oyunu
++Comment[uk]=Ğ“Ñ€Ğ° ĞœÑ–Ğ½Ğ¾ÑˆÑƒĞºĞ°Ñ‡
++Comment[zh_TW]=GNOME æ‹†åœ°é›·éŠæˆ²
+ Exec=gnomine
  Icon=gnome-gnomine.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnomine
---- gnome-games-2.6.2/gnotravex/gnotravex.desktop.in~	2004-08-24 04:52:31.000000000 +0200
-+++ gnome-games-2.6.2/gnotravex/gnotravex.desktop.in	2004-08-24 04:52:31.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gnotravex.png
- Terminal=false
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnotravex/gnotravex.desktop gnome-games-1.4.0.4/gnotravex/gnotravex.desktop
+--- gnome-games-1.4.0.4.orig/gnotravex/gnotravex.desktop	Tue Sep  4 22:06:05 2001
++++ gnome-games-1.4.0.4/gnotravex/gnotravex.desktop	Thu Dec 18 22:12:02 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=Gnotravex
+-Name[pt_BR]=Gnotravex
+ Name[da]=Gnotravex
+ Name[de]=Gnotravex
+ Name[el]=Gnotravex
+@@ -11,30 +10,33 @@
+ Name[ja]=Gnotravex
+ Name[lt]=Gnotravex
+ Name[no]=Gnotravex
+-Name[ru]=çÎÏÔÒÁ×ÅËÓ
++Name[pt_BR]=Gnotravex
++Name[ru]=Ğ“Ğ½Ğ¾Ñ‚Ñ€Ğ°Ğ²ĞµĞºÑ
+ Name[sk]=Gnotravex
+ Name[sv]=Gnotravex
+-Name[tr]=Sihirli sayılar
++Name[tr]=Sihirli sayÄ±lar
+ Name[zh_TW]=Gnotravex
+-Comment=Gnome Tetravex game
+-Comment[pt_BR]=Jogo Tetravex Gnome
+-Comment[da]=Tetravex spil til Gnome
+-Comment[de]=Gnome-Klon des Denkspiels Tetravex
+-Comment[el]=Ğáé÷íßäé áíôéóôïß÷éóçò ôåôñáãşíùí ôïõ Gnome
+-Comment[es]=Juego de reflexión clónico de Tetravex
+-Comment[fi]=Gnome-Tetravex-peli
++Comment=GNOME Tetravex game
++Comment[da]=Tetravex spil til GNOME
++Comment[de]=GNOME-Klon des Denkspiels Tetravex
++Comment[el]=Î Î±Î¹Ï‡Î½Î¯Î´Î¹ Î±Î½Ï„Î¹ÏƒÏ„Î¿Î¯Ï‡Î¹ÏƒÎ·Ï‚ Ï„ÎµÏ„ÏÎ±Î³ÏÎ½Ï‰Î½ Ï„Î¿Ï… GNOME
++Comment[es]=Juego de reflexiÃ³n clÃ³nico de Tetravex
++Comment[fi]=GNOME-Tetravex-peli
+ Comment[fr]=Jeu Tetravex GNOME
+-Comment[gl]=Xogo Tetravex de Gnome
+-Comment[ja]=GNOMEÈÇËâÊı¿Ø¥²¡¼¥à
+-Comment[lt]=Gnome Tetravex şaidimas
++Comment[gl]=Xogo Tetravex de GNOME
++Comment[ja]=GNOMEç‰ˆé­”æ–¹é™£ã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME Tetravex Å¾aidimas
+ Comment[no]=Tetravex spill for GNOME
+-Comment[ru]=éÇÒÁ ôÅÔÒÁ×ÅËÓ ÄÌÑ Gnome
++Comment[pl]=Gra Tetravex dla GNOME
++Comment[pt_BR]=Jogo Tetravex GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° Ğ¢ĞµÑ‚Ñ€Ğ°Ğ²ĞµĞºÑ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra Tetravex pre GNOME
+-Comment[sv]=Tetravexspel för Gnome
+-Comment[tr]=Sihirli sayılar oyunu
+-Comment[zh_TW]=Gnome Tetravex ¹CÀ¸
++Comment[sv]=Tetravexspel fÃ¶r GNOME
++Comment[tr]=Sihirli sayÄ±lar oyunu
++Comment[zh_TW]=GNOME Tetravex éŠæˆ²
+ Exec=gnotravex
+ Icon=gnotravex/gnome-gnotravex.png
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnotravex
---- gnome-games-2.6.2/gnotski/gnotski.desktop.in~	2004-08-24 04:52:46.000000000 +0200
-+++ gnome-games-2.6.2/gnotski/gnotski.desktop.in	2004-08-24 04:52:46.000000000 +0200
-@@ -6,7 +6,7 @@
+-
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gnotski/gnotski.desktop gnome-games-1.4.0.4/gnotski/gnotski.desktop
+--- gnome-games-1.4.0.4.orig/gnotski/gnotski.desktop	Tue Sep  4 22:06:06 2001
++++ gnome-games-1.4.0.4/gnotski/gnotski.desktop	Thu Dec 18 21:55:23 2003
+@@ -14,23 +14,25 @@
+ Name[sv]=Gnotski
+ Name[tr]=2 siyah 2 beyaz
+ Name[zh_TW]=Gnotski
+-Comment=Gnome Klotski
+-Comment[pt_BR]=Jogo Klotski Gnome
+-Comment[da]=Gnome Klotski
+-Comment[el]=ĞáñáëëáãŞ ôïõ ğáé÷íéäéïı klotski ãéá ôï Gnome
++Comment=GNOME Klotski
++Comment[pt_BR]=Jogo Klotski GNOME
++Comment[da]=GNOME Klotski
++Comment[el]=Î Î±ÏÎ±Î»Î»Î±Î³Î® Ï„Î¿Ï… Ï€Î±Î¹Ï‡Î½Î¹Î´Î¹Î¿Ï klotski Î³Î¹Î± Ï„Î¿ GNOME
+ Comment[et]=Klotski GNOME variant
+ Comment[fi]=GNOME-versio Klotskista
+-Comment[fr]=Gnome Klotski
+-Comment[gl]=Klotski de Gnome
+-Comment[ja]=GNOMEÈÇKlotski
+-Comment[lt]=Gnome Klotski klonas
+-Comment[no]=Gnome Klotski
++Comment[fr]=GNOME Klotski
++Comment[gl]=Klotski de GNOME
++Comment[ja]=GNOMEç‰ˆKlotski
++Comment[lt]=GNOME Klotski klonas
++Comment[no]=GNOME Klotski
++Comment[pl]=Klocki dla GNOME
+ Comment[sk]=Klotski pre GNOME
+-Comment[sv]=Gnome Klotski
++Comment[sv]=GNOME Klotski
+ Comment[tr]=2 siyah 2 beyaz oyunu
+-Comment[zh_TW]=Gnome Klotski
++Comment[zh_TW]=GNOME Klotski
+ Exec=gnotski
  Icon=gnotski-icon.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnotski
---- gnome-games-2.6.2/gtali/gtali.desktop.in~	2004-08-24 04:54:20.000000000 +0200
-+++ gnome-games-2.6.2/gtali/gtali.desktop.in	2004-08-24 04:54:20.000000000 +0200
-@@ -6,7 +6,7 @@
+-
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/gtali/gtali.desktop gnome-games-1.4.0.4/gtali/gtali.desktop
+--- gnome-games-1.4.0.4.orig/gtali/gtali.desktop	Tue Sep  4 22:06:06 2001
++++ gnome-games-1.4.0.4/gtali/gtali.desktop	Thu Dec 18 22:11:10 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=GTali
+-Name[pt_BR]=GTali
+ Name[da]=GTali
+ Name[de]=GTali
+ Name[el]=GTali
+@@ -12,30 +11,34 @@
+ Name[ja]=GTali
+ Name[lt]=GTali
+ Name[no]=GTali
+-Name[ru]=çÔÁÌÉ
++Name[pt_BR]=GTali
++Name[ru]=Ğ“Ñ‚Ğ°Ğ»Ğ¸
+ Name[sk]=GTali
+ Name[sv]=GTali
+ Name[tr]=GTali
+ Name[zh_TW]=GTali
+-Comment=Gnome Dice game
+-Comment[pt_BR]=Jogo de Dados Gnome
+-Comment[da]=Yatzy spil til Gnome
+-Comment[de]=Das Gnome-Würfelspiel
+-Comment[el]=Ğáé÷íßäé æáñéşí ôïõ Gnome
++Comment=GNOME Dice game
++Comment[da]=Yatzy spil til GNOME
++Comment[de]=Das GNOME-WÃ¼rfelspiel
++Comment[el]=Î Î±Î¹Ï‡Î½Î¯Î´Î¹ Î¶Î±ÏÎ¹ÏÎ½ Ï„Î¿Ï… GNOME
+ Comment[es]=Juego de dados tipo yahtzee
+-Comment[et]=Yahtzee täringumäng
+-Comment[fi]=Gnome-jatsipeli
+-Comment[fr]=Jeu de dés de genre yahtzee
+-Comment[gl]=Xogo de dados de Gnome
+-Comment[ja]=GNOMEÈÇ¤µ¤¤¤³¤í¥²¡¼¥à
+-Comment[lt]=Gnome kauliukø şaidimas
++Comment[et]=Yahtzee tÃ¤ringumÃ¤ng
++Comment[fi]=GNOME-jatsipeli
++Comment[fr]=Jeu de dÃ©s de genre yahtzee
++Comment[gl]=Xogo de dados de GNOME
++Comment[ja]=GNOMEç‰ˆã•ã„ã“ã‚ã‚²ãƒ¼ãƒ 
++Comment[lt]=GNOME kauliukÅ³ Å¾aidimas
+ Comment[no]=Yahtzee spill for GNOME
+-Comment[ru]=éÇÒÁ × ËÏÓÔÉ ÄÌÑ Gnome
++Comment[pl]=Gra w koÅ›ci dla GNOME
++Comment[pt_BR]=Jogo de Dados GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° Ğ² ĞºĞ¾ÑÑ‚Ğ¸ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra Kocky pre GNOME
+-Comment[sv]=Tärningsspel för Gnome
++Comment[sv]=TÃ¤rningsspel fÃ¶r GNOME
+ Comment[tr]=Bir zar oyunu
+-Comment[zh_TW]=Gnome »ë¤l¹CÀ¸
++Comment[zh_TW]=GNOME éª°å­éŠæˆ²
+ Exec=gtali
  Icon=gnome-gtali.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;
-+Categories=GTK;GNOME;Game;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gtali
---- gnome-games-2.6.2/iagno/iagno.desktop.in~	2004-08-24 05:02:26.000000000 +0200
-+++ gnome-games-2.6.2/iagno/iagno.desktop.in	2004-08-24 05:02:26.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/iagno/iagno.desktop gnome-games-1.4.0.4/iagno/iagno.desktop
+--- gnome-games-1.4.0.4.orig/iagno/iagno.desktop	Tue Sep  4 22:06:07 2001
++++ gnome-games-1.4.0.4/iagno/iagno.desktop	Thu Dec 18 21:56:41 2003
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Icon=iagno.png
+ Name=Iagno
+-Name[pt_BR]=Iagno
+ Name[da]=Iagno
+ Name[de]=Iagno
+ Name[el]=Iagno
+@@ -15,31 +14,35 @@
+ Name[lt]=Iagno
+ Name[no]=Iagno
+ Name[pt]=Iagno
+-Name[ru]=ñÇÎÏ
++Name[pt_BR]=Iagno
++Name[ru]=Ğ¯Ğ³Ğ½Ğ¾
+ Name[sk]=Iagno
+ Name[sv]=Iagno
+ Name[tr]=Iagno
+ Name[zh_TW]=Iagno
+-Comment=Gnome Reversi game
+-Comment[pt_BR]=Jogo Reversi Gnome
+-Comment[da]=Reversi spil til Gnome
+-Comment[de]=Gnome-Reversi-Spiel
+-Comment[el]=Ôï ğáé÷íßäé reversi ãéá ôï Gnome
+-Comment[es]=Juego Gnome Reversi
++Comment=GNOME Reversi game
++Comment[da]=Reversi spil til GNOME
++Comment[de]=GNOME-Reversi-Spiel
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ reversi Î³Î¹Î± Ï„Î¿ GNOME
++Comment[es]=Juego GNOME Reversi
+ Comment[et]=Reversi variant GNOME-le
+-Comment[fi]=Gnome-othellopeli
++Comment[fi]=GNOME-othellopeli
+ Comment[fr]=Jeu GNOME Reversi
+-Comment[gl]=Xogo Reversi de Gnome
+-Comment[ja]=GNOMEÈÇ¥ª¥»¥í
+-Comment[ko]=Gnome ¿Àµ¨·Î
+-Comment[lt]=Gnome Reversi klonas
++Comment[gl]=Xogo Reversi de GNOME
++Comment[ja]=GNOMEç‰ˆã‚ªã‚»ãƒ­
++Comment[ko]=GNOME ì˜¤ë¸ë¡œ
++Comment[lt]=GNOME Reversi klonas
+ Comment[no]=Reversi spill for GNOME
+-Comment[pt]=Versão Gnome do jogo Reversi
+-Comment[ru]=éÇÒÁ òÅ×ÅÒÓÉ ÄÌÑ Gnome
++Comment[pl]=Gra Reversi dla GNOME
++Comment[pt]=VersÃ£o GNOME do jogo Reversi
++Comment[pt_BR]=Jogo Reversi GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° Ğ ĞµĞ²ĞµÑ€ÑĞ¸ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra Reversi pre GNOME
+-Comment[sv]=Reversispel för Gnome
+-Comment[tr]=Gnome için Reversi oyunu
+-Comment[zh_TW]=Gnome ¶Â¥Õ´Ñ
++Comment[sv]=Reversispel fÃ¶r GNOME
++Comment[tr]=GNOME iÃ§in Reversi oyunu
++Comment[zh_TW]=GNOME é»‘ç™½æ£‹
  Exec=iagno
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;
-+Categories=GTK;GNOME;GameLogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=iagno
---- gnome-games-2.6.2/mahjongg/mahjongg.desktop.in~	2004-08-24 05:02:36.000000000 +0200
-+++ gnome-games-2.6.2/mahjongg/mahjongg.desktop.in	2004-08-24 05:02:36.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/mahjongg/mahjongg.desktop gnome-games-1.4.0.4/mahjongg/mahjongg.desktop
+--- gnome-games-1.4.0.4.orig/mahjongg/mahjongg.desktop	Tue Sep  4 22:06:08 2001
++++ gnome-games-1.4.0.4/mahjongg/mahjongg.desktop	Thu Dec 18 22:02:11 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=Mahjongg
+-Name[pt_BR]=Mahjongg
+ Name[da]=Mahjongg
+ Name[de]=Mahjongg
+ Name[el]=Mahjongg
+@@ -10,39 +9,43 @@
+ Name[fr]=Mahjongg
+ Name[gl]=Mahjongg
+ Name[hu]=Mahjongg
+-Name[ja]=¾å³¤
+-Name[ko]=¸¶ÀÛ
++Name[ja]=ä¸Šæµ·
++Name[ko]=ë§ˆì‘
+ Name[lt]=Mahjongg
+ Name[no]=Mahjongg
+ Name[pt]=Mahjongg
+-Name[ru]=íÁÄÖÏÎÇ
++Name[pt_BR]=Mahjongg
++Name[ru]=ĞœĞ°Ğ´Ğ¶Ğ¾Ğ½Ğ³
+ Name[sk]=Mahjongg
+ Name[sv]=Mah Jong
+ Name[tr]=Mahjongg
+-Name[zh_TW]=¤W®ü³Â±N
+-Comment=Gnome Mahjongg program
++Name[zh_TW]=ä¸Šæµ·éº»å°‡
++Comment=GNOME Mahjongg program
+ Comment[da]=Spillet Mahjongg
+-Comment[de]=Gnome Mahjongg
+-Comment[el]=Ôï ğáé÷íßäé Mahjongg ôïõ Gnome
++Comment[de]=GNOME Mahjongg
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ Mahjongg Ï„Î¿Ï… GNOME
+ Comment[es]=Juego de Mahjongg
+ Comment[et]=Mahjongg GNOME jaoks
+ Comment[fi]=Mahjongg-peli
+ Comment[fr]=Jeu de Mahjongg GNOME
+-Comment[gl]=Xogo Mahjongg de Gnome
+-Comment[hu]=Mahjongg program Gnome alá
+-Comment[ja]=GNOMEÈÇ¾å³¤
+-Comment[ko]=Gnome ¸¶ÀÛ
+-Comment[lt]=Gnome Mahjongg şaidimas
++Comment[gl]=Xogo Mahjongg de GNOME
++Comment[hu]=Mahjongg program GNOME alÃ¡
++Comment[ja]=GNOMEç‰ˆä¸Šæµ·
++Comment[ko]=GNOME ë§ˆì‘
++Comment[lt]=GNOME Mahjongg Å¾aidimas
+ Comment[no]=Spillet Mahjongg
+-Comment[pt]=Jogo de Mahjonng Gnome
+-Comment[pt_BR]=Programa Mahjongg Gnome
+-Comment[ru]=éÇÒÁ íÁÄÖÏÎÇ ÄÌÑ Gnome
++Comment[pl]=Gra Mahjongg dla GNOME
++Comment[pt]=Jogo de Mahjonng GNOME
++Comment[pt_BR]=Programa Mahjongg GNOME
++Comment[ru]=Ğ˜Ğ³Ñ€Ğ° ĞœĞ°Ğ´Ğ¶Ğ¾Ğ½Ğ³ Ğ´Ğ»Ñ GNOME
+ Comment[sk]=Hra Mahjongg pre GNOME
+-Comment[sv]=Mah Jong för Gnome
+-Comment[tr]=Gnome için Mahjongg oyunu
+-Comment[zh_TW]=Gnome ¤W®ü³Â±N
++Comment[sv]=Mah Jong fÃ¶r GNOME
++Comment[tr]=GNOME iÃ§in Mahjongg oyunu
++Comment[zh_TW]=GNOME ä¸Šæµ·éº»å°‡
+ Exec=mahjongg
  Icon=gnome-mahjongg.png
- Terminal=false
+ Info=Gnome Mahjongg program
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;BoardGame;
-+Categories=GTK;GNOME;Game;BoardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=mahjongg
---- gnome-games-2.6.2/same-gnome/same-gnome.desktop.in~	2004-08-24 05:02:48.000000000 +0200
-+++ gnome-games-2.6.2/same-gnome/same-gnome.desktop.in	2004-08-24 05:02:48.000000000 +0200
-@@ -6,7 +6,7 @@
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/same-gnome/same-gnome.desktop gnome-games-1.4.0.4/same-gnome/same-gnome.desktop
+--- gnome-games-1.4.0.4.orig/same-gnome/same-gnome.desktop	Tue Sep  4 22:06:08 2001
++++ gnome-games-1.4.0.4/same-gnome/same-gnome.desktop	Thu Dec 18 22:10:31 2003
+@@ -1,47 +1,50 @@
+ [Desktop Entry]
+-Name=Same Gnome
+-Name[pt_BR]=Same Gnome
+-Name[da]=Samme Gnome
+-Name[de]=Same Gnome
+-Name[el]=ºäéï Gnome
+-Name[es]=Same Gnome
+-Name[et]=Same Gnome
+-Name[fi]=Same Gnome
+-Name[fr]=Same Gnome
+-Name[ga]=An Gnome Cianna
+-Name[gl]=Same Gnome
+-Name[ja]=¤µ¤áGnome
+-Name[ko]=¼¼ÀÓ±×³ğ
+-Name[lt]=Same Gnome
+-Name[no]=Same Gnome
+-Name[pt]=Same Gnome
+-Name[ru]=ôÏÔ ÖÅ Gnome
++Name=Same GNOME
++Name[da]=Samme GNOME
++Name[de]=Same GNOME
++Name[el]=ÎŠÎ´Î¹Î¿ GNOME
++Name[es]=Same GNOME
++Name[et]=Same GNOME
++Name[fi]=Same GNOME
++Name[fr]=Same GNOME
++Name[ga]=An GNOME Cianna
++Name[gl]=Same GNOME
++Name[ja]=ã•ã‚GNOME
++Name[ko]=ì„¸ì„ê·¸ë†ˆ
++Name[lt]=Same GNOME
++Name[no]=Same GNOME
++Name[pt]=Same GNOME
++Name[pt_BR]=Same GNOME
++Name[ru]=Ğ¢Ğ¾Ñ‚ Ğ¶Ğµ GNOME
+ Name[sk]=Hra Same
+-Name[sv]=Same Gnome
++Name[sv]=Same GNOME
+ Name[tr]=Benzer benzemez
+-Name[zh_TW]=Same Gnome
+-Comment=Gnome SameGame program
+-Comment[da]=Gnome klon af SameGame
+-Comment[de]=Gnome-Variante des Spiels SameGame
+-Comment[el]=Ôï ğáé÷íßäé ºäéï ôïõ Gnome
+-Comment[es]=Juego SameGame de Gnome
++Name[zh_TW]=Same GNOME
++Comment=GNOME SameGame program
++Comment[da]=GNOME klon af SameGame
++Comment[de]=GNOME-Variante des Spiels SameGame
++Comment[el]=Î¤Î¿ Ï€Î±Î¹Ï‡Î½Î¯Î´Î¹ ÎŠÎ´Î¹Î¿ Ï„Î¿Ï… GNOME
++Comment[es]=Juego SameGame de GNOME
+ Comment[et]=SameGame GNOME variant
+-Comment[fi]=Gnomeversio SameGamesta
++Comment[fi]=GNOMEversio SameGamesta
+ Comment[fr]=Clone GNOME du Jeu SameGame
+-Comment[ga]=An Gnome Cianna
+-Comment[gl]=Xogo SameGame de Gnome
+-Comment[ja]=¤µ¤áGnome
+-Comment[ko]=±×³ğ ¼¼ÀÓ±×³ğ °ÔÀÓ
+-Comment[lt]=Gnome SameGame şaidimas
+-Comment[no]=Gnome klone av SameGame
+-Comment[pt]=Variante Gnome do jogo SameGame
+-Comment[pt_BR]=Programa SameGame Gnome
+-Comment[ru]=ôÁ ÖÅ ÉÇÒÁ ÄÌÑ Game
++Comment[ga]=An GNOME Cianna
++Comment[gl]=Xogo SameGame de GNOME
++Comment[ja]=ã•ã‚GNOME
++Comment[ko]=ê·¸ë†ˆ ì„¸ì„ê·¸ë†ˆ ê²Œì„
++Comment[lt]=GNOME SameGame Å¾aidimas
++Comment[no]=GNOME klone av SameGame
++Comment[pl]=Klon gry Same dla GNOME
++Comment[pt]=Variante GNOME do jogo SameGame
++Comment[pt_BR]=Programa SameGame GNOME
++Comment[ru]=Ğ¢Ğ° Ğ¶Ğµ Ğ¸Ğ³Ñ€Ğ° Ğ´Ğ»Ñ Game
+ Comment[sk]=Hra Same pre GNOME
+-Comment[sv]=Gnome-klon av SameGame
++Comment[sv]=GNOME-klon av SameGame
+ Comment[tr]=Benzer benzemez oyunu
+-Comment[zh_TW]=Gnome SameGame µ{¦¡
++Comment[zh_TW]=GNOME SameGame ç¨‹å¼
+ Exec=same-gnome
  Icon=gnome-gsame.png
- Terminal=false
+-Terminal=0
++Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=same-gnome
++Encoding=UTF-8
++# vi: encoding=utf-8
+diff -ur gnome-games-1.4.0.4.orig/xbill/xbill.desktop gnome-games-1.4.0.4/xbill/xbill.desktop
+--- gnome-games-1.4.0.4.orig/xbill/xbill.desktop	Wed Dec 17 22:34:12 2003
++++ gnome-games-1.4.0.4/xbill/xbill.desktop	Thu Dec 18 22:01:45 2003
+@@ -1,39 +1,42 @@
+ [Desktop Entry]
+-Name=Gnome xBill
+-Name[pt_BR]=Gnome xBill
+-Name[da]=Gnome xBill
++Name=GNOME xBill
++Name[da]=GNOME xBill
+ Name[de]=GNOME xBill
+-Name[el]=Gnome Bill
+-Name[et]=Gnome Bill
++Name[el]=GNOME Bill
++Name[et]=GNOME Bill
+ Name[fi]=xBill
+ Name[fr]=xBill
+-Name[gl]=Gnome xBill
+-Name[ja]=GNOME X¥Ó¥ë
+-Name[lt]=Gnome xBill
+-Name[no]=Gnome xBill
++Name[gl]=GNOME xBill
++Name[ja]=GNOME Xãƒ“ãƒ«
++Name[lt]=GNOME xBill
++Name[no]=GNOME xBill
++Name[pt_BR]=GNOME xBill
+ Name[sk]=GNOME xBill
+-Name[sv]=Gnome xBill
++Name[sv]=GNOME xBill
+ Name[tr]=xBill
+-Name[zh_TW]=Gnome xBill
+-Comment=Gnome version of the popular xBill game
+-Comment[pt_BR]=Versão Gnome do popular jogo xBill
+-Comment[da]=Gnome version af det populære xBill spil
+-Comment[de]=Die GNOME-Variante des populären xBill-Spiels
+-Comment[el]=Óşóôå ôïí ğëáíŞôç áğü ôïí Ìğéë
++Name[zh_TW]=GNOME xBill
++Comment=GNOME version of the popular xBill game
++Comment[da]=GNOME version af det populÃ¦re xBill spil
++Comment[de]=Die GNOME-Variante des populÃ¤ren xBill-Spiels
++Comment[el]=Î£ÏÏƒÏ„Îµ Ï„Î¿Î½ Ï€Î»Î±Î½Î®Ï„Î· Î±Ï€ÏŒ Ï„Î¿Î½ ÎœÏ€Î¹Î»
+ Comment[es]=Salve el planeta de Bill
+ Comment[et]=xBilli GNOME variant
+-Comment[fi]=GNOME-versio suositusta xBill-pelistä
++Comment[fi]=GNOME-versio suositusta xBill-pelistÃ¤
+ Comment[fr]=Sauvez le monde de Bill
+-Comment[gl]=Versión de Gnome do popular xogo xBill
+-Comment[ja]=¤«¤ÎÍ­Ì¾¤ÊxBill¤ÎGNOMEÈÇ
+-Comment[lt]=Populiaraus xBill şaidimo Gnome versija
+-Comment[no]=Gnome versjon av det populære xBill spillet
+-Comment[sk]=Populárna hra xBill pre GNOME
+-Comment[sv]=Gnome-version av det populära xBill-spelet
+-Comment[tr]=xBill oyununun Gnome surümü
+-Comment[wa]=Ni leyîz nén ki Bill mete si sistinme dvins les coputreces
+-Comment[zh_TW]=xBill ¹CÀ¸ªº Gnome ª©¥»
++Comment[gl]=VersiÃ³n de GNOME do popular xogo xBill
++Comment[ja]=ã‹ã®æœ‰åãªxBillã®GNOMEç‰ˆ
++Comment[lt]=Populiaraus xBill Å¾aidimo GNOME versija
++Comment[no]=GNOME versjon av det populÃ¦re xBill spillet
++Comment[pl]=Wersja dla GNOME popularnej gry xBill
++Comment[pt_BR]=VersÃ£o GNOME do popular jogo xBill
++Comment[sk]=PopulÃ¡rna hra xBill pre GNOME
++Comment[sv]=GNOME-version av det populÃ¤ra xBill-spelet
++Comment[tr]=xBill oyununun GNOME surÃ¼mÃ¼
++Comment[wa]=Ni leyÃ®z nÃ©n ki Bill mete si sistinme dvins les coputreces
++Comment[zh_TW]=xBill éŠæˆ²çš„ GNOME ç‰ˆæœ¬
+ Icon=gnome-xbill.png
+ Exec=gnome-xbill
+-Terminal=0
++Terminal=false
+ Type=Application
++Encoding=UTF-8
++# vi: encoding=utf-8
