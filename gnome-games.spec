@@ -6,19 +6,22 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	e646c5665296bef5b0a14ceb7d0c1fa7
+# Source0-md5:	96aa7c2ca9f2cd8b73680000998f488e
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	GConf2-devel >= 2.4.0
 BuildRequires:	gnome-vfs2-devel >= 2.5.1
 BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	gtk+2-devel >= 1:2.3.1
+BuildRequires:	intltool
 BuildRequires:	libgnome-devel >= 2.5.1
 BuildRequires:	libgnomeui-devel >= 2.5.1
 BuildRequires:	libltdl-devel
@@ -99,6 +102,12 @@ Biblioteki statyczne do GNOME games.
 %patch0 -p1
 
 %build
+glib-gettextize --copy --force
+intltoolize --copy --force
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoheader}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
