@@ -143,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ko) %{_datadir}/gnome-stonesrc.ko
 
 %{_datadir}/mime-info/*
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_datadir}/sounds/*
 
 %{_applnkdir}/Games/*.desktop
