@@ -6,17 +6,16 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.3.0
-Release:	2
+Version:	2.3.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-makefile.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
-BuildRequires:	guile-devel >= 1.6.4
+BuildRequires:	guile-devel >= 1.4.1
 BuildRequires:	libgnome-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libltdl-devel
@@ -94,7 +93,6 @@ Biblioteki statyczne do GNOME games.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure 
@@ -105,7 +103,8 @@ Biblioteki statyczne do GNOME games.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 #	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 %find_lang %{name} --with-gnome --all-name
