@@ -6,39 +6,40 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.8.3
+Version:	2.10.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	0ee8f7cb3a95a5e69a7c9cbb4dc6c66a
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	c3a1a8fd025a0174efa70d4e480114cf
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.92
+BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.7.92
-BuildRequires:	guile-devel >= 1.6.4
-BuildRequires:	gtk+2-devel >= 2:2.4.4
+BuildRequires:	gnome-vfs2-devel >= 2.10.0
+BuildRequires:	guile-devel >= 1.6.5
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	howl-devel >= 0.9.6
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnome-devel >= 2.7.92
-BuildRequires:	libgnomeui-devel >= 2.7.92
+BuildRequires:	libglade2-devel >= 1:2.5.0
+BuildRequires:	libgnomeui-devel >= 2.10.0
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg-devel >= 1:2.8.1
+BuildRequires:	librsvg-devel >= 1:2.9.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.7.92
-Requires:	librsvg >= 1:2.8.1
+Requires(post):	GConf2
+Requires:	gnome-vfs2 >= 2.10.0
+Requires:	librsvg >= 1:2.9.5
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
@@ -223,6 +224,7 @@ Uk³adanka.
 Summary:	Gnome Klotski
 Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
+Requires(post):	GConf2
 Requires(post):	coreutils
 Requires(post):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -339,6 +341,9 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%gconf_schema_install
 
 %post blackjack
 /usr/bin/scrollkeeper-update
@@ -467,6 +472,7 @@ done
 
 %post gnotski
 /usr/bin/scrollkeeper-update
+%gconf_schema_install
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
@@ -533,6 +539,8 @@ fi
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/games-server.py
+%{_sysconfdir}/gconf/schemas/libgnomegames.schemas
 %{_pixmapsdir}/gnome-games-common
 %{_pixmapsdir}/iagno/classic.png
 
@@ -574,7 +582,6 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
-%{_sysconfdir}/sound/events/gnect.soundlist
 %{_datadir}/gnect
 %{_desktopdir}/gnect.desktop
 %{_omf_dest_dir}/%{name}/gnect-C.omf
@@ -680,9 +687,11 @@ fi
 %files gnotski
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotski
+%{_sysconfdir}/gconf/schemas/gnotski.schemas
 %{_desktopdir}/gnotski.desktop
 %{_omf_dest_dir}/%{name}/gnotski-C.omf
 %{_pixmapsdir}/gnotski*.png
+%{_pixmapsdir}/gnotski.svg
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
 %dir %{_gnomehelpdir}/gnotski
 %{_gnomehelpdir}/gnotski/C
@@ -723,6 +732,7 @@ fi
 %{_omf_dest_dir}/%{name}/mahjongg-C.omf
 %{_pixmapsdir}/mahjongg
 %{_pixmapsdir}/gnome-mahjongg.png
+%{_datadir}/%{name}/mahjongg
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
 %dir %{_gnomehelpdir}/mahjongg
 %{_gnomehelpdir}/mahjongg/C
@@ -733,7 +743,7 @@ fi
 %{_sysconfdir}/gconf/schemas/same-gnome.schemas
 %{_desktopdir}/same-gnome.desktop
 %{_omf_dest_dir}/%{name}/same-gnome-C.omf
-%{_pixmapsdir}/same-gnome
+%{_datadir}/%{name}/same-gnome
 %{_pixmapsdir}/gnome-gsame.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
 %dir %{_gnomehelpdir}/same-gnome
@@ -747,8 +757,10 @@ fi
 %{_desktopdir}/freecell.desktop
 %{_desktopdir}/sol.desktop
 %{_omf_dest_dir}/%{name}/aisleriot-C.omf
+%lang(fr) %{_omf_dest_dir}/%{name}/aisleriot-fr.omf
 %{_pixmapsdir}/cards
 %{_pixmapsdir}/gnome-cardgame.png
 %{_pixmapsdir}/gnome-aisleriot.png
 %dir %{_gnomehelpdir}/aisleriot
 %{_gnomehelpdir}/aisleriot/C
+%lang(fr) %{_gnomehelpdir}/aisleriot/fr
