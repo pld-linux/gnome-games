@@ -163,24 +163,8 @@
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=same-gnome
---- gnome-games-2.6.2/blackjack/data/blackjack.desktop~	2004-08-24 05:36:55.000000000 +0200
-+++ gnome-games-2.6.2/blackjack/data/blackjack.desktop	2004-08-24 05:36:55.000000000 +0200
-@@ -26,7 +26,6 @@
- Name[nb]=Blackjack
- Name[nl]=Blackjack
- Name[nn]=Blackjack
--Name[no]=Blackjack
- Name[pa]=ਕਾਲਾ ਗੋਲ੏ਾ
- Name[pl]=Oczko
- Name[pt]=Blackjack
-@@ -69,7 +69,6 @@
- Comment[nb]=Spill kasinospillet Blackjack
- Comment[nl]=Het casino-kaartspel Blackjack
- Comment[nn]=Spel kasinospelet Blackjack
--Comment[no]=Spill kasinospillet Blackjack
- Comment[pa]=ਕੈਸੀਨੋ ਕਾਰਡ ਖੇਡ ਕਾਲਾ ਗੋਲ੏ਾ ਖੇਡੋ
- Comment[pl]=Kasynowa wersja gry oczko
- Comment[pt]=Jogue o jogo de casino Blackjack
+--- gnome-games-2.6.2/blackjack/data/blackjack.desktop.in~	2004-08-24 05:36:55.000000000 +0200
++++ gnome-games-2.6.2/blackjack/data/blackjack.desktop.in	2004-08-24 05:36:55.000000000 +0200
 @@ -88,7 +88,7 @@
  Icon=gnome-blackjack.png
  Terminal=false
@@ -190,24 +174,8 @@
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=blackjack
---- gnome-games-2.6.2/gnect/data/gnect.desktop~	2004-08-24 05:37:33.000000000 +0200
-+++ gnome-games-2.6.2/gnect/data/gnect.desktop	2004-08-24 05:37:33.000000000 +0200
-@@ -27,7 +27,6 @@
- Name[nb]=Fire på rad
- Name[nl]=Vier-op-een-rij
- Name[nn]=Fire på rad
--Name[no]=Fire på rad
- Name[pa]=ਇੱਕ ਕਤਾਰ ਵਿੱਚ ਚਾਰ
- Name[pl]=Gra "cztery w rzędzie"
- Name[pt]=Quatro-em-linha
-@@ -67,7 +67,6 @@
- Comment[nb]=Kjemp om å la linjene bli av samme farge
- Comment[nl]=Probeer lijnen van dezelfde kleur te maken
- Comment[nn]=Kapp om å laga linjer av same farge
--Comment[no]=Kjemp om å la linjene bli av samme farge
- Comment[pa]=ਇੱਕ ਰੰਗ ਦੀਆਂ ਲਾਇਨਾਂ ਬਣਾਉਣ ਦਾ ਮੁਕਾਬਲਾ ਕਰੋ
- Comment[pl]=Rywalizuj w celu utowrzenia linii w jednym kolorze
- Comment[pt]=Compita para fazer linhas da mesma cor
+--- gnome-games-2.6.2/gnect/data/gnect.desktop.in~	2004-08-24 05:37:33.000000000 +0200
++++ gnome-games-2.6.2/gnect/data/gnect.desktop.in	2004-08-24 05:37:33.000000000 +0200
 @@ -84,7 +84,7 @@
  Exec=gnect
  Terminal=false
