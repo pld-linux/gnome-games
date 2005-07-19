@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.10.2
+Version:	2.11.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	fa9488c0ebb34081da2433db5136d07a
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	1ae97437e5603327b0e8aa7d4c41e9db
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -23,14 +23,14 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	gnome-vfs2-devel >= 2.11.0
 BuildRequires:	gob2 >= 2.0.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	howl-devel >= 0.9.10
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.10.0-2
+BuildRequires:	libgnomeui-devel >= 2.11.0
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.9.5
 BuildRequires:	libstdc++-devel
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.10.0-2
+Requires:	gnome-vfs2 >= 2.11.0
 Requires:	librsvg >= 1:2.9.5
 Obsoletes:	gnect
 Obsoletes:	gnome
