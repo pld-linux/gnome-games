@@ -6,31 +6,31 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.10.2
+Version:	2.12.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	fa9488c0ebb34081da2433db5136d07a
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	f837a95f29008837c91481b0a5619166
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
 Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.10.0
+BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	gnome-vfs2-devel >= 2.12.0
 BuildRequires:	gob2 >= 2.0.0
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	howl-devel >= 0.9.10
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.10.0-2
+BuildRequires:	libgnomeui-devel >= 2.12.0
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.9.5
 BuildRequires:	libstdc++-devel
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.10.0-2
+Requires:	gnome-vfs2 >= 2.12.0
 Requires:	librsvg >= 1:2.9.5
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -343,6 +343,22 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name
+%find_lang gnect --with-gnome
+%find_lang gnomine --with-gnome
+%find_lang same-gnome --with-gnome
+%find_lang mahjongg --with-gnome
+%find_lang gtali --with-gnome
+%find_lang gnome-stones --with-gnome
+%find_lang gataxx --with-gnome
+%find_lang gnotravex --with-gnome
+%find_lang gnotski --with-gnome
+%find_lang glines --with-gnome
+%find_lang iagno --with-gnome
+%find_lang gnobots2 --with-gnome
+%find_lang gnibbles --with-gnome
+%find_lang gnometris --with-gnome
+%find_lang blackjack --with-gnome
+%find_lang aisleriot --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -616,7 +632,7 @@ fi
 %dir %{_pixmapsdir}/iagno
 %{_pixmapsdir}/iagno/classic.png
 
-%files blackjack
+%files blackjack -f blackjack.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/blackjack
 %{_sysconfdir}/gconf/schemas/blackjack.schemas
@@ -625,20 +641,16 @@ fi
 %{_omf_dest_dir}/%{name}/blackjack-C.omf
 %{_pixmapsdir}/blackjack
 %{_pixmapsdir}/gnome-blackjack.png
-%dir %{_gnomehelpdir}/blackjack
-%{_gnomehelpdir}/blackjack/C
 
-%files gataxx
+%files gataxx -f gataxx.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gataxx
 %{_sysconfdir}/gconf/schemas/gataxx.schemas
 %{_desktopdir}/gataxx.desktop
 %{_omf_dest_dir}/%{name}/gataxx-C.omf
 %{_pixmapsdir}/gataxx.png
-%dir %{_gnomehelpdir}/gataxx
-%{_gnomehelpdir}/gataxx/C
 
-%files glines
+%files glines -f glines.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/glines
 %{_sysconfdir}/gconf/schemas/glines.schemas
@@ -647,10 +659,8 @@ fi
 %{_pixmapsdir}/glines
 %{_pixmapsdir}/glines.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
-%dir %{_gnomehelpdir}/glines
-%{_gnomehelpdir}/glines/C
 
-%files gnect
+%files gnect -f gnect.lang
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
@@ -659,10 +669,8 @@ fi
 %{_omf_dest_dir}/%{name}/gnect-C.omf
 %{_pixmapsdir}/gnect
 %{_pixmapsdir}/gnect-icon.png
-%dir %{_gnomehelpdir}/gnect
-%{_gnomehelpdir}/gnect/C
 
-%files gnibbles
+%files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
@@ -674,10 +682,8 @@ fi
 %{_pixmapsdir}/gnibbles
 %{_pixmapsdir}/gnome-nibbles.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
-%dir %{_gnomehelpdir}/gnibbles
-%{_gnomehelpdir}/gnibbles/C
 
-%files gnobots2
+%files gnobots2 -f gnobots2.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnobots2
 %{_sysconfdir}/gconf/schemas/gnobots2.schemas
@@ -694,13 +700,8 @@ fi
 %{_pixmapsdir}/rteleport.png
 %{_pixmapsdir}/teleport.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
-%dir %{_gnomehelpdir}/gnobots2
-%{_gnomehelpdir}/gnobots2/C
-%lang(da) %{_gnomehelpdir}/gnobots2/da
-%lang(es) %{_gnomehelpdir}/gnobots2/es
-%lang(it) %{_gnomehelpdir}/gnobots2/it
 
-%files stones
+%files stones -f gnome-stones.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnome-stones
 %{_sysconfdir}/gconf/schemas/gnome-stones.schemas
@@ -716,10 +717,8 @@ fi
 %{_pixmapsdir}/gnome-stones
 %{_pixmapsdir}/gnome-stones*.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnome-stones.*
-%dir %{_gnomehelpdir}/gnome-stones
-%{_gnomehelpdir}/gnome-stones/C
 
-%files gnometris
+%files gnometris -f gnometris.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnometris
 %{_sysconfdir}/gconf/schemas/gnometris.schemas
@@ -729,10 +728,8 @@ fi
 %{_pixmapsdir}/gnome-gtetris.png
 %{_datadir}/sounds/gnometris
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
-%dir %{_gnomehelpdir}/gnometris
-%{_gnomehelpdir}/gnometris/C
 
-%files gnomine
+%files gnomine -f gnomine.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnomine
 %{_sysconfdir}/gconf/schemas/gnomine.schemas
@@ -741,10 +738,8 @@ fi
 %{_pixmapsdir}/gnomine
 %{_pixmapsdir}/gnome-gnomine.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
-%dir %{_gnomehelpdir}/gnomine
-%{_gnomehelpdir}/gnomine/C
 
-%files gnotravex
+%files gnotravex -f gnotravex.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotravex
 %{_sysconfdir}/gconf/schemas/gnotravex.schemas
@@ -752,10 +747,8 @@ fi
 %{_omf_dest_dir}/%{name}/gnotravex-C.omf
 %{_pixmapsdir}/gnome-gnotravex.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
-%dir %{_gnomehelpdir}/gnotravex
-%{_gnomehelpdir}/gnotravex/C
 
-%files gnotski
+%files gnotski -f gnotski.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotski
 %{_sysconfdir}/gconf/schemas/gnotski.schemas
@@ -764,10 +757,8 @@ fi
 %{_pixmapsdir}/gnotski*.png
 %{_pixmapsdir}/gnotski.svg
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
-%dir %{_gnomehelpdir}/gnotski
-%{_gnomehelpdir}/gnotski/C
 
-%files gtali
+%files gtali -f gtali.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gtali
 %{_sysconfdir}/gconf/schemas/gtali.schemas
@@ -777,11 +768,8 @@ fi
 %{_pixmapsdir}/gtali
 %{_pixmapsdir}/gnome-gtali.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
-%dir %{_gnomehelpdir}/gtali
-%{_gnomehelpdir}/gtali/C
-%lang(da) %{_gnomehelpdir}/gtali/da
 
-%files iagno
+%files iagno -f iagno.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
 %{_sysconfdir}/gconf/schemas/iagno.schemas
@@ -792,10 +780,8 @@ fi
 %{_pixmapsdir}/iagno.png
 %{_pixmapsdir}/iagno/*
 %exclude %{_pixmapsdir}/iagno/classic.png
-%dir %{_gnomehelpdir}/iagno
-%{_gnomehelpdir}/iagno/C
 
-%files mahjongg
+%files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/mahjongg
 %{_sysconfdir}/gconf/schemas/mahjongg.schemas
@@ -805,10 +791,8 @@ fi
 %{_pixmapsdir}/gnome-mahjongg.png
 %{_datadir}/%{name}/mahjongg
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
-%dir %{_gnomehelpdir}/mahjongg
-%{_gnomehelpdir}/mahjongg/C
 
-%files same-gnome
+%files same-gnome -f same-gnome.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/same-gnome
 %{_sysconfdir}/gconf/schemas/same-gnome.schemas
@@ -817,10 +801,8 @@ fi
 %{_datadir}/%{name}/same-gnome
 %{_pixmapsdir}/gnome-gsame.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
-%dir %{_gnomehelpdir}/same-gnome
-%{_gnomehelpdir}/same-gnome/C
 
-%files sol
+%files sol -f aisleriot.lang
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/sol
 %{_sysconfdir}/gconf/schemas/aisleriot.schemas
@@ -832,6 +814,3 @@ fi
 %{_pixmapsdir}/cards
 %{_pixmapsdir}/gnome-cardgame.png
 %{_pixmapsdir}/gnome-aisleriot.png
-%dir %{_gnomehelpdir}/aisleriot
-%{_gnomehelpdir}/aisleriot/C
-%lang(fr) %{_gnomehelpdir}/aisleriot/fr
