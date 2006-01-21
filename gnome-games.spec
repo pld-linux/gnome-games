@@ -16,7 +16,6 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.12/%{name}-%{versi
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
-Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf >= 2.53
