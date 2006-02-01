@@ -311,6 +311,7 @@ Ró¿ne gry karciane.
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-howl \
 	--disable-static
 %{__make}
 
@@ -331,7 +332,6 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 %find_lang same-gnome --with-gnome
 %find_lang mahjongg --with-gnome
 %find_lang gtali --with-gnome
-#%find_lang gnome-stones --with-gnome
 %find_lang gataxx --with-gnome
 %find_lang gnotravex --with-gnome
 %find_lang gnotski --with-gnome
