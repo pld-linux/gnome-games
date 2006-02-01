@@ -6,13 +6,13 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.12.2
+Version:	2.13.6
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	515bb41941d59ef1172fb35132822c3f
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.13/%{name}-%{version}.tar.bz2
+# Source0-md5:	b9421b420cd964a0bb7b7e510c4ff793
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -26,7 +26,6 @@ BuildRequires:	gnome-vfs2-devel >= 2.12.0
 BuildRequires:	gob2 >= 2.0.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	gtk+2-devel >= 2:2.8.3
-BuildRequires:	howl-devel >= 0.9.10
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.12.0
@@ -44,6 +43,7 @@ Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
 Obsoletes:	gnome-games-static
+Obsoletes:	gnome-games-stones
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
@@ -159,22 +159,6 @@ Avoid the robots and make them crash into each other.
 
 %description gnobots2 -l pl
 Gra polegaj±ca na zapobieganiu zderzeniom robotów.
-
-%package stones
-Summary:	GNOME Stones
-Summary(pl):	"Kamienie" dla GNOME
-Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
-Requires(post):	coreutils
-Requires(post,postun):	desktop-file-utils
-Requires(post,postun):	scrollkeeper
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description stones
-Boulder Dash like game.
-
-%description stones -l pl
-Gra podobna do Boulder Dasha.
 
 %package gnometris
 Summary:	GNOME Tetris
@@ -347,7 +331,7 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 %find_lang same-gnome --with-gnome
 %find_lang mahjongg --with-gnome
 %find_lang gtali --with-gnome
-%find_lang gnome-stones --with-gnome
+#%find_lang gnome-stones --with-gnome
 %find_lang gataxx --with-gnome
 %find_lang gnotravex --with-gnome
 %find_lang gnotski --with-gnome
@@ -458,24 +442,6 @@ done
 
 %postun	gnobots2
 %scrollkeeper_update_postun
-
-%post stones
-%scrollkeeper_update_post
-%gconf_schema_install gnome-stones.schemas
-%update_desktop_database_post
-
-if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
-	touch %{_gamesdir}/gnome-stones.scores
-	chown root:games %{_gamesdir}/gnome-stones.scores
-	chmod 664 %{_gamesdir}/gnome-stones.scores
-fi
-
-%preun stones
-%gconf_schema_uninstall gnome-stones.schemas
-
-%postun stones
-%scrollkeeper_update_postun
-%update_desktop_database_postun
 
 %post gnometris
 %scrollkeeper_update_post
@@ -645,6 +611,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gataxx
 %{_sysconfdir}/gconf/schemas/gataxx.schemas
+%{_datadir}/%{name}/ataxx
 %{_desktopdir}/gataxx.desktop
 %{_omf_dest_dir}/%{name}/gataxx-C.omf
 %{_pixmapsdir}/gataxx.png
@@ -695,27 +662,8 @@ fi
 %lang(es) %{_omf_dest_dir}/%{name}/gnobots2-es.omf
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
 %{_pixmapsdir}/gnobots2
-%{_pixmapsdir}/gnome-gnobots2.png
-%{_pixmapsdir}/rteleport.png
-%{_pixmapsdir}/teleport.png
+%{_pixmapsdir}/gnome-gnobots2.svg
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
-
-%files stones -f gnome-stones.lang
-%defattr(644,root,root,755)
-%attr(2755,root,games) %{_bindir}/gnome-stones
-%{_sysconfdir}/gconf/schemas/gnome-stones.schemas
-%{_datadir}/gnome-stones
-%{_datadir}/mime-info/gnome-stones.*
-%{_datadir}/gnome-stonesrc
-%lang(ko) %{_datadir}/gnome-stonesrc.ko
-%dir %{_libdir}/gnome-stones
-%dir %{_libdir}/gnome-stones/objects
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so
-%{_desktopdir}/gnome-stones.desktop
-%{_omf_dest_dir}/%{name}/gnome-stones-C.omf
-%{_pixmapsdir}/gnome-stones
-%{_pixmapsdir}/gnome-stones*.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnome-stones.*
 
 %files gnometris -f gnometris.lang
 %defattr(644,root,root,755)
