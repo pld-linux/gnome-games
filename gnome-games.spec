@@ -6,13 +6,13 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.13.6
+Version:	2.13.7
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9421b420cd964a0bb7b7e510c4ff793
+# Source0-md5:	5bf973558832c376d43227be44e3c405
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -20,6 +20,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
+BuildRequires:	avahi-compat-libdns_sd-devel
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-vfs2-devel >= 2.12.0
@@ -311,6 +312,7 @@ Ró¿ne gry karciane.
 %{__autoconf}
 %{__automake}
 %configure \
+	--enable-bonjour \
 	--disable-howl \
 	--disable-static
 %{__make}
