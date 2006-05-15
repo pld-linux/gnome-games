@@ -1,187 +1,192 @@
---- gnome-games-2.6.2/aisleriot/freecell.desktop.in~	2004-08-24 04:49:40.000000000 +0200
-+++ gnome-games-2.6.2/aisleriot/freecell.desktop.in	2004-08-24 04:49:40.000000000 +0200
+diff -aurN gnome-games-2.13.6.orig/aisleriot/freecell.desktop.in gnome-games-2.13.6/aisleriot/freecell.desktop.in
+--- gnome-games-2.13.6.orig/aisleriot/freecell.desktop.in	2006-01-30 09:13:59.000000000 +0100
++++ gnome-games-2.13.6/aisleriot/freecell.desktop.in	2006-02-01 22:26:16.411476000 +0100
 @@ -6,7 +6,7 @@
  Icon=gnome-cardgame.png
  Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;CardGame;
+-Categories=GNOME;GTK;Game;CardGame;
 +Categories=GTK;GNOME;Game;CardGame;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=aisleriot
---- gnome-games-2.6.2/aisleriot/sol.desktop.in~	2004-08-24 04:49:50.000000000 +0200
-+++ gnome-games-2.6.2/aisleriot/sol.desktop.in	2004-08-24 04:49:50.000000000 +0200
+diff -aurN gnome-games-2.13.6.orig/aisleriot/sol.desktop.in gnome-games-2.13.6/aisleriot/sol.desktop.in
+--- gnome-games-2.13.6.orig/aisleriot/sol.desktop.in	2006-01-30 09:13:59.000000000 +0100
++++ gnome-games-2.13.6/aisleriot/sol.desktop.in	2006-02-01 22:33:18.161476000 +0100
 @@ -6,7 +6,7 @@
  Icon=gnome-aisleriot.png
  Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;CardGame;
+-Categories=GNOME;GTK;Game;CardGame;
 +Categories=GTK;GNOME;Game;CardGame;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=aisleriot
---- gnome-games-2.6.2/gataxx/gataxx.desktop.in~	2004-08-24 04:50:07.000000000 +0200
-+++ gnome-games-2.6.2/gataxx/gataxx.desktop.in	2004-08-24 04:50:07.000000000 +0200
+diff -aurN gnome-games-2.13.6.orig/blackjack/data/blackjack.desktop.in gnome-games-2.13.6/blackjack/data/blackjack.desktop.in
+--- gnome-games-2.13.6.orig/blackjack/data/blackjack.desktop.in	2006-01-30 09:14:08.000000000 +0100
++++ gnome-games-2.13.6/blackjack/data/blackjack.desktop.in	2006-02-01 22:26:31.861476000 +0100
 @@ -6,7 +6,7 @@
- Exec=gataxx
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;BoardGame;
-+Categories=GTK;GNOME;Game;BoardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gataxx
---- gnome-games-2.6.2/glines/glines.desktop.in~	2004-08-24 04:50:21.000000000 +0200
-+++ gnome-games-2.6.2/glines/glines.desktop.in	2004-08-24 04:50:21.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=glines.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=glines
---- gnome-games-2.6.2/gnibbles/gnibbles.desktop.in~	2004-08-24 04:50:30.000000000 +0200
-+++ gnome-games-2.6.2/gnibbles/gnibbles.desktop.in	2004-08-24 04:50:30.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-nibbles.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;ArcadeGame;
-+Categories=GTK;GNOME;Game;ArcadeGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnibbles
---- gnome-games-2.6.2/gnobots2/gnobots2.desktop.in~	2004-08-24 04:51:33.000000000 +0200
-+++ gnome-games-2.6.2/gnobots2/gnobots2.desktop.in	2004-08-24 04:51:33.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gnobots2.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;ArcadeGame;
-+Categories=GTK;GNOME;Game;ArcadeGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnobots2
---- gnome-games-2.6.2/gnome-stones/gnome-stones.desktop.in~	2004-08-24 04:51:49.000000000 +0200
-+++ gnome-games-2.6.2/gnome-stones/gnome-stones.desktop.in	2004-08-24 04:51:49.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-stones.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnome-stones
---- gnome-games-2.6.2/gnometris/gnometris.desktop.in~	2004-08-24 04:51:59.000000000 +0200
-+++ gnome-games-2.6.2/gnometris/gnometris.desktop.in	2004-08-24 04:51:59.000000000 +0200
-@@ -6,7 +6,7 @@
- Exec=gnometris
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;BlocksGame;
-+Categories=GTK;GNOME;Game;BlocksGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnometris
---- gnome-games-2.6.2/gnomine/gnomine.desktop.in~	2004-08-24 04:52:16.000000000 +0200
-+++ gnome-games-2.6.2/gnomine/gnomine.desktop.in	2004-08-24 04:52:16.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gnomine.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnomine
---- gnome-games-2.6.2/gnotravex/gnotravex.desktop.in~	2004-08-24 04:52:31.000000000 +0200
-+++ gnome-games-2.6.2/gnotravex/gnotravex.desktop.in	2004-08-24 04:52:31.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gnotravex.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnotravex
---- gnome-games-2.6.2/gnotski/gnotski.desktop.in~	2004-08-24 04:52:46.000000000 +0200
-+++ gnome-games-2.6.2/gnotski/gnotski.desktop.in	2004-08-24 04:52:46.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnotski-icon.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gnotski
---- gnome-games-2.6.2/gtali/gtali.desktop.in~	2004-08-24 04:54:20.000000000 +0200
-+++ gnome-games-2.6.2/gtali/gtali.desktop.in	2004-08-24 04:54:20.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gtali.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;
-+Categories=GTK;GNOME;Game;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=gtali
---- gnome-games-2.6.2/iagno/iagno.desktop.in~	2004-08-24 05:02:26.000000000 +0200
-+++ gnome-games-2.6.2/iagno/iagno.desktop.in	2004-08-24 05:02:26.000000000 +0200
-@@ -6,7 +6,7 @@
- Exec=iagno
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=iagno
---- gnome-games-2.6.2/mahjongg/mahjongg.desktop.in~	2004-08-24 05:02:36.000000000 +0200
-+++ gnome-games-2.6.2/mahjongg/mahjongg.desktop.in	2004-08-24 05:02:36.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-mahjongg.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;BoardGame;
-+Categories=GTK;GNOME;Game;BoardGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=mahjongg
---- gnome-games-2.6.2/same-gnome/same-gnome.desktop.in~	2004-08-24 05:02:48.000000000 +0200
-+++ gnome-games-2.6.2/same-gnome/same-gnome.desktop.in	2004-08-24 05:02:48.000000000 +0200
-@@ -6,7 +6,7 @@
- Icon=gnome-gsame.png
- Terminal=false
- Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
-+Categories=GTK;GNOME;Game;LogicGame;
- X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=gnome-games
- X-GNOME-Bugzilla-Component=same-gnome
---- gnome-games-2.6.2/blackjack/data/blackjack.desktop.in~	2004-08-24 05:36:55.000000000 +0200
-+++ gnome-games-2.6.2/blackjack/data/blackjack.desktop.in	2004-08-24 05:36:55.000000000 +0200
-@@ -88,7 +88,7 @@
  Icon=gnome-blackjack.png
  Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;CardGame;
+-Categories=GNOME;GTK;Game;CardGame;
 +Categories=GTK;GNOME;Game;CardGame;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=blackjack
---- gnome-games-2.6.2/gnect/data/gnect.desktop.in~	2004-08-24 05:37:33.000000000 +0200
-+++ gnome-games-2.6.2/gnect/data/gnect.desktop.in	2004-08-24 05:37:33.000000000 +0200
-@@ -84,7 +84,7 @@
+diff -aurN gnome-games-2.13.6.orig/gataxx/gataxx.desktop.in gnome-games-2.13.6/gataxx/gataxx.desktop.in
+--- gnome-games-2.13.6.orig/gataxx/gataxx.desktop.in	2006-01-30 09:14:08.000000000 +0100
++++ gnome-games-2.13.6/gataxx/gataxx.desktop.in	2006-02-01 22:26:52.041476000 +0100
+@@ -6,7 +6,7 @@
+ Exec=gataxx
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;BoardGame;
++Categories=GTK;GNOME;Game;BoardGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gataxx
+diff -aurN gnome-games-2.13.6.orig/glines/glines.desktop.in gnome-games-2.13.6/glines/glines.desktop.in
+--- gnome-games-2.13.6.orig/glines/glines.desktop.in	2006-01-30 09:14:09.000000000 +0100
++++ gnome-games-2.13.6/glines/glines.desktop.in	2006-02-01 22:27:07.411476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=glines.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;LogicGame;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=glines
+diff -aurN gnome-games-2.13.6.orig/gnect/data/gnect.desktop.in gnome-games-2.13.6/gnect/data/gnect.desktop.in
+--- gnome-games-2.13.6.orig/gnect/data/gnect.desktop.in	2006-01-30 09:14:09.000000000 +0100
++++ gnome-games-2.13.6/gnect/data/gnect.desktop.in	2006-02-01 22:27:29.001476000 +0100
+@@ -6,7 +6,7 @@
  Exec=gnect
  Terminal=false
  Type=Application
--Categories=GNOME;Application;Game;PuzzleGame;
+-Categories=GNOME;GTK;Game;LogicGame;
 +Categories=GTK;GNOME;Game;LogicGame;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-games
  X-GNOME-Bugzilla-Component=gnect
+diff -aurN gnome-games-2.13.6.orig/gnibbles/gnibbles.desktop.in gnome-games-2.13.6/gnibbles/gnibbles.desktop.in
+--- gnome-games-2.13.6.orig/gnibbles/gnibbles.desktop.in	2006-01-30 09:14:09.000000000 +0100
++++ gnome-games-2.13.6/gnibbles/gnibbles.desktop.in	2006-02-01 22:27:47.431476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-nibbles.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;ArcadeGame;
++Categories=GTK;GNOME;Game;ArcadeGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnibbles
+diff -aurN gnome-games-2.13.6.orig/gnobots2/gnobots2.desktop.in gnome-games-2.13.6/gnobots2/gnobots2.desktop.in
+--- gnome-games-2.13.6.orig/gnobots2/gnobots2.desktop.in	2006-01-30 09:14:10.000000000 +0100
++++ gnome-games-2.13.6/gnobots2/gnobots2.desktop.in	2006-02-01 22:28:04.791476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-gnobots2.svg
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;ArcadeGame;
++Categories=GTK;GNOME;Game;ArcadeGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnobots2
+diff -aurN gnome-games-2.13.6.orig/gnometris/gnometris.desktop.in gnome-games-2.13.6/gnometris/gnometris.desktop.in
+--- gnome-games-2.13.6.orig/gnometris/gnometris.desktop.in	2006-01-30 09:14:11.000000000 +0100
++++ gnome-games-2.13.6/gnometris/gnometris.desktop.in	2006-02-01 22:28:17.161476000 +0100
+@@ -6,7 +6,7 @@
+ Exec=gnometris
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;BlocksGame;
++Categories=GTK;GNOME;Game;BlocksGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnometris
+diff -aurN gnome-games-2.13.6.orig/gnomine/gnomine.desktop.in gnome-games-2.13.6/gnomine/gnomine.desktop.in
+--- gnome-games-2.13.6.orig/gnomine/gnomine.desktop.in	2006-01-30 09:14:11.000000000 +0100
++++ gnome-games-2.13.6/gnomine/gnomine.desktop.in	2006-02-01 22:28:27.631476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-gnomine.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;LogicGame;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnomine
+diff -aurN gnome-games-2.13.6.orig/gnotravex/gnotravex.desktop.in gnome-games-2.13.6/gnotravex/gnotravex.desktop.in
+--- gnome-games-2.13.6.orig/gnotravex/gnotravex.desktop.in	2006-01-30 09:14:48.000000000 +0100
++++ gnome-games-2.13.6/gnotravex/gnotravex.desktop.in	2006-02-01 22:28:43.911476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-gnotravex.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;LogicGame;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnotravex
+diff -aurN gnome-games-2.13.6.orig/gnotski/gnotski.desktop.in gnome-games-2.13.6/gnotski/gnotski.desktop.in
+--- gnome-games-2.13.6.orig/gnotski/gnotski.desktop.in	2006-01-30 09:14:48.000000000 +0100
++++ gnome-games-2.13.6/gnotski/gnotski.desktop.in	2006-02-01 22:29:04.971476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnotski-icon.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;LogicGame;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gnotski
+diff -aurN gnome-games-2.13.6.orig/gtali/gtali.desktop.in gnome-games-2.13.6/gtali/gtali.desktop.in
+--- gnome-games-2.13.6.orig/gtali/gtali.desktop.in	2006-01-30 09:14:48.000000000 +0100
++++ gnome-games-2.13.6/gtali/gtali.desktop.in	2006-02-01 22:29:18.591476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-gtali.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;
++Categories=GTK;GNOME;Game;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=gtali
+diff -aurN gnome-games-2.13.6.orig/iagno/iagno.desktop.in gnome-games-2.13.6/iagno/iagno.desktop.in
+--- gnome-games-2.13.6.orig/iagno/iagno.desktop.in	2006-01-30 09:14:48.000000000 +0100
++++ gnome-games-2.13.6/iagno/iagno.desktop.in	2006-02-01 22:33:29.761476000 +0100
+@@ -6,7 +6,7 @@
+ Exec=iagno
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=iagno
+diff -aurN gnome-games-2.13.6.orig/mahjongg/mahjongg.desktop.in gnome-games-2.13.6/mahjongg/mahjongg.desktop.in
+--- gnome-games-2.13.6.orig/mahjongg/mahjongg.desktop.in	2006-01-30 09:14:48.000000000 +0100
++++ gnome-games-2.13.6/mahjongg/mahjongg.desktop.in	2006-02-01 22:30:19.281476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-mahjongg.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;BoardGame;
++Categories=GTK;GNOME;Game;BoardGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=mahjongg
+diff -aurN gnome-games-2.13.6.orig/same-gnome/same-gnome.desktop.in gnome-games-2.13.6/same-gnome/same-gnome.desktop.in
+--- gnome-games-2.13.6.orig/same-gnome/same-gnome.desktop.in	2006-01-30 09:14:55.000000000 +0100
++++ gnome-games-2.13.6/same-gnome/same-gnome.desktop.in	2006-02-01 22:30:32.171476000 +0100
+@@ -6,7 +6,7 @@
+ Icon=gnome-gsame.png
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Game;LogicGame;
++Categories=GTK;GNOME;Game;LogicGame;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-games
+ X-GNOME-Bugzilla-Component=same-gnome
