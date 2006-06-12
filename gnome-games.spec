@@ -6,13 +6,13 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.15.2
-Release:	0.1
+Version:	2.15.3
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed53690a7865d0e4fabec101af3f17fb
+# Source0-md5:	378d4280593a7dee51bc9ac5f126d5c8
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -78,7 +78,8 @@ same-gnome É sol.
 Summary:	GNOME's version of blackjack
 Summary(pl):	Blackjack dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -92,7 +93,8 @@ Kasynowa wersja gry oczko.
 Summary:	GNOME Ataxx
 Summary(pl):	Ataxx dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -106,8 +108,9 @@ Gra podobna do Reversi.
 Summary:	Five or more game
 Summary(pl):	Gra "Piêæ albo wiêcej"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -122,7 +125,8 @@ linie.
 Summary:	Four-in-a-row game
 Summary(pl):	Gra "Cztery w rzêdzie"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -136,8 +140,9 @@ Gra, której celem jest utowrzenie linii w jednym kolorze.
 Summary:	GNOME Nibbles
 Summary(pl):	Nibbles dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -151,8 +156,9 @@ Gra polegaj±ca na przeprowadzeniu robaka przez labirynt.
 Summary:	GNOME Robots
 Summary(pl):	Robots dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -166,8 +172,9 @@ Gra polegaj±ca na zapobieganiu zderzeniom robotów.
 Summary:	GNOME Tetris
 Summary(pl):	Tetris dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -181,8 +188,9 @@ Gra podobna do Tetrisa.
 Summary:	GNOME Mines
 Summary(pl):	Miny dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -196,8 +204,9 @@ Gra, której celem jest rozminowanie pola minowego.
 Summary:	GNOME Tetravex
 Summary(pl):	Tetravex dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -211,8 +220,9 @@ Uk³adanka.
 Summary:	Gnome Klotski
 Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -228,8 +238,9 @@ w pole ograniczone zielonymi znacznikami.
 Summary:	GNOME Tali
 Summary(pl):	Tali dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -243,7 +254,8 @@ Gra w ko¶ci w pokerowym stylu.
 Summary:	GNOME Iagno
 Summary(pl):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -257,8 +269,9 @@ Gra podobna do Reversi.
 Summary:	GNOME Mahjongg
 Summary(pl):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -272,8 +285,9 @@ par.
 %package same-gnome
 Summary:	Same GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -287,7 +301,8 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 Summary:	AisleRiot Solitaire
 Summary(pl):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,postun):	gtk+2 >= 2:2.9.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	guile >= 5:1.6.5
@@ -358,26 +373,31 @@ rm -rf $RPM_BUILD_ROOT
 %post blackjack
 %scrollkeeper_update_post
 %gconf_schema_install blackjack.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %preun blackjack
 %gconf_schema_uninstall blackjack.schemas
 
 %postun blackjack
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gataxx
 %scrollkeeper_update_post
 %gconf_schema_install gataxx.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %preun gataxx
 %gconf_schema_uninstall gataxx.schemas
 
 %postun gataxx
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post glines
 %scrollkeeper_update_post
 %gconf_schema_install glines.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
 	touch %{_gamesdir}/glines.scores
@@ -390,20 +410,24 @@ fi
 
 %postun glines
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnect
 %scrollkeeper_update_post
 %gconf_schema_install gnect.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %preun gnect
 %gconf_schema_uninstall gnect.schemas
 
 %postun gnect
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnibbles
 %scrollkeeper_update_post
 %gconf_schema_install gnibbles.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	gnibbles.3.1 gnibbles.4.0 gnibbles.4.1; do
@@ -419,10 +443,12 @@ done
 
 %postun gnibbles
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnobots2
 %scrollkeeper_update_post
 %gconf_schema_install gnobots2.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	gnobots2.classic_robots-super-safe gnobots2.nightmare-safe \
@@ -445,10 +471,12 @@ done
 
 %postun	gnobots2
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnometris
 %scrollkeeper_update_post
 %gconf_schema_install gnometris.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	touch %{_gamesdir}/gnometris.scores
@@ -461,10 +489,12 @@ fi
 
 %postun gnometris
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnomine
 %scrollkeeper_update_post
 %gconf_schema_install gnomine.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	if [ ! -f %{_gamesdir}/$i.scores ]; then
@@ -479,10 +509,12 @@ done
 
 %postun gnomine
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnotravex
 %scrollkeeper_update_post
 %gconf_schema_install gnotravex.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	gnotravex.6x6; do
@@ -498,10 +530,12 @@ done
 
 %postun gnotravex
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gnotski
 %scrollkeeper_update_post
 %gconf_schema_install gnotski.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
@@ -516,10 +550,12 @@ done
 
 %postun gnotski
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post gtali
 %scrollkeeper_update_post
 %gconf_schema_install gtali.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	touch %{_gamesdir}/gtali.scores
@@ -532,20 +568,24 @@ fi
 
 %postun gtali
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post iagno
 %scrollkeeper_update_post
 %gconf_schema_install iagno.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %preun iagno
 %gconf_schema_uninstall iagno.schemas
 
 %postun iagno
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post mahjongg
 %scrollkeeper_update_post
 %gconf_schema_install mahjongg.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	mahjongg.difficult mahjongg.dragon mahjongg.easy \
@@ -562,10 +602,12 @@ done
 
 %postun mahjongg
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post same-gnome
 %scrollkeeper_update_post
 %gconf_schema_install same-gnome.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	touch %{_gamesdir}/same-gnome.scores
@@ -578,16 +620,19 @@ fi
 
 %postun same-gnome
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %post sol
 %scrollkeeper_update_post
 %gconf_schema_install aisleriot.schemas
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %preun sol
 %gconf_schema_uninstall aisleriot.schemas
 
 %postun sol
 %scrollkeeper_update_postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -626,7 +671,7 @@ fi
 %{_desktopdir}/glines.desktop
 %{_omf_dest_dir}/%{name}/glines-C.omf
 %{_pixmapsdir}/glines
-#%{_iconsdir}/hicolor/*/*/gnome-glines.png
+%{_iconsdir}/hicolor/*/*/gnome-five-or-more.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
 
 %files gnect -f gnect.lang
@@ -637,6 +682,7 @@ fi
 %{_desktopdir}/gnect.desktop
 %{_omf_dest_dir}/%{name}/gnect-C.omf
 %{_pixmapsdir}/gnect
+%{_iconsdir}/hicolor/*/*/gnome-four-in-a-row.png
 
 %files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
@@ -664,7 +710,7 @@ fi
 %lang(es) %{_omf_dest_dir}/%{name}/gnobots2-es.omf
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
 %{_pixmapsdir}/gnobots2
-%{_iconsdir}/hicolor/*/*/gnome-robots.svg
+%{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
 
 %files gnometris -f gnometris.lang
@@ -704,6 +750,7 @@ fi
 %{_desktopdir}/gnotski.desktop
 %{_omf_dest_dir}/%{name}/gnotski-C.omf
 %{_pixmapsdir}/gnotski.svg
+%{_iconsdir}/hicolor/*/*/gnome-klotski.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
 
 %files gtali -f gtali.lang
@@ -760,3 +807,4 @@ fi
 %lang(fr) %{_omf_dest_dir}/%{name}/aisleriot-fr.omf
 %{_pixmapsdir}/cards
 %{_iconsdir}/hicolor/*/*/gnome-aisleriot.png
+%{_iconsdir}/hicolor/*/*/gnome-freecell.png
