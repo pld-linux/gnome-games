@@ -6,13 +6,13 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.15.4
+Version:	2.15.5
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	b8c50818ad905f6ecd4f8d90cd0111fc
+# Source0-md5:	a8dae17f465b280610a22896877d8037
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -23,23 +23,23 @@ BuildRequires:	automake
 BuildRequires:	avahi-glib-devel >= 0.6.11
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.15.3
+BuildRequires:	gnome-vfs2-devel >= 2.15.90
 BuildRequires:	gob2 >= 2.0.14
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.10.1
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.15.2
+BuildRequires:	libgnomeui-devel >= 2.15.90
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.15.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.15.3
-Requires:	libgnomeui >= 2.15.2
+Requires:	gnome-vfs2 >= 2.15.90
+Requires:	libgnomeui >= 2.15.90
 Requires:	librsvg >= 1:2.15.0
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -79,7 +79,7 @@ Summary:	GNOME's version of blackjack
 Summary(pl):	Blackjack dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -94,7 +94,7 @@ Summary:	GNOME Ataxx
 Summary(pl):	Ataxx dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -110,7 +110,7 @@ Summary(pl):	Gra "Piêæ albo wiêcej"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -126,7 +126,7 @@ Summary:	Four-in-a-row game
 Summary(pl):	Gra "Cztery w rzêdzie"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -142,7 +142,7 @@ Summary(pl):	Nibbles dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -158,7 +158,7 @@ Summary(pl):	Robots dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -174,7 +174,7 @@ Summary(pl):	Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -190,7 +190,7 @@ Summary(pl):	Miny dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -206,7 +206,7 @@ Summary(pl):	Tetravex dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -222,7 +222,7 @@ Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -240,7 +240,7 @@ Summary(pl):	Tali dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -255,7 +255,7 @@ Summary:	GNOME Iagno
 Summary(pl):	Iagno dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -271,7 +271,7 @@ Summary(pl):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -287,7 +287,7 @@ Summary:	Same GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -302,7 +302,7 @@ Summary:	AisleRiot Solitaire
 Summary(pl):	Pasjans AisleRiot
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.1
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	guile >= 5:1.6.5
@@ -327,7 +327,6 @@ Ró¿ne gry karciane.
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--disable-bonjour \
 	--disable-howl \
@@ -374,31 +373,31 @@ rm -rf $RPM_BUILD_ROOT
 %post blackjack
 %scrollkeeper_update_post
 %gconf_schema_install blackjack.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %preun blackjack
 %gconf_schema_uninstall blackjack.schemas
 
 %postun blackjack
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gataxx
 %scrollkeeper_update_post
 %gconf_schema_install gataxx.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %preun gataxx
 %gconf_schema_uninstall gataxx.schemas
 
 %postun gataxx
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post glines
 %scrollkeeper_update_post
 %gconf_schema_install glines.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
 	touch %{_gamesdir}/glines.scores
@@ -411,24 +410,24 @@ fi
 
 %postun glines
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnect
 %scrollkeeper_update_post
 %gconf_schema_install gnect.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %preun gnect
 %gconf_schema_uninstall gnect.schemas
 
 %postun gnect
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnibbles
 %scrollkeeper_update_post
 %gconf_schema_install gnibbles.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	gnibbles.3.1 gnibbles.4.0 gnibbles.4.1; do
@@ -444,12 +443,12 @@ done
 
 %postun gnibbles
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnobots2
 %scrollkeeper_update_post
 %gconf_schema_install gnobots2.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	gnobots2.classic_robots-super-safe gnobots2.nightmare-safe \
@@ -472,12 +471,12 @@ done
 
 %postun	gnobots2
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnometris
 %scrollkeeper_update_post
 %gconf_schema_install gnometris.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	touch %{_gamesdir}/gnometris.scores
@@ -490,12 +489,12 @@ fi
 
 %postun gnometris
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnomine
 %scrollkeeper_update_post
 %gconf_schema_install gnomine.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	if [ ! -f %{_gamesdir}/$i.scores ]; then
@@ -510,12 +509,12 @@ done
 
 %postun gnomine
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnotravex
 %scrollkeeper_update_post
 %gconf_schema_install gnotravex.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	gnotravex.6x6; do
@@ -531,12 +530,12 @@ done
 
 %postun gnotravex
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gnotski
 %scrollkeeper_update_post
 %gconf_schema_install gnotski.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
@@ -551,12 +550,12 @@ done
 
 %postun gnotski
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post gtali
 %scrollkeeper_update_post
 %gconf_schema_install gtali.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	touch %{_gamesdir}/gtali.scores
@@ -569,24 +568,24 @@ fi
 
 %postun gtali
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post iagno
 %scrollkeeper_update_post
 %gconf_schema_install iagno.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %preun iagno
 %gconf_schema_uninstall iagno.schemas
 
 %postun iagno
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post mahjongg
 %scrollkeeper_update_post
 %gconf_schema_install mahjongg.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	mahjongg.difficult mahjongg.dragon mahjongg.easy \
@@ -603,12 +602,12 @@ done
 
 %postun mahjongg
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post same-gnome
 %scrollkeeper_update_post
 %gconf_schema_install same-gnome.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	touch %{_gamesdir}/same-gnome.scores
@@ -621,19 +620,19 @@ fi
 
 %postun same-gnome
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %post sol
 %scrollkeeper_update_post
 %gconf_schema_install aisleriot.schemas
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %preun sol
 %gconf_schema_uninstall aisleriot.schemas
 
 %postun sol
 %scrollkeeper_update_postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
