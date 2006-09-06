@@ -6,13 +6,13 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.15.92
+Version:	2.16.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	bf065ef4085e304f9084db6e783bb353
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	93580896711b7f30deb236bf21c5a1e6
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -20,28 +20,28 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	avahi-glib-devel >= 0.6.12
+BuildRequires:	avahi-glib-devel >= 0.6.13
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.15.92
+BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:	gob2 >= 2.0.14
-BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	gtk+2-devel >= 2:2.10.2
+BuildRequires:	guile-devel >= 5:1.8.0
+BuildRequires:	gtk+2-devel >= 2:2.10.3
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.15.91
+BuildRequires:	libgnomeui-devel >= 2.16.0
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg-devel >= 1:2.15.90
+BuildRequires:	librsvg-devel >= 1:2.16.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.15.92
+Requires:	gnome-vfs2 >= 2.16.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.15.91
-Requires:	librsvg >= 1:2.15.90
+Requires:	libgnomeui >= 2.16.0
+Requires:	librsvg >= 1:2.16.0
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
@@ -80,7 +80,7 @@ Summary:	GNOME's version of blackjack
 Summary(pl):	Blackjack dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -95,7 +95,7 @@ Summary:	GNOME Ataxx
 Summary(pl):	Ataxx dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -111,7 +111,7 @@ Summary(pl):	Gra "Piêæ albo wiêcej"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -127,7 +127,7 @@ Summary:	Four-in-a-row game
 Summary(pl):	Gra "Cztery w rzêdzie"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -143,7 +143,7 @@ Summary(pl):	Nibbles dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -159,7 +159,7 @@ Summary(pl):	Robots dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -175,7 +175,7 @@ Summary(pl):	Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -191,7 +191,7 @@ Summary(pl):	Miny dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -207,7 +207,7 @@ Summary(pl):	Tetravex dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -223,7 +223,7 @@ Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -241,7 +241,7 @@ Summary(pl):	Tali dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -256,7 +256,7 @@ Summary:	GNOME Iagno
 Summary(pl):	Iagno dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -272,7 +272,7 @@ Summary(pl):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -288,7 +288,7 @@ Summary:	Same GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -303,10 +303,10 @@ Summary:	AisleRiot Solitaire
 Summary(pl):	Pasjans AisleRiot
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.2
+Requires(post,postun):	gtk+2 >= 2:2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	guile >= 5:1.6.5
+Requires:	guile >= 5:1.8.0
 
 %description sol
 Many different solitaire games.
@@ -342,8 +342,6 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
-
-#rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name
 %find_lang gnect --with-gnome
