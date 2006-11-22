@@ -6,30 +6,30 @@ Summary(ru):	éÇÒÙ ÐÏÄ GNOME
 Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.16.1
+Version:	2.16.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	4377f69dffe1bca3a153936354112ec9
+# Source0-md5:	e69465370ce5d8aad617f341bc35a58e
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.14.0
+BuildRequires:	GConf2-devel >= 2.16.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	avahi-glib-devel >= 0.6.14
+BuildRequires:	avahi-glib-devel >= 0.6.15
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.1
+BuildRequires:	gnome-vfs2-devel >= 2.16.2
 BuildRequires:	gob2 >= 2.0.14
 BuildRequires:	guile-devel >= 5:1.8.0
-BuildRequires:	gtk+2-devel >= 2:2.10.5
-BuildRequires:	intltool >= 0.35
+BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.16.0
+BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.16.0
 BuildRequires:	libstdc++-devel
@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.16.1
+Requires:	gnome-vfs2 >= 2.16.2
 Requires:	hicolor-icon-theme
 Requires:	libgnomeui >= 2.16.0
 Requires:	librsvg >= 1:2.16.0
@@ -79,8 +79,8 @@ same-gnome É sol.
 Summary:	GNOME's version of blackjack
 Summary(pl):	Blackjack dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -94,8 +94,8 @@ Kasynowa wersja gry oczko.
 Summary:	GNOME Ataxx
 Summary(pl):	Ataxx dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -109,9 +109,9 @@ Gra podobna do Reversi.
 Summary:	Five or more game
 Summary(pl):	Gra "Piêæ albo wiêcej"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -126,8 +126,8 @@ linie.
 Summary:	Four-in-a-row game
 Summary(pl):	Gra "Cztery w rzêdzie"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -141,9 +141,9 @@ Gra, której celem jest utowrzenie linii w jednym kolorze.
 Summary:	GNOME Nibbles
 Summary(pl):	Nibbles dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -157,9 +157,9 @@ Gra polegaj±ca na przeprowadzeniu robaka przez labirynt.
 Summary:	GNOME Robots
 Summary(pl):	Robots dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -173,9 +173,9 @@ Gra polegaj±ca na zapobieganiu zderzeniom robotów.
 Summary:	GNOME Tetris
 Summary(pl):	Tetris dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -189,9 +189,9 @@ Gra podobna do Tetrisa.
 Summary:	GNOME Mines
 Summary(pl):	Miny dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -205,9 +205,9 @@ Gra, której celem jest rozminowanie pola minowego.
 Summary:	GNOME Tetravex
 Summary(pl):	Tetravex dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -221,9 +221,9 @@ Uk³adanka.
 Summary:	Gnome Klotski
 Summary(pl):	Klotski dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -239,9 +239,9 @@ w pole ograniczone zielonymi znacznikami.
 Summary:	GNOME Tali
 Summary(pl):	Tali dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -255,8 +255,8 @@ Gra w ko¶ci w pokerowym stylu.
 Summary:	GNOME Iagno
 Summary(pl):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -270,9 +270,9 @@ Gra podobna do Reversi.
 Summary:	GNOME Mahjongg
 Summary(pl):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -286,9 +286,9 @@ par.
 %package same-gnome
 Summary:	Same GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -302,8 +302,8 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 Summary:	AisleRiot Solitaire
 Summary(pl):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	guile >= 5:1.8.0
