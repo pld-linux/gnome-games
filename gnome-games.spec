@@ -6,13 +6,13 @@ Summary(ru):	Игры под GNOME
 Summary(uk):	╤гри п╕д GNOME
 Summary(wa):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.16.2
+Version:	2.16.3
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	e69465370ce5d8aad617f341bc35a58e
+# Source0-md5:	88baa9ab64b84bfcac2a1ba05f84d2f9
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -23,7 +23,7 @@ BuildRequires:	automake
 BuildRequires:	avahi-glib-devel >= 0.6.15
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.2
+BuildRequires:	gnome-vfs2-devel >= 2.16.3
 BuildRequires:	gob2 >= 2.0.14
 BuildRequires:	guile-devel >= 5:1.8.0
 BuildRequires:	gtk+2-devel >= 2:2.10.6
@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.16.2
+Requires:	gnome-vfs2 >= 2.16.3
 Requires:	hicolor-icon-theme
 Requires:	libgnomeui >= 2.16.0
 Requires:	librsvg >= 1:2.16.0
