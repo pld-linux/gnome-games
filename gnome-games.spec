@@ -1,10 +1,10 @@
 Summary:	GNOME games
-Summary(es):	Juegos de GNOME
-Summary(fr):	Jeux pour GNOME
-Summary(pl):	GNOME - gry
-Summary(ru):	éÇÒÙ ÐÏÄ GNOME
-Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
-Summary(wa):	Djeus po GNOME
+Summary(es.UTF-8):   Juegos de GNOME
+Summary(fr.UTF-8):   Jeux pour GNOME
+Summary(pl.UTF-8):   GNOME - gry
+Summary(ru.UTF-8):   Ð˜Ð³Ñ€Ñ‹ Ð¿Ð¾Ð´ GNOME
+Summary(uk.UTF-8):   Ð†Ð³Ñ€Ð¸ Ð¿Ñ–Ð´ GNOME
+Summary(wa.UTF-8):   Djeus po GNOME
 Name:		gnome-games
 Version:	2.14.0
 Release:	1
@@ -56,26 +56,26 @@ Gnome-games is a collection of simple, but addictive, games from the
 GNOME desktop project. They represent many of the popular games and
 include card games, puzzle games and arcade games.
 
-%description -l pl
-Gnome-games jest kolekcj± prostych, choæ uzale¿niaj±cych gier projektu
-GNOME. S± w¶ród nich reprezentanci wielu popularnych gier, wliczaj±c
-karciane, uk³adanki i zrêczno¶ciowe.
+%description -l pl.UTF-8
+Gnome-games jest kolekcjÄ… prostych, choÄ‡ uzaleÅ¼niajÄ…cych gier projektu
+GNOME. SÄ… wÅ›rÃ³d nich reprezentanci wielu popularnych gier, wliczajÄ…c
+karciane, ukÅ‚adanki i zrÄ™cznoÅ›ciowe.
 
-%description -l uk
-ðÁËÅÔ gnome-games ×ËÌÀÞÁ¤ ¦ÇÒÉ ÄÌÑ ÓÅÒÅÄÏ×ÉÝÁ ÒÏÂÏÞÏÇÏ ÓÔÏÌÕ GNOME,
-ÓÅÒÅÄ ÑËÉÈ GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+%description -l uk.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-games Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ” Ñ–Ð³Ñ€Ð¸ Ð´Ð»Ñ ÑÐµÑ€ÐµÐ´Ð¾Ð²Ð¸Ñ‰Ð° Ñ€Ð¾Ð±Ð¾Ñ‡Ð¾Ð³Ð¾ ÑÑ‚Ð¾Ð»Ñƒ GNOME,
+ÑÐµÑ€ÐµÐ´ ÑÐºÐ¸Ñ… GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome ÔÁ sol.
+same-gnome Ñ‚Ð° sol.
 
-%description -l ru
-ðÁËÅÔ gnome-games ×ËÌÀÞÁÅÔ ÉÇÒÙ ÄÌÑ ÓÒÅÄÙ ÒÁÂÏÞÅÇÏ ÓÔÏÌÁ GNOME, ÓÒÅÄÉ
-ËÏÔÏÒÙÈ GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+%description -l ru.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-games Ð²ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ Ð¸Ð³Ñ€Ñ‹ Ð´Ð»Ñ ÑÑ€ÐµÐ´Ñ‹ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾ ÑÑ‚Ð¾Ð»Ð° GNOME, ÑÑ€ÐµÐ´Ð¸
+ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome É sol.
+same-gnome Ð¸ sol.
 
 %package blackjack
 Summary:	GNOME's version of blackjack
-Summary(pl):	Blackjack dla GNOME
+Summary(pl.UTF-8):   Blackjack dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -84,12 +84,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description blackjack
 Casino card game Blackjack.
 
-%description blackjack -l pl
+%description blackjack -l pl.UTF-8
 Kasynowa wersja gry oczko.
 
 %package gataxx
 Summary:	GNOME Ataxx
-Summary(pl):	Ataxx dla GNOME
+Summary(pl.UTF-8):   Ataxx dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -98,12 +98,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gataxx
 Reversi like game.
 
-%description gataxx -l pl
+%description gataxx -l pl.UTF-8
 Gra podobna do Reversi.
 
 %package glines
 Summary:	Five or more game
-Summary(pl):	Gra "Piêæ albo wiêcej"
+Summary(pl.UTF-8):   Gra "PiÄ™Ä‡ albo wiÄ™cej"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -113,13 +113,13 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description glines
 Remove colored balls from the board by forming lines.
 
-%description glines -l pl
-Gra polegaj±ca na usuwaniu kolorwych kul poprzez uk³adanie ich w
+%description glines -l pl.UTF-8
+Gra polegajÄ…ca na usuwaniu kolorwych kul poprzez ukÅ‚adanie ich w
 linie.
 
 %package gnect
 Summary:	Four-in-a-row game
-Summary(pl):	Gra "Cztery w rzêdzie"
+Summary(pl.UTF-8):   Gra "Cztery w rzÄ™dzie"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -128,12 +128,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnect
 Compete to make lines of the same color.
 
-%description gnect -l pl
-Gra, której celem jest utowrzenie linii w jednym kolorze.
+%description gnect -l pl.UTF-8
+Gra, ktÃ³rej celem jest utowrzenie linii w jednym kolorze.
 
 %package gnibbles
 Summary:	GNOME Nibbles
-Summary(pl):	Nibbles dla GNOME
+Summary(pl.UTF-8):   Nibbles dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -143,12 +143,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnibbles
 Guide a worm around a maze.
 
-%description gnibbles -l pl
-Gra polegaj±ca na przeprowadzeniu robaka przez labirynt.
+%description gnibbles -l pl.UTF-8
+Gra polegajÄ…ca na przeprowadzeniu robaka przez labirynt.
 
 %package gnobots2
 Summary:	GNOME Robots
-Summary(pl):	Robots dla GNOME
+Summary(pl.UTF-8):   Robots dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -158,12 +158,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnobots2
 Avoid the robots and make them crash into each other.
 
-%description gnobots2 -l pl
-Gra polegaj±ca na zapobieganiu zderzeniom robotów.
+%description gnobots2 -l pl.UTF-8
+Gra polegajÄ…ca na zapobieganiu zderzeniom robotÃ³w.
 
 %package gnometris
 Summary:	GNOME Tetris
-Summary(pl):	Tetris dla GNOME
+Summary(pl.UTF-8):   Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -173,12 +173,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnometris
 Tetris like game.
 
-%description gnometris -l pl
+%description gnometris -l pl.UTF-8
 Gra podobna do Tetrisa.
 
 %package gnomine
 Summary:	GNOME Mines
-Summary(pl):	Miny dla GNOME
+Summary(pl.UTF-8):   Miny dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -188,12 +188,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnomine
 Clear mines from a minefield.
 
-%description gnomine -l pl
-Gra, której celem jest rozminowanie pola minowego.
+%description gnomine -l pl.UTF-8
+Gra, ktÃ³rej celem jest rozminowanie pola minowego.
 
 %package gnotravex
 Summary:	GNOME Tetravex
-Summary(pl):	Tetravex dla GNOME
+Summary(pl.UTF-8):   Tetravex dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -203,12 +203,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gnotravex
 Puzzle game.
 
-%description gnotravex -l pl
-Uk³adanka.
+%description gnotravex -l pl.UTF-8
+UkÅ‚adanka.
 
 %package gnotski
 Summary:	Gnome Klotski
-Summary(pl):	Klotski dla GNOME
+Summary(pl.UTF-8):   Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -219,13 +219,13 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Clone of the Klotski game. The objective is to move the patterned
 block to the area bordered by green markers.
 
-%description gnotski -l pl
-Klon gry Klotski. Celem gry jest przesuniêcie zaznaczonego klocka
+%description gnotski -l pl.UTF-8
+Klon gry Klotski. Celem gry jest przesuniÄ™cie zaznaczonego klocka
 w pole ograniczone zielonymi znacznikami.
 
 %package gtali
 Summary:	GNOME Tali
-Summary(pl):	Tali dla GNOME
+Summary(pl.UTF-8):   Tali dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -235,12 +235,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description gtali
 Poker-style dice game.
 
-%description gtali -l pl
-Gra w ko¶ci w pokerowym stylu.
+%description gtali -l pl.UTF-8
+Gra w koÅ›ci w pokerowym stylu.
 
 %package iagno
 Summary:	GNOME Iagno
-Summary(pl):	Iagno dla GNOME
+Summary(pl.UTF-8):   Iagno dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -249,12 +249,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description iagno
 Reversi like game.
 
-%description iagno -l pl
+%description iagno -l pl.UTF-8
 Gra podobna do Reversi.
 
 %package mahjongg
 Summary:	GNOME Mahjongg
-Summary(pl):	Mahjongg dla GNOME
+Summary(pl.UTF-8):   Mahjongg dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post):	coreutils
@@ -264,8 +264,8 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description mahjongg
 Disassemble a pile of tiles by removing matching pairs.
 
-%description mahjongg -l pl
-Gra polegjaca na demonta¿u stosu kafli poprzez usuwanie pasuj±cych
+%description mahjongg -l pl.UTF-8
+Gra polegjaca na demontaÅ¼u stosu kafli poprzez usuwanie pasujÄ…cych
 par.
 
 %package same-gnome
@@ -279,12 +279,12 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %description same-gnome
 Remove groups of balls to try and clear the screen.
 
-%description same-gnome -l pl
-Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
+%description same-gnome -l pl.UTF-8
+Gra, ktÃ³rej celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 
 %package sol
 Summary:	AisleRiot Solitaire
-Summary(pl):	Pasjans AisleRiot
+Summary(pl.UTF-8):   Pasjans AisleRiot
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -294,8 +294,8 @@ Requires:	guile >= 5:1.6.5
 %description sol
 Many different solitaire games.
 
-%description sol -l pl
-Ró¿ne gry karciane.
+%description sol -l pl.UTF-8
+RÃ³Å¼ne gry karciane.
 
 %prep
 %setup -q
