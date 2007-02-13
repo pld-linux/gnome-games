@@ -1,10 +1,10 @@
 Summary:	GNOME games
-Summary(es.UTF-8):   Juegos de GNOME
-Summary(fr.UTF-8):   Jeux pour GNOME
-Summary(pl.UTF-8):   GNOME - gry
-Summary(ru.UTF-8):   Игры под GNOME
-Summary(uk.UTF-8):   Ігри під GNOME
-Summary(wa.UTF-8):   Djeus po GNOME
+Summary(es.UTF-8):	Juegos de GNOME
+Summary(fr.UTF-8):	Jeux pour GNOME
+Summary(pl.UTF-8):	GNOME - gry
+Summary(ru.UTF-8):	Игры под GNOME
+Summary(uk.UTF-8):	Ігри під GNOME
+Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.16.3
 Release:	1
@@ -77,7 +77,7 @@ same-gnome и sol.
 
 %package blackjack
 Summary:	GNOME's version of blackjack
-Summary(pl.UTF-8):   Blackjack dla GNOME
+Summary(pl.UTF-8):	Blackjack dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	gtk+2 >= 2:2.10.6
@@ -92,7 +92,7 @@ Kasynowa wersja gry oczko.
 
 %package gataxx
 Summary:	GNOME Ataxx
-Summary(pl.UTF-8):   Ataxx dla GNOME
+Summary(pl.UTF-8):	Ataxx dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	gtk+2 >= 2:2.10.6
@@ -107,7 +107,7 @@ Gra podobna do Reversi.
 
 %package glines
 Summary:	Five or more game
-Summary(pl.UTF-8):   Gra "Pięć albo więcej"
+Summary(pl.UTF-8):	Gra "Pięć albo więcej"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -124,7 +124,7 @@ linie.
 
 %package gnect
 Summary:	Four-in-a-row game
-Summary(pl.UTF-8):   Gra "Cztery w rzędzie"
+Summary(pl.UTF-8):	Gra "Cztery w rzędzie"
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	gtk+2 >= 2:2.10.6
@@ -139,7 +139,7 @@ Gra, której celem jest utowrzenie linii w jednym kolorze.
 
 %package gnibbles
 Summary:	GNOME Nibbles
-Summary(pl.UTF-8):   Nibbles dla GNOME
+Summary(pl.UTF-8):	Nibbles dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -155,7 +155,7 @@ Gra polegająca na przeprowadzeniu robaka przez labirynt.
 
 %package gnobots2
 Summary:	GNOME Robots
-Summary(pl.UTF-8):   Robots dla GNOME
+Summary(pl.UTF-8):	Robots dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -171,7 +171,7 @@ Gra polegająca na zapobieganiu zderzeniom robotów.
 
 %package gnometris
 Summary:	GNOME Tetris
-Summary(pl.UTF-8):   Tetris dla GNOME
+Summary(pl.UTF-8):	Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -187,7 +187,7 @@ Gra podobna do Tetrisa.
 
 %package gnomine
 Summary:	GNOME Mines
-Summary(pl.UTF-8):   Miny dla GNOME
+Summary(pl.UTF-8):	Miny dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -203,7 +203,7 @@ Gra, której celem jest rozminowanie pola minowego.
 
 %package gnotravex
 Summary:	GNOME Tetravex
-Summary(pl.UTF-8):   Tetravex dla GNOME
+Summary(pl.UTF-8):	Tetravex dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -219,7 +219,7 @@ Układanka.
 
 %package gnotski
 Summary:	Gnome Klotski
-Summary(pl.UTF-8):   Klotski dla GNOME
+Summary(pl.UTF-8):	Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -237,7 +237,7 @@ w pole ograniczone zielonymi znacznikami.
 
 %package gtali
 Summary:	GNOME Tali
-Summary(pl.UTF-8):   Tali dla GNOME
+Summary(pl.UTF-8):	Tali dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -253,7 +253,7 @@ Gra w kości w pokerowym stylu.
 
 %package iagno
 Summary:	GNOME Iagno
-Summary(pl.UTF-8):   Iagno dla GNOME
+Summary(pl.UTF-8):	Iagno dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	gtk+2 >= 2:2.10.6
@@ -268,7 +268,7 @@ Gra podobna do Reversi.
 
 %package mahjongg
 Summary:	GNOME Mahjongg
-Summary(pl.UTF-8):   Mahjongg dla GNOME
+Summary(pl.UTF-8):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
@@ -300,7 +300,7 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 
 %package sol
 Summary:	AisleRiot Solitaire
-Summary(pl.UTF-8):   Pasjans AisleRiot
+Summary(pl.UTF-8):	Pasjans AisleRiot
 Group:		X11/Applications/Games
 Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	gtk+2 >= 2:2.10.6
