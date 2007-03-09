@@ -1,3 +1,8 @@
+#
+# TODO:
+# - system libggz (http://www.ggzgamingzone.org/)
+# - pl summary and description for glchess subpackage
+#
 Summary:	GNOME games
 Summary(es.UTF-8):	Juegos de GNOME
 Summary(fr.UTF-8):	Jeux pour GNOME
@@ -6,45 +11,51 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.16.3
+Version:	2.17.92
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	88baa9ab64b84bfcac2a1ba05f84d2f9
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.17/%{name}-%{version}.tar.bz2
+# Source0-md5:	d36e595666b72c4644795eff5cd4420b
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.16.0
+BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	avahi-glib-devel >= 0.6.15
+BuildRequires:	check >= 0.9.4
 BuildRequires:	esound-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.3
-BuildRequires:	gob2 >= 2.0.14
-BuildRequires:	guile-devel >= 5:1.8.0
-BuildRequires:	gtk+2-devel >= 2:2.10.6
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	gnome-doc-utils >= 0.9.2
+BuildRequires:	gnome-vfs2-devel >= 2.17.91
+BuildRequires:	gtk+2-devel >= 2:2.10.9
+BuildRequires:	guile-devel >= 5:1.6.5
+BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	libgnomeui-devel >= 2.17.92
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg-devel >= 1:2.16.0
+BuildRequires:	librsvg-devel >= 1:2.16.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	pkgconfig
+BuildRequires:	python-devel >= 2.4
+BuildRequires:	python-gnome-desktop-devel >= 2.17.93
+BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.16.3
+Requires:	gnome-vfs2 >= 2.17.91
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.16.0
-Requires:	librsvg >= 1:2.16.0
+Requires:	libgnomeui >= 2.17.92
+Requires:	librsvg >= 1:2.16.1
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
+Obsoletes:	gnome-games-gataxx
 Obsoletes:	gnome-games-static
 Obsoletes:	gnome-games-stones
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -79,9 +90,9 @@ same-gnome и sol.
 Summary:	GNOME's version of blackjack
 Summary(pl.UTF-8):	Blackjack dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description blackjack
@@ -90,29 +101,27 @@ Casino card game Blackjack.
 %description blackjack -l pl.UTF-8
 Kasynowa wersja gry oczko.
 
-%package gataxx
-Summary:	GNOME Ataxx
-Summary(pl.UTF-8):	Ataxx dla GNOME
+%package glchess
+Summary:	GNOME glChess - a 2D/3D chess interface
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Obsoletes:	glchess
 
-%description gataxx
-Reversi like game.
-
-%description gataxx -l pl.UTF-8
-Gra podobna do Reversi.
+%description glchess
+glChess is a 2D/3D chess game interfacing via the Chess Engine
+Communication Protocol (CECP) by Tim Mann. This means it can currently
+use engines such as GNUChess, Sjeng, Faile, Amy, Crafty and Phalanx.
 
 %package glines
 Summary:	Five or more game
 Summary(pl.UTF-8):	Gra "Pięć albo więcej"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description glines
@@ -126,9 +135,9 @@ linie.
 Summary:	Four-in-a-row game
 Summary(pl.UTF-8):	Gra "Cztery w rzędzie"
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnect
@@ -141,10 +150,10 @@ Gra, której celem jest utowrzenie linii w jednym kolorze.
 Summary:	GNOME Nibbles
 Summary(pl.UTF-8):	Nibbles dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnibbles
@@ -157,10 +166,10 @@ Gra polegająca na przeprowadzeniu robaka przez labirynt.
 Summary:	GNOME Robots
 Summary(pl.UTF-8):	Robots dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnobots2
@@ -173,10 +182,10 @@ Gra polegająca na zapobieganiu zderzeniom robotów.
 Summary:	GNOME Tetris
 Summary(pl.UTF-8):	Tetris dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnometris
@@ -189,10 +198,10 @@ Gra podobna do Tetrisa.
 Summary:	GNOME Mines
 Summary(pl.UTF-8):	Miny dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnomine
@@ -205,10 +214,10 @@ Gra, której celem jest rozminowanie pola minowego.
 Summary:	GNOME Tetravex
 Summary(pl.UTF-8):	Tetravex dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotravex
@@ -221,10 +230,10 @@ Układanka.
 Summary:	Gnome Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotski
@@ -232,17 +241,17 @@ Clone of the Klotski game. The objective is to move the patterned
 block to the area bordered by green markers.
 
 %description gnotski -l pl.UTF-8
-Klon gry Klotski. Celem gry jest przesunięcie zaznaczonego klocka
-w pole ograniczone zielonymi znacznikami.
+Klon gry Klotski. Celem gry jest przesunięcie zaznaczonego klocka w
+pole ograniczone zielonymi znacznikami.
 
 %package gtali
 Summary:	GNOME Tali
 Summary(pl.UTF-8):	Tali dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gtali
@@ -255,9 +264,9 @@ Gra w kości w pokerowym stylu.
 Summary:	GNOME Iagno
 Summary(pl.UTF-8):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description iagno
@@ -270,10 +279,10 @@ Gra podobna do Reversi.
 Summary:	GNOME Mahjongg
 Summary(pl.UTF-8):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description mahjongg
@@ -286,10 +295,10 @@ par.
 %package same-gnome
 Summary:	Same GNOME
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description same-gnome
@@ -302,17 +311,33 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 Summary:	AisleRiot Solitaire
 Summary(pl.UTF-8):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	guile >= 5:1.8.0
+Requires:	guile >= 5:1.6.5
 
 %description sol
 Many different solitaire games.
 
 %description sol -l pl.UTF-8
 Różne gry karciane.
+
+%package sudoku
+Summary:	Simple interface for playing, saving, printing and solving Sudoku
+Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
+Group:		X11/Applications/Games
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	python-gnome-desktop-print >= 2.17.93
+Obsoletes:	gnome-sudoku
+
+%description sudoku
+GNOME Sudoku provides a simple interface for playing, saving, printing
+and solving Sudoku.
+
+%description sudoku -l pl.UTF-8
+GNOME Sudoku dostarcza prosty interfejs do grania, zapisywania,
+drukowania i rozwiązywania Sudoku.
 
 %prep
 %setup -q
@@ -324,13 +349,14 @@ Różne gry karciane.
 %{__glib_gettextize}
 %{__intltoolize}
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoheader}
 %{__autoconf}
 %{__automake}
 %configure \
 	--disable-bonjour \
 	--disable-howl \
+	--disable-scrollkeeper \
 	--disable-static
 %{__make}
 
@@ -343,13 +369,16 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
 
+%py_postclean
+
 %find_lang %{name} --all-name
 %find_lang gnect --with-gnome
 %find_lang gnomine --with-gnome
 %find_lang same-gnome --with-gnome
 %find_lang mahjongg --with-gnome
+%find_lang glchess --with-gnome
 %find_lang gtali --with-gnome
-%find_lang gataxx --with-gnome
+%find_lang gnome-sudoku --with-gnome
 %find_lang gnotravex --with-gnome
 %find_lang gnotski --with-gnome
 %find_lang glines --with-gnome
@@ -381,17 +410,15 @@ rm -rf $RPM_BUILD_ROOT
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
-%post gataxx
+%post glchess
+%gconf_schema_install glchess.schemas
 %scrollkeeper_update_post
-%gconf_schema_install gataxx.schemas
-%update_icon_cache hicolor
 
-%preun gataxx
-%gconf_schema_uninstall gataxx.schemas
+%preun glchess
+%gconf_schema_uninstall glchess.schemas
 
-%postun gataxx
+%postun glchess
 %scrollkeeper_update_postun
-%update_icon_cache hicolor
 
 %post glines
 %scrollkeeper_update_post
@@ -636,13 +663,14 @@ fi
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/games-server.py
 %{_sysconfdir}/gconf/schemas/libgnomegames.schemas
 %dir %{_datadir}/%{name}
 %dir %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/gnome-games-common
 %dir %{_pixmapsdir}/iagno
 %{_pixmapsdir}/iagno/classic.png
+%dir %{_datadir}/ggz
+%{_datadir}/ggz/gnome-games
 
 %files blackjack -f blackjack.lang
 %defattr(644,root,root,755)
@@ -654,23 +682,29 @@ fi
 %{_pixmapsdir}/blackjack
 %{_iconsdir}/hicolor/*/*/gnome-blackjack.png
 
-%files gataxx -f gataxx.lang
+%files glchess -f glchess.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/gataxx
-%{_sysconfdir}/gconf/schemas/gataxx.schemas
-%{_datadir}/%{name}/ataxx
-%{_desktopdir}/gataxx.desktop
-%{_omf_dest_dir}/%{name}/gataxx-C.omf
-%{_iconsdir}/hicolor/*/*/gnome-ataxx.*
+%attr(755,root,root) %{_bindir}/glchess
+%attr(755,root,root) %{_bindir}/gnome-gnuchess
+%{_sysconfdir}/gconf/schemas/glchess.schemas
+%{_desktopdir}/glchess.desktop
+%{_datadir}/glchess
+%{py_sitescriptdir}/glchess
+%{_pixmapsdir}/glchess.svg
+%{_pixmapsdir}/glchess
+%dir %{_omf_dest_dir}/glchess
+%{_omf_dest_dir}/glchess/glchess-C.omf
 
 %files glines -f glines.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/glines
 %{_sysconfdir}/gconf/schemas/glines.schemas
 %{_desktopdir}/glines.desktop
-%{_omf_dest_dir}/%{name}/glines-C.omf
 %{_pixmapsdir}/glines
 %{_iconsdir}/hicolor/*/*/gnome-five-or-more.png
+%dir %{_omf_dest_dir}/glines
+%{_omf_dest_dir}/glines/glines-C.omf
+%lang(sv) %{_omf_dest_dir}/glines/glines-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
 
 %files gnect -f gnect.lang
@@ -679,9 +713,11 @@ fi
 %{_sysconfdir}/gconf/schemas/gnect.schemas
 %{_datadir}/gnect
 %{_desktopdir}/gnect.desktop
-%{_omf_dest_dir}/%{name}/gnect-C.omf
 %{_pixmapsdir}/gnect
 %{_iconsdir}/hicolor/*/*/gnome-four-in-a-row.png
+%dir %{_omf_dest_dir}/gnect
+%{_omf_dest_dir}/gnect/gnect-C.omf
+%lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
 %files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
@@ -739,6 +775,7 @@ fi
 %{_sysconfdir}/gconf/schemas/gnotravex.schemas
 %{_desktopdir}/gnotravex.desktop
 %{_omf_dest_dir}/%{name}/gnotravex-C.omf
+%{_pixmapsdir}/gnotravex
 %{_iconsdir}/hicolor/*/*/gnome-tetravex.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
 
@@ -790,9 +827,11 @@ fi
 %attr(2755,root,games) %{_bindir}/same-gnome
 %{_sysconfdir}/gconf/schemas/same-gnome.schemas
 %{_desktopdir}/same-gnome.desktop
-%{_omf_dest_dir}/%{name}/same-gnome-C.omf
 %{_datadir}/%{name}/same-gnome
 %{_iconsdir}/hicolor/*/*/gnome-same-gnome.png
+%dir %{_omf_dest_dir}/same-gnome
+%{_omf_dest_dir}/same-gnome/same-gnome-C.omf
+%lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
 
 %files sol -f aisleriot.lang
@@ -807,3 +846,15 @@ fi
 %{_pixmapsdir}/cards
 %{_iconsdir}/hicolor/*/*/gnome-aisleriot.png
 %{_iconsdir}/hicolor/*/*/gnome-freecell.png
+
+%files sudoku -f gnome-sudoku.lang
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gnome-sudoku
+%{_desktopdir}/gnome-sudoku.desktop
+%dir %{py_sitescriptdir}/gnome_sudoku
+%{py_sitescriptdir}/gnome_sudoku/*.py[co]
+%dir %{py_sitescriptdir}/gnome_sudoku/gtk_goodies
+%{py_sitescriptdir}/gnome_sudoku/gtk_goodies/*.py[co]
+%{_datadir}/gnome-sudoku
+%{_pixmapsdir}/gnome-sudoku
+%{_pixmapsdir}/sudoku.png
