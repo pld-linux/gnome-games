@@ -1,45 +1,63 @@
+#
+# TODO:
+# - system libggz (http://www.ggzgamingzone.org/)
+# - pl summary and description for glchess subpackage
+#
 Summary:	GNOME games
-Summary(es):	Juegos de GNOME
-Summary(fr):	Jeux pour GNOME
-Summary(pl):	GNOME - gry
-Summary(ru):	éÇÒÙ ÐÏÄ GNOME
-Summary(uk):	¶ÇÒÉ Ð¦Ä GNOME
-Summary(wa):	Djeus po GNOME
+Summary(es.UTF-8):	Juegos de GNOME
+Summary(fr.UTF-8):	Jeux pour GNOME
+Summary(pl.UTF-8):	GNOME - gry
+Summary(ru.UTF-8):	Ð˜Ð³Ñ€Ñ‹ Ð¿Ð¾Ð´ GNOME
+Summary(uk.UTF-8):	Ð†Ð³Ñ€Ð¸ Ð¿Ñ–Ð´ GNOME
+Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.8.0
+Version:	2.17.92
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	28ca74bc8b3305103aaf18b7f3530191
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.17/%{name}-%{version}.tar.bz2
+# Source0-md5:	d36e595666b72c4644795eff5cd4420b
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
-Icon:		gnome-games.gif
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.92
+BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
+BuildRequires:	avahi-glib-devel >= 0.6.15
+BuildRequires:	check >= 0.9.4
 BuildRequires:	esound-devel
-BuildRequires:	gnome-vfs2-devel >= 2.7.92
-BuildRequires:	guile-devel >= 1.6.4
-BuildRequires:	gtk+2-devel >= 2:2.4.4
-BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnome-devel >= 2.7.92
-BuildRequires:	libgnomeui-devel >= 2.7.92
+BuildRequires:	gnome-common >= 2.12.0
+BuildRequires:	gnome-doc-utils >= 0.9.2
+BuildRequires:	gnome-vfs2-devel >= 2.17.91
+BuildRequires:	gtk+2-devel >= 2:2.10.9
+BuildRequires:	guile-devel >= 5:1.6.5
+BuildRequires:	intltool >= 0.35.5
+BuildRequires:	libglade2-devel >= 1:2.6.0
+BuildRequires:	libgnomeui-devel >= 2.17.92
 BuildRequires:	libltdl-devel
-BuildRequires:	librsvg >= 1:2.8.1
+BuildRequires:	librsvg-devel >= 1:2.16.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 1:2.6.27
+BuildRequires:	pkgconfig
+BuildRequires:	python-devel >= 2.4
+BuildRequires:	python-gnome-desktop-devel >= 2.17.93
+BuildRequires:	python-pygtk-devel >= 2:2.10.4
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
-BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-vfs2 >= 2.7.92
-Requires:	librsvg >= 1:2.8.1
+Requires(post,preun):	GConf2
+Requires:	gnome-vfs2 >= 2.17.91
+Requires:	hicolor-icon-theme
+Requires:	libgnomeui >= 2.17.92
+Requires:	librsvg >= 1:2.16.1
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
+Obsoletes:	gnome-games-gataxx
+Obsoletes:	gnome-games-static
+Obsoletes:	gnome-games-stones
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
@@ -51,259 +69,275 @@ Gnome-games is a collection of simple, but addictive, games from the
 GNOME desktop project. They represent many of the popular games and
 include card games, puzzle games and arcade games.
 
-%description -l pl
-Gnome-games jest kolekcj± prostych, choæ uzale¿niaj±cych gier projektu
-GNOME. S± w¶ród nich reprezentanci wielu popularnych gier, wliczaj±c
-karciane, uk³adanki i zrêczno¶ciowe.
+%description -l pl.UTF-8
+Gnome-games jest kolekcjÄ… prostych, choÄ‡ uzaleÅ¼niajÄ…cych gier projektu
+GNOME. SÄ… wÅ›rÃ³d nich reprezentanci wielu popularnych gier, wliczajÄ…c
+karciane, ukÅ‚adanki i zrÄ™cznoÅ›ciowe.
 
-%description -l uk
-ðÁËÅÔ gnome-games ×ËÌÀÞÁ¤ ¦ÇÒÉ ÄÌÑ ÓÅÒÅÄÏ×ÉÝÁ ÒÏÂÏÞÏÇÏ ÓÔÏÌÕ GNOME,
-ÓÅÒÅÄ ÑËÉÈ GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+%description -l uk.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-games Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ” Ñ–Ð³Ñ€Ð¸ Ð´Ð»Ñ ÑÐµÑ€ÐµÐ´Ð¾Ð²Ð¸Ñ‰Ð° Ñ€Ð¾Ð±Ð¾Ñ‡Ð¾Ð³Ð¾ ÑÑ‚Ð¾Ð»Ñƒ GNOME,
+ÑÐµÑ€ÐµÐ´ ÑÐºÐ¸Ñ… GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome ÔÁ sol.
+same-gnome Ñ‚Ð° sol.
 
-%description -l ru
-ðÁËÅÔ gnome-games ×ËÌÀÞÁÅÔ ÉÇÒÙ ÄÌÑ ÓÒÅÄÙ ÒÁÂÏÞÅÇÏ ÓÔÏÌÁ GNOME, ÓÒÅÄÉ
-ËÏÔÏÒÙÈ GnomeScott, freecell, gnibbles, gnobots, gnobots2,
+%description -l ru.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-games Ð²ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ Ð¸Ð³Ñ€Ñ‹ Ð´Ð»Ñ ÑÑ€ÐµÐ´Ñ‹ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾ ÑÑ‚Ð¾Ð»Ð° GNOME, ÑÑ€ÐµÐ´Ð¸
+ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
-same-gnome É sol.
+same-gnome Ð¸ sol.
 
 %package blackjack
 Summary:	GNOME's version of blackjack
-Summary(pl):	Blackjack dla GNOME
+Summary(pl.UTF-8):	Blackjack dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description blackjack
 Casino card game Blackjack.
 
-%description blackjack -l pl
+%description blackjack -l pl.UTF-8
 Kasynowa wersja gry oczko.
 
-%package gataxx
-Summary:	GNOME Ataxx
-Summary(pl):	Ataxx dla GNOME
+%package glchess
+Summary:	GNOME glChess - a 2D/3D chess interface
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Obsoletes:	glchess
 
-%description gataxx
-Reversi like game.
-
-%description gataxx -l pl
-Gra podobna do Reversi.
+%description glchess
+glChess is a 2D/3D chess game interfacing via the Chess Engine
+Communication Protocol (CECP) by Tim Mann. This means it can currently
+use engines such as GNUChess, Sjeng, Faile, Amy, Crafty and Phalanx.
 
 %package glines
 Summary:	Five or more game
-Summary(pl):	Gra "Piêæ albo wiêcej"
+Summary(pl.UTF-8):	Gra "PiÄ™Ä‡ albo wiÄ™cej"
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description glines
 Remove colored balls from the board by forming lines.
 
-%description glines -l pl
-Gra polegaj±ca na usuwaniu kolorwych kul poprzez uk³adanie ich w
+%description glines -l pl.UTF-8
+Gra polegajÄ…ca na usuwaniu kolorwych kul poprzez ukÅ‚adanie ich w
 linie.
 
 %package gnect
 Summary:	Four-in-a-row game
-Summary(pl):	Gra "Cztery w rzêdzie"
+Summary(pl.UTF-8):	Gra "Cztery w rzÄ™dzie"
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnect
 Compete to make lines of the same color.
 
-%description gnect -l pl
-Gra, której celem jest utowrzenie linii w jednym kolorze.
+%description gnect -l pl.UTF-8
+Gra, ktÃ³rej celem jest utowrzenie linii w jednym kolorze.
 
 %package gnibbles
 Summary:	GNOME Nibbles
-Summary(pl):	Nibbles dla GNOME
+Summary(pl.UTF-8):	Nibbles dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnibbles
 Guide a worm around a maze.
 
-%description gnibbles -l pl
-Gra polegaj±ca na przeprowadzeniu robaka przez labirynt.
+%description gnibbles -l pl.UTF-8
+Gra polegajÄ…ca na przeprowadzeniu robaka przez labirynt.
 
 %package gnobots2
 Summary:	GNOME Robots
-Summary(pl):	Robots dla GNOME
+Summary(pl.UTF-8):	Robots dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnobots2
 Avoid the robots and make them crash into each other.
 
-%description gnobots2 -l pl
-Gra polegaj±ca na zapobieganiu zderzeniom robotów.
-
-%package stones
-Summary:	GNOME Stones
-Summary(pl):	"Kamienie" dla GNOME
-Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	coreutils
-Requires(post):	scrollkeeper
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description stones
-Boulder Dash like game.
-
-%description stones -l pl
-Gra podobna do Boulder Dasha.
+%description gnobots2 -l pl.UTF-8
+Gra polegajÄ…ca na zapobieganiu zderzeniom robotÃ³w.
 
 %package gnometris
 Summary:	GNOME Tetris
-Summary(pl):	Tetris dla GNOME
+Summary(pl.UTF-8):	Tetris dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnometris
 Tetris like game.
 
-%description gnometris -l pl
+%description gnometris -l pl.UTF-8
 Gra podobna do Tetrisa.
 
 %package gnomine
 Summary:	GNOME Mines
-Summary(pl):	Miny dla GNOME
+Summary(pl.UTF-8):	Miny dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnomine
 Clear mines from a minefield.
 
-%description gnomine -l pl
-Gra, której celem jest rozminowanie pola minowego.
+%description gnomine -l pl.UTF-8
+Gra, ktÃ³rej celem jest rozminowanie pola minowego.
 
 %package gnotravex
 Summary:	GNOME Tetravex
-Summary(pl):	Tetravex dla GNOME
+Summary(pl.UTF-8):	Tetravex dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotravex
 Puzzle game.
 
-%description gnotravex -l pl
-Uk³adanka.
+%description gnotravex -l pl.UTF-8
+UkÅ‚adanka.
 
 %package gnotski
 Summary:	Gnome Klotski
-Summary(pl):	Klotski dla GNOME
+Summary(pl.UTF-8):	Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnotski
 Clone of the Klotski game. The objective is to move the patterned
 block to the area bordered by green markers.
 
-%description gnotski -l pl
-Klon gry Klotski. Celem gry jest przesuniêcie zaznaczonego klocka
-w pole ograniczone zielonymi znacznikami.
+%description gnotski -l pl.UTF-8
+Klon gry Klotski. Celem gry jest przesuniÄ™cie zaznaczonego klocka w
+pole ograniczone zielonymi znacznikami.
 
 %package gtali
 Summary:	GNOME Tali
-Summary(pl):	Tali dla GNOME
+Summary(pl.UTF-8):	Tali dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gtali
 Poker-style dice game.
 
-%description gtali -l pl
-Gra w ko¶ci w pokerowym stylu.
+%description gtali -l pl.UTF-8
+Gra w koÅ›ci w pokerowym stylu.
 
 %package iagno
 Summary:	GNOME Iagno
-Summary(pl):	Iagno dla GNOME
+Summary(pl.UTF-8):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description iagno
 Reversi like game.
 
-%description iagno -l pl
+%description iagno -l pl.UTF-8
 Gra podobna do Reversi.
 
 %package mahjongg
 Summary:	GNOME Mahjongg
-Summary(pl):	Mahjongg dla GNOME
+Summary(pl.UTF-8):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description mahjongg
 Disassemble a pile of tiles by removing matching pairs.
 
-%description mahjongg -l pl
-Gra polegjaca na demonta¿u stosu kafli poprzez usuwanie pasuj±cych
+%description mahjongg -l pl.UTF-8
+Gra polegjaca na demontaÅ¼u stosu kafli poprzez usuwanie pasujÄ…cych
 par.
 
 %package same-gnome
 Summary:	Same GNOME
 Group:		X11/Applications/Games
-Requires(post):	GConf2
 Requires(post):	coreutils
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description same-gnome
 Remove groups of balls to try and clear the screen.
 
-%description same-gnome -l pl
-Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
+%description same-gnome -l pl.UTF-8
+Gra, ktÃ³rej celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 
 %package sol
 Summary:	AisleRiot Solitaire
-Summary(pl):	Pasjans AisleRiot
+Summary(pl.UTF-8):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	guile >= 5:1.6.5
 
 %description sol
 Many different solitaire games.
 
-%description sol -l pl
-Ró¿ne gry karciane.
+%description sol -l pl.UTF-8
+RÃ³Å¼ne gry karciane.
+
+%package sudoku
+Summary:	Simple interface for playing, saving, printing and solving Sudoku
+Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiÄ…zywania Sudoku
+Group:		X11/Applications/Games
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	python-gnome-desktop-print >= 2.17.93
+Obsoletes:	gnome-sudoku
+
+%description sudoku
+GNOME Sudoku provides a simple interface for playing, saving, printing
+and solving Sudoku.
+
+%description sudoku -l pl.UTF-8
+GNOME Sudoku dostarcza prosty interfejs do grania, zapisywania,
+drukowania i rozwiÄ…zywania Sudoku.
 
 %prep
 %setup -q
@@ -312,14 +346,17 @@ Ró¿ne gry karciane.
 %patch2 -p1
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal} -I m4
 %{__autoheader}
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-bonjour \
+	--disable-howl \
+	--disable-scrollkeeper \
 	--disable-static
 %{__make}
 
@@ -330,28 +367,63 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
+
+%py_postclean
 
 %find_lang %{name} --all-name
+%find_lang gnect --with-gnome
+%find_lang gnomine --with-gnome
+%find_lang same-gnome --with-gnome
+%find_lang mahjongg --with-gnome
+%find_lang glchess --with-gnome
+%find_lang gtali --with-gnome
+%find_lang gnome-sudoku --with-gnome
+%find_lang gnotravex --with-gnome
+%find_lang gnotski --with-gnome
+%find_lang glines --with-gnome
+%find_lang iagno --with-gnome
+%find_lang gnobots2 --with-gnome
+%find_lang gnibbles --with-gnome
+%find_lang gnometris --with-gnome
+%find_lang blackjack --with-gnome
+%find_lang aisleriot --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%gconf_schema_install libgnomegames.schemas
+
+%preun
+%gconf_schema_uninstall libgnomegames.schemas
+
 %post blackjack
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install blackjack.schemas
+%update_icon_cache hicolor
 
-%postun blackjack -p /usr/bin/scrollkeeper-update
+%preun blackjack
+%gconf_schema_uninstall blackjack.schemas
 
-%post gataxx
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%postun blackjack
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
-%postun gataxx -p /usr/bin/scrollkeeper-update
+%post glchess
+%gconf_schema_install glchess.schemas
+%scrollkeeper_update_post
+
+%preun glchess
+%gconf_schema_uninstall glchess.schemas
+
+%postun glchess
+%scrollkeeper_update_postun
 
 %post glines
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install glines.schemas
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
 	touch %{_gamesdir}/glines.scores
@@ -359,17 +431,29 @@ if [ ! -f %{_gamesdir}/glines.scores ]; then
 	chmod 664 %{_gamesdir}/glines.scores
 fi
 
-%postun glines -p /usr/bin/scrollkeeper-update
+%preun glines
+%gconf_schema_uninstall glines.schemas
+
+%postun glines
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnect
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnect.schemas
+%update_icon_cache hicolor
 
-%postun gnect -p /usr/bin/scrollkeeper-update
+%preun gnect
+%gconf_schema_uninstall gnect.schemas
+
+%postun gnect
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnibbles
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnibbles.schemas
+%update_icon_cache hicolor
 
 for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	gnibbles.3.1 gnibbles.4.0 gnibbles.4.1; do
@@ -380,11 +464,17 @@ for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	fi
 done
 
-%postun gnibbles -p /usr/bin/scrollkeeper-update
+%preun gnibbles
+%gconf_schema_uninstall gnibbles.schemas
+
+%postun gnibbles
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnobots2
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnobots2.schemas
+%update_icon_cache hicolor
 
 for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	gnobots2.classic_robots-super-safe gnobots2.nightmare-safe \
@@ -402,23 +492,17 @@ for i in gnobots2.classic_robots-safe gnobots2.classic_robots \
 	fi
 done
 
-%postun	gnobots2 -p /usr/bin/scrollkeeper-update
+%preun gnobots2
+%gconf_schema_uninstall gnobots2.schemas
 
-%post stones
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
-
-if [ ! -f %{_gamesdir}/gnome-stones.scores ]; then
-	touch %{_gamesdir}/gnome-stones.scores
-	chown root:games %{_gamesdir}/gnome-stones.scores
-	chmod 664 %{_gamesdir}/gnome-stones.scores
-fi
-
-%postun stones -p /usr/bin/scrollkeeper-update
+%postun	gnobots2
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnometris
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnometris.schemas
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	touch %{_gamesdir}/gnometris.scores
@@ -426,11 +510,17 @@ if [ ! -f %{_gamesdir}/gnometris.scores ]; then
 	chmod 664 %{_gamesdir}/gnometris.scores
 fi
 
-%postun gnometris -p /usr/bin/scrollkeeper-update
+%preun gnometris
+%gconf_schema_uninstall gnometris.schemas
+
+%postun gnometris
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnomine
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnomine.schemas
+%update_icon_cache hicolor
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	if [ ! -f %{_gamesdir}/$i.scores ]; then
@@ -440,11 +530,17 @@ for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	fi
 done
 
-%postun gnomine -p /usr/bin/scrollkeeper-update
+%preun gnomine
+%gconf_schema_uninstall gnomine.schemas
+
+%postun gnomine
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnotravex
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gnotravex.schemas
+%update_icon_cache hicolor
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	gnotravex.6x6; do
@@ -455,10 +551,17 @@ for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	fi
 done
 
-%postun gnotravex -p /usr/bin/scrollkeeper-update
+%preun gnotravex
+%gconf_schema_uninstall gnotravex.schemas
+
+%postun gnotravex
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gnotski
-/usr/bin/scrollkeeper-update
+%scrollkeeper_update_post
+%gconf_schema_install gnotski.schemas
+%update_icon_cache hicolor
 
 for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	if [ ! -f %{_gamesdir}/gnotski.$i.scores ]; then
@@ -468,11 +571,17 @@ for i in 1 2 3 4 5 6 7 11 12 13 14 15 16 17 21 22 23 24 25 26; do
 	fi
 done
 
-%postun gnotski -p /usr/bin/scrollkeeper-update
+%preun gnotski
+%gconf_schema_uninstall gnotski.schemas
+
+%postun gnotski
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gtali
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install gtali.schemas
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	touch %{_gamesdir}/gtali.scores
@@ -480,17 +589,29 @@ if [ ! -f %{_gamesdir}/gtali.scores ]; then
 	chmod 664 %{_gamesdir}/gtali.scores
 fi
 
-%postun gtali -p /usr/bin/scrollkeeper-update
+%preun gtali
+%gconf_schema_uninstall gtali.schemas
+
+%postun gtali
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post iagno
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install iagno.schemas
+%update_icon_cache hicolor
 
-%postun iagno -p /usr/bin/scrollkeeper-update
+%preun iagno
+%gconf_schema_uninstall iagno.schemas
+
+%postun iagno
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post mahjongg
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install mahjongg.schemas
+%update_icon_cache hicolor
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	mahjongg.difficult mahjongg.dragon mahjongg.easy \
@@ -502,11 +623,17 @@ for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	fi
 done
 
-%postun mahjongg -p /usr/bin/scrollkeeper-update
+%preun mahjongg
+%gconf_schema_uninstall mahjongg.schemas
+
+%postun mahjongg
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post same-gnome
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install same-gnome.schemas
+%update_icon_cache hicolor
 
 if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	touch %{_gamesdir}/same-gnome.scores
@@ -514,20 +641,38 @@ if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
 	chmod 664 %{_gamesdir}/same-gnome.scores
 fi
 
-%postun same-gnome -p /usr/bin/scrollkeeper-update
+%preun same-gnome
+%gconf_schema_uninstall same-gnome.schemas
+
+%postun same-gnome
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post sol
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%scrollkeeper_update_post
+%gconf_schema_install aisleriot.schemas
+%update_icon_cache hicolor
 
-%postun sol -p /usr/bin/scrollkeeper-update
+%preun sol
+%gconf_schema_uninstall aisleriot.schemas
+
+%postun sol
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%{_sysconfdir}/gconf/schemas/libgnomegames.schemas
+%dir %{_datadir}/%{name}
+%dir %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/gnome-games-common
+%dir %{_pixmapsdir}/iagno
+%{_pixmapsdir}/iagno/classic.png
+%dir %{_datadir}/ggz
+%{_datadir}/ggz/gnome-games
 
-%files blackjack
+%files blackjack -f blackjack.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/blackjack
 %{_sysconfdir}/gconf/schemas/blackjack.schemas
@@ -535,46 +680,46 @@ fi
 %{_desktopdir}/blackjack.desktop
 %{_omf_dest_dir}/%{name}/blackjack-C.omf
 %{_pixmapsdir}/blackjack
-%{_pixmapsdir}/gnome-blackjack.png
-%dir %{_gnomehelpdir}/blackjack
-%{_gnomehelpdir}/blackjack/C
+%{_iconsdir}/hicolor/*/*/gnome-blackjack.png
 
-%files gataxx
+%files glchess -f glchess.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/gataxx
-%{_sysconfdir}/gconf/schemas/gataxx.schemas
-%{_desktopdir}/gataxx.desktop
-%{_omf_dest_dir}/%{name}/gataxx-C.omf
-%{_pixmapsdir}/gataxx.png
-%dir %{_gnomehelpdir}/gataxx
-%{_gnomehelpdir}/gataxx/C
+%attr(755,root,root) %{_bindir}/glchess
+%attr(755,root,root) %{_bindir}/gnome-gnuchess
+%{_sysconfdir}/gconf/schemas/glchess.schemas
+%{_desktopdir}/glchess.desktop
+%{_datadir}/glchess
+%{py_sitescriptdir}/glchess
+%{_pixmapsdir}/glchess.svg
+%{_pixmapsdir}/glchess
+%dir %{_omf_dest_dir}/glchess
+%{_omf_dest_dir}/glchess/glchess-C.omf
 
-%files glines
+%files glines -f glines.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/glines
 %{_sysconfdir}/gconf/schemas/glines.schemas
 %{_desktopdir}/glines.desktop
-%{_omf_dest_dir}/%{name}/glines-C.omf
 %{_pixmapsdir}/glines
-%{_pixmapsdir}/glines.png
+%{_iconsdir}/hicolor/*/*/gnome-five-or-more.png
+%dir %{_omf_dest_dir}/glines
+%{_omf_dest_dir}/glines/glines-C.omf
+%lang(sv) %{_omf_dest_dir}/glines/glines-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
-%dir %{_gnomehelpdir}/glines
-%{_gnomehelpdir}/glines/C
 
-%files gnect
+%files gnect -f gnect.lang
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
-%{_sysconfdir}/sound/events/gnect.soundlist
 %{_datadir}/gnect
 %{_desktopdir}/gnect.desktop
-%{_omf_dest_dir}/%{name}/gnect-C.omf
 %{_pixmapsdir}/gnect
-%{_pixmapsdir}/gnect-icon.png
-%dir %{_gnomehelpdir}/gnect
-%{_gnomehelpdir}/gnect/C
+%{_iconsdir}/hicolor/*/*/gnome-four-in-a-row.png
+%dir %{_omf_dest_dir}/gnect
+%{_omf_dest_dir}/gnect/gnect-C.omf
+%lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
-%files gnibbles
+%files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
@@ -584,12 +729,10 @@ fi
 %{_desktopdir}/gnibbles.desktop
 %{_omf_dest_dir}/%{name}/gnibbles-C.omf
 %{_pixmapsdir}/gnibbles
-%{_pixmapsdir}/gnome-nibbles.png
+%{_iconsdir}/hicolor/*/*/gnome-nibbles.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
-%dir %{_gnomehelpdir}/gnibbles
-%{_gnomehelpdir}/gnibbles/C
 
-%files gnobots2
+%files gnobots2 -f gnobots2.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnobots2
 %{_sysconfdir}/gconf/schemas/gnobots2.schemas
@@ -602,83 +745,51 @@ fi
 %lang(es) %{_omf_dest_dir}/%{name}/gnobots2-es.omf
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
 %{_pixmapsdir}/gnobots2
-%{_pixmapsdir}/gnome-gnobots2.png
-%{_pixmapsdir}/rteleport.png
-%{_pixmapsdir}/teleport.png
+%{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
-%dir %{_gnomehelpdir}/gnobots2
-%{_gnomehelpdir}/gnobots2/C
-%lang(da) %{_gnomehelpdir}/gnobots2/da
-%lang(es) %{_gnomehelpdir}/gnobots2/es
-%lang(it) %{_gnomehelpdir}/gnobots2/it
 
-%files stones
-%defattr(644,root,root,755)
-%attr(2755,root,games) %{_bindir}/gnome-stones
-%{_sysconfdir}/gconf/schemas/gnome-stones.schemas
-%{_datadir}/gnome-stones
-%{_datadir}/mime-info/gnome-stones.*
-%{_datadir}/gnome-stonesrc
-%lang(ko) %{_datadir}/gnome-stonesrc.ko
-%dir %{_libdir}/gnome-stones
-%dir %{_libdir}/gnome-stones/objects
-%attr(755,root,root) %{_libdir}/gnome-stones/objects/lib*.so
-%{_libdir}/gnome-stones/objects/lib*.la
-%{_desktopdir}/gnome-stones.desktop
-%{_omf_dest_dir}/%{name}/gnome-stones-C.omf
-%{_pixmapsdir}/gnome-stones
-%{_pixmapsdir}/gnome-stones*.png
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnome-stones.*
-%dir %{_gnomehelpdir}/gnome-stones
-%{_gnomehelpdir}/gnome-stones/C
-
-%files gnometris
+%files gnometris -f gnometris.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnometris
 %{_sysconfdir}/gconf/schemas/gnometris.schemas
 %{_desktopdir}/gnometris.desktop
 %{_omf_dest_dir}/%{name}/gnometris-C.omf
 %{_pixmapsdir}/gnometris
-%{_pixmapsdir}/gnome-gtetris.png
+%{_iconsdir}/hicolor/*/*/gnome-gnometris.png
 %{_datadir}/sounds/gnometris
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
-%dir %{_gnomehelpdir}/gnometris
-%{_gnomehelpdir}/gnometris/C
 
-%files gnomine
+%files gnomine -f gnomine.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnomine
 %{_sysconfdir}/gconf/schemas/gnomine.schemas
 %{_desktopdir}/gnomine.desktop
 %{_omf_dest_dir}/%{name}/gnomine-C.omf
 %{_pixmapsdir}/gnomine
-%{_pixmapsdir}/gnome-gnomine.png
+%{_iconsdir}/hicolor/*/*/gnome-gnomine.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
-%dir %{_gnomehelpdir}/gnomine
-%{_gnomehelpdir}/gnomine/C
 
-%files gnotravex
+%files gnotravex -f gnotravex.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotravex
 %{_sysconfdir}/gconf/schemas/gnotravex.schemas
 %{_desktopdir}/gnotravex.desktop
 %{_omf_dest_dir}/%{name}/gnotravex-C.omf
-%{_pixmapsdir}/gnome-gnotravex.png
+%{_pixmapsdir}/gnotravex
+%{_iconsdir}/hicolor/*/*/gnome-tetravex.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
-%dir %{_gnomehelpdir}/gnotravex
-%{_gnomehelpdir}/gnotravex/C
 
-%files gnotski
+%files gnotski -f gnotski.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotski
+%{_sysconfdir}/gconf/schemas/gnotski.schemas
 %{_desktopdir}/gnotski.desktop
 %{_omf_dest_dir}/%{name}/gnotski-C.omf
-%{_pixmapsdir}/gnotski*.png
+%{_pixmapsdir}/gnotski.svg
+%{_iconsdir}/hicolor/*/*/gnome-klotski.png
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
-%dir %{_gnomehelpdir}/gnotski
-%{_gnomehelpdir}/gnotski/C
 
-%files gtali
+%files gtali -f gtali.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gtali
 %{_sysconfdir}/gconf/schemas/gtali.schemas
@@ -686,13 +797,10 @@ fi
 %{_omf_dest_dir}/%{name}/gtali-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
 %{_pixmapsdir}/gtali
-%{_pixmapsdir}/gnome-gtali.png
+%{_iconsdir}/hicolor/*/*/gnome-tali.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
-%dir %{_gnomehelpdir}/gtali
-%{_gnomehelpdir}/gtali/C
-%lang(da) %{_gnomehelpdir}/gtali/da
 
-%files iagno
+%files iagno -f iagno.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
 %{_sysconfdir}/gconf/schemas/iagno.schemas
@@ -700,36 +808,33 @@ fi
 %{_datadir}/sounds/iagno
 %{_desktopdir}/iagno.desktop
 %{_omf_dest_dir}/%{name}/iagno-C.omf
-%{_pixmapsdir}/iagno
-%{_pixmapsdir}/iagno.png
-%dir %{_gnomehelpdir}/iagno
-%{_gnomehelpdir}/iagno/C
+%{_iconsdir}/hicolor/*/*/gnome-iagno.*
+%{_pixmapsdir}/iagno/woodtrim.png
 
-%files mahjongg
+%files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/mahjongg
 %{_sysconfdir}/gconf/schemas/mahjongg.schemas
 %{_desktopdir}/mahjongg.desktop
 %{_omf_dest_dir}/%{name}/mahjongg-C.omf
 %{_pixmapsdir}/mahjongg
-%{_pixmapsdir}/gnome-mahjongg.png
+%{_iconsdir}/hicolor/*/*/gnome-mahjongg.png
+%{_datadir}/%{name}/mahjongg
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
-%dir %{_gnomehelpdir}/mahjongg
-%{_gnomehelpdir}/mahjongg/C
 
-%files same-gnome
+%files same-gnome -f same-gnome.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/same-gnome
 %{_sysconfdir}/gconf/schemas/same-gnome.schemas
 %{_desktopdir}/same-gnome.desktop
-%{_omf_dest_dir}/%{name}/same-gnome-C.omf
-%{_pixmapsdir}/same-gnome
-%{_pixmapsdir}/gnome-gsame.png
+%{_datadir}/%{name}/same-gnome
+%{_iconsdir}/hicolor/*/*/gnome-same-gnome.png
+%dir %{_omf_dest_dir}/same-gnome
+%{_omf_dest_dir}/same-gnome/same-gnome-C.omf
+%lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
-%dir %{_gnomehelpdir}/same-gnome
-%{_gnomehelpdir}/same-gnome/C
 
-%files sol
+%files sol -f aisleriot.lang
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/sol
 %{_sysconfdir}/gconf/schemas/aisleriot.schemas
@@ -737,8 +842,19 @@ fi
 %{_desktopdir}/freecell.desktop
 %{_desktopdir}/sol.desktop
 %{_omf_dest_dir}/%{name}/aisleriot-C.omf
+%lang(fr) %{_omf_dest_dir}/%{name}/aisleriot-fr.omf
 %{_pixmapsdir}/cards
-%{_pixmapsdir}/gnome-cardgame.png
-%{_pixmapsdir}/gnome-aisleriot.png
-%dir %{_gnomehelpdir}/aisleriot
-%{_gnomehelpdir}/aisleriot/C
+%{_iconsdir}/hicolor/*/*/gnome-aisleriot.png
+%{_iconsdir}/hicolor/*/*/gnome-freecell.png
+
+%files sudoku -f gnome-sudoku.lang
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gnome-sudoku
+%{_desktopdir}/gnome-sudoku.desktop
+%dir %{py_sitescriptdir}/gnome_sudoku
+%{py_sitescriptdir}/gnome_sudoku/*.py[co]
+%dir %{py_sitescriptdir}/gnome_sudoku/gtk_goodies
+%{py_sitescriptdir}/gnome_sudoku/gtk_goodies/*.py[co]
+%{_datadir}/gnome-sudoku
+%{_pixmapsdir}/gnome-sudoku
+%{_pixmapsdir}/sudoku.png
