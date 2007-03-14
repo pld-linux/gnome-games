@@ -1,7 +1,6 @@
 #
 # TODO:
 # - system libggz (http://www.ggzgamingzone.org/)
-# - pl summary and description for glchess subpackage
 #
 Summary:	GNOME games
 Summary(es.UTF-8):	Juegos de GNOME
@@ -103,6 +102,7 @@ Kasynowa wersja gry oczko.
 
 %package glchess
 Summary:	GNOME glChess - a 2D/3D chess interface
+Summary(pl.UTF-8):	GNOME glChess - dwu i trójwymiarowy interfejs do szachów
 Group:		X11/Applications/Games
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
@@ -114,6 +114,12 @@ Obsoletes:	glchess
 glChess is a 2D/3D chess game interfacing via the Chess Engine
 Communication Protocol (CECP) by Tim Mann. This means it can currently
 use engines such as GNUChess, Sjeng, Faile, Amy, Crafty and Phalanx.
+
+%description glchess -l pl.UTF-8
+glChess to dwu i trójwymiarowa gra w szachy komunikująca się za
+pomocą protokołu CECP (Chess Engine Communication Protocol) Tima
+Manna. Oznacza to, że aktualnie może używać silników takich jak
+GNUChess, Sjeng, Faile, Amy, Crafty i Phalanx.
 
 %package glines
 Summary:	Five or more game
