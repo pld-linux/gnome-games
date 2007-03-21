@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.0
+Version:	2.18.0.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	ef00cec63ca8b4e328c1975377f98f11
+# Source0-md5:	aa052f1fa0b4c020c0219a227e75721c
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -713,6 +713,7 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-five-or-more.png
 %dir %{_omf_dest_dir}/glines
 %{_omf_dest_dir}/glines/glines-C.omf
+%lang(en_GB) %{_omf_dest_dir}/glines/glines-en_GB.omf
 %lang(fr) %{_omf_dest_dir}/glines/glines-fr.omf
 %lang(ru) %{_omf_dest_dir}/glines/glines-ru.omf
 %lang(sv) %{_omf_dest_dir}/glines/glines-sv.omf
@@ -728,6 +729,7 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-four-in-a-row.png
 %dir %{_omf_dest_dir}/gnect
 %{_omf_dest_dir}/gnect/gnect-C.omf
+%lang(en_GB) %{_omf_dest_dir}/gnect/gnect-en_GB.omf
 %lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
 %files gnibbles -f gnibbles.lang
@@ -842,6 +844,7 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-same-gnome.png
 %dir %{_omf_dest_dir}/same-gnome
 %{_omf_dest_dir}/same-gnome/same-gnome-C.omf
+%lang(en_GB) %{_omf_dest_dir}/same-gnome/same-gnome-en_GB.omf
 %lang(ru) %{_omf_dest_dir}/same-gnome/same-gnome-ru.omf
 %lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
