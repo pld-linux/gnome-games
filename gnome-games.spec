@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.0.1
+Version:	2.18.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	aa052f1fa0b4c020c0219a227e75721c
+# Source0-md5:	b5479669347042c6354e5c0d2d9df2a0
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -27,14 +27,14 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	avahi-glib-devel >= 0.6.15
 BuildRequires:	check >= 0.9.4
 BuildRequires:	esound-devel
-BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-doc-utils >= 0.10.1
+BuildRequires:	gnome-common >= 2.18.0
+BuildRequires:	gnome-doc-utils >= 0.10.3
 BuildRequires:	gnome-vfs2-devel >= 2.18.0.1
 BuildRequires:	gtk+2-devel >= 2:2.10.10
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.18.0
+BuildRequires:	libgnomeui-devel >= 2.18.1
 BuildRequires:	libltdl-devel
 BuildRequires:	librsvg-devel >= 1:2.16.1
 BuildRequires:	libstdc++-devel
@@ -49,7 +49,7 @@ BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
 Requires:	gnome-vfs2 >= 2.18.0.1
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.18.0
+Requires:	libgnomeui >= 2.18.1
 Requires:	librsvg >= 1:2.16.1
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -335,7 +335,7 @@ Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	python-gnome-desktop-print >= 2.17.93
+Requires:	python-gnome-desktop-print >= 2.18.0
 Obsoletes:	gnome-sudoku
 
 %description sudoku
@@ -730,6 +730,7 @@ fi
 %dir %{_omf_dest_dir}/gnect
 %{_omf_dest_dir}/gnect/gnect-C.omf
 %lang(en_GB) %{_omf_dest_dir}/gnect/gnect-en_GB.omf
+%lang(fr) %{_omf_dest_dir}/gnect/gnect-fr.omf
 %lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
 %files gnibbles -f gnibbles.lang
@@ -845,6 +846,7 @@ fi
 %dir %{_omf_dest_dir}/same-gnome
 %{_omf_dest_dir}/same-gnome/same-gnome-C.omf
 %lang(en_GB) %{_omf_dest_dir}/same-gnome/same-gnome-en_GB.omf
+%lang(fr) %{_omf_dest_dir}/same-gnome/same-gnome-fr.omf
 %lang(ru) %{_omf_dest_dir}/same-gnome/same-gnome-ru.omf
 %lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
