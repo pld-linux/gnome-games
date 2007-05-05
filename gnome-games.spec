@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.1
+Version:	2.18.1.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	b5479669347042c6354e5c0d2d9df2a0
+# Source0-md5:	3e7dedf811f952efe8a32a7cea790a09
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -714,6 +714,7 @@ fi
 %dir %{_omf_dest_dir}/glines
 %{_omf_dest_dir}/glines/glines-C.omf
 %lang(en_GB) %{_omf_dest_dir}/glines/glines-en_GB.omf
+%lang(es) %{_omf_dest_dir}/glines/glines-es.omf
 %lang(fr) %{_omf_dest_dir}/glines/glines-fr.omf
 %lang(ru) %{_omf_dest_dir}/glines/glines-ru.omf
 %lang(sv) %{_omf_dest_dir}/glines/glines-sv.omf
@@ -730,6 +731,7 @@ fi
 %dir %{_omf_dest_dir}/gnect
 %{_omf_dest_dir}/gnect/gnect-C.omf
 %lang(en_GB) %{_omf_dest_dir}/gnect/gnect-en_GB.omf
+%lang(es) %{_omf_dest_dir}/gnect/gnect-es.omf
 %lang(fr) %{_omf_dest_dir}/gnect/gnect-fr.omf
 %lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
@@ -846,6 +848,7 @@ fi
 %dir %{_omf_dest_dir}/same-gnome
 %{_omf_dest_dir}/same-gnome/same-gnome-C.omf
 %lang(en_GB) %{_omf_dest_dir}/same-gnome/same-gnome-en_GB.omf
+%lang(es) %{_omf_dest_dir}/same-gnome/same-gnome-es.omf
 %lang(fr) %{_omf_dest_dir}/same-gnome/same-gnome-fr.omf
 %lang(ru) %{_omf_dest_dir}/same-gnome/same-gnome-ru.omf
 %lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
