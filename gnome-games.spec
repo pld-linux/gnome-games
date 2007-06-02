@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.1.1
+Version:	2.18.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	3e7dedf811f952efe8a32a7cea790a09
+# Source0-md5:	fcc0e2fafbc2486b0c003feabf00342d
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
@@ -703,6 +703,9 @@ fi
 %{_pixmapsdir}/glchess
 %dir %{_omf_dest_dir}/glchess
 %{_omf_dest_dir}/glchess/glchess-C.omf
+%lang(es) %{_omf_dest_dir}/glchess/glchess-es.omf
+%lang(fr) %{_omf_dest_dir}/glchess/glchess-fr.omf
+%lang(sv) %{_omf_dest_dir}/glchess/glchess-sv.omf
 
 %files glines -f glines.lang
 %defattr(644,root,root,755)
