@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.2
+Version:	2.18.2.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	fcc0e2fafbc2486b0c003feabf00342d
+# Source0-md5:	c3434a724cd72a536ba48d9187f10697
 Patch0:		%{name}-schemas.patch
 Patch1:		%{name}-include.patch
 Patch2:		%{name}-desktop.patch
