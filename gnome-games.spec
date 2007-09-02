@@ -11,7 +11,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.19.91.1
-Release:	0.1
+Release:	0.2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -108,6 +108,8 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Suggests:	python-pygtkglext >= 1.1.0-2
+Suggests:	python-PyOpenGL
 Obsoletes:	glchess
 
 %description glchess
