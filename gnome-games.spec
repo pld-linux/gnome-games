@@ -10,13 +10,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.19.91.1
+Version:	2.19.92
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.19/%{name}-%{version}.tar.bz2
-# Source0-md5:	2f4c55edc046879b58e1d48972d82f82
+# Source0-md5:	ae47893206f44c97333eb8f6b56716aa
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.19.1
@@ -678,6 +678,7 @@ fi
 %dir %{_omf_dest_dir}/blackjack
 %{_omf_dest_dir}/blackjack/blackjack-C.omf
 %lang(es) %{_omf_dest_dir}/blackjack/blackjack-es.omf
+%lang(fr) %{_omf_dest_dir}/blackjack/blackjack-fr.omf
 %lang(oc) %{_omf_dest_dir}/blackjack/blackjack-oc.omf
 %lang(sv) %{_omf_dest_dir}/blackjack/blackjack-sv.omf
 %{_iconsdir}/hicolor/*/*/gnome-blackjack.*
@@ -757,6 +758,7 @@ fi
 %{_omf_dest_dir}/gnobots2/gnobots2-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gnobots2-da.omf
 %lang(es) %{_omf_dest_dir}/gnobots2/gnobots2-es.omf
+%lang(fr) %{_omf_dest_dir}/gnobots2/gnobots2-fr.omf
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
 %lang(oc) %{_omf_dest_dir}/gnobots2/gnobots2-oc.omf
 %lang(sv) %{_omf_dest_dir}/gnobots2/gnobots2-sv.omf
@@ -836,6 +838,7 @@ fi
 %{_omf_dest_dir}/gtali/gtali-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
 %lang(es) %{_omf_dest_dir}/gtali/gtali-es.omf
+%lang(fr) %{_omf_dest_dir}/gtali/gtali-fr.omf
 %lang(oc) %{_omf_dest_dir}/gtali/gtali-oc.omf
 %lang(sv) %{_omf_dest_dir}/gtali/gtali-sv.omf
 %{_pixmapsdir}/gtali
@@ -850,6 +853,7 @@ fi
 %dir %{_omf_dest_dir}/iagno
 %{_omf_dest_dir}/iagno/iagno-C.omf
 %lang(es) %{_omf_dest_dir}/iagno/iagno-es.omf
+%lang(fr) %{_omf_dest_dir}/iagno/iagno-fr.omf
 %lang(oc) %{_omf_dest_dir}/iagno/iagno-oc.omf
 %lang(sv) %{_omf_dest_dir}/iagno/iagno-sv.omf
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
@@ -863,6 +867,7 @@ fi
 %dir %{_omf_dest_dir}/mahjongg
 %{_omf_dest_dir}/mahjongg/mahjongg-C.omf
 %lang(es) %{_omf_dest_dir}/mahjongg/mahjongg-es.omf
+%lang(fr) %{_omf_dest_dir}/mahjongg/mahjongg-fr.omf
 %lang(oc) %{_omf_dest_dir}/mahjongg/mahjongg-oc.omf
 %lang(sv) %{_omf_dest_dir}/mahjongg/mahjongg-sv.omf
 %{_pixmapsdir}/mahjongg
