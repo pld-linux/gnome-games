@@ -1,6 +1,6 @@
-diff -urN gnome-games-2.5.6.orig/gtali/gtali.schemas.in gnome-games-2.5.6/gtali/gtali.schemas.in
---- gnome-games-2.5.6.orig/gtali/gtali.schemas.in	2004-02-16 12:25:40.148111480 +0100
-+++ gnome-games-2.5.6/gtali/gtali.schemas.in	2004-02-16 12:28:22.347453432 +0100
+diff -urN gnome-games-2.19.91.1/gtali/gtali.schemas.in gnome-games-2.19.91.1.new/gtali/gtali.schemas.in
+--- gnome-games-2.19.91.1/gtali/gtali.schemas.in	2007-08-27 22:03:17.000000000 +0200
++++ gnome-games-2.19.91.1.new/gtali/gtali.schemas.in	2007-09-02 21:32:57.000000000 +0200
 @@ -54,10 +54,10 @@
        <owner>gtali</owner>
        <type>list</type>
@@ -12,6 +12,20 @@ diff -urN gnome-games-2.5.6.orig/gtali/gtali.schemas.in gnome-games-2.5.6/gtali/
 -        <long></long>
 +        <short>Player names</short>
 +        <long>Player names.</long>
+       </locale>
+     </schema>
+ 
+@@ -66,10 +66,10 @@
+       <applyto>/apps/gtali/GameType</applyto>
+       <owner>gtali</owner>
+       <type>string</type>
++      <default>Regular</default>
+       <locale name="C">
+-        <default>Regular</default>
+-        <short></short>
+-        <long></long>
++        <short>Game type</short>
++        <long>Game type.</long>
        </locale>
      </schema>
  
