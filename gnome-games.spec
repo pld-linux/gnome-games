@@ -10,47 +10,41 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.18.2.1
+Version:	2.20.0.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-games/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	c3434a724cd72a536ba48d9187f10697
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.20/%{name}-%{version}.tar.bz2
+# Source0-md5:	b852cfe1f65c076b8af4fa9c7383a35f
 Patch0:		%{name}-schemas.patch
-Patch1:		%{name}-include.patch
-Patch2:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.18.0.1
+BuildRequires:	GConf2-devel >= 2.19.1
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	avahi-glib-devel >= 0.6.15
 BuildRequires:	check >= 0.9.4
-BuildRequires:	esound-devel
-BuildRequires:	gnome-common >= 2.18.0
-BuildRequires:	gnome-doc-utils >= 0.10.3
-BuildRequires:	gnome-vfs2-devel >= 2.18.0.1
-BuildRequires:	gtk+2-devel >= 2:2.10.10
+BuildRequires:	gnome-common >= 2.20.0
+BuildRequires:	gnome-doc-utils >= 0.12.0
+BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	intltool >= 0.35.5
-BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.18.1
-BuildRequires:	libltdl-devel
-BuildRequires:	librsvg-devel >= 1:2.16.1
+BuildRequires:	intltool >= 0.36.2
+BuildRequires:	libgnomeui-devel >= 2.19.1
+BuildRequires:	librsvg-devel >= 1:2.18.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.27
-BuildRequires:	pkgconfig
+BuildRequires:	libxml2-devel >= 1:2.6.30
+BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 2.4
-BuildRequires:	python-gnome-desktop-devel >= 2.18.0
-BuildRequires:	python-pygtk-devel >= 2:2.10.4
+BuildRequires:	python-gnome-desktop-devel >= 2.20.0
+BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.18.0.1
+Requires:	gnome-vfs2 >= 2.20.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.18.1
-Requires:	librsvg >= 1:2.16.1
+Requires:	libgnomeui >= 2.19.1
+Requires:	librsvg >= 1:2.18.2
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-devel
@@ -108,6 +102,8 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Suggests:	python-pygtkglext >= 1.1.0-2
+Suggests:	python-PyOpenGL
 Obsoletes:	glchess
 
 %description glchess
@@ -335,7 +331,7 @@ Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	python-gnome-desktop-print >= 2.18.0
+Requires:	python-gnome-desktop-print >= 2.20.0
 Obsoletes:	gnome-sudoku
 
 %description sudoku
@@ -349,8 +345,6 @@ drukowania i rozwiązywania Sudoku.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %{__glib_gettextize}
@@ -361,9 +355,9 @@ drukowania i rozwiązywania Sudoku.
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-bonjour \
-	--disable-howl \
+	--enable-games=all \
 	--disable-scrollkeeper \
+	--disable-schemas-install \
 	--disable-static
 %{__make}
 
@@ -371,8 +365,7 @@ drukowania i rozwiązywania Sudoku.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
 
@@ -398,12 +391,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-%gconf_schema_install libgnomegames.schemas
-
-%preun
-%gconf_schema_uninstall libgnomegames.schemas
 
 %post blackjack
 %scrollkeeper_update_post
@@ -672,24 +659,29 @@ fi
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_sysconfdir}/gconf/schemas/libgnomegames.schemas
+%dir %{_libdir}/%{name}
+%attr(755,root,root) %{_libdir}/%{name}/gnome-games-render-cards
 %dir %{_datadir}/%{name}
-%dir %{_omf_dest_dir}/%{name}
-%{_pixmapsdir}/gnome-games-common
-%dir %{_pixmapsdir}/iagno
-%{_pixmapsdir}/iagno/classic.png
+%{_datadir}/%{name}/sounds
+%{_datadir}/%{name}/pixmaps
+%{_datadir}/gnome-games-common
 %dir %{_datadir}/ggz
 %{_datadir}/ggz/gnome-games
+%dir %{_omf_dest_dir}/%{name}
 
 %files blackjack -f blackjack.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/blackjack
 %{_sysconfdir}/gconf/schemas/blackjack.schemas
-%{_datadir}/blackjack
+%{_datadir}/%{name}/blackjack
 %{_desktopdir}/blackjack.desktop
-%{_omf_dest_dir}/%{name}/blackjack-C.omf
-%{_pixmapsdir}/blackjack
-%{_iconsdir}/hicolor/*/*/gnome-blackjack.png
+%dir %{_omf_dest_dir}/blackjack
+%{_omf_dest_dir}/blackjack/blackjack-C.omf
+%lang(es) %{_omf_dest_dir}/blackjack/blackjack-es.omf
+%lang(fr) %{_omf_dest_dir}/blackjack/blackjack-fr.omf
+%lang(oc) %{_omf_dest_dir}/blackjack/blackjack-oc.omf
+%lang(sv) %{_omf_dest_dir}/blackjack/blackjack-sv.omf
+%{_iconsdir}/hicolor/*/*/gnome-blackjack.*
 
 %files glchess -f glchess.lang
 %defattr(644,root,root,755)
@@ -699,13 +691,15 @@ fi
 %{_desktopdir}/glchess.desktop
 %{_datadir}/glchess
 %{py_sitescriptdir}/glchess
-%{_pixmapsdir}/glchess.svg
 %{_pixmapsdir}/glchess
 %dir %{_omf_dest_dir}/glchess
 %{_omf_dest_dir}/glchess/glchess-C.omf
 %lang(es) %{_omf_dest_dir}/glchess/glchess-es.omf
 %lang(fr) %{_omf_dest_dir}/glchess/glchess-fr.omf
+%lang(oc) %{_omf_dest_dir}/glchess/glchess-oc.omf
+%lang(pt_BR) %{_omf_dest_dir}/glchess/glchess-pt_BR.omf
 %lang(sv) %{_omf_dest_dir}/glchess/glchess-sv.omf
+%{_iconsdir}/hicolor/*/*/gnome-glchess.*
 
 %files glines -f glines.lang
 %defattr(644,root,root,755)
@@ -713,12 +707,13 @@ fi
 %{_sysconfdir}/gconf/schemas/glines.schemas
 %{_desktopdir}/glines.desktop
 %{_pixmapsdir}/glines
-%{_iconsdir}/hicolor/*/*/gnome-five-or-more.png
+%{_iconsdir}/hicolor/*/*/gnome-glines.*
 %dir %{_omf_dest_dir}/glines
 %{_omf_dest_dir}/glines/glines-C.omf
 %lang(en_GB) %{_omf_dest_dir}/glines/glines-en_GB.omf
 %lang(es) %{_omf_dest_dir}/glines/glines-es.omf
 %lang(fr) %{_omf_dest_dir}/glines/glines-fr.omf
+%lang(oc) %{_omf_dest_dir}/glines/glines-oc.omf
 %lang(ru) %{_omf_dest_dir}/glines/glines-ru.omf
 %lang(sv) %{_omf_dest_dir}/glines/glines-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
@@ -730,39 +725,46 @@ fi
 %{_datadir}/gnect
 %{_desktopdir}/gnect.desktop
 %{_pixmapsdir}/gnect
-%{_iconsdir}/hicolor/*/*/gnome-four-in-a-row.png
+%{_iconsdir}/hicolor/*/*/gnome-gnect.*
 %dir %{_omf_dest_dir}/gnect
 %{_omf_dest_dir}/gnect/gnect-C.omf
 %lang(en_GB) %{_omf_dest_dir}/gnect/gnect-en_GB.omf
 %lang(es) %{_omf_dest_dir}/gnect/gnect-es.omf
 %lang(fr) %{_omf_dest_dir}/gnect/gnect-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnect/gnect-oc.omf
 %lang(sv) %{_omf_dest_dir}/gnect/gnect-sv.omf
 
 %files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
-%{_sysconfdir}/sound/events/gnibbles.soundlist
 %{_datadir}/gnibbles
-%{_datadir}/sounds/gnibbles
 %{_desktopdir}/gnibbles.desktop
-%{_omf_dest_dir}/%{name}/gnibbles-C.omf
+%dir %{_omf_dest_dir}/gnibbles
+%{_omf_dest_dir}/gnibbles/gnibbles-C.omf
+%lang(es) %{_omf_dest_dir}/gnibbles/gnibbles-es.omf
+%lang(fr) %{_omf_dest_dir}/gnibbles/gnibbles-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnibbles/gnibbles-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnibbles/gnibbles-sv.omf
 %{_pixmapsdir}/gnibbles
-%{_iconsdir}/hicolor/*/*/gnome-nibbles.*
+%{_iconsdir}/hicolor/*/*/gnome-gnibbles.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
 
 %files gnobots2 -f gnobots2.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnobots2
 %{_sysconfdir}/gconf/schemas/gnobots2.schemas
-%{_sysconfdir}/sound/events/gnobots2.soundlist
 %{_datadir}/gnobots2
-%{_datadir}/sounds/gnobots2
 %{_desktopdir}/gnobots2.desktop
-%{_omf_dest_dir}/%{name}/gnobots2-C.omf
+%dir %{_omf_dest_dir}/gnobots2
+%{_omf_dest_dir}/gnobots2/gnobots2-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gnobots2-da.omf
-%lang(es) %{_omf_dest_dir}/%{name}/gnobots2-es.omf
+%lang(de) %{_omf_dest_dir}/gnobots2/gnobots2-de.omf
+%lang(es) %{_omf_dest_dir}/gnobots2/gnobots2-es.omf
+%lang(fr) %{_omf_dest_dir}/gnobots2/gnobots2-fr.omf
 %lang(it) %{_omf_dest_dir}/%{name}/gnobots2-it.omf
+%lang(oc) %{_omf_dest_dir}/gnobots2/gnobots2-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnobots2/gnobots2-sv.omf
 %{_pixmapsdir}/gnobots2
 %{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
@@ -772,10 +774,15 @@ fi
 %attr(2755,root,games) %{_bindir}/gnometris
 %{_sysconfdir}/gconf/schemas/gnometris.schemas
 %{_desktopdir}/gnometris.desktop
-%{_omf_dest_dir}/%{name}/gnometris-C.omf
+%dir %{_omf_dest_dir}/gnometris
+%{_omf_dest_dir}/gnometris/gnometris-C.omf
+%lang(el) %{_omf_dest_dir}/gnometris/gnometris-el.omf
+%lang(es) %{_omf_dest_dir}/gnometris/gnometris-es.omf
+%lang(fr) %{_omf_dest_dir}/gnometris/gnometris-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnometris/gnometris-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnometris/gnometris-sv.omf
 %{_pixmapsdir}/gnometris
-%{_iconsdir}/hicolor/*/*/gnome-gnometris.png
-%{_datadir}/sounds/gnometris
+%{_iconsdir}/hicolor/*/*/gnome-gnometris.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
 
 %files gnomine -f gnomine.lang
@@ -783,9 +790,15 @@ fi
 %attr(2755,root,games) %{_bindir}/gnomine
 %{_sysconfdir}/gconf/schemas/gnomine.schemas
 %{_desktopdir}/gnomine.desktop
-%{_omf_dest_dir}/%{name}/gnomine-C.omf
+%dir %{_omf_dest_dir}/gnomine
+%{_omf_dest_dir}/gnomine/gnomine-C.omf
+%lang(de) %{_omf_dest_dir}/gnomine/gnomine-de.omf
+%lang(es) %{_omf_dest_dir}/gnomine/gnomine-es.omf
+%lang(fr) %{_omf_dest_dir}/gnomine/gnomine-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnomine/gnomine-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnomine/gnomine-sv.omf
 %{_pixmapsdir}/gnomine
-%{_iconsdir}/hicolor/*/*/gnome-gnomine.*
+%{_iconsdir}/hicolor/*/*/gnome-mines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
 
 %files gnotravex -f gnotravex.lang
@@ -793,9 +806,15 @@ fi
 %attr(2755,root,games) %{_bindir}/gnotravex
 %{_sysconfdir}/gconf/schemas/gnotravex.schemas
 %{_desktopdir}/gnotravex.desktop
-%{_omf_dest_dir}/%{name}/gnotravex-C.omf
+%dir %{_omf_dest_dir}/gnotravex
+%{_omf_dest_dir}/gnotravex/gnotravex-C.omf
+%lang(el) %{_omf_dest_dir}/gnotravex/gnotravex-el.omf
+%lang(es) %{_omf_dest_dir}/gnotravex/gnotravex-es.omf
+%lang(fr) %{_omf_dest_dir}/gnotravex/gnotravex-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnotravex/gnotravex-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnotravex/gnotravex-sv.omf
 %{_pixmapsdir}/gnotravex
-%{_iconsdir}/hicolor/*/*/gnome-tetravex.png
+%{_iconsdir}/hicolor/*/*/gnome-tetravex.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
 
 %files gnotski -f gnotski.lang
@@ -803,9 +822,15 @@ fi
 %attr(2755,root,games) %{_bindir}/gnotski
 %{_sysconfdir}/gconf/schemas/gnotski.schemas
 %{_desktopdir}/gnotski.desktop
-%{_omf_dest_dir}/%{name}/gnotski-C.omf
-%{_pixmapsdir}/gnotski.svg
-%{_iconsdir}/hicolor/*/*/gnome-klotski.png
+%dir %{_omf_dest_dir}/gnotski
+%{_omf_dest_dir}/gnotski/gnotski-C.omf
+%lang(es) %{_omf_dest_dir}/gnotski/gnotski-es.omf
+%lang(fr) %{_omf_dest_dir}/gnotski/gnotski-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnotski/gnotski-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnotski/gnotski-sv.omf
+%dir %{_datadir}/%{name}/gnotski
+%{_datadir}/%{name}/gnotski/gnotski.svg
+%{_iconsdir}/hicolor/*/*/gnome-klotski.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
 
 %files gtali -f gtali.lang
@@ -813,8 +838,13 @@ fi
 %attr(2755,root,games) %{_bindir}/gtali
 %{_sysconfdir}/gconf/schemas/gtali.schemas
 %{_desktopdir}/gtali.desktop
-%{_omf_dest_dir}/%{name}/gtali-C.omf
+%dir %{_omf_dest_dir}/gtali
+%{_omf_dest_dir}/gtali/gtali-C.omf
 %lang(da) %{_omf_dest_dir}/%{name}/gtali-da.omf
+%lang(es) %{_omf_dest_dir}/gtali/gtali-es.omf
+%lang(fr) %{_omf_dest_dir}/gtali/gtali-fr.omf
+%lang(oc) %{_omf_dest_dir}/gtali/gtali-oc.omf
+%lang(sv) %{_omf_dest_dir}/gtali/gtali-sv.omf
 %{_pixmapsdir}/gtali
 %{_iconsdir}/hicolor/*/*/gnome-tali.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
@@ -823,19 +853,27 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
 %{_sysconfdir}/gconf/schemas/iagno.schemas
-%{_sysconfdir}/sound/events/iagno.soundlist
-%{_datadir}/sounds/iagno
 %{_desktopdir}/iagno.desktop
-%{_omf_dest_dir}/%{name}/iagno-C.omf
+%dir %{_omf_dest_dir}/iagno
+%{_omf_dest_dir}/iagno/iagno-C.omf
+%lang(es) %{_omf_dest_dir}/iagno/iagno-es.omf
+%lang(fr) %{_omf_dest_dir}/iagno/iagno-fr.omf
+%lang(oc) %{_omf_dest_dir}/iagno/iagno-oc.omf
+%lang(sv) %{_omf_dest_dir}/iagno/iagno-sv.omf
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
-%{_pixmapsdir}/iagno/woodtrim.png
+%{_pixmapsdir}/iagno
 
 %files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/mahjongg
 %{_sysconfdir}/gconf/schemas/mahjongg.schemas
 %{_desktopdir}/mahjongg.desktop
-%{_omf_dest_dir}/%{name}/mahjongg-C.omf
+%dir %{_omf_dest_dir}/mahjongg
+%{_omf_dest_dir}/mahjongg/mahjongg-C.omf
+%lang(es) %{_omf_dest_dir}/mahjongg/mahjongg-es.omf
+%lang(fr) %{_omf_dest_dir}/mahjongg/mahjongg-fr.omf
+%lang(oc) %{_omf_dest_dir}/mahjongg/mahjongg-oc.omf
+%lang(sv) %{_omf_dest_dir}/mahjongg/mahjongg-sv.omf
 %{_pixmapsdir}/mahjongg
 %{_iconsdir}/hicolor/*/*/gnome-mahjongg.png
 %{_datadir}/%{name}/mahjongg
@@ -847,12 +885,13 @@ fi
 %{_sysconfdir}/gconf/schemas/same-gnome.schemas
 %{_desktopdir}/same-gnome.desktop
 %{_datadir}/%{name}/same-gnome
-%{_iconsdir}/hicolor/*/*/gnome-same-gnome.png
+%{_iconsdir}/hicolor/*/*/gnome-samegnome.*
 %dir %{_omf_dest_dir}/same-gnome
 %{_omf_dest_dir}/same-gnome/same-gnome-C.omf
 %lang(en_GB) %{_omf_dest_dir}/same-gnome/same-gnome-en_GB.omf
 %lang(es) %{_omf_dest_dir}/same-gnome/same-gnome-es.omf
 %lang(fr) %{_omf_dest_dir}/same-gnome/same-gnome-fr.omf
+%lang(oc) %{_omf_dest_dir}/same-gnome/same-gnome-oc.omf
 %lang(ru) %{_omf_dest_dir}/same-gnome/same-gnome-ru.omf
 %lang(sv) %{_omf_dest_dir}/same-gnome/same-gnome-sv.omf
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
@@ -861,14 +900,17 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/sol
 %{_sysconfdir}/gconf/schemas/aisleriot.schemas
-%{_datadir}/sol-games
+%{_datadir}/%{name}/aisleriot
 %{_desktopdir}/freecell.desktop
 %{_desktopdir}/sol.desktop
-%{_omf_dest_dir}/%{name}/aisleriot-C.omf
-%lang(fr) %{_omf_dest_dir}/%{name}/aisleriot-fr.omf
-%{_pixmapsdir}/cards
-%{_iconsdir}/hicolor/*/*/gnome-aisleriot.png
-%{_iconsdir}/hicolor/*/*/gnome-freecell.png
+%dir %{_omf_dest_dir}/aisleriot
+%{_omf_dest_dir}/aisleriot/aisleriot-C.omf
+%lang(es) %{_omf_dest_dir}/aisleriot/aisleriot-es.omf
+%lang(fr) %{_omf_dest_dir}/aisleriot/aisleriot-fr.omf
+%lang(oc) %{_omf_dest_dir}/aisleriot/aisleriot-oc.omf
+%lang(sv) %{_omf_dest_dir}/aisleriot/aisleriot-sv.omf
+%{_iconsdir}/hicolor/*/*/gnome-aisleriot.*
+%{_iconsdir}/hicolor/*/*/gnome-freecell.*
 
 %files sudoku -f gnome-sudoku.lang
 %defattr(644,root,root,755)
@@ -879,5 +921,11 @@ fi
 %dir %{py_sitescriptdir}/gnome_sudoku/gtk_goodies
 %{py_sitescriptdir}/gnome_sudoku/gtk_goodies/*.py[co]
 %{_datadir}/gnome-sudoku
+%dir %{_omf_dest_dir}/gnome-sudoku
+%{_omf_dest_dir}/gnome-sudoku/gnome-sudoku-C.omf
+%lang(es) %{_omf_dest_dir}/gnome-sudoku/gnome-sudoku-es.omf
+%lang(fr) %{_omf_dest_dir}/gnome-sudoku/gnome-sudoku-fr.omf
+%lang(oc) %{_omf_dest_dir}/gnome-sudoku/gnome-sudoku-oc.omf
+%lang(sv) %{_omf_dest_dir}/gnome-sudoku/gnome-sudoku-sv.omf
 %{_pixmapsdir}/gnome-sudoku
-%{_pixmapsdir}/sudoku.png
+%{_iconsdir}/hicolor/*/*/gnome-sudoku.*
