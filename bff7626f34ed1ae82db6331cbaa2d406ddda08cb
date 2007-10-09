@@ -1,0 +1,1 @@
+- added fix for building in new gettext environment (use_AM_GNU_GETTEXT patch).
