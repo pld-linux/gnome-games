@@ -1,7 +1,3 @@
-#
-# TODO:
-# - system libggz (http://www.ggzgamingzone.org/)
-#
 Summary:	GNOME games
 Summary(es.UTF-8):	Juegos de GNOME
 Summary(fr.UTF-8):	Jeux pour GNOME
@@ -10,16 +6,16 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.20.0.1
+Version:	2.20.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	b852cfe1f65c076b8af4fa9c7383a35f
+# Source0-md5:	b860b7815c8af1df12fa234dfef4d203
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.19.1
+BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
@@ -29,7 +25,7 @@ BuildRequires:	gnome-vfs2-devel >= 2.20.0
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.36.2
-BuildRequires:	libgnomeui-devel >= 2.19.1
+BuildRequires:	libgnomeui-devel >= 2.20.0
 BuildRequires:	librsvg-devel >= 1:2.18.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -43,7 +39,7 @@ BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2
 Requires:	gnome-vfs2 >= 2.20.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.19.1
+Requires:	libgnomeui >= 2.20.0
 Requires:	librsvg >= 1:2.18.2
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -808,6 +804,7 @@ fi
 %{_desktopdir}/gnotravex.desktop
 %dir %{_omf_dest_dir}/gnotravex
 %{_omf_dest_dir}/gnotravex/gnotravex-C.omf
+%lang(de) %{_omf_dest_dir}/gnotravex/gnotravex-de.omf
 %lang(el) %{_omf_dest_dir}/gnotravex/gnotravex-el.omf
 %lang(es) %{_omf_dest_dir}/gnotravex/gnotravex-es.omf
 %lang(fr) %{_omf_dest_dir}/gnotravex/gnotravex-fr.omf
