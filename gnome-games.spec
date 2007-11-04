@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.20.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -47,6 +47,8 @@ Obsoletes:	gnome-games-devel
 Obsoletes:	gnome-games-gataxx
 Obsoletes:	gnome-games-static
 Obsoletes:	gnome-games-stones
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
@@ -367,6 +369,8 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
 
 %py_postclean
 
+[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
+	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name} --all-name
 %find_lang gnect --with-gnome
 %find_lang gnomine --with-gnome
