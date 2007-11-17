@@ -100,6 +100,8 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Suggests:	crafty
+Suggests:	gnuchess
 Suggests:	python-pygtkglext >= 1.1.0-2
 Suggests:	python-PyOpenGL
 Obsoletes:	glchess
