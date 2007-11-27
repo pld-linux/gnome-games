@@ -31,11 +31,13 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	pkgconfig >= 1:0.15
-BuildRequires:	python-devel >= 2.4
+BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-gnome-desktop-devel >= 2.20.0
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
+BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
+BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
 Requires:	gnome-vfs2 >= 2.20.0
 Requires:	hicolor-icon-theme
@@ -346,7 +348,7 @@ drukowania i rozwiązywania Sudoku.
 %setup -q
 %patch0 -p1
 
-sed -i -e s#sr\@Latn#sr\@latin# po/LINGUAS
+sed -i -e 's#sr\@Latn#sr\@latin#' po/LINGUAS
 mv -f po/sr\@{Latn,latin}.po
 
 %build
