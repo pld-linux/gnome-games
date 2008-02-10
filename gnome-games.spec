@@ -6,30 +6,34 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.20.3
+Version:	2.21.90
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	470bec8560c931609f89aae94977d799
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.21/%{name}-%{version}.tar.bz2
+# Source0-md5:	fccffd631122e6b1d7bcb4caf73af896
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.20.0
+BuildRequires:	GConf2-devel >= 2.21.90
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
+BuildRequires:	gettext-devel
+BuildRequires:	ggz-client-libs-devel >= 0.0.14
+BuildRequires:	ggz-server-devel >= 0.0.14
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gnome-vfs2-devel >= 2.20.0
-BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	gstreamer-devel >= 0.10.15
+BuildRequires:	gtk+2-devel >= 2:2.12.5
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	intltool >= 0.36.2
-BuildRequires:	libgnomeui-devel >= 2.20.0
+BuildRequires:	intltool >= 0.37.0
+BuildRequires:	libgnomeui-devel >= 2.21.90
 BuildRequires:	librsvg-devel >= 1:2.18.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.30
+BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-gnome-desktop-devel >= 2.20.0
@@ -41,7 +45,7 @@ BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
 Requires:	gnome-vfs2 >= 2.20.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.20.0
+Requires:	libgnomeui >= 2.21.90
 Requires:	librsvg >= 1:2.18.2
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -54,7 +58,6 @@ Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
-%define		_gnomehelpdir	%{_datadir}/gnome/help
 %define		_gamesdir	%{_localstatedir}/games
 
 %description
@@ -104,8 +107,8 @@ Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Suggests:	crafty
 Suggests:	gnuchess
-Suggests:	python-pygtkglext >= 1.1.0-2
 Suggests:	python-PyOpenGL
+Suggests:	python-pygtkglext >= 1.1.0-2
 Obsoletes:	glchess
 
 %description glchess
@@ -114,10 +117,10 @@ Communication Protocol (CECP) by Tim Mann. This means it can currently
 use engines such as GNUChess, Sjeng, Faile, Amy, Crafty and Phalanx.
 
 %description glchess -l pl.UTF-8
-glChess to dwu i trójwymiarowa gra w szachy komunikująca się za
-pomocą protokołu CECP (Chess Engine Communication Protocol) Tima
-Manna. Oznacza to, że aktualnie może używać silników takich jak
-GNUChess, Sjeng, Faile, Amy, Crafty i Phalanx.
+glChess to dwu i trójwymiarowa gra w szachy komunikująca się za pomocą
+protokołu CECP (Chess Engine Communication Protocol) Tima Manna.
+Oznacza to, że aktualnie może używać silników takich jak GNUChess,
+Sjeng, Faile, Amy, Crafty i Phalanx.
 
 %package glines
 Summary:	Five or more game
@@ -143,6 +146,7 @@ Group:		X11/Applications/Games
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
+Requires(post,preun):	ggz-client-libs
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnect
@@ -159,6 +163,7 @@ Requires(post):	coreutils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
+Requires(post,preun):	ggz-client-libs
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnibbles
@@ -344,35 +349,56 @@ and solving Sudoku.
 GNOME Sudoku dostarcza prosty interfejs do grania, zapisywania,
 drukowania i rozwiązywania Sudoku.
 
+%package servers
+Summary:	GGZ Gaming Zone servers for the GNOME games
+Summary(pl.UTF-8):	Serwery GGZ Gaming Zone dla gier GNOME
+Group:		Applications
+Requires:	ggz-server >= 0.0.14
+
+%description servers
+GGZ Gaming Zone servers for the GNOME games.
+
+%description servers -l pl.UTF-8
+Serwery GGZ Gaming Zone dla gier GNOME.
+
 %prep
 %setup -q
 %patch0 -p1
 
-sed -i -e 's#sr\@Latn#sr\@latin#' po/LINGUAS
-mv -f po/sr\@{Latn,latin}.po
+sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
+mv -f po/sr@{Latn,latin}.po
 
 %build
 %{__glib_gettextize}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
-%{__autoheader}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--enable-games=all \
+	--with-sound=gstreamer \
 	--disable-scrollkeeper \
 	--disable-schemas-install \
 	--disable-static
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/ggz
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	ggzserver_dscdir=%{_sysconfdir}/ggzd/games \
+	ggzroomdir=%{_sysconfdir}/ggzd/rooms
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gnome-stones/objects/lib*.la
+install gnect/data/gnect-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
+install gnibbles/gnibbles-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
+install iagno/iagno-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
+
+rm -f $RPM_BUILD_ROOT%{_sysconfdir}/ggz.modules
 
 %py_postclean
 
@@ -444,8 +470,14 @@ fi
 %gconf_schema_install gnect.schemas
 %update_icon_cache hicolor
 
+/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/gnect-client.dsc
+
 %preun gnect
 %gconf_schema_uninstall gnect.schemas
+
+if [ "$1" = "0" ]; then
+	/usr/bin/ggz-config -r -m %{_datadir}/ggz/gnect-client.dsc
+fi
 
 %postun gnect
 %scrollkeeper_update_postun
@@ -465,8 +497,14 @@ for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	fi
 done
 
+/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/gnibbles-client.dsc
+
 %preun gnibbles
 %gconf_schema_uninstall gnibbles.schemas
+
+if [ "$1" = "0" ]; then
+	/usr/bin/ggz-config -r -m %{_datadir}/ggz/gnibbles-client.dsc
+fi
 
 %postun gnibbles
 %scrollkeeper_update_postun
@@ -602,8 +640,14 @@ fi
 %gconf_schema_install iagno.schemas
 %update_icon_cache hicolor
 
+/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/iagno-client.dsc
+
 %preun iagno
 %gconf_schema_uninstall iagno.schemas
+
+if [ "$1" = "0" ]; then
+	/usr/bin/ggz-config -r -m %{_datadir}/ggz/iagno-client.dsc
+fi
 
 %postun iagno
 %scrollkeeper_update_postun
@@ -670,7 +714,6 @@ fi
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/pixmaps
 %{_datadir}/gnome-games-common
-%dir %{_datadir}/ggz
 %{_datadir}/ggz/gnome-games
 %dir %{_omf_dest_dir}/%{name}
 
@@ -707,6 +750,7 @@ fi
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
 %{_datadir}/gnect
+%{_datadir}/ggz/gnect-client.dsc
 %{_desktopdir}/gnect.desktop
 %{_pixmapsdir}/gnect
 %{_iconsdir}/hicolor/*/*/gnome-gnect.*
@@ -716,6 +760,7 @@ fi
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
 %{_datadir}/gnibbles
+%{_datadir}/ggz/gnibbles-client.dsc
 %{_desktopdir}/gnibbles.desktop
 %{_pixmapsdir}/gnibbles
 %{_iconsdir}/hicolor/*/*/gnome-gnibbles.*
@@ -783,6 +828,7 @@ fi
 %files iagno -f iagno.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
+%{_datadir}/ggz/iagno-client.dsc
 %{_sysconfdir}/gconf/schemas/iagno.schemas
 %{_desktopdir}/iagno.desktop
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
@@ -828,3 +874,15 @@ fi
 %{_datadir}/gnome-sudoku
 %{_pixmapsdir}/gnome-sudoku
 %{_iconsdir}/hicolor/*/*/gnome-sudoku.*
+
+%files servers
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/ggz/gnectd
+%attr(755,root,root) %{_libdir}/ggz/gnibblesd
+%attr(755,root,root) %{_libdir}/ggz/iagnod
+%{_sysconfdir}/ggzd/games/gnect-server.dsc
+%{_sysconfdir}/ggzd/games/gnibbles-server.dsc
+%{_sysconfdir}/ggzd/games/iagno-server.dsc
+%{_sysconfdir}/ggzd/rooms/gnect.room
+%{_sysconfdir}/ggzd/rooms/gnibbles.room
+%{_sysconfdir}/ggzd/rooms/iagno.room
