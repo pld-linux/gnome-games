@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.21.90
+Version:	2.21.91
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	fccffd631122e6b1d7bcb4caf73af896
+# Source0-md5:	00a497d3b5b786c0a724cd43b23fb354
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.21.90
@@ -711,6 +711,7 @@ fi
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/gnome-games-render-cards
 %dir %{_datadir}/%{name}
+%{_datadir}/%{name}/icons
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/pixmaps
 %{_datadir}/gnome-games-common
