@@ -7,13 +7,14 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.22.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.22/%{name}-%{version}.tar.bz2
 # Source0-md5:	41b0261d636e667be44f4fdc5d42bc1d
 Patch0:		%{name}-schemas.patch
+Patch1:		%{name}-ggz.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.53
@@ -364,6 +365,7 @@ Serwery GGZ Gaming Zone dla gier GNOME.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
 mv -f po/sr@{Latn,latin}.po
@@ -378,6 +380,7 @@ mv -f po/sr@{Latn,latin}.po
 %{__automake}
 %configure \
 	--enable-games=all \
+	--with-ggzd-confdir=%{_sysconfdir}/ggzd \
 	--with-sound=gstreamer \
 	--disable-scrollkeeper \
 	--disable-schemas-install \
