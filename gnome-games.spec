@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.22.0
+Version:	2.22.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	c26ba479a4bb0d4226100944d9ae77db
+# Source0-md5:	41b0261d636e667be44f4fdc5d42bc1d
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
@@ -24,9 +24,9 @@ BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	ggz-server-devel >= 0.0.14
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	gnome-vfs2-devel >= 2.22.0
 BuildRequires:	gstreamer-devel >= 0.10.15
-BuildRequires:	gtk+2-devel >= 2:2.12.5
+BuildRequires:	gtk+2-devel >= 2:2.12.9
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.37.0
 BuildRequires:	libgnomeui-devel >= 2.22.0
@@ -338,7 +338,7 @@ Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	python-gnome-desktop-print >= 2.20.0
+Requires:	python-gnome-desktop-print >= 2.22.0
 Obsoletes:	gnome-sudoku
 
 %description sudoku
