@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.24.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -375,6 +375,7 @@ Serwery GGZ Gaming Zone dla gier GNOME.
 %{__automake}
 %configure \
 	--enable-games=all \
+	--with-ggz-server=force \
 	--with-ggzd-confdir=%{_sysconfdir}/ggzd \
 	--with-sound=gstreamer \
 	--disable-scrollkeeper \
