@@ -6,30 +6,29 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.24.0
-Release:	2
+Version:	2.24.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	23bf4e795725a74ebb37daacda784adb
+# Source0-md5:	d2299cb425196cb60b66c3fa6b5bc2d3
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	ggz-server-devel >= 0.0.14
-BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
+BuildRequires:	gnome-common >= 2.24.0
+BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gstreamer-devel >= 0.10.15
-BuildRequires:	gtk+2-devel >= 2:2.12.9
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	intltool >= 0.37.0
-BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	librsvg-devel >= 1:2.22.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -41,11 +40,9 @@ BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
-BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
-Requires:	gnome-vfs2 >= 2.22.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.22.0
+Requires:	libgnomeui >= 2.24.0
 Requires:	librsvg >= 1:2.22.0
 Obsoletes:	gnect
 Obsoletes:	gnome
