@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.24.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -395,6 +395,7 @@ install gnibbles/gnibbles-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
 install iagno/iagno-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
 
 rm -f $RPM_BUILD_ROOT%{_sysconfdir}/ggz.modules
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/la
 
 %py_postclean
 
