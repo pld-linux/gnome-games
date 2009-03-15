@@ -6,19 +6,22 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.24.3
+Version:	2.25.92
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	e416e2922fe119c41ec224fab97f7909
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.25/%{name}-%{version}.tar.bz2
+# Source0-md5:	f8cba0eba30b6a1818e7e87abf49777a
 Patch0:		%{name}-schemas.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
+BuildRequires:	clutter-devel >= 0.8.8
+BuildRequires:	clutter-cairo-devel >= 0.8.2
+BuildRequires:	clutter-gtk-devel >= 0.8.3
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	ggz-server-devel >= 0.0.14
@@ -372,6 +375,7 @@ Serwery GGZ Gaming Zone dla gier GNOME.
 %{__automake}
 %configure \
 	--enable-games=all \
+	--enable-clutter \
 	--with-ggz-server=force \
 	--with-ggzd-confdir=%{_sysconfdir}/ggzd \
 	--with-sound=gstreamer \
@@ -731,15 +735,15 @@ fi
 %{_desktopdir}/glchess.desktop
 %{_datadir}/glchess
 %{py_sitescriptdir}/glchess
-%{_pixmapsdir}/glchess
 %{_iconsdir}/hicolor/*/*/gnome-glchess.*
+%{_pixmapsdir}/glchess
 
 %files glines -f glines.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/glines
 %{_sysconfdir}/gconf/schemas/glines.schemas
+%{_datadir}/%{name}/glines
 %{_desktopdir}/glines.desktop
-%{_pixmapsdir}/glines
 %{_iconsdir}/hicolor/*/*/gnome-glines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
 
@@ -747,20 +751,18 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
-%{_datadir}/gnect
+%{_datadir}/%{name}/gnect
 %{_datadir}/ggz/gnect-client.dsc
 %{_desktopdir}/gnect.desktop
-%{_pixmapsdir}/gnect
 %{_iconsdir}/hicolor/*/*/gnome-gnect.*
 
 %files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
-%{_datadir}/gnibbles
+%{_datadir}/%{name}/gnibbles
 %{_datadir}/ggz/gnibbles-client.dsc
 %{_desktopdir}/gnibbles.desktop
-%{_pixmapsdir}/gnibbles
 %{_iconsdir}/hicolor/*/*/gnome-gnibbles.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
 
@@ -768,9 +770,8 @@ fi
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnobots2
 %{_sysconfdir}/gconf/schemas/gnobots2.schemas
-%{_datadir}/gnobots2
+%{_datadir}/%{name}/gnobots2
 %{_desktopdir}/gnobots2.desktop
-%{_pixmapsdir}/gnobots2
 %{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
 
@@ -778,8 +779,8 @@ fi
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnometris
 %{_sysconfdir}/gconf/schemas/gnometris.schemas
+%{_datadir}/%{name}/gnometris
 %{_desktopdir}/gnometris.desktop
-%{_pixmapsdir}/gnometris
 %{_iconsdir}/hicolor/*/*/gnome-gnometris.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
 
@@ -787,8 +788,8 @@ fi
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnomine
 %{_sysconfdir}/gconf/schemas/gnomine.schemas
+%{_datadir}/%{name}/gnomine
 %{_desktopdir}/gnomine.desktop
-%{_pixmapsdir}/gnomine
 %{_iconsdir}/hicolor/*/*/gnome-mines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
 
@@ -797,7 +798,6 @@ fi
 %attr(2755,root,games) %{_bindir}/gnotravex
 %{_sysconfdir}/gconf/schemas/gnotravex.schemas
 %{_desktopdir}/gnotravex.desktop
-%{_pixmapsdir}/gnotravex
 %{_iconsdir}/hicolor/*/*/gnome-tetravex.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
 
@@ -806,8 +806,7 @@ fi
 %attr(2755,root,games) %{_bindir}/gnotski
 %{_sysconfdir}/gconf/schemas/gnotski.schemas
 %{_desktopdir}/gnotski.desktop
-%dir %{_datadir}/%{name}/gnotski
-%{_datadir}/%{name}/gnotski/gnotski.svg
+%{_datadir}/%{name}/gnotski
 %{_iconsdir}/hicolor/*/*/gnome-klotski.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
 
@@ -815,27 +814,27 @@ fi
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gtali
 %{_sysconfdir}/gconf/schemas/gtali.schemas
+%{_datadir}/%{name}/gtali
 %{_desktopdir}/gtali.desktop
-%{_pixmapsdir}/gtali
 %{_iconsdir}/hicolor/*/*/gnome-tali.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
 
 %files iagno -f iagno.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
-%{_datadir}/ggz/iagno-client.dsc
 %{_sysconfdir}/gconf/schemas/iagno.schemas
+%{_datadir}/%{name}/iagno
+%{_datadir}/ggz/iagno-client.dsc
 %{_desktopdir}/iagno.desktop
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
-%{_pixmapsdir}/iagno
 
 %files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/mahjongg
 %{_sysconfdir}/gconf/schemas/mahjongg.schemas
 %{_desktopdir}/mahjongg.desktop
-%{_pixmapsdir}/mahjongg
 %{_iconsdir}/hicolor/*/*/gnome-mahjongg.png
+%{_iconsdir}/hicolor/*/*/gnome-mahjongg.svg
 %{_datadir}/%{name}/mahjongg
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
 
@@ -867,8 +866,8 @@ fi
 %dir %{py_sitescriptdir}/gnome_sudoku/gtk_goodies
 %{py_sitescriptdir}/gnome_sudoku/gtk_goodies/*.py[co]
 %{_datadir}/gnome-sudoku
-%{_pixmapsdir}/gnome-sudoku
 %{_iconsdir}/hicolor/*/*/gnome-sudoku.*
+%{_pixmapsdir}/gnome-sudoku
 
 %files servers
 %defattr(644,root,root,755)
