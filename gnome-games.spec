@@ -6,22 +6,23 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.25.92
+Version:	2.26.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.25/%{name}-%{version}.tar.bz2
-# Source0-md5:	f8cba0eba30b6a1818e7e87abf49777a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.26/%{name}-%{version}.tar.bz2
+# Source0-md5:	77e03e0caa57daec39e7cf8e09c87598
 Patch0:		%{name}-schemas.patch
-URL:		http://www.gnome.org/
+URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
-BuildRequires:	clutter-devel >= 0.8.8
 BuildRequires:	clutter-cairo-devel >= 0.8.2
+BuildRequires:	clutter-devel >= 0.8.8
 BuildRequires:	clutter-gtk-devel >= 0.8.3
+BuildRequires:	dbus-glib-devel >= 0.75
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	ggz-server-devel >= 0.0.14
@@ -30,8 +31,7 @@ BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gstreamer-devel >= 0.10.15
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	guile-devel >= 5:1.6.5
-BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libgnomeui-devel >= 2.24.0
+BuildRequires:	intltool >= 0.40.4
 BuildRequires:	librsvg-devel >= 1:2.22.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -43,9 +43,9 @@ BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
+BuildRequires:	xorg-lib-libSM-devel
 Requires(post,preun):	GConf2
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.24.0
 Requires:	librsvg >= 1:2.22.0
 Obsoletes:	gnect
 Obsoletes:	gnome
@@ -105,6 +105,7 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	python-gnome-gconf
 Suggests:	crafty
 Suggests:	gnuchess
 Suggests:	python-PyOpenGL
@@ -339,6 +340,7 @@ Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwią
 Group:		X11/Applications/Games
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	python-gnome-desktop-print >= 2.22.0
+Requires:	python-gnome-gconf
 Obsoletes:	gnome-sudoku
 
 %description sudoku
