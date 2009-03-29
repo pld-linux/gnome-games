@@ -338,6 +338,7 @@ Różne gry karciane.
 Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
+Requires(post,postun):	gtk+2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	python-gnome-desktop-print >= 2.22.0
 Requires:	python-gnome-gconf
@@ -706,6 +707,12 @@ fi
 
 %postun sol
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
+
+%post sudoku
+%update_icon_cache hicolor
+
+%postun sudoku
 %update_icon_cache hicolor
 
 %files -f %{name}.lang
