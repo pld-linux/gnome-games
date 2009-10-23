@@ -6,22 +6,21 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.28.0
+Version:	2.28.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	39101397625e931a74f40854eeb1d182
+# Source0-md5:	c67497debd70aa8847874616660dae48
 Patch0:		%{name}-schemas.patch
 URL:		http://live.gnome.org/GnomeGames
-BuildRequires:	GConf2-devel >= 2.24.0
+BuildRequires:	GConf2-devel >= 2.28.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	check >= 0.9.4
-BuildRequires:	clutter-cairo-devel >= 0.8.2
-BuildRequires:	clutter-devel >= 0.8.8
-BuildRequires:	clutter-gtk-devel >= 0.8.3
+BuildRequires:	clutter-devel >= 1.0.0
+BuildRequires:	clutter-gtk-devel >= 0.10.2
 BuildRequires:	dbus-glib-devel >= 0.75
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
@@ -29,9 +28,10 @@ BuildRequires:	ggz-server-devel >= 0.0.14
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gstreamer-devel >= 0.10.15
-BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.40.4
+BuildRequires:	libcanberra-gtk-devel
 BuildRequires:	librsvg-devel >= 1:2.22.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -39,7 +39,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-gnome-desktop-devel >= 2.22.0
-BuildRequires:	python-pygtk-devel >= 2:2.12.0
+BuildRequires:	python-pygtk-devel >= 2:2.14.0
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
@@ -339,6 +339,7 @@ Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
 Requires(post,postun):	gtk+2
+Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	python-gnome-desktop-print >= 2.22.0
 Requires:	python-gnome-gconf
@@ -378,10 +379,9 @@ Serwery GGZ Gaming Zone dla gier GNOME.
 %{__automake}
 %configure \
 	--enable-games=all \
-	--enable-clutter \
 	--with-ggz-server=force \
 	--with-ggzd-confdir=%{_sysconfdir}/ggzd \
-	--with-sound=gstreamer \
+	--disable-introspection \
 	--disable-scrollkeeper \
 	--disable-schemas-install \
 	--disable-static
@@ -711,6 +711,10 @@ fi
 
 %post sudoku
 %update_icon_cache hicolor
+%gconf_schema_install gnome-sudoku.schemas
+
+%preun sudoku
+%gconf_schema_uninstall gnome-sudoku.schemas
 
 %postun sudoku
 %update_icon_cache hicolor
@@ -726,7 +730,6 @@ fi
 %{_datadir}/%{name}/pixmaps
 %{_datadir}/gnome-games-common
 %{_datadir}/ggz/gnome-games
-%dir %{_omf_dest_dir}/%{name}
 
 %files blackjack -f blackjack.lang
 %defattr(644,root,root,755)
@@ -735,6 +738,7 @@ fi
 %{_datadir}/%{name}/blackjack
 %{_desktopdir}/blackjack.desktop
 %{_iconsdir}/hicolor/*/*/gnome-blackjack.*
+%{_mandir}/man6/blackjack.6*
 
 %files glchess -f glchess.lang
 %defattr(644,root,root,755)
@@ -745,7 +749,7 @@ fi
 %{_datadir}/glchess
 %{py_sitescriptdir}/glchess
 %{_iconsdir}/hicolor/*/*/gnome-glchess.*
-%{_pixmapsdir}/glchess
+%{_mandir}/man6/glchess.6*
 
 %files glines -f glines.lang
 %defattr(644,root,root,755)
@@ -755,6 +759,7 @@ fi
 %{_desktopdir}/glines.desktop
 %{_iconsdir}/hicolor/*/*/gnome-glines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
+%{_mandir}/man6/glines.6*
 
 %files gnect -f gnect.lang
 %defattr(644,root,root,755)
@@ -764,6 +769,7 @@ fi
 %{_datadir}/ggz/gnect-client.dsc
 %{_desktopdir}/gnect.desktop
 %{_iconsdir}/hicolor/*/*/gnome-gnect.*
+%{_mandir}/man6/gnect.6*
 
 %files gnibbles -f gnibbles.lang
 %defattr(644,root,root,755)
@@ -774,6 +780,7 @@ fi
 %{_desktopdir}/gnibbles.desktop
 %{_iconsdir}/hicolor/*/*/gnome-gnibbles.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
+%{_mandir}/man6/gnibbles.6*
 
 %files gnobots2 -f gnobots2.lang
 %defattr(644,root,root,755)
@@ -783,6 +790,7 @@ fi
 %{_desktopdir}/gnobots2.desktop
 %{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
+%{_mandir}/man6/gnobots2.6*
 
 %files gnometris -f gnometris.lang
 %defattr(644,root,root,755)
@@ -792,6 +800,7 @@ fi
 %{_desktopdir}/gnometris.desktop
 %{_iconsdir}/hicolor/*/*/gnome-gnometris.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
+%{_mandir}/man6/gnometris.6*
 
 %files gnomine -f gnomine.lang
 %defattr(644,root,root,755)
@@ -801,6 +810,7 @@ fi
 %{_desktopdir}/gnomine.desktop
 %{_iconsdir}/hicolor/*/*/gnome-mines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
+%{_mandir}/man6/gnomine.6*
 
 %files gnotravex -f gnotravex.lang
 %defattr(644,root,root,755)
@@ -809,6 +819,7 @@ fi
 %{_desktopdir}/gnotravex.desktop
 %{_iconsdir}/hicolor/*/*/gnome-tetravex.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
+%{_mandir}/man6/gnotravex.6*
 
 %files gnotski -f gnotski.lang
 %defattr(644,root,root,755)
@@ -818,6 +829,7 @@ fi
 %{_datadir}/%{name}/gnotski
 %{_iconsdir}/hicolor/*/*/gnome-klotski.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotski.*
+%{_mandir}/man6/gnotski.6*
 
 %files gtali -f gtali.lang
 %defattr(644,root,root,755)
@@ -827,6 +839,7 @@ fi
 %{_desktopdir}/gtali.desktop
 %{_iconsdir}/hicolor/*/*/gnome-tali.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gtali.*
+%{_mandir}/man6/gtali.6*
 
 %files iagno -f iagno.lang
 %defattr(644,root,root,755)
@@ -836,6 +849,7 @@ fi
 %{_datadir}/ggz/iagno-client.dsc
 %{_desktopdir}/iagno.desktop
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
+%{_mandir}/man6/iagno.6*
 
 %files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
@@ -846,6 +860,7 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-mahjongg.svg
 %{_datadir}/%{name}/mahjongg
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
+%{_mandir}/man6/mahjongg.6*
 
 %files same-gnome -f same-gnome.lang
 %defattr(644,root,root,755)
@@ -855,6 +870,7 @@ fi
 %{_datadir}/%{name}/same-gnome
 %{_iconsdir}/hicolor/*/*/gnome-samegnome.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
+%{_mandir}/man6/same-gnome.6*
 
 %files sol -f aisleriot.lang
 %defattr(644,root,root,755)
@@ -865,6 +881,7 @@ fi
 %{_desktopdir}/sol.desktop
 %{_iconsdir}/hicolor/*/*/gnome-aisleriot.*
 %{_iconsdir}/hicolor/*/*/gnome-freecell.*
+%{_mandir}/man6/sol.6*
 
 %files sudoku -f gnome-sudoku.lang
 %defattr(644,root,root,755)
@@ -876,7 +893,8 @@ fi
 %{py_sitescriptdir}/gnome_sudoku/gtk_goodies/*.py[co]
 %{_datadir}/gnome-sudoku
 %{_iconsdir}/hicolor/*/*/gnome-sudoku.*
-%{_pixmapsdir}/gnome-sudoku
+%{_sysconfdir}/gconf/schemas/gnome-sudoku.schemas
+%{_mandir}/man6/gnome-sudoku.6*
 
 %files servers
 %defattr(644,root,root,755)
