@@ -22,6 +22,7 @@ BuildRequires:	check >= 0.9.4
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	clutter-gtk-devel >= 0.10.2
 BuildRequires:	dbus-glib-devel >= 0.75
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	ggz-server-devel >= 0.0.14
@@ -40,6 +41,7 @@ BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-gnome-desktop-devel >= 2.22.0
 BuildRequires:	python-pygtk-devel >= 2:2.14.0
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
