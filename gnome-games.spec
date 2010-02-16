@@ -404,7 +404,6 @@ install gnibbles/gnibbles-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
 install iagno/iagno-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
 
 rm -f $RPM_BUILD_ROOT%{_sysconfdir}/ggz.modules
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/la
 
 %py_postclean
 
