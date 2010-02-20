@@ -33,7 +33,6 @@ BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.40.4
 BuildRequires:	libcanberra-gtk-devel
-BuildRequires:	libdrm-devel
 BuildRequires:	librsvg-devel >= 1:2.22.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -46,8 +45,6 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	xorg-lib-libSM-devel
-BuildRequires:	xorg-lib-libXxf86vm-devel
-BuildRequires:	xorg-proto-dri2proto-devel
 Requires(post,preun):	GConf2
 Requires:	hicolor-icon-theme
 Requires:	librsvg >= 1:2.22.0
