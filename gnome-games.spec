@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.28.2
+Version:	2.30.0
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	6dcd006d4393524c1e4f39ca0310ac8d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	324acc2f45b1d1f2000cdbd6c596a250
 Patch0:		%{name}-schemas.patch
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	GConf2-devel >= 2.28.0
@@ -24,10 +24,9 @@ BuildRequires:	clutter-gtk-devel >= 0.10.2
 BuildRequires:	dbus-glib-devel >= 0.75
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
-BuildRequires:	ggz-client-libs-devel >= 0.0.14
-BuildRequires:	ggz-server-devel >= 0.0.14
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
+BuildRequires:	gobject-introspection-devel
 BuildRequires:	gstreamer-devel >= 0.10.15
 BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	guile-devel >= 5:1.6.5
@@ -50,8 +49,10 @@ Requires:	hicolor-icon-theme
 Requires:	librsvg >= 1:2.22.0
 Obsoletes:	gnect
 Obsoletes:	gnome
+Obsoletes:	gnome-games-blackjack
 Obsoletes:	gnome-games-devel
 Obsoletes:	gnome-games-gataxx
+Obsoletes:	gnome-games-servers
 Obsoletes:	gnome-games-static
 Obsoletes:	gnome-games-stones
 # sr@Latn vs. sr@latin
@@ -82,21 +83,6 @@ same-gnome та sol.
 которых GnomeScott, freecell, gnibbles, gnobots, gnobots2,
 gnome-stones, gnomine, gnotravex, gtali, gturing, iagno, mahjongg,
 same-gnome и sol.
-
-%package blackjack
-Summary:	GNOME's version of blackjack
-Summary(pl.UTF-8):	Blackjack dla GNOME
-Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
-Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description blackjack
-Casino card game Blackjack.
-
-%description blackjack -l pl.UTF-8
-Kasynowa wersja gry oczko.
 
 %package glchess
 Summary:	GNOME glChess - a 2D/3D chess interface
@@ -148,7 +134,6 @@ Group:		X11/Applications/Games
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
-Requires(post,preun):	ggz-client-libs
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnect
@@ -165,7 +150,6 @@ Requires(post):	coreutils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
-Requires(post,preun):	ggz-client-libs
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnibbles
@@ -189,22 +173,6 @@ Avoid the robots and make them crash into each other.
 
 %description gnobots2 -l pl.UTF-8
 Gra polegająca na zapobieganiu zderzeniom robotów.
-
-%package gnometris
-Summary:	GNOME Tetris
-Summary(pl.UTF-8):	Tetris dla GNOME
-Group:		X11/Applications/Games
-Requires(post):	coreutils
-Requires(post,postun):	gtk+2
-Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description gnometris
-Tetris like game.
-
-%description gnometris -l pl.UTF-8
-Gra podobna do Tetrisa.
 
 %package gnomine
 Summary:	GNOME Mines
@@ -287,6 +255,21 @@ Reversi like game.
 %description iagno -l pl.UTF-8
 Gra podobna do Reversi.
 
+%package lightsoff
+Summary:	Lights Off
+Group:		X11/Applications/Games
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	gir-repository
+Requires:	seed
+
+%description lightsoff
+Lights Off is a puzzle game, where the objective is to turn off all of
+the tiles on the board. Each click toggles the state of the clicked
+tile and its non-diagonal neighbors.
+
 %package mahjongg
 Summary:	GNOME Mahjongg
 Summary(pl.UTF-8):	Mahjongg dla GNOME
@@ -304,20 +287,23 @@ Disassemble a pile of tiles by removing matching pairs.
 Gra polegjaca na demontażu stosu kafli poprzez usuwanie pasujących
 par.
 
-%package same-gnome
-Summary:	Same GNOME
+%package quadrapassel
+Summary:	GNOME Tetris
+Summary(pl.UTF-8):	Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	gnome-games-gnometris
+Obsoletes:	gnome-games-gnometris
 
-%description same-gnome
-Remove groups of balls to try and clear the screen.
+%description quadrapassel
+Tetris like game.
 
-%description same-gnome -l pl.UTF-8
-Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
+%description quadrapassel -l pl.UTF-8
+Gra podobna do Tetrisa.
 
 %package sol
 Summary:	AisleRiot Solitaire
@@ -354,21 +340,31 @@ and solving Sudoku.
 GNOME Sudoku dostarcza prosty interfejs do grania, zapisywania,
 drukowania i rozwiązywania Sudoku.
 
-%package servers
-Summary:	GGZ Gaming Zone servers for the GNOME games
-Summary(pl.UTF-8):	Serwery GGZ Gaming Zone dla gier GNOME
-Group:		Applications
-Requires:	ggz-server >= 0.0.14
+%package swell-foop
+Summary:	Swell Foop
+Group:		X11/Applications/Games
+Requires(post):	coreutils
+Requires(post,postun):	gtk+2
+Requires(post,postun):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	gir-repository
+Requires:	seed
+Provides:	gnome-games-same-gnome
+Obsoletes:	gnome-games-same-gnome
 
-%description servers
-GGZ Gaming Zone servers for the GNOME games.
+%description swell-foop
+Remove groups of balls to try and clear the screen.
 
-%description servers -l pl.UTF-8
-Serwery GGZ Gaming Zone dla gier GNOME.
+%description swell-foop -l pl.UTF-8
+Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 
 %prep
 %setup -q
 %patch0 -p1
+
+%{__sed} -i -e 's/^en@shaw//' po/LINGUAS
+%{__rm} -f po/en@shaw.po
 
 %build
 %{__glib_gettextize}
@@ -380,36 +376,25 @@ Serwery GGZ Gaming Zone dla gier GNOME.
 %{__automake}
 %configure \
 	--enable-games=all \
-	--with-ggz-server=force \
-	--with-ggzd-confdir=%{_sysconfdir}/ggzd \
-	--disable-introspection \
 	--disable-scrollkeeper \
 	--disable-schemas-install \
+	--disable-silent-rules \
 	--disable-static
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/ggz
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	ggzserver_dscdir=%{_sysconfdir}/ggzd/games \
-	ggzroomdir=%{_sysconfdir}/ggzd/rooms
-
-install gnect/data/gnect-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
-install gnibbles/gnibbles-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
-install iagno/iagno-client.dsc $RPM_BUILD_ROOT%{_datadir}/ggz
-
-rm -f $RPM_BUILD_ROOT%{_sysconfdir}/ggz.modules
+	DESTDIR=$RPM_BUILD_ROOT
 
 %py_postclean
 
 %find_lang %{name} --all-name
 %find_lang gnect --with-gnome --with-omf
 %find_lang gnomine --with-gnome --with-omf
-%find_lang same-gnome --with-gnome --with-omf
+%find_lang swell-foop --with-gnome --with-omf
 %find_lang mahjongg --with-gnome --with-omf
 %find_lang glchess --with-gnome --with-omf
 %find_lang gtali --with-gnome --with-omf
@@ -420,24 +405,12 @@ rm -f $RPM_BUILD_ROOT%{_sysconfdir}/ggz.modules
 %find_lang iagno --with-gnome --with-omf
 %find_lang gnobots2 --with-gnome --with-omf
 %find_lang gnibbles --with-gnome --with-omf
-%find_lang gnometris --with-gnome --with-omf
-%find_lang blackjack --with-gnome --with-omf
+%find_lang quadrapassel --with-gnome --with-omf
 %find_lang aisleriot --with-gnome --with-omf
+%find_lang lightsoff --with-gnome --with-omf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post blackjack
-%scrollkeeper_update_post
-%gconf_schema_install blackjack.schemas
-%update_icon_cache hicolor
-
-%preun blackjack
-%gconf_schema_uninstall blackjack.schemas
-
-%postun blackjack
-%scrollkeeper_update_postun
-%update_icon_cache hicolor
 
 %post glchess
 %gconf_schema_install glchess.schemas
@@ -474,14 +447,8 @@ fi
 %gconf_schema_install gnect.schemas
 %update_icon_cache hicolor
 
-/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/gnect-client.dsc
-
 %preun gnect
 %gconf_schema_uninstall gnect.schemas
-
-if [ "$1" = "0" ]; then
-	/usr/bin/ggz-config -r -m %{_datadir}/ggz/gnect-client.dsc
-fi
 
 %postun gnect
 %scrollkeeper_update_postun
@@ -501,14 +468,8 @@ for i in gnibbles.1.0 gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 \
 	fi
 done
 
-/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/gnibbles-client.dsc
-
 %preun gnibbles
 %gconf_schema_uninstall gnibbles.schemas
-
-if [ "$1" = "0" ]; then
-	/usr/bin/ggz-config -r -m %{_datadir}/ggz/gnibbles-client.dsc
-fi
 
 %postun gnibbles
 %scrollkeeper_update_postun
@@ -539,24 +500,6 @@ done
 %gconf_schema_uninstall gnobots2.schemas
 
 %postun	gnobots2
-%scrollkeeper_update_postun
-%update_icon_cache hicolor
-
-%post gnometris
-%scrollkeeper_update_post
-%gconf_schema_install gnometris.schemas
-%update_icon_cache hicolor
-
-if [ ! -f %{_gamesdir}/gnometris.scores ]; then
-	touch %{_gamesdir}/gnometris.scores
-	chown root:games %{_gamesdir}/gnometris.scores
-	chmod 664 %{_gamesdir}/gnometris.scores
-fi
-
-%preun gnometris
-%gconf_schema_uninstall gnometris.schemas
-
-%postun gnometris
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -644,16 +587,22 @@ fi
 %gconf_schema_install iagno.schemas
 %update_icon_cache hicolor
 
-/usr/bin/ggz-config -i -f -m %{_datadir}/ggz/iagno-client.dsc
-
 %preun iagno
 %gconf_schema_uninstall iagno.schemas
 
-if [ "$1" = "0" ]; then
-	/usr/bin/ggz-config -r -m %{_datadir}/ggz/iagno-client.dsc
-fi
-
 %postun iagno
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
+
+%post lightsoff
+%scrollkeeper_update_post
+%gconf_schema_install lightsoff.schemas
+%update_icon_cache hicolor
+
+%preun lightsoff
+%gconf_schema_uninstall lightsoff.schemas
+
+%postun lightsoff
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -679,21 +628,21 @@ done
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
-%post same-gnome
+%post quadrapassel
 %scrollkeeper_update_post
-%gconf_schema_install same-gnome.schemas
+%gconf_schema_install quadrapassel.schemas
 %update_icon_cache hicolor
 
-if [ ! -f %{_gamesdir}/same-gnome.scores ]; then
-	touch %{_gamesdir}/same-gnome.scores
-	chown root:games %{_gamesdir}/same-gnome.scores
-	chmod 664 %{_gamesdir}/same-gnome.scores
+if [ ! -f %{_gamesdir}/quadrapassel.scores ]; then
+	touch %{_gamesdir}/quadrapassel.scores
+	chown root:games %{_gamesdir}/quadrapassel.scores
+	chmod 664 %{_gamesdir}/quadrapassel.scores
 fi
 
-%preun same-gnome
-%gconf_schema_uninstall same-gnome.schemas
+%preun quadrapassel
+%gconf_schema_uninstall quadrapassel.schemas
 
-%postun same-gnome
+%postun quadrapassel
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -719,26 +668,30 @@ fi
 %postun sudoku
 %update_icon_cache hicolor
 
+%post swell-foop
+%scrollkeeper_update_post
+%gconf_schema_install swell-foop.schemas
+%update_icon_cache hicolor
+
+%preun swell-foop
+%gconf_schema_uninstall swell-foop.schemas
+
+%postun swell-foop
+%scrollkeeper_update_postun
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %dir %{_libdir}/%{name}
-%attr(755,root,root) %{_libdir}/%{name}/gnome-games-render-cards
+%attr(755,root,root) %{_libdir}/%{name}/ar-cards-renderer
+%attr(755,root,root) %{_libdir}/%{name}/libgames-support-gi.so*
+%{_libdir}/girepository-1.0/GnomeGamesSupport-1.0.typelib
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/pixmaps
 %{_datadir}/gnome-games-common
-%{_datadir}/ggz/gnome-games
-
-%files blackjack -f blackjack.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/blackjack
-%{_sysconfdir}/gconf/schemas/blackjack.schemas
-%{_datadir}/%{name}/blackjack
-%{_desktopdir}/blackjack.desktop
-%{_iconsdir}/hicolor/*/*/gnome-blackjack.*
-%{_mandir}/man6/blackjack.6*
 
 %files glchess -f glchess.lang
 %defattr(644,root,root,755)
@@ -766,7 +719,6 @@ fi
 %attr(755,root,games) %{_bindir}/gnect
 %{_sysconfdir}/gconf/schemas/gnect.schemas
 %{_datadir}/%{name}/gnect
-%{_datadir}/ggz/gnect-client.dsc
 %{_desktopdir}/gnect.desktop
 %{_iconsdir}/hicolor/*/*/gnome-gnect.*
 %{_mandir}/man6/gnect.6*
@@ -776,7 +728,6 @@ fi
 %attr(2755,root,games) %{_bindir}/gnibbles
 %{_sysconfdir}/gconf/schemas/gnibbles.schemas
 %{_datadir}/%{name}/gnibbles
-%{_datadir}/ggz/gnibbles-client.dsc
 %{_desktopdir}/gnibbles.desktop
 %{_iconsdir}/hicolor/*/*/gnome-gnibbles.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnibbles.*
@@ -791,16 +742,6 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-robots.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnobots2.*
 %{_mandir}/man6/gnobots2.6*
-
-%files gnometris -f gnometris.lang
-%defattr(644,root,root,755)
-%attr(2755,root,games) %{_bindir}/gnometris
-%{_sysconfdir}/gconf/schemas/gnometris.schemas
-%{_datadir}/%{name}/gnometris
-%{_desktopdir}/gnometris.desktop
-%{_iconsdir}/hicolor/*/*/gnome-gnometris.*
-%attr(664,root,games) %ghost %{_localstatedir}/games/gnometris.*
-%{_mandir}/man6/gnometris.6*
 
 %files gnomine -f gnomine.lang
 %defattr(644,root,root,755)
@@ -846,10 +787,17 @@ fi
 %attr(755,root,root) %{_bindir}/iagno
 %{_sysconfdir}/gconf/schemas/iagno.schemas
 %{_datadir}/%{name}/iagno
-%{_datadir}/ggz/iagno-client.dsc
 %{_desktopdir}/iagno.desktop
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
 %{_mandir}/man6/iagno.6*
+
+%files lightsoff -f lightsoff.lang
+%defattr(644,root,root,755)
+%attr(755,root,games) %{_bindir}/lightsoff
+%{_datadir}/%{name}/lightsoff
+%{_desktopdir}/lightsoff.desktop
+%{_sysconfdir}/gconf/schemas/lightsoff.schemas
+%{_iconsdir}/hicolor/*/*/gnome-lightsoff.*
 
 %files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
@@ -862,15 +810,15 @@ fi
 %attr(664,root,games) %ghost %{_localstatedir}/games/mahjongg.*
 %{_mandir}/man6/mahjongg.6*
 
-%files same-gnome -f same-gnome.lang
+%files quadrapassel -f quadrapassel.lang
 %defattr(644,root,root,755)
-%attr(2755,root,games) %{_bindir}/same-gnome
-%{_sysconfdir}/gconf/schemas/same-gnome.schemas
-%{_desktopdir}/same-gnome.desktop
-%{_datadir}/%{name}/same-gnome
-%{_iconsdir}/hicolor/*/*/gnome-samegnome.*
-%attr(664,root,games) %ghost %{_localstatedir}/games/same-gnome.*
-%{_mandir}/man6/same-gnome.6*
+%attr(2755,root,games) %{_bindir}/quadrapassel
+%{_sysconfdir}/gconf/schemas/quadrapassel.schemas
+%{_datadir}/%{name}/quadrapassel
+%{_desktopdir}/quadrapassel.desktop
+%{_iconsdir}/hicolor/*/*/gnome-quadrapassel.*
+%attr(664,root,games) %ghost %{_localstatedir}/games/quadrapassel.*
+%{_mandir}/man6/quadrapassel.6*
 
 %files sol -f aisleriot.lang
 %defattr(644,root,root,755)
@@ -896,14 +844,10 @@ fi
 %{_sysconfdir}/gconf/schemas/gnome-sudoku.schemas
 %{_mandir}/man6/gnome-sudoku.6*
 
-%files servers
+%files swell-foop -f swell-foop.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/ggz/gnectd
-%attr(755,root,root) %{_libdir}/ggz/gnibblesd
-%attr(755,root,root) %{_libdir}/ggz/iagnod
-%{_sysconfdir}/ggzd/games/gnect-server.dsc
-%{_sysconfdir}/ggzd/games/gnibbles-server.dsc
-%{_sysconfdir}/ggzd/games/iagno-server.dsc
-%{_sysconfdir}/ggzd/rooms/gnect.room
-%{_sysconfdir}/ggzd/rooms/gnibbles.room
-%{_sysconfdir}/ggzd/rooms/iagno.room
+%attr(755,root,games) %{_bindir}/swell-foop
+%{_sysconfdir}/gconf/schemas/swell-foop.schemas
+%{_desktopdir}/swell-foop.desktop
+%{_datadir}/%{name}/swell-foop
+%{_iconsdir}/hicolor/*/*/gnome-swell-foop.*
