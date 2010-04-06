@@ -24,6 +24,7 @@ BuildRequires:	clutter-gtk-devel >= 0.10.2
 BuildRequires:	dbus-glib-devel >= 0.75
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
+BuildRequires:	glibc-misc
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel
@@ -44,6 +45,7 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-proto-glproto-devel
 Requires(post,preun):	GConf2
 Requires:	hicolor-icon-theme
 Requires:	librsvg >= 1:2.22.0
