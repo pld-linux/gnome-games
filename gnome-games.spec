@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	2.30.2
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
