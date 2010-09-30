@@ -264,7 +264,6 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gir-repository
 Requires:	seed
 
 %description lightsoff
@@ -350,7 +349,6 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gir-repository
 Requires:	seed
 Provides:	gnome-games-same-gnome
 Obsoletes:	gnome-games-same-gnome
