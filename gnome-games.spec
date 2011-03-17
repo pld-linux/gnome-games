@@ -429,22 +429,22 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%glib_schemas_compile
+%glib_compile_schemas
 
 %postun
-%glib_schemas_compile
+%glib_compile_schemas
 
 %post glchess
 %update_icon_cache hicolor
 %update_desktop_database_post
 %scrollkeeper_update_post
-%glib_schemas_compile
+%glib_compile_schemas
 
 %postun glchess
 %update_icon_cache hicolor
 %update_desktop_database_postun
 %scrollkeeper_update_postun
-%glib_schemas_compile
+%glib_compile_schemas
 
 %post glines
 %scrollkeeper_update_post
