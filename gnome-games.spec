@@ -127,7 +127,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Remove colored balls from the board by forming lines.
 
 %description glines -l pl.UTF-8
-Gra polegająca na usuwaniu kolorwych kul poprzez układanie ich w
+Gra polegająca na usuwaniu kolorowych kul poprzez układanie ich w
 linie.
 
 %package gnect
@@ -143,7 +143,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Compete to make lines of the same color.
 
 %description gnect -l pl.UTF-8
-Gra, której celem jest utowrzenie linii w jednym kolorze.
+Gra, której celem jest utworzenie linii w jednym kolorze.
 
 %package gnibbles
 Summary:	GNOME Nibbles
@@ -260,6 +260,7 @@ Gra podobna do Reversi.
 
 %package lightsoff
 Summary:	Lights Off
+Summary(pl.UTF-8):	Gra Lights Off dla GNOME
 Group:		X11/Applications/Games
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
@@ -271,6 +272,11 @@ Requires:	seed
 Lights Off is a puzzle game, where the objective is to turn off all of
 the tiles on the board. Each click toggles the state of the clicked
 tile and its non-diagonal neighbors.
+
+%description lightsoff -l pl.UTF-8
+Lights Off to układanka, której celem jest zgaszenie wszystkich pól na
+planszy. Każde kliknięcie zmienia stan klikniętego pola oraz jego
+najbliższych sąsiadów (nie po przekątnej).
 
 %package mahjongg
 Summary:	GNOME Mahjongg
@@ -286,7 +292,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Disassemble a pile of tiles by removing matching pairs.
 
 %description mahjongg -l pl.UTF-8
-Gra polegjaca na demontażu stosu kafli poprzez usuwanie pasujących
+Gra polegająca na demontażu stosu kafli poprzez usuwanie pasujących
 par.
 
 %package quadrapassel
@@ -344,6 +350,7 @@ drukowania i rozwiązywania Sudoku.
 
 %package swell-foop
 Summary:	Swell Foop
+Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk+2
@@ -363,9 +370,6 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 %prep
 %setup -q
 %patch0 -p1
-
-%{__sed} -i -e 's/^en@shaw//' po/LINGUAS
-%{__rm} -f po/en@shaw.po
 
 %build
 %{__glib_gettextize}
