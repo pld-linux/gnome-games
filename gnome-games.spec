@@ -6,50 +6,50 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	2.32.1
-Release:	2
+Version:	3.0.0
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/2.32/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5182bf7dc5d8573bdfdd4f5626890cd
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	3209301f3f55957dd7ceef6000ba0e0e
 Patch0:		%{name}-schemas.patch
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	GConf2-devel >= 2.28.0
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	check-devel >= 0.9.4
 BuildRequires:	clutter-devel >= 1.0.0
-BuildRequires:	clutter-gtk-devel >= 0.10.2
-BuildRequires:	dbus-glib-devel >= 0.75
+BuildRequires:	clutter-gtk-devel >= 1.0.0
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	glibc-misc
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gobject-introspection-devel
-BuildRequires:	gstreamer-devel >= 0.10.15
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gobject-introspection-devel >= 0.10.0
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.40.4
-BuildRequires:	libcanberra-gtk-devel
-BuildRequires:	librsvg-devel >= 1:2.22.0
+BuildRequires:	libcanberra-gtk3-devel >= 0.26
+BuildRequires:	librsvg-devel >= 1:2.32.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 1:2.4
-BuildRequires:	python-pygtk-devel >= 2:2.14.0
+BuildRequires:	python-pygtk-devel >= 2:2.16.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
+BuildRequires:	sqlite3-devel
+BuildRequires:	vala >= 0.11.6
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-proto-glproto-devel
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
-Requires(post,preun):	GConf2
-Requires:	librsvg >= 1:2.22.0
+Requires(post,postun):	glib2 >= 1:2.26.0
+Requires:	hicolor-icon-theme
+Requires:	librsvg >= 1:2.32.0
 Obsoletes:	gnect
 Obsoletes:	gnome
 Obsoletes:	gnome-games-blackjack
@@ -92,9 +92,11 @@ Summary:	GNOME glChess - a 2D/3D chess interface
 Summary(pl.UTF-8):	GNOME glChess - dwu i trójwymiarowy interfejs do szachów
 Group:		X11/Applications/Games
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 Requires:	python-gnome-gconf
 Suggests:	crafty
 Suggests:	gnuchess
@@ -118,10 +120,11 @@ Summary:	Five or more game
 Summary(pl.UTF-8):	Gra "Pięć albo więcej"
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description glines
 Remove colored balls from the board by forming lines.
@@ -134,10 +137,11 @@ linie.
 Summary:	Four-in-a-row game
 Summary(pl.UTF-8):	Gra "Cztery w rzędzie"
 Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnect
 Compete to make lines of the same color.
@@ -150,10 +154,11 @@ Summary:	GNOME Nibbles
 Summary(pl.UTF-8):	Nibbles dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnibbles
 Guide a worm around a maze.
@@ -166,10 +171,11 @@ Summary:	GNOME Robots
 Summary(pl.UTF-8):	Robots dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnobots2
 Avoid the robots and make them crash into each other.
@@ -182,10 +188,11 @@ Summary:	GNOME Mines
 Summary(pl.UTF-8):	Miny dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnomine
 Clear mines from a minefield.
@@ -198,10 +205,11 @@ Summary:	GNOME Tetravex
 Summary(pl.UTF-8):	Tetravex dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnotravex
 Puzzle game.
@@ -214,10 +222,11 @@ Summary:	Gnome Klotski
 Summary(pl.UTF-8):	Klotski dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gnotski
 Clone of the Klotski game. The objective is to move the patterned
@@ -232,10 +241,11 @@ Summary:	GNOME Tali
 Summary(pl.UTF-8):	Tali dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description gtali
 Poker-style dice game.
@@ -247,10 +257,11 @@ Gra w kości w pokerowym stylu.
 Summary:	GNOME Iagno
 Summary(pl.UTF-8):	Iagno dla GNOME
 Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description iagno
 Reversi like game.
@@ -262,10 +273,11 @@ Gra podobna do Reversi.
 Summary:	Lights Off
 Summary(pl.UTF-8):	Gra Lights Off dla GNOME
 Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 Requires:	seed
 
 %description lightsoff
@@ -283,10 +295,11 @@ Summary:	GNOME Mahjongg
 Summary(pl.UTF-8):	Mahjongg dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 
 %description mahjongg
 Disassemble a pile of tiles by removing matching pairs.
@@ -300,10 +313,11 @@ Summary:	GNOME Tetris
 Summary(pl.UTF-8):	Tetris dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 Provides:	gnome-games-gnometris
 Obsoletes:	gnome-games-gnometris
 
@@ -317,11 +331,12 @@ Gra podobna do Tetrisa.
 Summary:	AisleRiot Solitaire
 Summary(pl.UTF-8):	Pasjans AisleRiot
 Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	guile >= 5:1.6.5
+Requires:	hicolor-icon-theme
 
 %description sol
 Many different solitaire games.
@@ -333,9 +348,10 @@ Różne gry karciane.
 Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
 Group:		X11/Applications/Games
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 Requires:	python-gnome-desktop-print >= 2.22.0
 Requires:	python-gnome-gconf
 Obsoletes:	gnome-sudoku
@@ -353,10 +369,11 @@ Summary:	Swell Foop
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Group:		X11/Applications/Games
 Requires(post):	coreutils
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	hicolor-icon-theme
 Requires:	seed
 Provides:	gnome-games-same-gnome
 Obsoletes:	gnome-games-same-gnome
@@ -381,6 +398,7 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 %{__automake}
 %configure \
 	--enable-games=all \
+	--enable-staging \
 	--disable-scrollkeeper \
 	--disable-schemas-install \
 	--disable-silent-rules \
@@ -417,17 +435,23 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%glib_compile_schemas
+
+%postun
+%glib_compile_schemas
+
 %post glchess
-%gconf_schema_install glchess.schemas
+%update_icon_cache hicolor
 %update_desktop_database_post
 %scrollkeeper_update_post
-
-%preun glchess
-%gconf_schema_uninstall glchess.schemas
+%glib_compile_schemas
 
 %postun glchess
+%update_icon_cache hicolor
 %update_desktop_database_postun
 %scrollkeeper_update_postun
+%glib_compile_schemas
 
 %post glines
 %scrollkeeper_update_post
@@ -692,6 +716,7 @@ fi
 %attr(755,root,root) %{_libdir}/%{name}/ar-cards-renderer
 %attr(755,root,root) %{_libdir}/%{name}/libgames-support-gi.so*
 %{_libdir}/girepository-1.0/GnomeGamesSupport-1.0.typelib
+%{_datadir}/glib-2.0/schemas/org.gnome.Games.WindowState.gschema.xml
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/sounds
@@ -702,10 +727,9 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/glchess
 %attr(755,root,root) %{_bindir}/gnome-gnuchess
-%{_sysconfdir}/gconf/schemas/glchess.schemas
 %{_desktopdir}/glchess.desktop
 %{_datadir}/glchess
-%{py_sitescriptdir}/glchess
+%{_datadir}/glib-2.0/schemas/org.gnome.glchess.gschema.xml
 %{_iconsdir}/hicolor/*/*/gnome-glchess.*
 %{_mandir}/man6/glchess.6*
 
@@ -754,7 +778,7 @@ fi
 %{_sysconfdir}/gconf/schemas/gnomine.schemas
 %{_datadir}/%{name}/gnomine
 %{_desktopdir}/gnomine.desktop
-%{_iconsdir}/hicolor/*/*/gnome-mines.*
+%{_iconsdir}/hicolor/*/*/gnomine.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
 %{_mandir}/man6/gnomine.6*
 
