@@ -867,7 +867,6 @@ fi
 %{_iconsdir}/hicolor/24x24/*/gnome-freecell.*
 %{_iconsdir}/hicolor/32x32/*/gnome-freecell.*
 %{_iconsdir}/hicolor/48x48/*/gnome-freecell.*
-%{_iconsdir}/hicolor/256x256/*/gnome-freecell.*
 %{_mandir}/man6/sol.6*
 
 %files sudoku -f gnome-sudoku.lang
