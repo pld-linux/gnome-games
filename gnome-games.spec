@@ -856,9 +856,9 @@ fi
 %{_datadir}/%{name}/aisleriot
 %{_desktopdir}/freecell.desktop
 %{_desktopdir}/sol.desktop
-%dir %{_iconsdir}/hicolor/*/*
-%{_iconsdir}/hicolor/*/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/*/*/gnome-freecell.*
+#%%dir %{_iconsdir}/hicolor/*/*
+#%%{_iconsdir}/hicolor/*/*/gnome-aisleriot.*
+#%%{_iconsdir}/hicolor/*/*/gnome-freecell.*
 %{_mandir}/man6/sol.6*
 
 %files sudoku -f gnome-sudoku.lang
