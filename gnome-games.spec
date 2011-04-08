@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
 Version:	3.0.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
@@ -856,6 +856,7 @@ fi
 %{_datadir}/%{name}/aisleriot
 %{_desktopdir}/freecell.desktop
 %{_desktopdir}/sol.desktop
+%dir %{_iconsdir}/hicolor/*/*
 %{_iconsdir}/hicolor/*/*/gnome-aisleriot.*
 %{_iconsdir}/hicolor/*/*/gnome-freecell.*
 %{_mandir}/man6/sol.6*
