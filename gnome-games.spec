@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	3.0.0
-Release:	3
+Version:	3.0.1.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	3209301f3f55957dd7ceef6000ba0e0e
+# Source0-md5:	2b59a0e039d015180e3340707092b408
 Patch0:		%{name}-schemas.patch
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	GConf2-devel >= 2.28.0
@@ -715,7 +715,7 @@ fi
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/ar-cards-renderer
 %attr(755,root,root) %{_libdir}/%{name}/libgames-support-gi.so*
-%{_libdir}/girepository-1.0/GnomeGamesSupport-1.0.typelib
+%{_libdir}/%{name}/GnomeGamesSupport-1.0.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Games.WindowState.gschema.xml
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/icons
