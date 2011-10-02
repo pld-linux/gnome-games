@@ -6,19 +6,19 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	3.0.2
-Release:	2
+Version:	3.2.0
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	3e5f027ee4f6dd49de1f913949bde9c9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.2/%{name}-%{version}.tar.xz
+# Source0-md5:	1e735e8ed735f6597fd7c0686c4faed4
 Patch0:		%{name}-schemas.patch
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	GConf2-devel >= 2.28.0
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	clutter-gtk-devel >= 1.0.0
 BuildRequires:	docbook-dtd412-xml
@@ -29,7 +29,6 @@ BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
-BuildRequires:	guile-devel >= 5:1.6.5
 BuildRequires:	intltool >= 0.40.4
 BuildRequires:	libcanberra-gtk3-devel >= 0.26
 BuildRequires:	librsvg-devel >= 1:2.32.0
@@ -37,15 +36,17 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.15
 BuildRequires:	python-devel >= 1:2.4
-BuildRequires:	python-pygtk-devel >= 2:2.16.0
+BuildRequires:	python-pygobject3-devel >= 3.0.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRequires:	sqlite3-devel
-BuildRequires:	vala >= 0.11.6
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	vala >= 2:0.14.0
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-proto-glproto-devel
+BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	hicolor-icon-theme
@@ -122,7 +123,7 @@ Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	hicolor-icon-theme
 
@@ -190,7 +191,7 @@ Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	hicolor-icon-theme
 
@@ -207,7 +208,7 @@ Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	hicolor-icon-theme
 
@@ -259,7 +260,7 @@ Summary(pl.UTF-8):	Iagno dla GNOME
 Group:		X11/Applications/Games
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	hicolor-icon-theme
 
@@ -277,6 +278,11 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	GConf2-libs
+Requires:	clutter >= 1.0.0
+Requires:	clutter-gtk >= 1.0.0
+Requires:	gobject-introspection >= 0.10.0
+Requires:	gtk+3
 Requires:	hicolor-icon-theme
 Requires:	seed
 
@@ -297,7 +303,7 @@ Group:		X11/Applications/Games
 Requires(post):	coreutils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
+Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	hicolor-icon-theme
 
@@ -327,23 +333,6 @@ Tetris like game.
 %description quadrapassel -l pl.UTF-8
 Gra podobna do Tetrisa.
 
-%package sol
-Summary:	AisleRiot Solitaire
-Summary(pl.UTF-8):	Pasjans AisleRiot
-Group:		X11/Applications/Games
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	guile >= 5:1.6.5
-Requires:	hicolor-icon-theme
-
-%description sol
-Many different solitaire games.
-
-%description sol -l pl.UTF-8
-Różne gry karciane.
-
 %package sudoku
 Summary:	Simple interface for playing, saving, printing and solving Sudoku
 Summary(pl.UTF-8):	Prosty interfejs do grania, zapisywania, drukowania i rozwiązywania Sudoku
@@ -351,9 +340,12 @@ Group:		X11/Applications/Games
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	GConf2-libs
+Requires:	gobject-introspection >= 0.10.0
+Requires:	gtk+3
 Requires:	hicolor-icon-theme
-Requires:	python-gnome-desktop-print >= 2.22.0
-Requires:	python-gnome-gconf
+Requires:	python-pycairo
+Requires:	python-pygobject3
 Obsoletes:	gnome-sudoku
 
 %description sudoku
@@ -373,6 +365,9 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	clutter >= 1.0.0
+Requires:	gobject-introspection >= 0.10.0
+Requires:	gtk+3
 Requires:	hicolor-icon-theme
 Requires:	seed
 Provides:	gnome-games-same-gnome
@@ -429,7 +424,6 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang gnobots2 --with-gnome --with-omf
 %find_lang gnibbles --with-gnome --with-omf
 %find_lang quadrapassel --with-gnome --with-omf
-%find_lang aisleriot --with-gnome --with-omf
 %find_lang lightsoff --with-gnome --with-omf
 
 %clean
@@ -455,8 +449,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %post glines
 %scrollkeeper_update_post
-%gconf_schema_install glines.schemas
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 if [ ! -f %{_gamesdir}/glines.scores ]; then
 	touch %{_gamesdir}/glines.scores
@@ -464,12 +458,10 @@ if [ ! -f %{_gamesdir}/glines.scores ]; then
 	chmod 664 %{_gamesdir}/glines.scores
 fi
 
-%preun glines
-%gconf_schema_uninstall glines.schemas
-
 %postun glines
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %post gnect
 %scrollkeeper_update_post
@@ -534,7 +526,7 @@ done
 
 %post gnomine
 %scrollkeeper_update_post
-%gconf_schema_install gnomine.schemas
+%glib_compile_schemas
 %update_icon_cache hicolor
 
 for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
@@ -545,16 +537,14 @@ for i in gnomine.Custom gnomine.Large gnomine.Medium gnomine.Small; do
 	fi
 done
 
-%preun gnomine
-%gconf_schema_uninstall gnomine.schemas
-
 %postun gnomine
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %post gnotravex
 %scrollkeeper_update_post
-%gconf_schema_install gnotravex.schemas
+%glib_compile_schemas
 %update_icon_cache hicolor
 
 for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
@@ -566,12 +556,10 @@ for i in gnotravex.2x2 gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 \
 	fi
 done
 
-%preun gnotravex
-%gconf_schema_uninstall gnotravex.schemas
-
 %postun gnotravex
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %post gnotski
 %scrollkeeper_update_post
@@ -613,15 +601,13 @@ fi
 
 %post iagno
 %scrollkeeper_update_post
-%gconf_schema_install iagno.schemas
+%glib_compile_schemas
 %update_icon_cache hicolor
-
-%preun iagno
-%gconf_schema_uninstall iagno.schemas
 
 %postun iagno
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %post lightsoff
 %scrollkeeper_update_post
@@ -637,7 +623,7 @@ fi
 
 %post mahjongg
 %scrollkeeper_update_post
-%gconf_schema_install mahjongg.schemas
+%glib_compile_schemas
 %update_icon_cache hicolor
 
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
@@ -650,12 +636,10 @@ for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	fi
 done
 
-%preun mahjongg
-%gconf_schema_uninstall mahjongg.schemas
-
 %postun mahjongg
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %post quadrapassel
 %scrollkeeper_update_post
@@ -672,18 +656,6 @@ fi
 %gconf_schema_uninstall quadrapassel.schemas
 
 %postun quadrapassel
-%scrollkeeper_update_postun
-%update_icon_cache hicolor
-
-%post sol
-%scrollkeeper_update_post
-%gconf_schema_install aisleriot.schemas
-%update_icon_cache hicolor
-
-%preun sol
-%gconf_schema_uninstall aisleriot.schemas
-
-%postun sol
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -713,7 +685,6 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %dir %{_libdir}/%{name}
-%attr(755,root,root) %{_libdir}/%{name}/ar-cards-renderer
 %attr(755,root,root) %{_libdir}/%{name}/libgames-support-gi.so*
 %{_libdir}/%{name}/GnomeGamesSupport-1.0.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Games.WindowState.gschema.xml
@@ -721,7 +692,6 @@ fi
 %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/pixmaps
-%{_datadir}/gnome-games-common
 
 %files glchess -f glchess.lang
 %defattr(644,root,root,755)
@@ -736,8 +706,8 @@ fi
 %files glines -f glines.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/glines
-%{_sysconfdir}/gconf/schemas/glines.schemas
 %{_datadir}/%{name}/glines
+%{_datadir}/glib-2.0/schemas/org.gnome.glines.gschema.xml
 %{_desktopdir}/glines.desktop
 %{_iconsdir}/hicolor/*/*/gnome-glines.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/glines.*
@@ -775,8 +745,8 @@ fi
 %files gnomine -f gnomine.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnomine
-%{_sysconfdir}/gconf/schemas/gnomine.schemas
 %{_datadir}/%{name}/gnomine
+%{_datadir}/glib-2.0/schemas/org.gnome.gnomine.gschema.xml
 %{_desktopdir}/gnomine.desktop
 %{_iconsdir}/hicolor/*/*/gnomine.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnomine.*
@@ -785,7 +755,7 @@ fi
 %files gnotravex -f gnotravex.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/gnotravex
-%{_sysconfdir}/gconf/schemas/gnotravex.schemas
+%{_datadir}/glib-2.0/schemas/org.gnome.gnotravex.gschema.xml
 %{_desktopdir}/gnotravex.desktop
 %{_iconsdir}/hicolor/*/*/gnome-tetravex.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/gnotravex.*
@@ -814,8 +784,8 @@ fi
 %files iagno -f iagno.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/iagno
-%{_sysconfdir}/gconf/schemas/iagno.schemas
 %{_datadir}/%{name}/iagno
+%{_datadir}/glib-2.0/schemas/org.gnome.iagno.gschema.xml
 %{_desktopdir}/iagno.desktop
 %{_iconsdir}/hicolor/*/*/gnome-iagno.*
 %{_mandir}/man6/iagno.6*
@@ -831,7 +801,7 @@ fi
 %files mahjongg -f mahjongg.lang
 %defattr(644,root,root,755)
 %attr(2755,root,games) %{_bindir}/mahjongg
-%{_sysconfdir}/gconf/schemas/mahjongg.schemas
+%{_datadir}/glib-2.0/schemas/org.gnome.mahjongg.gschema.xml
 %{_desktopdir}/mahjongg.desktop
 %{_iconsdir}/hicolor/*/*/gnome-mahjongg.png
 %{_iconsdir}/hicolor/*/*/gnome-mahjongg.svg
@@ -848,26 +818,6 @@ fi
 %{_iconsdir}/hicolor/*/*/gnome-quadrapassel.*
 %attr(664,root,games) %ghost %{_localstatedir}/games/quadrapassel.*
 %{_mandir}/man6/quadrapassel.6*
-
-%files sol -f aisleriot.lang
-%defattr(644,root,root,755)
-%attr(755,root,games) %{_bindir}/sol
-%{_sysconfdir}/gconf/schemas/aisleriot.schemas
-%{_datadir}/%{name}/aisleriot
-%{_desktopdir}/freecell.desktop
-%{_desktopdir}/sol.desktop
-%{_iconsdir}/hicolor/16x16/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/22x22/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/24x24/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/32x32/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/48x48/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/256x256/*/gnome-aisleriot.*
-%{_iconsdir}/hicolor/16x16/*/gnome-freecell.*
-%{_iconsdir}/hicolor/22x22/*/gnome-freecell.*
-%{_iconsdir}/hicolor/24x24/*/gnome-freecell.*
-%{_iconsdir}/hicolor/32x32/*/gnome-freecell.*
-%{_iconsdir}/hicolor/48x48/*/gnome-freecell.*
-%{_mandir}/man6/sol.6*
 
 %files sudoku -f gnome-sudoku.lang
 %defattr(644,root,root,755)
