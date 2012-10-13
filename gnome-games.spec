@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	3.4.2
+Version:	3.6.0.2
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	4888d77c1fc012ab044bddd305ed32d1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.6/%{name}-%{version}.tar.xz
+# Source0-md5:	8971d723252a5095413b1a9b81fbaa3a
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	autoconf >= 2.53
@@ -376,15 +376,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/%{name}/*.la
-
 %py_postclean
 
 %find_lang %{name}
 %find_lang gnect --with-gnome
 %find_lang gnomine --with-gnome
 %find_lang swell-foop --with-gnome
-%find_lang mahjongg --with-gnome
+%find_lang gnome-mahjongg --with-gnome
 %find_lang glchess --with-gnome
 %find_lang gtali --with-gnome
 %find_lang gnome-sudoku --with-gnome
@@ -567,10 +565,12 @@ fi
 for i in mahjongg.bridges mahjongg.cloud mahjongg.confounding \
 	mahjongg.difficult mahjongg.dragon mahjongg.easy \
 	mahjongg.pyramid mahjongg.tictactoe mahjongg.ziggurat; do
-	if [ ! -f %{_gamesdir}/$i.scores ]; then
-		touch %{_gamesdir}/$i.scores
-		chown root:games %{_gamesdir}/$i.scores
-		chmod 664 %{_gamesdir}/$i.scores
+	if [ -f %{_gamesdir}/$i.scores ]; then
+		mv %{_gamesdir}/$i.scores %{_gamesdir}/gnome-$i.scores
+	elif [ ! -f %{_gamesdir}/gnome-$i.scores ]; then
+		touch %{_gamesdir}/gnome-$i.scores
+		chown root:games %{_gamesdir}/gnome-$i.scores
+		chmod 664 %{_gamesdir}/gnome-$i.scores
 	fi
 done
 
@@ -619,12 +619,6 @@ done
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%dir %{_libdir}/%{name}
-%attr(755,root,root) %{_libdir}/%{name}/libgames-support-gi.so*
-%{_libdir}/%{name}/GnomeGamesSupport-1.0.*
-%{_datadir}/glib-2.0/schemas/org.gnome.Games.WindowState.gschema.xml
-%{_iconsdir}/hicolor/*/*/*.png
-%dir %{_datadir}/%{name}
 
 %files glchess -f glchess.lang
 %defattr(644,root,root,755)
@@ -671,6 +665,8 @@ done
 %{_datadir}/glib-2.0/schemas/org.gnome.gnobots2.gschema.xml
 %{_desktopdir}/gnobots2.desktop
 %{_iconsdir}/hicolor/*/*/gnobots2.*
+%{_iconsdir}/hicolor/24x24/actions/teleport-random.png
+%{_iconsdir}/hicolor/24x24/actions/teleport.png
 %attr(664,root,games) %ghost %{_gamesdir}/gnobots2.*
 %{_mandir}/man6/gnobots2.6*
 
@@ -731,15 +727,15 @@ done
 %{_desktopdir}/lightsoff.desktop
 %{_iconsdir}/hicolor/*/*/lightsoff.*
 
-%files mahjongg -f mahjongg.lang
+%files mahjongg -f gnome-mahjongg.lang
 %defattr(644,root,root,755)
-%attr(2755,root,games) %{_bindir}/mahjongg
-%{_datadir}/glib-2.0/schemas/org.gnome.mahjongg.gschema.xml
-%{_desktopdir}/mahjongg.desktop
-%{_iconsdir}/hicolor/*/*/mahjongg.*
-%{_datadir}/mahjongg
-%attr(664,root,games) %ghost %{_gamesdir}/mahjongg.*
-%{_mandir}/man6/mahjongg.6*
+%attr(2755,root,games) %{_bindir}/gnome-mahjongg
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-mahjongg.gschema.xml
+%{_desktopdir}/gnome-mahjongg.desktop
+%{_iconsdir}/hicolor/*/*/gnome-mahjongg.*
+%{_datadir}/gnome-mahjongg
+%attr(664,root,games) %ghost %{_gamesdir}/gnome-mahjongg.*
+%{_mandir}/man6/gnome-mahjongg.6*
 
 %files quadrapassel -f quadrapassel.lang
 %defattr(644,root,root,755)
@@ -768,7 +764,7 @@ done
 %defattr(644,root,root,755)
 %attr(755,root,games) %{_bindir}/swell-foop
 %{_desktopdir}/swell-foop.desktop
-%{_datadir}/gnome-games/swell-foop
+%{_datadir}/swell-foop
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
 %{_iconsdir}/hicolor/*/*/swell-foop.*
 %attr(664,root,games) %ghost %{_gamesdir}/swell-foop.*
