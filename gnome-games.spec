@@ -6,13 +6,13 @@ Summary(ru.UTF-8):	Игры под GNOME
 Summary(uk.UTF-8):	Ігри під GNOME
 Summary(wa.UTF-8):	Djeus po GNOME
 Name:		gnome-games
-Version:	3.6.0.2
+Version:	3.6.1
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	8971d723252a5095413b1a9b81fbaa3a
+# Source0-md5:	4f57151eefcb5de4349c2b5f570eff64
 URL:		http://live.gnome.org/GnomeGames
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	autoconf >= 2.53
