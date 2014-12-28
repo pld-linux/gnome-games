@@ -21,7 +21,7 @@ BuildRequires:	cairo-devel >= 1.10.0
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	clutter-gtk-devel >= 1.0.0
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	glibc-misc
 BuildRequires:	gnome-common >= 2.24.0
