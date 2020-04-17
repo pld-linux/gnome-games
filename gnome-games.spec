@@ -1,13 +1,13 @@
 Summary:	Video games for GNOME
 Summary(pl.UTF-8):	Gry wideo dla GNOME
 Name:		gnome-games
-Version:	3.34.2
+Version:	3.36.1
 Release:	1
 Epoch:		1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	f9cdbaaecab5100bb2c84f2210c07fe0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	94de45be6e087ce7f4d29bfdea4baa67
 URL:		https://wiki.gnome.org/Apps/Games
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.38
@@ -17,12 +17,14 @@ BuildRequires:	libarchive-devel
 BuildRequires:	libhandy-devel >= 0.0.10
 BuildRequires:	libmanette-devel >= 0.2.0
 BuildRequires:	librsvg-devel >= 1:2.32.0
+BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.46.1
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	retro-gtk-devel >= 0.18.0
 BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	tracker-devel >= 2.0
 BuildRequires:	vala >= 2:0.15.1
