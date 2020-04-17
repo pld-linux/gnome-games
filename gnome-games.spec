@@ -16,7 +16,7 @@ BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	libarchive-devel
 BuildRequires:	libhandy-devel >= 0.0.10
 BuildRequires:	libmanette-devel >= 0.2.0
-BuildRequires:	librsvg-devel >= 1:2.32.0
+BuildRequires:	librsvg-devel >= 1:2.46
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	meson >= 0.46.1
@@ -31,7 +31,7 @@ BuildRequires:	vala >= 2:0.15.1
 BuildRequires:	vala-grilo >= 0.3
 BuildRequires:	vala-libhandy >= 0.0.10
 BuildRequires:	vala-libmanette >= 0.2.0
-BuildRequires:	vala-librsvg >= 1:2.32.0
+BuildRequires:	vala-librsvg >= 1:2.46
 BuildRequires:	vala-retro-gtk >= 0.18.0
 BuildRequires:	vala-tracker >= 2.0
 BuildRequires:	xz
@@ -40,7 +40,9 @@ Requires(post,postun):	glib2 >= 1:2.38
 Requires:	glib2-devel >= 1:2.38
 Requires:	hicolor-icon-theme
 Requires:	libhandy >= 0.0.10
-Requires:	librsvg >= 1:2.32.0
+Requires:	librsvg >= 1:2.46
+# requires "rusted" librsvg
+ExclusiveArch:	%{x8664} %{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
