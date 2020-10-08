@@ -2,7 +2,7 @@ Summary:	Video games for GNOME
 Summary(pl.UTF-8):	Gry wideo dla GNOME
 Name:		gnome-games
 Version:	3.38.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v3+
 Group:		X11/Applications/Games
@@ -60,7 +60,7 @@ grami to, co GNOME Music robi z biblioteką muzyczną.
 Summary:	GNOME Games search provider for GNOME Shell
 Summary(pl.UTF-8):	Usługa wyszukiwania GNOME Games dla powłoki GNOME
 Group:		X11/Applications/Games
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gnome-shell >= 3
 
 %description search-provider
