@@ -43,7 +43,7 @@ Requires:	libhandy1 >= 0.90.0
 Requires:	librsvg >= 1:2.46
 Requires:	retro-gtk >= 1.0
 # requires "rusted" librsvg
-ExclusiveArch:	%{x8664} %{ix86}
+ExclusiveArch:	%{x8664} %{ix86} x32
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
