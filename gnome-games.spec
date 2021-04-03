@@ -1,25 +1,25 @@
 Summary:	Video games for GNOME
 Summary(pl.UTF-8):	Gry wideo dla GNOME
 Name:		gnome-games
-Version:	3.38.0
-Release:	2
+Version:	40.0
+Release:	1
 Epoch:		1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-games/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	976f10d975798dec30b88cdc8aef3cbb
+Source0:	https://download.gnome.org/sources/gnome-games/40/%{name}-%{version}.tar.xz
+# Source0-md5:	c39e68fa7e42ca0b9377de3f6af206eb
 URL:		https://wiki.gnome.org/Apps/Games
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.38
 BuildRequires:	grilo-devel >= 0.3
 BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	libarchive-devel
-BuildRequires:	libhandy1-devel >= 0.90.0
+BuildRequires:	libhandy1-devel >= 1.1.90
 BuildRequires:	libmanette-devel >= 0.2.0
 BuildRequires:	librsvg-devel >= 1:2.46
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	libxml2-devel >= 2.0
-BuildRequires:	meson >= 0.46.1
+BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	retro-gtk-devel >= 1.0
@@ -29,7 +29,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	tracker-devel >= 2.0
 BuildRequires:	vala >= 2:0.15.1
 BuildRequires:	vala-grilo >= 0.3
-BuildRequires:	vala-libhandy1 >= 0.90.0
+BuildRequires:	vala-libhandy1 >= 1.1.90
 BuildRequires:	vala-libmanette >= 0.2.0
 BuildRequires:	vala-librsvg >= 1:2.46
 BuildRequires:	vala-retro-gtk >= 1.0
@@ -39,7 +39,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.38
 Requires:	glib2-devel >= 1:2.38
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 0.90.0
+Requires:	libhandy1 >= 1.1.90
 Requires:	librsvg >= 1:2.46
 Requires:	retro-gtk >= 1.0
 # requires "rusted" librsvg
