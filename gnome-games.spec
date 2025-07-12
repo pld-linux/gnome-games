@@ -2,7 +2,7 @@ Summary:	Video games for GNOME
 Summary(pl.UTF-8):	Gry wideo dla GNOME
 Name:		gnome-games
 Version:	40.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v3+
 Group:		X11/Applications/Games
