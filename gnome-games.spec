@@ -73,15 +73,15 @@ Usługa wyszukiwania GNOME Games dla powłoki GNOME.
 %setup -q
 
 %build
-%meson build \
+%meson \
 	-Dmame-plugin=true
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name}
 
